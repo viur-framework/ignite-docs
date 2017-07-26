@@ -1,0 +1,325 @@
+{% extends "viur_base.html" %}
+{% block additionalTitle %}Forms{% endblock additionalTitle %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline">Forms</h1>
+
+		<h2 class="headline">Default Form</h2>
+		<p>This is a standard form.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<label class="label" for="defaultinput">Label</label>
+				<input class="input" type="text" placeholder="Default input" id="defaultinput">
+				<input class="input input-vContrast" type="text" placeholder="Input with contrast">
+				<button class="btn" type="button">Button</button>
+				<p class="note">This is an informative note.</p>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Selection</h2>
+		<p>This is a select menu.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<label class="label" for="select">Select an option</label>
+				<select class="select" id="select">
+					<option>Test</option>
+					<option>Test 2</option>
+					<option>Test</option>
+				</select>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Small selection</h2>
+		<p>This is a small select menu.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<label class="label label-vSmall" for="selectSmall">Select an option</label>
+				<select class="select select-vSmall" id="selectSmall">
+					<option>Test</option>
+					<option>Test 2</option>
+					<option>Test</option>
+				</select>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Input connected with button</h2>
+		<p>This is an input directly connected to a button.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label" for="inputGroup-input1">Label</label>
+					<input class="input" id="inputGroup-input1" type="text" placeholder="Default input">
+					<button class="btn" type="button">Button</button>
+				</div>
+				<div class="inputGroup">
+					<label class="label is-required" for="inputGroup-input2">This is required</label>
+					<input class="input" id="inputGroup-input2" type="text" placeholder="Default input">
+					<button class="btn" type="button">Button</button>
+				</div>
+				<div class="inputGroup">
+					<label class="label has-icon i-heart" for="inputGroup-input3">Label with icon</label>
+					<input class="input" id="inputGroup-input3" type="text" placeholder="Default input">
+					<button class="btn" type="button">Button</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Small input</h2>
+		<p>This is a small input.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<input class="input input-vSmall" type="text" placeholder="Small input">
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Large input</h2>
+		<p>This is a large input.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<input class="input input-vLarge" type="text" placeholder="Large input">
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Disabled and read-only inputs</h2>
+		<p>This is a disabled and a read-only input.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<label class="label is-disabled">Label</label>
+				<input class="input is-disabled" type="text" value="No input here" disabled="disabled">
+				<input class="input is-readonly" type="text" value="Just readin'" readonly>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Block input</h2>
+		<p>This is a block input.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<p><input class="input input-vBlock" type="text" placeholder="Block input"/></p>
+				<p>
+					<label class="label is-disabled" for="inlineblock-input">Label</label>
+					<input class="input input-vBlock" type="text" placeholder="Block input next to Label" id="inlineblock-input">
+				</p>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Error, recommended and accepted on input</h2>
+		<p>These are examples for an error, a recommendation and an accepted status.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label is-invalid" for="inputGroup-input4">Label</label>
+					<input class="input is-invalid" type="text" placeholder="Input" id="inputGroup-input4">
+				</div>
+				<div class="inputGroup">
+					<label class="label is-recommended" for="inputGroup-input5">Label</label>
+					<input class="input is-recommended" type="text" placeholder="Input" id="inputGroup-input5">
+				</div>
+				<div class="inputGroup">
+					<label class="label is-valid" for="inputGroup-input6">Label</label>
+					<input class="input is-valid" type="text" placeholder="Input" id="inputGroup-input6">
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Checkbox</h2>
+		<p>This is an example of an checkbox.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<label class="pointer" for="single-check">
+					<input id="single-check" class="checkbox" type="checkbox">
+					Test checkbox
+				</label>
+				<p class="note note-vOffset">This is an informative note.</p>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Switch</h2>
+		<p>This is a simple, yet elegant, boolean switch.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label" for="switch1">Label</label>
+					<div class="switch">
+						<input class="switch-input" id="switch1" type="checkbox" />
+						<label class="switch-label" for="switch1"></label>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Radio</h2>
+		<p>These are simple radio buttons. You may group them.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label">Label</label>
+					<div class="optionGroup">
+						<div class="radio">
+							<input class="radio-input" id="radio1" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio1">Radio Option 1</label>
+						</div>
+						<div class="radio">
+							<input class="radio-input" id="radio2" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio2">Radio Option 2</label>
+						</div>
+						<div class="radio">
+							<input class="radio-input" id="radio3" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio3">Radio Option 3</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label">Label</label>
+					<div class="optionGroup optionGroup-vSelectionList">
+						<div class="radio">
+							<input class="radio-input" id="radio-list1" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio-list1">Radio Option 1</label>
+						</div>
+						<div class="radio">
+							<input class="radio-input" id="radio-list2" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio-list2">Radio Option 2</label>
+						</div>
+						<div class="radio">
+							<input class="radio-input" id="radio-list3" type="radio" name="radiogroup1"/>
+							<label class="radio-label" for="radio-list3">Radio Option 3</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Checkboxes</h2>
+		<p>These are simple checkboxes. You may group them.</p>
+		<form>
+			<div class="sandbox js-codeChild">
+				<div class="inputGroup">
+					<label class="label">Label</label>
+					<div class="optionGroup">
+						<div class="check">
+							<input class="check-input" id="check1" type="checkbox" name="checkgroup1"/>
+							<label class="check-label" for="check1">Check Option 1</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check2" type="checkbox" name="checkgroup1"/>
+							<label class="check-label" for="check2">Check Option 2</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check3" type="checkbox" name="checkgroup1"/>
+							<label class="check-label" for="check3">Check Option 3</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check4" type="checkbox" name="checkgroup1"/>
+							<label class="check-label" for="check4">Check Option 4</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check5" type="checkbox" name="checkgroup1"/>
+							<label class="check-label" for="check5">Check Option 5</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sandbox js-codeChild">
+				<div class="inputGroup">
+					<label class="label">Label</label>
+					<div class="optionGroup optionGroup-vSelectionList">
+						<div class="check">
+							<input class="check-input" id="check-list1" type="checkbox" name="checkgroup2"/>
+							<label class="check-label" for="check-list1">Check Option 1</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check-list2" type="checkbox" name="checkgroup2"/>
+							<label class="check-label" for="check-list2">Check Option 2</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check-list3" type="checkbox" name="checkgroup2"/>
+							<label class="check-label" for="check-list3">Check Option 3</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check-list4" type="checkbox" name="checkgroup2"/>
+							<label class="check-label" for="check-list4">Check Option 4</label>
+						</div>
+						<div class="check">
+							<input class="check-input" id="check-list5" type="checkbox" name="checkgroup2"/>
+							<label class="check-label" for="check-list5">Check Option 5</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</section>
+
+	<section class="section">
+		<h2 class="headline">Textarea</h2>
+		<p>This is an example of a textarea.</p>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="inputGroup">
+					<label class="label" for="textarea">Textarea1
+					</label>
+					<textarea class="textarea" id="textarea"></textarea>
+				</div>
+
+				<textarea class="textarea textarea-vBlock">Textarea as block.</textarea>
+			</form>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Form actions</h2>
+		<p>Use formActions to float submit buttons to the right at the end of your form.</p>
+		<div class="msg msg-vError has-icon i-cross">
+			<h3 class="msg-headline">Deprecated!</h3>
+			<p>formActions are deprecated. Please use the .bar element instead!</p>
+		</div>
+		<div class="sandbox js-codeChild">
+			<form>
+				<div class="formActions">
+					<input type="submit" class="btn btn-vPrimary">
+					<input type="reset" class="btn btn-vDanger">
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock content %}

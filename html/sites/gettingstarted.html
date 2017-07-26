@@ -1,0 +1,100 @@
+{% extends "viur_base.html" %}
+{%- block additionalTitle -%}Getting Started{%- endblock additionalTitle -%}
+
+{% block content %}
+<section class="section">
+		<h1 class="headline">Getting Started</h1>
+
+
+		<h2 class="headline">Dependencies</h2>
+		<p>Before you continue, be sure that you have these tools installed on your machine:</p>
+		<pre>NPM (https://www.npmjs.com)
+Git (https://git-scm.com)</pre>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Install</h2>
+		<p>Get the basic project from Github:</p>
+		<pre>$ git clone git@github.com:viur-ignite/viur-ignite.git</pre>
+
+		<p>Change into the ViUR ignite root directory:</p>
+		<pre>$ cd &lt;viur-ignite root&gt;</pre>
+
+		<p>Install gulp global and all dependencies local and initial the project:</p>
+		<pre>$ npm run setup</pre>
+
+		<div class="msg msg-vSuccess has-icon i-check">
+			<h3 class="msg-headline">You did it!</h3>
+			<p>Let's start.</p>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Build your project</h2>
+		<div class="msg has-icon i-pen">
+		<h3 class="msg-headline">Folders and structure</h3>
+			<p>Your workspace is <code>/sources/</code>.<br>
+			Because ViUR information system is build for the Google App Engine all compiled files are moved to <code>/appengine/</code>.<br>
+			Only the <code>/appengine/</code> folder is deployed to your server.
+		</div>
+		<ul class="is-list">
+			<li>
+				<p><b>HTML:</b> Write the site in _layout.html and fill html-files in sources/html with cool content. New sites must be added in the _menu.json</p>
+			</li>
+			<li>
+				<p><b>LESS:</b> Add a less-file in sources/less and create your own elements or customize your project in the app.less and appconf.less</p>
+			</li>
+			<li>
+				<p><b>JavaScript:</b> Look at the previous point! ... You tried it with Pure CSS? OKAY, add your scripts in sources/less/app.js</p>
+			</li>
+			<li>
+				<p><b>Icons:</b> Add your own icons in sources/icons</p>
+			</li>
+			<li>
+				<p><b>Images:</b> Add your images in sources/images</p>
+			</li>
+			<li>
+				<p><b>Meta:</b> Add your favicon in sources/meta</p>
+			</li>
+		</ul>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">... And Make it</h2>
+
+		<p>Change back into the viur-ignite root directory:</p>
+		<pre>$ cd &lt;viur-ignite root&gt;</pre>
+
+		<p>And run the gulp file to compile the appengine-folder:</p>
+		<pre>$ gulp</pre>
+
+		<div class="msg msg-vWarn has-icon i-flash">
+			<h3 class="msg-headline">But be aware!</h3>
+			<p>For faster workflows ViUR Ignite will overwrite any file in your appengine folder without ever asking!</p>
+		</div>
+
+		<p>You want only compile specific parts? No Problem! Run one of the following commands:</p>
+		<pre>$ gulp html
+$ gulp js
+$ gulp css
+$ gulp compress
+$ gulp icons
+</pre>
+
+		<div class="msg msg-vSuccess has-icon i-check">
+			<h3 class="msg-headline">Well Done!</h3>
+			<p>Look in your appengine folder and open your sites in a browser.</p>
+		</div>
+
+
+	</section>
+	<section class="section">
+		<nav class="bar">
+			<div class="barGroup-vLeft"><a class="btn btn-vSmall" href="index.html">Previous: ViUR Ignite</a></div>
+			<div class="barGroup-vRight"><a class="btn btn-vSmall" href="components.html">Next: Components</a></div>
+		</nav>
+	</section>
+{% endblock content %}

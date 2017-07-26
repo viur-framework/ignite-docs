@@ -1,0 +1,88 @@
+{% extends "viur_base.html" %}
+{% block additionalTitle %}Helper{% endblock additionalTitle %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline">Helper</h1>
+		<p>ViUR Ignite has many little helper tools. See those on this page.</p>
+
+		<h2 class="headline">Floats &amp; Clearfix</h2>
+		<p>Add the class <code>.f-left</code>, <code>.f-right</code> or <code>.f-none</code> to an element to float it.</p>
+		<p>Add the class <code>.clearfix</code> to an element to clear the following content or create a <code>.clear</code> element which clear also.</p>
+		<div class="sandbox js-codeChild demo-headline">
+			<p class="f-left">This text is floating left.</p>
+			<div class="clear"></div>
+			<div class="clearfix">
+				<p class="f-right">This text is floating right.</p>
+			</div>
+			<p class="f-none">This text isn't floating.</p>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Center</h2>
+		<p>Center an element vertical and/or horizontal with the class <code>.center</code>, <code>.centerX</code> or <code>.centerY</code></p>
+		<div class="sandbox js-codeChild">
+			<div class="grid-row">
+				<div class="grid-col grid-col-one-third">
+					<div class="center-demo-wrapper">
+						<div class="center"></div>
+					</div>
+				</div>
+				<div class="grid-col grid-col-one-third">
+					<div class="center-demo-wrapper">
+						<div class="centerX"></div>
+					</div>
+				</div>
+				<div class="grid-col grid-col-one-third">
+					<div class="center-demo-wrapper">
+						<div class="centerY"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Pointer</h2>
+		<p>Add the class <code>.pointer</code> to an element to change the cursor to pointer on hover.</p>
+		<div class="sandbox js-codeChild">
+			<p>Hover me and see the default!</p>
+			<p class="pointer">Hover me and see my effect!</p>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Shaddow</h2>
+		<p>The class <code>.shd</code> or <code>.txt-shd</code> add a shaddow to the element.</p>
+		<div class="sandbox js-codeChild">
+			<p class="shd">I have a pretty box-shaddow!</p>
+			<p class="txt-shd">I have a pretty text-shaddow!</p>
+		</div>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Responsive Elements</h2>
+		<p>Add the class <code>.responsive-16by9</code> or <code>.responsive-4by3</code> to an element to get the aspect ratio 16:9 or 4:3. It's very helpful if you embed Videos.</p>
+		<div class="sandbox js-codeChild">
+			<div class="grid-row">
+				<div class="grid-col grid-col-half">
+					<figure class="thumbnail">
+						<div class="thumnail-img image responsive-16by9"></div>
+						<figcaption class="thumbnail-caption txt-center">16:9</figcaption>
+					</figure>
+				</div>
+				<div class="grid-col grid-col-half">
+					<figure class="thumbnail">
+						<div class="thumbnail-img image responsive-4by3"></div>
+						<figcaption class="thumbnail-caption txt-center">4:3</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

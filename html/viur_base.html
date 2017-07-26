@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+{%- set lang = getLanguage() -%}
+
+{%- if not title -%}
+	{#- The default page title. Optimal length for search engines is 50-60 characters. -#}
+	{%- set title="Ignite Docs" -%}
+{%- endif -%}
+{%- if not metaDescr -%}
+	{#- The default meta description. The description should optimally be between 150-160 characters. -#}
+	{%- set metaDescr="Ignite - The first attempt in building a sturdy foundation of CSS (LESS) for ViUR products and Mausbrand projects. Official Documentation" -%}
+{%- endif -%}
+{%- if not metaKeywords -%}
+	{#- Default meta keywords. Meta keywords have no effect on SEO whatsoever. Length is anywhere from 100 to 255 characters. -#}
+	{%- set metaKeywords="VIUR, Ignite, Docs, CSS, LESS, framework, NPM" -%}
+{%- endif -%}
+{%- if not pageContent -%}
+	{#- Set default css page name to index. -#}
+	{%- set pageContent="index" -%}
+{%- endif -%}
+
+<html>
+<head lang="{{ lang }}">
+	<meta charset="utf-8">
+
+	<!-- Herzlich willkommen bei-->
+	<meta name="twitter:title" content="{{ title }}">
+	<meta property="og:title" content="{{ title }}">
+	<title>{% block additionalTitle %}{{ title }}{% endblock additionalTitle %} - {{ title }}</title>
+
+	<!-- Language -->
+	<meta name="content-language" content="{{ lang }}">
+	<meta name="DC.Language" content="{{ lang }}">
+	<meta http-equiv="content-language" content="{{ lang }}">
+
+	<!-- Descriptions -->
+	<meta name="description" lang="{{ lang }}" content="{{ metaDescr }}">
+	<meta name="twitter:description" content="{{ metaDescr }}">
+	<meta name="DC.Description" content="{{ metaDescr }}">
+	<meta property="og:description" content="{{ metaDescr }}">
+	<meta name="keywords" lang="{{ lang }}" content="{{ metaKeywords }}">
+
+	<!-- Diese Webseite ist ein viur Informationssystem. -->
+	<meta name="generator" content="www.viur.is">
+	<link type="text/plain" rel="author" href="/static/meta/humans.txt">
+	<meta name="author" content="Mausbrand Informationssysteme GmbH">
+
+	<meta name="robots" content="index, follow, noarchive">
+	<meta property="og:type" content="website">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<!-- icons -->
+	<link rel="shortcut icon" href="/static/meta/favicon.png" type="image/png">
+
+	<!-- css -->
+	<link href="/static/css/style.css" rel="stylesheet">
+
+	<!-- iPhone -->
+	<link href="/static/meta/apple-touch-icon-precomposed.png" sizes="57x57" rel="apple-touch-icon">
+	<link href="/static/meta/apple-touch-icon-precomposed.png" sizes="57x57" rel="apple-touch-icon-precomposed">
+	<link href="/static/meta/apple-touch-startup-image-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+	<!-- iPhone (Retina) -->
+	<link href="/static/meta/apple-touch-icon-114x114-precomposed.png" sizes="114x114" rel="apple-touch-icon">
+	<link href="/static/meta/apple-touch-icon-114x114-precomposed.png" sizes="114x114" rel="apple-touch-icon-precomposed">
+	<link href="/static/meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+	<!-- iPhone 5 -->
+	<link href="/static/meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+	<!-- iPad -->
+	<link href="/static/meta/apple-touch-icon-72x72-precomposed.png" sizes="72x72" rel="apple-touch-icon">
+	<link href="/static/meta/apple-touch-icon-72x72-precomposed.png" sizes="72x72" rel="apple-touch-icon-precomposed">
+	<link href="/static/meta/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+	<link href="/static/meta/apple-touch-startup-image-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">
+
+	<!-- iPad (Retina) -->
+	<link href="/static/meta/apple-touch-icon-144x144-precomposed.png" sizes="144x144" rel="apple-touch-icon">
+	<link href="/static/meta/apple-touch-icon-144x144-precomposed.png" sizes="144x144" rel="apple-touch-icon-precomposed">
+	<link href="/static/meta/apple-touch-startup-image-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+	<link href="/static/meta/apple-touch-startup-image-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+
+	{% block additionalHead %}
+		{# use additionalHead for important template specific JS or CSS file imports. #}
+	{% endblock %}
+
+</head>
+<body>
+
+	<article class="wrap">
+		<div class="bind flex">
+			<input type="checkbox" id="nav-trigger" class="nav-trigger">
+			<label for="nav-trigger"></label>
+
+			<article class="content {{pageContent}}" role="main">
+				{% block content %}
+				{% endblock content %}
+			</article>
+
+			{% block sidebar %}
+				<div class="sidebar menuWrapper sidebar-vLeft sidebar-vMarginal">
+					<ul class="menu-list">
+						<li class="menu-item menu1-item"><a class="menu-link is-primary" href="/">Start</a></li>
+						<li class="menu-item menu1-item"><a class="menu-link" href="/s/gettingstarted">Getting Started</a></li>
+						<li class="menu-item menu1-item"><a class="menu-link" href="/s/guidelines">Guidelines</a></li>
+						<li class="menu-item menu1-item"><a class="menu-link" href="/s/components">Components</a></li>
+						<li class="menu-item menu1-item"><a class="menu-link" href="/s/states">States</a></li>
+						<li class="menu-item menu1-item"><a class="menu-link" href="/s/variables">Variables/Settings</a></li>
+					</ul>
+					<ul class="menu-list">
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/messages">Alerts and Messages</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/bar">Bar</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/buttons">Buttons</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/forms">Forms</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/grid">Grid</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/helper">Helper</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/tables">Table</a></li>
+						<li class="menu-item menu2-item"><a class="menu-link" href="/s/types">Typography</a></li>
+					</ul>
+					<ul class="menu-list">
+					</ul>
+				</div>
+			{% endblock sidebar %}
+
+		</div>
+	</article>
+
+	{% block additionalBody %}
+	{% endblock additionalBody %}
+
+
+
+	<!-- js -->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/shCore.js"></script>
+	<script src="/static/js/shBrushXml.js"></script>
+	<script src="/static/js/app.js"></script>
+
+	{% block additionalFooter %}
+	{% endblock additionalFooter %}
+
+</body>
+</html>

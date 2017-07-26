@@ -1,0 +1,36 @@
+application: ignite-docs
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: True
+
+handlers:
+- url: /vi/s
+  static_dir: vi
+- url: /static
+  static_dir: static
+- url: /resources
+  static_dir: server/resources
+- url: /_tasks
+  script: ignite-docs.application
+- url: /admin/user/getAuthMethod
+  script: ignite-docs.application
+- url: /admin/.*
+  script: ignite-docs.application
+- url: /vi.*
+  script: ignite-docs.application
+- url: /favicon.ico
+  static_files: static/meta/favicon.ico
+  upload: favicon.ico
+- url: /.*
+  script: ignite-docs.application
+
+libraries:
+- name: jinja2 
+  version: latest
+
+inbound_services:
+- warmup
+
+builtins:
+- deferred: on

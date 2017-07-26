@@ -1,0 +1,18 @@
+{% extends "viur_base.html" %}
+{% block additionalTitle %}States{% endblock additionalTitle %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline">States</h1>
+		<p>Many interface elements appear in diffrent states.
+			ViUR Ignite CSS tries to consolidate recurrent state types, like <code>.is-active</code>, <code>.is-disabled</code>, <code>.is-loading</code>, <code>.has-icon</code> etc.</p>
+		<p>Some of these states have native pseudo class or attribute counterparts &mdash; <code>:active</code>, <code>:disabled</code> &mdash; or WAI-ARIA states and properties &mdash; <code>[aria-busy=true]</code>, <code>[aria-disabled=true]</code>.</p>
+		<p>These attributes are supported as well and in most cases recommended.</p>
+	</section>
+	<section class="section">
+		<nav class="bar">
+			<div class="barGroup-vLeft"><a class="btn btn-vSmall" href="components">Previous: Components</a></div>
+			<div class="barGroup-vRight"><a class="btn btn-vSmall" href="variables">Next: Variables</a></div>
+		</nav>
+	</section>
+{% endblock content %}

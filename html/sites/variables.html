@@ -1,0 +1,375 @@
+{% extends "viur_base.html" %}
+{% block additionalTitle %}Variables/Settings{% endblock additionalTitle %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline">Variables/Settings</h1>
+		<p>To customize your project you can overwrite the default settings in your style.less</p>
+
+
+		<h2 class="headline">Colors</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@mainColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #d00f1c;"></div>#d00f1c</td>
+					<td class="tableBody-cell">The corporate color - defining most of the looks.</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@complementColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #333;"></div>#333</td>
+					<td class="tableBody-cell">A color used to sit next to the maincolor.</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@textColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #222;"></div>#222</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@invTextColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #f4f4f4;"></div>#f4f4f4</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@backgroundColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #fafafa;"></div>#fafafa</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@successColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #4cad42;"></div>#4cad42</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@warnColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #f5b639;"></div>#f5b639</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@failColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #f44336;"></div>#f44336</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@hintColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #1da7e0;"></div>#1da7e0</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Alert Colors</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@alertColor</td>
+					<td class="tableBody-cell">@hintColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@alertSuccessColor</td>
+					<td class="tableBody-cell">@successColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@alertWarnColor</td>
+					<td class="tableBody-cell">@warnColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@alertErrorColor</td>
+					<td class="tableBody-cell">@failColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="section">
+		<h2 class="headline">Default Shaddow</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@defaultShadow</td>
+					<td class="tableBody-cell">1px 2px 3px rgba(0,0,0,0.3)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Fonts</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@bodyFonts</td>
+					<td class="tableBody-cell">'Source Sans Pro', 'Open Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'</td>
+					<td class="tableBody-cell">Default font stack</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@headFonts</td>
+					<td class="tableBody-cell">'Source Sans Pro', 'Open Sans', sans-serif</td>
+					<td class="tableBody-cell">Fonts for headlines, blockquotes and alike</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@monoFonts</td>
+					<td class="tableBody-cell">'Source Code Pro', Courier, monospace</td>
+					<td class="tableBody-cell">Fonts for code pieces.</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Page &amp; Media Queries</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@pageWidth</td>
+					<td class="tableBody-cell">1300px</td>
+					<td class="tableBody-cell">max-width of the centered container</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@breakSmall</td>
+					<td class="tableBody-cell">900px</td>
+					<td class="tableBody-cell">smart phones</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@breakMedium</td>
+					<td class="tableBody-cell">1100px</td>
+					<td class="tableBody-cell">tablets</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@breakLarge</td>
+					<td class="tableBody-cell">1400px</td>
+					<td class="tableBody-cell">screens</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@break2x</td>
+					<td class="tableBody-cell">228dpi</td>
+					<td class="tableBody-cell">high-density displays</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@breakPrint</td>
+					<td class="tableBody-cell">print</td>
+					<td class="tableBody-cell">make it printable</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Grid</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@gridSpace</td>
+					<td class="tableBody-cell">10px</td>
+					<td class="tableBody-cell">Space Between Columns</td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@gridColumns</td>
+					<td class="tableBody-cell">12</td>
+					<td class="tableBody-cell">Grid-Row-Size</td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Buttons</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnBackgroundColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #e7e5e5;"></div>#e7e5e5</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnPrimaryBgColor</td>
+					<td class="tableBody-cell">@successColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnDangerBgColor</td>
+					<td class="tableBody-cell">@failColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnEditBgColor</td>
+					<td class="tableBody-cell">@hintColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnShadow</td>
+					<td class="tableBody-cell">0 1px 1px rgba(0,0,0,0.4)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@btnHoverShadow</td>
+					<td class="tableBody-cell">0 3px 3px rgba(0,0,0,0.4)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Form / Inputs</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputValidColor</td>
+					<td class="tableBody-cell">@successColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputDangerColor</td>
+					<td class="tableBody-cell">@failColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputHintColor</td>
+					<td class="tableBody-cell">@hintColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputRequiredColor</td>
+					<td class="tableBody-cell">@mainColor</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputColor</td>
+					<td class="tableBody-cell"><div class="color-demo" style="background-color: #ffffff;"></div>#ffffff</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputShadow</td>
+					<td class="tableBody-cell">0px 1px 1px rgba(0,0,0,0.4)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@inputHoverShadow</td>
+					<td class="tableBody-cell">0 3px 3px rgba(0,0,0,0.4)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline">Other</h2>
+
+		<table class="table">
+			<thead class="tableHead">
+				<tr class="tableHead-row">
+					<th class="tableHead-cell">Variable</th>
+					<th class="tableHead-cell">Default Value</th>
+					<th class="tableHead-cell">Note</th>
+				</tr>
+			</thead>
+			<tbody class="tableBody">
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@menuBackgroundColor</td>
+					<td class="tableBody-cell">#f4f4f4</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@progressBackground</td>
+					<td class="tableBody-cell">lighten(@complementColor,60%)</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@tableRowBackgroundColor</td>
+					<td class="tableBody-cell">#fefefe</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+				<tr class="tableBody-row">
+					<td class="tableBody-cell">@tipMultilineMaxwidth</td>
+					<td class="tableBody-cell">250px</td>
+					<td class="tableBody-cell"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section class="section">
+		<nav class="bar">
+			<div class="barGroup-vLeft"><a class="btn btn-vSmall" href="states">Previous: States</a></div>
+		</nav>
+	</section>
+{% endblock content %}
