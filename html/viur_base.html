@@ -19,6 +19,40 @@
 	{%- set pageContent="index" -%}
 {%- endif -%}
 
+{%-
+	set sites = [[
+		["start", "Start"],
+		["gettingstarted", "Getting Started"],
+		["guidelines", "Guidelines"],
+		["components", "Components"],
+		["states", "States"],
+		["variables", "Variables/Settings"]
+	], [
+		["messages", "Alerts and Messages"],
+		["bar", "Bar"],
+		["buttons", "Buttons"],
+		["forms", "Forms"],
+		["grid", "Grid"],
+		["helper", "Helper"],
+		["tables", "Table"],
+		["types", "Typography"]
+	]]
+-%}
+{%- set curSite = [] -%}
+{%- set curMenu = [] -%}
+{%- set menuCounter = 0 -%}
+{%- for menu in sites -%}
+	{%- set siteCounter = 0 -%}
+	{%- for site in menu -%}
+		{%- if isActive==site[0] -%}
+			{%- do curSite.append(siteCounter) -%}
+			{%- do curMenu.append(menuCounter) -%}
+		{%- endif -%}
+		{%- set siteCounter = siteCounter + 1 -%}
+	{%- endfor -%}
+	{%- set menuCounter = menuCounter + 1 -%}
+{%- endfor -%}
+
 <html>
 <head lang="{{ lang }}">
 	<meta charset="utf-8">
@@ -46,6 +80,7 @@
 	<meta name="author" content="Mausbrand Informationssysteme GmbH">
 
 	<meta name="robots" content="index, follow, noarchive">
+	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+isActive if isActive != 'start' }}" />
 	<meta property="og:type" content="website">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -95,35 +130,44 @@
 			<article class="content {{pageContent}}" role="main">
 				{% block content %}
 				{% endblock content %}
+				<section class="section">
+					<nav class="bar">
+						{% if curSite[0]-1 != -1 %}
+							<div class="barGroup-vLeft"><a class="btn btn-vSmall"
+								href="/s/{{ sites[curMenu[0]][curSite[0]-1][0] }}">
+								Previous: {{ sites[curMenu[0]][curSite[0]-1][1] }}</a></div>
+						{% endif %}
+
+						{% if sites[curMenu[0]][curSite[0]+1] %}
+							<div class="barGroup-vRight"><a class="btn btn-vSmall"
+								href="/s/{{ sites[curMenu[0]][curSite[0]+1][0] }}">
+								Next: {{ sites[curMenu[0]][curSite[0]+1][1] }}</a></div>
+						{% endif %}
+					</nav>
+				</section>
 			</article>
 
 			{% block sidebar %}
 				<div class="sidebar menuWrapper sidebar-vLeft sidebar-vMarginal">
-					<ul class="menu-list">
-						<li class="menu-item menu1-item"><a class="menu-link is-primary" href="/">Start</a></li>
-						<li class="menu-item menu1-item"><a class="menu-link" href="/s/gettingstarted">Getting Started</a></li>
-						<li class="menu-item menu1-item"><a class="menu-link" href="/s/guidelines">Guidelines</a></li>
-						<li class="menu-item menu1-item"><a class="menu-link" href="/s/components">Components</a></li>
-						<li class="menu-item menu1-item"><a class="menu-link" href="/s/states">States</a></li>
-						<li class="menu-item menu1-item"><a class="menu-link" href="/s/variables">Variables/Settings</a></li>
-					</ul>
-					<ul class="menu-list">
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/messages">Alerts and Messages</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/bar">Bar</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/buttons">Buttons</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/forms">Forms</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/grid">Grid</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/helper">Helper</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/tables">Table</a></li>
-						<li class="menu-item menu2-item"><a class="menu-link" href="/s/types">Typography</a></li>
-					</ul>
-					<ul class="menu-list">
-					</ul>
+					{% for menu in sites %}
+						<ul class="menu-list">
+							{% for site in menu %}
+								{% if site[0] == "start" %}
+									<li class="menu-item"><a class="menu-link is-primary {{ 'is-active' if isActive==site[0] }}"
+										href="/">{{ site[1] }}</a></li>
+								{% else %}
+									<li class="menu-item"><a class="menu-link {{ 'is-active' if isActive==site[0] }}"
+										href="/s/{{ site[0] }}">{{ site[1] }}</a></li>
+								{% endif %}
+							{% endfor %}
+						</ul>
+					{% endfor %}
 				</div>
 			{% endblock sidebar %}
 
 		</div>
 	</article>
+
 
 	{% block additionalBody %}
 	{% endblock additionalBody %}

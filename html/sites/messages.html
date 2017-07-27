@@ -1,3 +1,4 @@
+{% set isActive="messages" %}
 {% extends "viur_base.html" %}
 {% block additionalTitle %}Alerts and Messages{% endblock additionalTitle %}
 
@@ -56,13 +57,6 @@
 		<h2 class="headline">Message with icon</h2>
 		<p></p>
 		<div class="sandbox js-codeChild">
-			<div class="msg has-icon i-heart">
-				<h3 class="msg-headline">Icon!</h3>
-				<p>This is a before element icon.</p>
-			</div>
-		</div>
-
-		<div class="sandbox js-codeChild">
 			<div class="msg has-icon">
 				<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><path fill="#D00F1C" d="M32.061 53.776a.121.121 0 0 1-.062-.01c-.02.009-.034.016-.062.01a.212.212 0 0 1-.152-.062L8.847 30.775c-6.973-6.974-6.716-14.301.761-21.781l.228-.229c2.941-2.94 6.051-4.432 9.24-4.432 3.929 0 8.006 2.168 12.464 6.627l.46.418.468-.424c4.449-4.453 8.529-6.622 12.456-6.622 3.188 0 6.299 1.492 9.24 4.432l.227.229c7.479 7.479 7.735 14.809.764 21.781l-22.941 22.94a.21.21 0 0 1-.153.062z"/></svg>
 				<h3 class="msg-headline">Icon!</h3>
@@ -73,7 +67,7 @@
 {% endblock content %}
 
 {% block additionalBody %}
-	<div class="alert-center">
+	<div class="alertGroup">
 		<div class="alert has-icon i-heart">
 			<h4 class="alert-headline">Advice!</h4>
 			<p>This gives some advice.</p>

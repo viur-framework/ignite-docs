@@ -1,3 +1,4 @@
+{% set isActive="helper" %}
 {% extends "viur_base.html" %}
 {% block additionalTitle %}Helper{% endblock additionalTitle %}
 
@@ -21,36 +22,15 @@
 
 
 	<section class="section">
-		<h2 class="headline">Center</h2>
-		<p>Center an element vertical and/or horizontal with the class <code>.center</code>, <code>.centerX</code> or <code>.centerY</code></p>
-		<div class="sandbox js-codeChild">
-			<div class="grid-row">
-				<div class="grid-col grid-col-one-third">
-					<div class="center-demo-wrapper">
-						<div class="center"></div>
-					</div>
-				</div>
-				<div class="grid-col grid-col-one-third">
-					<div class="center-demo-wrapper">
-						<div class="centerX"></div>
-					</div>
-				</div>
-				<div class="grid-col grid-col-one-third">
-					<div class="center-demo-wrapper">
-						<div class="centerY"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-
-	<section class="section">
 		<h2 class="headline">Pointer</h2>
 		<p>Add the class <code>.pointer</code> to an element to change the cursor to pointer on hover.</p>
 		<div class="sandbox js-codeChild">
 			<p>Hover me and see the default!</p>
-			<p class="pointer">Hover me and see my effect!</p>
+			<p class="c-pointer">Hover me and see my effect!</p>
+			<p class="c-help">Hover me and see my effect!</p>
+			<p class="c-not-allowed">Hover me and see my effect!</p>
+			<p class="c-progress">Hover me and see my effect!</p>
+			<p class="c-wait">Hover me and see my effect!</p>
 		</div>
 	</section>
 
@@ -72,13 +52,13 @@
 			<div class="grid-row">
 				<div class="grid-col grid-col-half">
 					<figure class="thumbnail">
-						<div class="thumnail-img image responsive-16by9"></div>
+						<div class="demo responsive-16by9"></div>
 						<figcaption class="thumbnail-caption txt-center">16:9</figcaption>
 					</figure>
 				</div>
 				<div class="grid-col grid-col-half">
 					<figure class="thumbnail">
-						<div class="thumbnail-img image responsive-4by3"></div>
+						<div class="demo responsive-4by3"></div>
 						<figcaption class="thumbnail-caption txt-center">4:3</figcaption>
 					</figure>
 				</div>

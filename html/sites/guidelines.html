@@ -1,3 +1,4 @@
+{% set isActive="guidelines" %}
 {% extends "viur_base.html" %}
 {% block additionalTitle %}Guidelines for Ignite{% endblock additionalTitle %}
 
@@ -21,7 +22,7 @@
 		<h3 class="headline">Selector</h3>
 		<pre>[selector] {
 	[property]: [value];
-	}</pre>
+}</pre>
 		<ul class="is-list">
 			<li>related selectors on the same line; unrelated selectors on new lines;</li>
 			<li>a space before our opening brace ({);</li>
@@ -56,12 +57,12 @@
 		<h3 class="headline">Write Smart</h3>
 		<p>Avoid unnecessary elemtent. It have a positive effect on the readabilty and page load time.</p>
 		<pre class="brush: html">&lt;!-- Bad --&gt;
-	&lt;span class="avatar"&gt;
+&lt;span class="avatar"&gt;
 	&lt;img src="..."&gt;
-	&lt;/span&gt;
+&lt;/span&gt;
 
-	&lt;!-- Good --&gt;
-	&lt;img class="avatar" src="..."&gt;</pre>
+&lt;!-- Good --&gt;
+&lt;img class="avatar" src="..."&gt;</pre>
 	</section>
 
 

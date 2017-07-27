@@ -1,3 +1,4 @@
+{% set isActive="types" %}
 {% extends "viur_base.html" %}
 {% block additionalTitle %}Typography{% endblock additionalTitle %}
 
@@ -5,13 +6,15 @@
 	<section class="section">
 		<h1 class="headline">Typography</h1>
 
-		<p> ViUR Ignite CSS supports the <a href="https://ia.net/know-how/100e2r" title="Information Architects: 100e2r">100% Easy to read</a> standard.
-			<ul class="is-list">
-				<li>The body font size is 100% (roughly 16px).</li>
-				<li>Objects use a font size based on the body &mdash; using »rem« (root em).</li>
-				<li>Inline elements and type should react to their direct surroundings &mdash; thus using »em«.</li>
-			</ul>
+		<p> ViUR Ignite CSS supports the <a
+			href="https://medium.com/@xtianmiller/your-body-text-is-too-small-5e02d36dc902"
+			title="Your Body Text Is Too Small">Your Body Text Is Too Small</a> standard.
 		</p>
+		<ul class="is-list">
+			<li>The body font size is depending on the display-size.</li>
+			<li>Objects use a font size based on the body &mdash; using »rem« (root em).</li>
+			<li>Inline elements and type should react to their direct surroundings &mdash; thus using »em«.</li>
+		</ul>
 	</section>
 
 

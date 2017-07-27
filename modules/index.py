@@ -7,7 +7,7 @@ class index(default):
 
 	@exposed
 	def index(self, *args, **kwargs):
-		template = self.getEnv().get_template("index.html")
+		template = self.getEnv().get_template("sites/start.html")
 		return template.render(start=True)
 
 	#@tasks.PeriodicTask(24*60)
