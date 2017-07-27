@@ -124,9 +124,6 @@
 
 	<article class="wrap">
 		<div class="bind flex">
-			<input type="checkbox" id="nav-trigger" class="nav-trigger">
-			<label for="nav-trigger"></label>
-
 			<article class="content {{pageContent}}" role="main">
 				{% block content %}
 				{% endblock content %}
@@ -148,7 +145,10 @@
 			</article>
 
 			{% block sidebar %}
-				<div class="sidebar menuWrapper sidebar-vLeft sidebar-vMarginal">
+				<input type="checkbox" id="nav-trigger" class="nav-trigger">
+				<label for="nav-trigger"></label>
+
+				<div class="sidebar menuWrapper sidebar-vLeft">
 					{% for menu in sites %}
 						<ul class="menu-list">
 							{% for site in menu %}
