@@ -18,6 +18,9 @@
 	{#- Set default css page name to index. -#}
 	{%- set pageContent="index" -%}
 {%- endif -%}
+{%- if not isActive -%}
+	{%- set isActive="start" -%}
+{%- endif -%}
 
 {%-
 	set sites = [[
