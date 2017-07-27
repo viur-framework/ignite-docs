@@ -16,16 +16,18 @@ Git (https://git-scm.com)</pre>
 
 	<section class="section">
 		<h2 class="headline">Install</h2>
-		<p>Get the basic project from Github:</p>
-		<pre>$ git clone git@github.com:viur-ignite/viur-ignite.git</pre>
+		<p>Get the framework from Github:</p>
+		<pre>$ git clone git@github.com:viur-framework/ignite.git</pre>
 
-		<p>Change into the ViUR ignite root directory:</p>
-		<pre>$ cd &lt;viur-ignite root&gt;</pre>
+		<p>As an alternativ, you can <a href="https://github.com/viur-framework/ignite/archive/master.zip">download it as ZIP</a>
+		<p>Change into the Ignite root directory:</p>
+		<pre>$ cd ignite</pre>
 
-		<p>Install gulp global and all dependencies local and initial the project:</p>
+		<p>Install gulp global and all dependencies local, you will need them later to compile the less:</p>
 		<pre>$ npm run setup</pre>
 
-		<div class="msg msg-vSuccess has-icon i-check">
+		<div class="msg msg-vSuccess has-icon">
+			{{ icon("check") }}
 			<h3 class="msg-headline">You did it!</h3>
 			<p>Let's start.</p>
 		</div>
@@ -33,32 +35,10 @@ Git (https://git-scm.com)</pre>
 
 
 	<section class="section">
-		<h2 class="headline">Build your project</h2>
-		<div class="msg has-icon i-pen">
-		<h3 class="msg-headline">Folders and structure</h3>
-			<p>Your workspace is <code>/sources/</code>.<br>
-			Because ViUR information system is build for the Google App Engine all compiled files are moved to <code>/appengine/</code>.<br>
-			Only the <code>/appengine/</code> folder is deployed to your server.
-		</div>
-		<ul class="is-list">
-			<li>
-				<p><b>HTML:</b> Write the site in _layout.html and fill html-files in sources/html with cool content. New sites must be added in the _menu.json</p>
-			</li>
-			<li>
-				<p><b>LESS:</b> Add a less-file in sources/less and create your own elements or customize your project in the app.less and appconf.less</p>
-			</li>
-			<li>
-				<p><b>JavaScript:</b> Look at the previous point! ... You tried it with Pure CSS? OKAY, add your scripts in sources/less/app.js</p>
-			</li>
-			<li>
-				<p><b>Icons:</b> Add your own icons in sources/icons</p>
-			</li>
-			<li>
-				<p><b>Images:</b> Add your images in sources/images</p>
-			</li>
-			<li>
-				<p><b>Meta:</b> Add your favicon in sources/meta</p>
-			</li>
+		<h2 class="headline">Style your project</h2>
+			<p>Because Ignite is designed for VIUR projects it uses a specific dictionarystructure. Of cource you can customize  it for your workflow.</p>
+			<p>In <code>../static/less/</code> your find the <code>style.less</code> which is imported as default by ignite. Change this in the <code>viur.less</code>, if required.</p>
+			<p>Gulp and the other dependencies will output the css in <code>../static/css/</code>. Change this in the <code>gulpfile.js</code>, if required.</p>
 		</ul>
 	</section>
 
@@ -66,28 +46,21 @@ Git (https://git-scm.com)</pre>
 	<section class="section">
 		<h2 class="headline">... And Make it</h2>
 
-		<p>Change back into the viur-ignite root directory:</p>
-		<pre>$ cd &lt;viur-ignite root&gt;</pre>
+		<p>Change back into the ignite root directory:</p>
+		<pre>$ cd ignite</pre>
 
-		<p>And run the gulp file to compile the appengine-folder:</p>
+		<p>And run the gulp file to compile the less:</p>
 		<pre>$ gulp</pre>
+		<p></p>
 
-		<div class="msg msg-vWarn has-icon i-flash">
-			<h3 class="msg-headline">But be aware!</h3>
-			<p>For faster workflows ViUR Ignite will overwrite any file in your appengine folder without ever asking!</p>
-		</div>
+		<h4 class="subline">Use the gulp watch task!</h4>
+		<p>For faster workflows you can use the gulp watch task, it will compile the less after changes in files automatically.</p>
+		<pre>$ gulp watch</pre>
 
-		<p>You want only compile specific parts? No Problem! Run one of the following commands:</p>
-		<pre>$ gulp html
-$ gulp js
-$ gulp css
-$ gulp compress
-$ gulp icons
-</pre>
-
-		<div class="msg msg-vSuccess has-icon i-check">
+		<div class="msg msg-vSuccess has-icon">
+			{{ icon("check") }}
 			<h3 class="msg-headline">Well Done!</h3>
-			<p>Look in your appengine folder and open your sites in a browser.</p>
+			<p>Open your project in a browser.</p>
 		</div>
 	</section>
 {% endblock content %}
