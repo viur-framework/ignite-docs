@@ -1,0 +1,3 @@
+[submodule "ignite"]
+	path = ignite
+	url = git@github.com:viur-framework/ignite.git
