@@ -184,11 +184,15 @@ label[for="nav-trigger"] {
     margin-top: 4px;
     margin-left: 4px;
   }
-  .mq-min(@breakSmall, {display:none;})
+  .mq-min(@breakMedium, {display:none;})
 }
 
+// #FIXME
+// (@breakMedium + 1em) is only a hotfix
+// @breakMedium will be decreased in mq-max mixin,
+// but this its not desired here
 .menuWrapper {
-  .mq-max(@breakSmall, {
+  .mq-max((@breakMedium + 1em), {
     width: 70%;
     position: absolute;
     top: 40px;

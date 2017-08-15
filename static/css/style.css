@@ -3067,10 +3067,6 @@ h1.headline {
     border-bottom-left-radius: 0;
   }
 
-  label[for="nav-trigger"] {
-    display: none;
-  }
-
   .table .tableHead-cell,
   .table .tableBody-cell,
   .table .tableFoot-cell {
@@ -3139,6 +3135,10 @@ h1.headline {
 
   .menu-list {
     font-size: .9rem;
+  }
+
+  label[for="nav-trigger"] {
+    display: none;
   }
 
   .grid-row {
@@ -3346,26 +3346,7 @@ h1.headline {
   }
 }
 
-@media (max-width: 36.5em) {
-  .input,
-  .label + .input-vBlock,
-  .label + .textarea-vBlock,
-  .select,
-  .switch,
-  .radio {
-    width: 100%;
-    margin: 0;
-    margin-bottom: 5px;
-  }
-
-  .inputGroup .btn {
-    margin-top: -1px;
-  }
-
-  .no-mobile {
-    display: none;
-  }
-
+@media (max-width: 56.25em) {
   .menuWrapper {
     width: 70%;
     position: absolute;
@@ -3385,6 +3366,27 @@ h1.headline {
 
   .nav-trigger:checked ~ .menuWrapper {
     right: 0;
+  }
+}
+
+@media (max-width: 36.5em) {
+  .input,
+  .label + .input-vBlock,
+  .label + .textarea-vBlock,
+  .select,
+  .switch,
+  .radio {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 5px;
+  }
+
+  .inputGroup .btn {
+    margin-top: -1px;
+  }
+
+  .no-mobile {
+    display: none;
   }
 }
 

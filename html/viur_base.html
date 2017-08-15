@@ -65,11 +65,6 @@
 	<meta property="og:title" content="{{ title }}">
 	<title>{% block additionalTitle %}{{ title }}{% endblock additionalTitle %} - {{ title }}</title>
 
-	<!-- Language -->
-	<meta name="content-language" content="{{ lang }}">
-	<meta name="DC.Language" content="{{ lang }}">
-	<meta http-equiv="content-language" content="{{ lang }}">
-
 	<!-- Descriptions -->
 	<meta name="description" lang="{{ lang }}" content="{{ metaDescr }}">
 	<meta name="twitter:description" content="{{ metaDescr }}">
@@ -121,12 +116,11 @@
 	{% block additionalHead %}
 		{# use additionalHead for important template specific JS or CSS file imports. #}
 	{% endblock %}
-
 </head>
 <body>
 
 	<article class="wrap">
-		<div class="bind flex">
+		<div class="bind">
 			<article class="content {{pageContent}}" role="main">
 				{% block content %}
 				{% endblock content %}
