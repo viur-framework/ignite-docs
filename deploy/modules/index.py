@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from server import tasks, exposed
-from server.render.html import default
+from render.html import default
 import logging
 
 class index(default):

@@ -1,63 +1,23 @@
 <!DOCTYPE html>
-
 {%- set lang = getLanguage() -%}
 
 {%- if not title -%}
-	{#- The default page title. Optimal length for search engines is 50-60 characters. -#}
 	{%- set title="Ignite Docs" -%}
 {%- endif -%}
 {%- if not metaDescr -%}
-	{#- The default meta description. The description should optimally be between 150-160 characters. -#}
 	{%- set metaDescr="Ignite - The first attempt in building a sturdy foundation of CSS (LESS) for ViUR products and Mausbrand projects. Official Documentation" -%}
 {%- endif -%}
 {%- if not metaKeywords -%}
-	{#- Default meta keywords. Meta keywords have no effect on SEO whatsoever. Length is anywhere from 100 to 255 characters. -#}
 	{%- set metaKeywords="VIUR, Ignite, Docs, CSS, LESS, framework, NPM" -%}
 {%- endif -%}
 {%- if not pageContent -%}
-	{#- Set default css page name to index. -#}
 	{%- set pageContent="index" -%}
 {%- endif -%}
-{%- if not isActive -%}
-	{%- set isActive="start" -%}
+{%- if not currSite -%}
+	{%- set currSite="start" -%}
 {%- endif -%}
-
-{%-
-	set sites = [[
-		["start", "Start"],
-		["gettingstarted", "Getting Started"],
-		["guidelines", "Guidelines"],
-		["components", "Components"],
-		["states", "States"],
-		["variables", "Variables/Settings"]
-	], [
-		["messages", "Alerts and Messages"],
-		["bar", "Bar"],
-		["buttons", "Buttons"],
-		["forms", "Forms"],
-		["grid", "Grid"],
-		["helper", "Helper"],
-		["tables", "Table"],
-		["types", "Typography"]
-	]]
--%}
-{%- set curSite = [] -%}
-{%- set curMenu = [] -%}
-{%- set menuCounter = 0 -%}
-{%- for menu in sites -%}
-	{%- set siteCounter = 0 -%}
-	{%- for site in menu -%}
-		{%- if isActive==site[0] -%}
-			{%- do curSite.append(siteCounter) -%}
-			{%- do curMenu.append(menuCounter) -%}
-		{%- endif -%}
-		{%- set siteCounter = siteCounter + 1 -%}
-	{%- endfor -%}
-	{%- set menuCounter = menuCounter + 1 -%}
-{%- endfor -%}
-
-<html>
-<head lang="{{ lang }}">
+<html lang="{{ lang }}">
+<head>
 	<meta charset="utf-8">
 
 	<!-- Herzlich willkommen bei-->
@@ -78,7 +38,7 @@
 	<meta name="author" content="Mausbrand Informationssysteme GmbH">
 
 	<meta name="robots" content="index, follow, noarchive">
-	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+isActive if isActive != 'start' }}" />
+	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+currSite if currSite != 'start' }}" />
 	<meta property="og:type" content="website">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -126,16 +86,22 @@
 				{% endblock content %}
 				<section class="section">
 					<nav class="bar">
-						{% if curSite[0]-1 != -1 %}
-							<div class="bar-group--left"><a class="btn btn--small"
-								href="/s/{{ sites[curMenu[0]][curSite[0]-1][0] }}">
-								Previous: {{ sites[curMenu[0]][curSite[0]-1][1] }}</a></div>
+						{%- set getPrevMenuItem = getPrevMenuItem() -%}
+						{% if getPrevMenuItem and if getPrevMenuItem.site and getPrevMenuItem.name %}
+							<div class="bar-group--left">
+								<a class="btn btn--small" href="/s/{{ getPrevMenuItem.site }}">
+									Previous: {{ getPrevMenuItem.name }}
+								</a>
+							</div>
 						{% endif %}
 
-						{% if sites[curMenu[0]][curSite[0]+1] %}
-							<div class="bar-group--right"><a class="btn btn--small"
-								href="/s/{{ sites[curMenu[0]][curSite[0]+1][0] }}">
-								Next: {{ sites[curMenu[0]][curSite[0]+1][1] }}</a></div>
+						{%- set getNextMenuItem = getNextMenuItem() -%}
+						{% if getNextMenuItem and if getNextMenuItem.site and getNextMenuItem.name %}
+							<div class="bar-group--right">
+								<a class="btn btn--small" href="/s/{{ getNextMenuItem.site }}">
+									Next: {{ getNextMenuItem.name }}
+								</a>
+							</div>
 						{% endif %}
 					</nav>
 				</section>
@@ -146,15 +112,23 @@
 				<label for="nav-trigger"></label>
 
 				<div class="sidebar menuWrapper sidebar--left">
-					{% for menu in sites %}
+					{% for menu in getMenu() %}
 						<ul class="menu-list">
-							{% for site in menu %}
-								{% if site[0] == "start" %}
-									<li class="menu-item"><a class="menu-link is-primary {{ 'is-active' if isActive==site[0] }}"
-										href="/">{{ site[1] }}</a></li>
+							{% for site, name in menu.items() %}
+								{% if site == "start" %}
+									<li class="menu-item">
+										<a class="menu-link is-primary {{ 'is-active' if currSite == site }}"
+										   href="/">
+											{{ name }}
+										</a>
+									</li>
 								{% else %}
-									<li class="menu-item"><a class="menu-link {{ 'is-active' if isActive==site[0] }}"
-										href="/s/{{ site[0] }}">{{ site[1] }}</a></li>
+									<li class="menu-item">
+										<a class="menu-link {{ 'is-active' if currSite == site }}"
+										   href="/s/{{ site }}">
+											{{ name }}
+										</a>
+									</li>
 								{% endif %}
 							{% endfor %}
 						</ul>

@@ -24,6 +24,7 @@
 #
 
 from server import conf
+from collections import OrderedDict
 
 # ------------------------------------------------------------------------------
 # General configuration
@@ -51,6 +52,31 @@ conf["admin.vi.name"] = "Ignite Documentation"
 #
 
 conf["viur.security.contentSecurityPolicy"] = {}
+
+# ------------------------------------------------------------------------------
+# Content Security Policy
+#
+
+conf["docs.menu"] = [
+	OrderedDict([
+		[u"start", u"Start"],
+		[u"gettingstarted", u"Getting Started"],
+		[u"guidelines", u"Guidelines"],
+		[u"components", u"Components"],
+		[u"states", u"States"],
+		[u"variables", u"Variables/Settings"]
+	]),
+	OrderedDict([
+		[u"messages", u"Alerts and Messages"],
+		[u"bar", u"Bar"],
+		[u"buttons", u"Buttons"],
+		[u"forms", u"Forms"],
+		[u"grid", u"Grid"],
+		[u"helper", u"Helper"],
+		[u"tables", u"Table"],
+		[u"types", u"Typography"]
+	])
+]
 
 
 # ------------------------------------------------------------------------------
