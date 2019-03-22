@@ -12,7 +12,7 @@
 			<form>
 				<label class="label" for="defaultinput">Label</label>
 				<input class="input" type="text" placeholder="Default input" id="defaultinput">
-				<input class="input input-vContrast" type="text" placeholder="Input with contrast">
+				<input class="input input--contrast" type="text" placeholder="Input with contrast">
 				<button class="btn" type="button">Button</button>
 				<p class="note">This is an informative note.</p>
 			</form>
@@ -41,8 +41,8 @@
 		<p>This is a small select menu.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<label class="label label-vSmall" for="selectSmall">Select an option</label>
-				<select class="select select-vSmall" id="selectSmall">
+				<label class="label label--small" for="selectSmall">Select an option</label>
+				<select class="select select--small" id="selectSmall">
 					<option>Test</option>
 					<option>Test 2</option>
 					<option>Test</option>
@@ -57,19 +57,19 @@
 		<p>This is an input directly connected to a button.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
-					<label class="label" for="inputGroup-input1">Label</label>
-					<input class="input" id="inputGroup-input1" type="text" placeholder="Default input">
+				<div class="input-group">
+					<label class="label" for="input-group-input1">Label</label>
+					<input class="input" id="input-group-input1" type="text" placeholder="Default input">
 					<button class="btn" type="button">Button</button>
 				</div>
-				<div class="inputGroup">
-					<label class="label is-required" for="inputGroup-input2">This is required</label>
-					<input class="input" id="inputGroup-input2" type="text" placeholder="Default input">
+				<div class="input-group">
+					<label class="label is-required" for="input-group-input2">This is required</label>
+					<input class="input" id="input-group-input2" type="text" placeholder="Default input">
 					<button class="btn" type="button">Button</button>
 				</div>
-				<div class="inputGroup">
-					<label class="label has-icon" for="inputGroup-input3">{{ embedSvg("heart") }}Label with icon</label>
-					<input class="input" id="inputGroup-input3" type="text" placeholder="Default input">
+				<div class="input-group">
+					<label class="label has-icon" for="input-group-input3">{{ embedSvg("heart") }}Label with icon</label>
+					<input class="input" id="input-group-input3" type="text" placeholder="Default input">
 					<button class="btn" type="button">Button</button>
 				</div>
 			</form>
@@ -82,7 +82,7 @@
 		<p>This is a small input.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<input class="input input-vSmall" type="text" placeholder="Small input">
+				<input class="input input--small" type="text" placeholder="Small input">
 			</form>
 		</div>
 	</section>
@@ -93,7 +93,7 @@
 		<p>This is a large input.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<input class="input input-vLarge" type="text" placeholder="Large input">
+				<input class="input input--large" type="text" placeholder="Large input">
 			</form>
 		</div>
 	</section>
@@ -117,17 +117,17 @@
 		<p>These are examples for an error, a recommendation and an accepted status.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
-					<label class="label is-invalid" for="inputGroup-input4">Label</label>
-					<input class="input is-invalid" type="text" placeholder="Input" id="inputGroup-input4">
+				<div class="input-group">
+					<label class="label is-invalid" for="input-group-input4">Label</label>
+					<input class="input is-invalid" type="text" placeholder="Input" id="input-group-input4">
 				</div>
-				<div class="inputGroup">
-					<label class="label is-recommended" for="inputGroup-input5">Label</label>
-					<input class="input is-recommended" type="text" placeholder="Input" id="inputGroup-input5">
+				<div class="input-group">
+					<label class="label is-recommended" for="input-group-input5">Label</label>
+					<input class="input is-recommended" type="text" placeholder="Input" id="input-group-input5">
 				</div>
-				<div class="inputGroup">
-					<label class="label is-valid" for="inputGroup-input6">Label</label>
-					<input class="input is-valid" type="text" placeholder="Input" id="inputGroup-input6">
+				<div class="input-group">
+					<label class="label is-valid" for="input-group-input6">Label</label>
+					<input class="input is-valid" type="text" placeholder="Input" id="input-group-input6">
 				</div>
 			</form>
 		</div>
@@ -139,7 +139,7 @@
 		<p>This is a simple, yet elegant, boolean switch.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label" for="switch1">Label</label>
 					<div class="switch">
 						<input class="switch-input" id="switch1" type="checkbox" />
@@ -156,9 +156,9 @@
 		<p>These are simple radio buttons. You may group them.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label">Label</label>
-					<div class="optionGroup">
+					<div class="option-group">
 						<div class="radio">
 							<input class="radio-input" id="radio1" type="radio" name="radiogroup1"/>
 							<label class="radio-label" for="radio1">Radio Option 1</label>
@@ -177,9 +177,9 @@
 		</div>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label">Label</label>
-					<div class="optionGroup optionGroup-vSelectionList">
+					<div class="option-group option-group--selectionList">
 						<div class="radio">
 							<input class="radio-input" id="radio-list1" type="radio" name="radiogroup1"/>
 							<label class="radio-label" for="radio-list1">Radio Option 1</label>
@@ -204,9 +204,9 @@
 		<p>These are simple checkboxes. You may group them.</p>
 		<form>
 			<div class="sandbox js-codeChild">
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label">Label</label>
-					<div class="optionGroup">
+					<div class="option-group">
 						<div class="check">
 							<input class="check-input" id="check1" type="checkbox" name="checkgroup1"/>
 							<label class="check-label" for="check1">Check Option 1</label>
@@ -231,9 +231,9 @@
 				</div>
 			</div>
 			<div class="sandbox js-codeChild">
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label">Label</label>
-					<div class="optionGroup optionGroup-vSelectionList">
+					<div class="option-group option-group--selectionList">
 						<div class="check">
 							<input class="check-input" id="check-list1" type="checkbox" name="checkgroup2"/>
 							<label class="check-label" for="check-list1">Check Option 1</label>
@@ -265,13 +265,13 @@
 		<p>This is an example of a textarea.</p>
 		<div class="sandbox js-codeChild">
 			<form>
-				<div class="inputGroup">
+				<div class="input-group">
 					<label class="label" for="textarea">Textarea1
 					</label>
 					<textarea class="textarea" id="textarea"></textarea>
 				</div>
 
-				<textarea class="textarea textarea-vBlock">Textarea as block.</textarea>
+				<textarea class="textarea textarea--block">Textarea as block.</textarea>
 			</form>
 		</div>
 	</section>
@@ -283,9 +283,9 @@
 		<div class="sandbox js-codeChild">
 			<form>
 				<div class="bar">
-					<div class="barGroup barGroup-vRight">
-						<input type="submit" class="btn btn-vPrimary">
-						<input type="reset" class="btn btn-vDanger">
+					<div class="bar-group bar-group--right">
+						<input type="submit" class="btn btn--primary">
+						<input type="reset" class="btn btn--danger">
 					</div>
 				</div>
 			</form>

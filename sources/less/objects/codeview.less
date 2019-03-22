@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+
+// no margin and no project styles
+.demo-headline {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    border: none;
+  }
+}
+
+.sandbox {
+  background: @backgroundColor;
+  border: 1px solid lighten(@complementColor, 40%);
+  margin: 30px 0 20px;
+  padding: 20px;
+  position: relative;
+
+  &:before {
+    background: lighten(@complementColor, 50%);
+    border-radius: 0;
+    bottom: 100%;
+    content: "Sandbox";
+    display: inline-block;
+    font-size: .6em;
+    font-weight: bold;
+    left: -1px;
+    letter-spacing: 1px;
+    padding: 2px 4px;
+    position: absolute;
+    text-transform: uppercase;
+    vertical-align: top;
+    color: #fff;
+  }
+}
+
+.placeholder {
+  height: 130px;
+}
+
+.grid-demo .grid-col {
+  text-align: center;
+
+  p {
+    border: 1px solid darken(@menuBackgroundColor, 15%);
+    background: @menuBackgroundColor;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 0;
+    height: 100%;
+  }
+}
+
+.demo {
+  background: #eee;
+}
+
+.color-demo {
+  height: 20px;
+  width: 20px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-right: 5px;
+}

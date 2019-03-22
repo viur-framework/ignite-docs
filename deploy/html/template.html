@@ -127,13 +127,13 @@
 				<section class="section">
 					<nav class="bar">
 						{% if curSite[0]-1 != -1 %}
-							<div class="barGroup-vLeft"><a class="btn btn-vSmall"
+							<div class="bar-group--left"><a class="btn btn--small"
 								href="/s/{{ sites[curMenu[0]][curSite[0]-1][0] }}">
 								Previous: {{ sites[curMenu[0]][curSite[0]-1][1] }}</a></div>
 						{% endif %}
 
 						{% if sites[curMenu[0]][curSite[0]+1] %}
-							<div class="barGroup-vRight"><a class="btn btn-vSmall"
+							<div class="bar-group--right"><a class="btn btn--small"
 								href="/s/{{ sites[curMenu[0]][curSite[0]+1][0] }}">
 								Next: {{ sites[curMenu[0]][curSite[0]+1][1] }}</a></div>
 						{% endif %}
@@ -145,7 +145,7 @@
 				<input type="checkbox" id="nav-trigger" class="nav-trigger">
 				<label for="nav-trigger"></label>
 
-				<div class="sidebar menuWrapper sidebar-vLeft">
+				<div class="sidebar menuWrapper sidebar--left">
 					{% for menu in sites %}
 						<ul class="menu-list">
 							{% for site in menu %}
