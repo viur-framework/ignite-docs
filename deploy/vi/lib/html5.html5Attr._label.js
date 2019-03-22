@@ -7,66 +7,65 @@ $pyjs['loaded_modules']['html5.html5Attr._label'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'html5.html5Attr._label';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	$pyjs['loaded_modules']['html5.html5Attr']['_label'] = $pyjs['loaded_modules']['html5.html5Attr._label'];
-	$m.__track_lines__[1] = 'html5.html5Attr._label.py, line 1:\n    class _Label(object):';
-	$m.__track_lines__[2] = 'html5.html5Attr._label.py, line 2:\n    def _getLabel(self):';
-	$m.__track_lines__[3] = 'html5.html5Attr._label.py, line 3:\n    return self.element.label';
-	$m.__track_lines__[4] = 'html5.html5Attr._label.py, line 4:\n    def _setLabel(self,val):';
-	$m.__track_lines__[5] = 'html5.html5Attr._label.py, line 5:\n    self.element.label=val';
+	try {
 
 
-	$pyjs['track']['module']='html5.html5Attr._label';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=1;
-	$m['_Label'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition['__module__'] = 'html5.html5Attr._label';
-		$pyjs['track']['lineno']=2;
-		$method = $pyjs__bind_method2('_getLabel', function() {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
+		$m['_Label'] = (function(){
+			var $cls_definition = new Object();
+			var $method;
+			$cls_definition['__module__'] = 'html5.html5Attr._label';
+			$cls_definition['__md5__'] = '67d629471d7c531019b8cbb556c92ccf';
+			$method = $pyjs__bind_method2('_getLabel', function() {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '67d629471d7c531019b8cbb556c92ccf') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
+
+				return self['element']['getAttribute']('label');
 			}
-
-			$pyjs['track']={'module':'html5.html5Attr._label', 'lineno':2};$pyjs['trackstack']['push']($pyjs['track']);
-			$pyjs['track']['module']='html5.html5Attr._label';
-			$pyjs['track']['lineno']=2;
-			$pyjs['track']['lineno']=3;
-			$pyjs['track']['lineno']=3;
-			var $pyjs__ret = $p['getattr']($p['getattr'](self, 'element'), '$$label');
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return $pyjs__ret;
-		}
 	, 1, [null,null,['self']]);
-		$cls_definition['_getLabel'] = $method;
-		$pyjs['track']['lineno']=4;
-		$method = $pyjs__bind_method2('_setLabel', function(val) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				val = arguments[1];
-			}
+			$cls_definition['_getLabel'] = $method;
+			$method = $pyjs__bind_method2('_setLabel', function(val) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					val = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '67d629471d7c531019b8cbb556c92ccf') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
-			$pyjs['track']={'module':'html5.html5Attr._label', 'lineno':4};$pyjs['trackstack']['push']($pyjs['track']);
-			$pyjs['track']['module']='html5.html5Attr._label';
-			$pyjs['track']['lineno']=4;
-			$pyjs['track']['lineno']=5;
-			$p['getattr'](self, 'element')['$$label'] = val;
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return null;
-		}
+				self['element']['setAttribute']('label', val);
+				return null;
+			}
 	, 1, [null,null,['self'],['val']]);
-		$cls_definition['_setLabel'] = $method;
-		$pyjs['track']['lineno']=1;
-		var $bases = new Array($p['object']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data['__setitem__']($item, $cls_definition[$item]); }
-		return $p['_create_class']('_Label', $p['tuple']($bases), $data);
-	})();
+			$cls_definition['_setLabel'] = $method;
+			var $bases = new Array($p['object']);
+			var $data = $p['dict']();
+			for (var $item in $cls_definition) { $data['__setitem__']($item, $cls_definition[$item]); }
+			return $p['_create_class']('_Label', $p['tuple']($bases), $data);
+		})();
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end html5.html5Attr._label */
 

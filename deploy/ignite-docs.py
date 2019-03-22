@@ -29,7 +29,7 @@ from server import conf
 # General configuration
 #
 
-#conf["viur.forceSSL"] = True
+conf["viur.forceSSL"] = True
 #conf["viur.disableCache"] = True
 
 # ------------------------------------------------------------------------------
@@ -39,30 +39,11 @@ from server import conf
 #conf["viur.languageMethod"] = "url"
 #conf["viur.availableLanguages"] = ["en", "de"]
 
-#conf["viur.defaultlangsvalues"] = {
-# 	"en": u"English",
-# 	"de": u"Deutsch",
-# 	"es": u"Español",
-# 	"fr": u"Français",
-# 	"sv": u"Swedish",
-# 	"it": u"Italiano",
-# 	"cs": u"Čeština (Czech)",
-# 	"ru": u"Русский (Russian)",
-# 	"pt": u"Português",
-# 	"sk": u"Slovenčina",
-# 	"da": u"Dansk",
-# 	"fi": u"Suomi (Finnish)",
-# 	"pl": u"Polski",
-# 	"nl": u"Nederlands",
-# 	"no": u"Norsk" }
-
-#server.setDefaultLanguage("en") #set default language!
-
 # ------------------------------------------------------------------------------
 # ViUR admin tool specific configurations
 #
 
-conf["admin.vi.name"] = "ignite-docs"
+conf["admin.vi.name"] = "Ignite Documentation"
 #conf["admin.vi.logo"] = "/static/meta/logo.svg"
 
 # ------------------------------------------------------------------------------
@@ -71,11 +52,6 @@ conf["admin.vi.name"] = "ignite-docs"
 
 conf["viur.security.contentSecurityPolicy"] = {}
 
-# ------------------------------------------------------------------------------
-# Bugsnag: Tell us what is wrong!
-#
-
-#conf["bugsnag.apiKey" ] = "INSERT YOUR BUGSNAG API KEY HERE"
 
 # ------------------------------------------------------------------------------
 # Server startup
@@ -83,10 +59,8 @@ conf["viur.security.contentSecurityPolicy"] = {}
 
 import server, modules
 
+#server.setDefaultLanguage("en") #set default language!
 application = server.setup(modules, server.render)
 
-def main():
-	server.run()
-
 if __name__ == '__main__':
-	main()
+	server.run()

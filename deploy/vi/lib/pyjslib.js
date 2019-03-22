@@ -6,12 +6,7 @@ $pyjs['loaded_modules']['pyjslib'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'pyjslib';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	var $add3,$add2,$add6,$add4,$add5,$add1;
-	$pyjs['track']['module']='pyjslib';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=19;
-	$pyjs['track']['lineno']=21;
 	;
 	$m['platform'] = $pyjs['platform'];
 	$m['sys'] = null;
@@ -40,11 +35,12 @@ $min_int = -0x80000000;
 };
 ;
 	$m['_create_class'] = function(clsname, bases, methods) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
 		if (typeof bases == 'undefined') bases=arguments['callee']['__args__'][3][1];
 		if (typeof methods == 'undefined') methods=arguments['callee']['__args__'][4][1];
 		var $and1,$and2,$and3,main_base;
-		if ($p['bool'](($p['bool']($and1=bases)?($p['bool']($and2=$p['hasattr'](bases['__getitem__'](0), '__class__'))?$p['hasattr'](bases['__getitem__'](0), '__new__'):$and2):$and1))) {
-			main_base = bases['__getitem__'](0);
+		if ($p['bool'](($p['bool']($and1=bases)?($p['bool']($and2=$p['hasattr'](bases['__getitem__']($constant_int_0), '__class__'))?$p['hasattr'](bases['__getitem__']($constant_int_0), '__new__'):$and2):$and1))) {
+			main_base = bases['__getitem__']($constant_int_0);
 			return main_base['__class__'](clsname, bases, methods);
 		}
 		return $p['type'](clsname, bases, methods);
@@ -54,10 +50,11 @@ $min_int = -0x80000000;
 	$m['_create_class']['__bind_type__'] = 0;
 	$m['_create_class']['__args__'] = [null,null,['clsname'],['bases', null],['methods', null]];
 	$m['type'] = function(clsname, bases, methods) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
 		if (typeof bases == 'undefined') bases=arguments['callee']['__args__'][3][1];
 		if (typeof methods == 'undefined') methods=arguments['callee']['__args__'][4][1];
 		var $iter1_nextval,$iter1_idx,$attr1,k,$attr2,$and4,$and5,$iter1_iter,mth,$iter1_array,$iter1_type;
-		if ($p['bool'](($p['bool']($and4=(bases === null))?(methods === null):$and4))) {
+		if ($p['bool'](($p['bool']($and4=$p['op_is'](bases, null))?$p['op_is'](methods, null):$and4))) {
 			if ($p['bool']($p['isinstance'](clsname, $p['str']))) {
 				return $p['str'];
 			}
@@ -67,8 +64,8 @@ $min_int = -0x80000000;
 			if ($p['bool']($p['hasattr'](clsname, '__class__'))) {
 				return clsname['__class__'];
 			}
-			if ($p['bool']($p['isinstance'](clsname, $p['float_int']))) {
-				return $p['float_int'];
+			if ($p['bool']($p['isinstance'](clsname, $p['int']))) {
+				return $p['int'];
 			}
 			if ($p['bool']($p['isinstance'](clsname, $p['float']))) {
 				return $p['float'];
@@ -112,10 +109,20 @@ bss = bases['__array'];
 		$method = $pyjs__bind_method2('__setattr__', function(name, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				name = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'cb8623ec7ab16ef108a15335051acf66') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -176,8 +183,18 @@ bss = bases['__array'];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var cls = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var cls = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (cls.prototype['__md5__'] !== 'e8d06874b7a525e88b4475846b899d0b') {
+					if (!$p['_isinstance'](cls, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], cls);
+					}
+				}
 			}
 			var $attr3,$attr4;
 			return $p['sprintf']("<type '%s'>", cls['__name__']);
@@ -195,12 +212,22 @@ bss = bases['__array'];
 		$method = $pyjs__bind_method2('__hash__', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '45239554bbf34972bc1d0080ede86ba3') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
-			return 0;
+			return $constant_int_0;
 		}
 	, 1, [null,null,['self'],['value']]);
 		$cls_definition['__hash__'] = $method;
@@ -253,8 +280,9 @@ bss = bases['__array'];
 		$cls_definition['__module__'] = 'pyjslib';
 		$cls_definition['__md5__'] = '42c81936a7d384a2b0c729c3d9807841';
 		$method = $pyjs__bind_method2('__new__', function(cls) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-			if ($p['bool'](($m['Ellipsis'] === null))) {
+			if ($p['bool']($p['op_is']($m['Ellipsis'], null))) {
 				return $m['object']['__new__'](cls);
 			}
 			else {
@@ -267,8 +295,18 @@ bss = bases['__array'];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '42c81936a7d384a2b0c729c3d9807841') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return 'Ellipsis';
@@ -278,8 +316,18 @@ bss = bases['__array'];
 		$method = $pyjs__bind_method2('__str__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '42c81936a7d384a2b0c729c3d9807841') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return 'Ellipsis';
@@ -290,6 +338,7 @@ bss = bases['__array'];
 		return $pyjs_type('EllipsisType', $bases, $cls_definition);
 	})();
 	$m['op_is'] = function(a, b) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (a === b) return true;
@@ -311,6 +360,7 @@ bss = bases['__array'];
 	$m['op_is']['__bind_type__'] = 0;
 	$m['op_is']['__args__'] = [null,null,['a'],['b']];
 	$m['op_eq'] = function(a, b) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (a === null) {
@@ -338,11 +388,11 @@ bss = bases['__array'];
             return a['__v'] == b['__v'];
         case 0x0104:
         case 0x0204:
-            a = new $p['float_int'](a['valueOf']());
+            a = new $p['long'](a['valueOf']());
         case 0x0404:
             return a['__cmp__'](b) == 0;
         case 0x0402:
-            return a['__cmp__'](new $p['float_int'](b['valueOf']())) == 0;
+            return a['__cmp__'](new $p['long'](b['valueOf']())) == 0;
     }
     if (typeof a == 'object' || typeof a == 'function') {
         if (typeof a['__eq__'] == 'function') {
@@ -393,6 +443,7 @@ bss = bases['__array'];
 	$m['op_eq']['__bind_type__'] = 0;
 	$m['op_eq']['__args__'] = [null,null,['a'],['b']];
 	$m['op_uadd'] = function(v) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     switch (v['__number__']) {
@@ -413,13 +464,14 @@ bss = bases['__array'];
 	$m['op_uadd']['__bind_type__'] = 0;
 	$m['op_uadd']['__args__'] = [null,null,['v']];
 	$m['op_usub'] = function(v) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     switch (v['__number__']) {
         case 0x01:
             return -v;
         case 0x02:
-            return new $p['float_int'](-v);
+            return new $p['int'](-v);
     }
     if (v!== null) {
         if (typeof v['__neg__'] == 'function') return v['__neg__']();
@@ -433,6 +485,7 @@ bss = bases['__array'];
 	$m['op_usub']['__bind_type__'] = 0;
 	$m['op_usub']['__args__'] = [null,null,['v']];
 	$m['__op_add'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
         return (typeof (x)==typeof (y) &&
@@ -446,6 +499,7 @@ bss = bases['__array'];
 	$m['__op_add']['__bind_type__'] = 0;
 	$m['__op_add']['__args__'] = [null,null,['x'],['y']];
 	$m['op_add'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x!== null && y!== null) {
@@ -459,11 +513,11 @@ bss = bases['__array'];
             case 0x0201:
                 return x['__v'] + y;
             case 0x0202:
-                return new $p['float_int'](x['__v'] + y['__v']);
+                return new $p['int'](x['__v'] + y['__v']);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__add'](y);
+                return (new $p['long'](x['__v']))['__add'](y);
             case 0x0402:
-                return x['__add'](new $p['float_int'](y['__v']));
+                return x['__add'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__add'](y);
         }
@@ -487,6 +541,7 @@ bss = bases['__array'];
 	$m['op_add']['__bind_type__'] = 0;
 	$m['op_add']['__args__'] = [null,null,['x'],['y']];
 	$m['__op_sub'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
         return (typeof (x)==typeof (y) &&
@@ -500,6 +555,7 @@ bss = bases['__array'];
 	$m['__op_sub']['__bind_type__'] = 0;
 	$m['__op_sub']['__args__'] = [null,null,['x'],['y']];
 	$m['op_sub'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x!== null && y!== null) {
@@ -513,11 +569,11 @@ bss = bases['__array'];
             case 0x0201:
                 return x['__v'] - y;
             case 0x0202:
-                return new $p['float_int'](x['__v'] - y['__v']);
+                return new $p['int'](x['__v'] - y['__v']);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__sub'](y);
+                return (new $p['long'](x['__v']))['__sub'](y);
             case 0x0402:
-                return x['__sub'](new $p['float_int'](y['__v']));
+                return x['__sub'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__sub'](y);
         }
@@ -540,6 +596,7 @@ bss = bases['__array'];
 	$m['op_sub']['__bind_type__'] = 0;
 	$m['op_sub']['__args__'] = [null,null,['x'],['y']];
 	$m['op_floordiv'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -557,11 +614,11 @@ bss = bases['__array'];
                 return Math['floor'](x['__v'] / y);
             case 0x0202:
                 if (y['__v'] == 0) throw $p['ZeroDivisionError']('integer division or modulo by zero');
-                return new $p['float_int'](Math['floor'](x['__v'] / y['__v']));
+                return new $p['int'](Math['floor'](x['__v'] / y['__v']));
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__floordiv'](y);
+                return (new $p['long'](x['__v']))['__floordiv'](y);
             case 0x0402:
-                return x['__floordiv'](new $p['float_int'](y['__v']));
+                return x['__floordiv'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__floordiv'](y);
         }
@@ -584,6 +641,7 @@ bss = bases['__array'];
 	$m['op_floordiv']['__bind_type__'] = 0;
 	$m['op_floordiv']['__args__'] = [null,null,['x'],['y']];
 	$m['op_div'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -601,11 +659,11 @@ bss = bases['__array'];
                 return x['__v'] / y;
             case 0x0202:
                 if (y['__v'] == 0) throw $p['ZeroDivisionError']('float divmod()');
-                return new $p['float_int'](x['__v'] / y['__v']);
+                return new $p['int'](x['__v'] / y['__v']);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__div'](y);
+                return (new $p['long'](x['__v']))['__div'](y);
             case 0x0402:
-                return x['__div'](new $p['float_int'](y['__v']));
+                return x['__div'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__div'](y);
         }
@@ -628,6 +686,7 @@ bss = bases['__array'];
 	$m['op_div']['__bind_type__'] = 0;
 	$m['op_div']['__args__'] = [null,null,['x'],['y']];
 	$m['op_truediv'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -669,6 +728,7 @@ bss = bases['__array'];
 	$m['op_truediv']['__bind_type__'] = 0;
 	$m['op_truediv']['__args__'] = [null,null,['x'],['y']];
 	$m['op_mul'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -682,11 +742,11 @@ bss = bases['__array'];
             case 0x0201:
                 return x['__v'] * y;
             case 0x0202:
-                return new $p['float_int'](x['__v'] * y['__v']);
+                return new $p['int'](x['__v'] * y['__v']);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__mul'](y);
+                return (new $p['long'](x['__v']))['__mul'](y);
             case 0x0402:
-                return x['__mul'](new $p['float_int'](y['__v']));
+                return x['__mul'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__mul'](y);
         }
@@ -709,6 +769,7 @@ bss = bases['__array'];
 	$m['op_mul']['__bind_type__'] = 0;
 	$m['op_mul']['__args__'] = [null,null,['x'],['y']];
 	$m['op_mod'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -730,11 +791,11 @@ bss = bases['__array'];
             case 0x0202:
                 if (y['__v'] == 0) throw $p['ZeroDivisionError']('integer division or modulo by zero');
                 var v = x['__v'] % y['__v'];
-                return new $p['float_int'](v < 0 && y['__v'] > 0 ? v + y['__v'] : v);
+                return new $p['int'](v < 0 && y['__v'] > 0 ? v + y['__v'] : v);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__mod'](y);
+                return (new $p['long'](x['__v']))['__mod'](y);
             case 0x0402:
-                return x['__mod'](new $p['float_int'](y['__v']));
+                return x['__mod'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__mod'](y);
         }
@@ -760,6 +821,7 @@ bss = bases['__array'];
 	$m['op_mod']['__bind_type__'] = 0;
 	$m['op_mod']['__args__'] = [null,null,['x'],['y']];
 	$m['op_pow'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -778,9 +840,9 @@ bss = bases['__array'];
             case 0x0202:
                 return x['__pow__'](y);
             case 0x0204:
-                return (new $p['float_int'](x['__v']))['__pow'](y);
+                return (new $p['long'](x['__v']))['__pow'](y);
             case 0x0402:
-                return x['__pow'](new $p['float_int'](y['__v']));
+                return x['__pow'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__pow'](y);
         }
@@ -803,6 +865,7 @@ bss = bases['__array'];
 	$m['op_pow']['__bind_type__'] = 0;
 	$m['op_pow']['__args__'] = [null,null,['x'],['y']];
 	$m['op_invert'] = function(v) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (v !== null) {
@@ -817,6 +880,7 @@ bss = bases['__array'];
 	$m['op_invert']['__bind_type__'] = 0;
 	$m['op_invert']['__args__'] = [null,null,['v']];
 	$m['op_bitshiftleft'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -845,6 +909,7 @@ bss = bases['__array'];
 	$m['op_bitshiftleft']['__bind_type__'] = 0;
 	$m['op_bitshiftleft']['__args__'] = [null,null,['x'],['y']];
 	$m['op_bitshiftright'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -873,6 +938,7 @@ bss = bases['__array'];
 	$m['op_bitshiftright']['__bind_type__'] = 0;
 	$m['op_bitshiftright']['__args__'] = [null,null,['x'],['y']];
 	$m['op_bitand2'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -880,9 +946,9 @@ bss = bases['__array'];
             case 0x0202:
                 return x['__and__'](y);
             case 0x0204:
-                return y['__and'](new $p['float_int'](x));
+                return y['__and'](new $p['long'](x));
             case 0x0402:
-                return x['__and'](new $p['float_int'](y['__v']));
+                return x['__and'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__and'](y);
         }
@@ -943,6 +1009,7 @@ bss = bases['__array'];
 };
 
 	$m['op_bitxor2'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -950,9 +1017,9 @@ bss = bases['__array'];
             case 0x0202:
                 return x['__xor__'](y);
             case 0x0204:
-                return y['__xor'](new $p['float_int'](x));
+                return y['__xor'](new $p['long'](x));
             case 0x0402:
-                return x['__xor'](new $p['float_int'](y['__v']));
+                return x['__xor'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__xor'](y);
         }
@@ -1013,6 +1080,7 @@ bss = bases['__array'];
 };
 
 	$m['op_bitor2'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -1020,9 +1088,9 @@ bss = bases['__array'];
             case 0x0202:
                 return x['__or__'](y);
             case 0x0204:
-                return y['__or'](new $p['float_int'](x));
+                return y['__or'](new $p['long'](x));
             case 0x0402:
-                return x['__or'](new $p['float_int'](y['__v']));
+                return x['__or'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__or'](y);
         }
@@ -1085,6 +1153,7 @@ bss = bases['__array'];
 };
 
 	$m['___import___'] = function(path, context, module_name, get_base) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 4)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 4, arguments['length']);
 		if (typeof module_name == 'undefined') module_name=arguments['callee']['__args__'][4][1];
 		if (typeof get_base == 'undefined') get_base=arguments['callee']['__args__'][5][1];
 		var $and8,$and14,$and9,$and13,parentName,module,$attr20,$attr21,$attr14,$attr23,$attr24,$attr25,$and15,is_module_object,$attr28,$attr18,in_context,$and11,$attr27,$attr16,$attr26,$attr11,$and6,$attr22,objName,$sub2,$sub1,$and16,$attr9,$attr8,contextTopName,$attr5,$attr7,$attr6,sys,$add15,$add16,$add17,$add10,$add11,$add12,$add13,$attr15,$attr17,$and7,$add18,$attr10,$attr13,$attr12,importName,$add14,pyjslib,path_parts,topName,inContextTopName,$and10,$and12,depth,inContextImportName,inContextParentName,$add7,$and17,$add8,$add9,$attr19,save_track_module;
@@ -1108,8 +1177,8 @@ $pyjs['loaded_modules']['builtins'] = pyjslib;
 		depth = path_parts['length'];
 		topName = path_parts[0];
 		objName = path_parts[path_parts['length']-1];
-		parentName = path_parts['slice'](0, $m['__op_sub']($sub1=path_parts['length'],$sub2=1))['join']('.');
-		if ($p['bool']((context === null))) {
+		parentName = path_parts['slice']($constant_int_0, $m['__op_sub']($sub1=path_parts['length'],$sub2=$constant_int_1))['join']('.');
+		if ($p['bool']($m['op_is'](context, null))) {
 			in_context = false;
 		}
 		else {
@@ -1123,7 +1192,7 @@ $pyjs['loaded_modules']['builtins'] = pyjslib;
 			}
 			inContextTopName = $m['__op_add']($add17=$m['__op_add']($add15=context,$add16='.'),$add18=topName);
 			contextTopName = context['__split']('.')[0];
-			if ($p['bool'](($p['bool']($and6=($p['cmp'](depth, 1) == 1))?sys['modules']['has_key'](inContextParentName):$and6))) {
+			if ($p['bool'](($p['bool']($and6=($p['cmp'](depth, $constant_int_1) == 1))?sys['modules']['has_key'](inContextParentName):$and6))) {
 				module = sys['modules']['__getitem__'](inContextParentName);
 				if ($p['bool'](typeof module[objName] != 'undefined')) {
 					if ($p['bool'](get_base)) {
@@ -1138,7 +1207,7 @@ $pyjs['loaded_modules']['builtins'] = pyjslib;
 				}
 				return sys['modules']['__getitem__'](inContextImportName);
 			}
-			else if ($p['bool'](($p['bool']($and8=($p['cmp'](depth, 1) == 1))?typeof (module = $pyjs['loaded_modules'][inContextParentName]) != 'undefined':$and8))) {
+			else if ($p['bool'](($p['bool']($and8=($p['cmp'](depth, $constant_int_1) == 1))?typeof (module = $pyjs['loaded_modules'][inContextParentName]) != 'undefined':$and8))) {
 				sys['modules']['__setitem__'](inContextParentName, module);
 module['__was_initialized__'] = false;
 				module(null);
@@ -1173,14 +1242,14 @@ $pyjs['track']['module'] = save_track_module;
 						module = (typeof __dynamic_load__ == "undefined"?$m['__dynamic_load__']:__dynamic_load__)(inContextTopName);
 						if ($p['bool'](typeof module == 'function')) {
 							in_context = true;
-							if ($p['bool']($m['op_eq'](depth, 1))) {
+							if ($p['bool']($m['op_eq'](depth, $constant_int_1))) {
 								module(module_name);
 $pyjs['track']['module'] = save_track_module;
 								return module;
 							}
 							else {
 								module(null);
-								if ($p['bool'](($p['bool']($and10=$m['op_eq'](depth, 2))?typeof module[objName] != 'undefined':$and10))) {
+								if ($p['bool'](($p['bool']($and10=$m['op_eq'](depth, $constant_int_2))?typeof module[objName] != 'undefined':$and10))) {
 									if ($p['bool'](get_base)) {
 										return $pyjs['loaded_modules'][inContextTopName];
 									}
@@ -1263,10 +1332,11 @@ $pyjs['track']['module'] = save_track_module;
 	$m['___import___']['__bind_type__'] = 0;
 	$m['___import___']['__args__'] = [null,null,['path'],['context'],['module_name', null],['get_base', true]];
 	$m['__dynamic_load__'] = function(importName) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $add28,$add30,$or1,$or3,$or2,$add21,$add20,$add23,$add22,$add25,$add24,module,$add26,$add29,$pyjs_try_err,$add27,$add19;
 		;
 		module = $pyjs['loaded_modules'][importName];
-		if ($p['bool'](($p['bool']($or1=($m['sys'] === null))?$or1:($p['bool']($or2=($m['dynamic'] === null))?$or2:$m['__nondynamic_modules__']['has_key'](importName))))) {
+		if ($p['bool'](($p['bool']($or1=$m['op_is']($m['sys'], null))?$or1:($p['bool']($or2=$m['op_is']($m['dynamic'], null))?$or2:$m['__nondynamic_modules__']['has_key'](importName))))) {
 			return module;
 		}
 		if ($p['bool'](typeof module== 'undefined')) {
@@ -1301,6 +1371,7 @@ $pyjs['track']['module'] = save_track_module;
 	$m['__dynamic_load__']['__bind_type__'] = 0;
 	$m['__dynamic_load__']['__args__'] = [null,null,['importName']];
 	$m['__import_all__'] = function(path, context, namespace, module_name, get_base) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 3 || arguments['length'] > 5)) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 5, arguments['length']);
 		if (typeof module_name == 'undefined') module_name=arguments['callee']['__args__'][5][1];
 		if (typeof get_base == 'undefined') get_base=arguments['callee']['__args__'][6][1];
 		var $iter5_nextval,$iter5_idx,name,$iter6_idx,$iter6_type,$iter5_array,module,$iter6_array,$iter5_iter,$iter6_iter,$iter5_type,$iter6_nextval;
@@ -1339,10 +1410,20 @@ namespace[name] = module[name];
 				var self = this;
 				var args = $p['tuple']($pyjs_array_slice['call'](arguments,0,arguments['length']));
 
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, null, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				var args = $p['tuple']($pyjs_array_slice['call'](arguments,1,arguments['length']));
 
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, null, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'b85ed1ae30f12d496b01fe7803b763cc') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['args'] = args;
@@ -1353,9 +1434,19 @@ namespace[name] = module[name];
 		$method = $pyjs__bind_method2('__getitem__', function(index) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				index = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'b85ed1ae30f12d496b01fe7803b763cc') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['args']['__getitem__'](index);
@@ -1365,8 +1456,18 @@ namespace[name] = module[name];
 		$method = $pyjs__bind_method2('toString', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'b85ed1ae30f12d496b01fe7803b763cc') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add32,$add33,$add31,$add34,$attr30,$attr29;
 			return $m['__op_add']($add33=$m['__op_add']($add31=self['__name__'],$add32=': '),$add34=self['__str__']());
@@ -1376,15 +1477,25 @@ namespace[name] = module[name];
 		$method = $pyjs__bind_method2('__str__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'b85ed1ae30f12d496b01fe7803b763cc') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr33,$attr32,$attr31,$attr37,$attr36,$attr35,$attr34,$attr38;
-			if ($p['bool'](($p['len'](self['args']) === 0))) {
+			if ($p['bool']($m['op_is']($p['len'](self['args']), $constant_int_0))) {
 				return '';
 			}
-			else if ($p['bool'](($p['len'](self['args']) === 1))) {
-				return $p['str'](self['args']['__getitem__'](0));
+			else if ($p['bool']($m['op_is']($p['len'](self['args']), $constant_int_1))) {
+				return $p['str'](self['args']['__getitem__']($constant_int_0));
 			}
 			return $p['repr'](self['args']);
 		}
@@ -1393,8 +1504,18 @@ namespace[name] = module[name];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'b85ed1ae30f12d496b01fe7803b763cc') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add36,$add35,$attr44,$attr42,$attr43,$attr40,$attr41,$attr39;
 			if ($p['bool']($p['callable'](self))) {
@@ -1551,15 +1672,25 @@ namespace[name] = module[name];
 		$method = $pyjs__bind_method2('__str__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '61fca1de1a4c3689bc91aa186599fa54') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr51,$attr50,$attr52,$attr46,$attr47,$attr45,$attr48,$attr49;
-			if ($p['bool'](($p['len'](self['args']) === 0))) {
+			if ($p['bool']($m['op_is']($p['len'](self['args']), $constant_int_0))) {
 				return '';
 			}
-			else if ($p['bool'](($p['len'](self['args']) === 1))) {
-				return $p['repr'](self['args']['__getitem__'](0));
+			else if ($p['bool']($m['op_is']($p['len'](self['args']), $constant_int_1))) {
+				return $p['repr'](self['args']['__getitem__']($constant_int_0));
 			}
 			return $p['repr'](self['args']);
 		}
@@ -1609,6 +1740,7 @@ namespace[name] = module[name];
 		return $pyjs_type('UndefinedValueError', $bases, $cls_definition);
 	})();
 	$m['init'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, 0, arguments['length']);
 
 
 $p['_errorMapping'] = function(err) {
@@ -2151,9 +2283,19 @@ $p['abs'] = Math['abs'];
 		$method = $pyjs__bind_method2('__init__', function(name) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				name = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '7888674594d3d29a56aa65002b902620') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['$$name'] = name;
@@ -2164,8 +2306,18 @@ $p['abs'] = Math['abs'];
 		$method = $pyjs__bind_method2('__str___', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '7888674594d3d29a56aa65002b902620') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr53,$attr54;
 			return self['$$name'];
@@ -2176,6 +2328,7 @@ $p['abs'] = Math['abs'];
 		return $pyjs_type('Class', $bases, $cls_definition);
 	})();
 	$m['open'] = function(fname, mode) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof mode == 'undefined') mode=arguments['callee']['__args__'][3][1];
 
 		throw ($m['NotImplementedError']('open is not implemented in browsers'));
@@ -2224,17 +2377,17 @@ $p['abs'] = Math['abs'];
             }
             return 1;
         case 0x0102:
-            return -b['__cmp__'](new $p['float_int'](a));
+            return -b['__cmp__'](new $p['int'](a));
         case 0x0104:
-            return -b['__cmp__'](new $p['float_int'](a));
+            return -b['__cmp__'](new $p['long'](a));
         case 0x0201:
-            return a['__cmp__'](new $p['float_int'](b));
+            return a['__cmp__'](new $p['int'](b));
         case 0x0401:
-            return a['__cmp__'](new $p['float_int'](b));
+            return a['__cmp__'](new $p['long'](b));
         case 0x0204:
-            return -b['__cmp__'](new $p['float_int'](a));
+            return -b['__cmp__'](new $p['long'](a));
         case 0x0402:
-            return a['__cmp__'](new $p['float_int'](b));
+            return a['__cmp__'](new $p['long'](b));
         case 0x0404:
             return a['__cmp__'](b);
     }
@@ -2260,6 +2413,7 @@ $p['abs'] = Math['abs'];
     ;
 	$m['__cmp'] = $m['cmp'];
 	$m['bool'] = function(v) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     switch (v) {
@@ -2290,6 +2444,7 @@ $p['abs'] = Math['abs'];
 		$cls_definition['__md5__'] = '9b8de80f12ec869e3f4f5f7acc990d6e';
 		$cls_definition['__number__'] = 0x01;
 		$method = $pyjs__bind_method2('__new__', function(self, num) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
         if (typeof num == 'string') {
@@ -2444,9 +2599,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__init__', function(num) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				num = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['__v'] = $m['float_js'](num);
@@ -2457,8 +2622,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__str__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__str__']();
@@ -2468,8 +2643,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__repr__']();
@@ -2479,8 +2664,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__nonzero__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__nonzero__']();
@@ -2490,9 +2685,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__cmp__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__cmp__'](other);
@@ -2502,8 +2707,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__hash__']();
@@ -2513,8 +2728,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__oct__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__oct__']();
@@ -2524,8 +2749,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__hex__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__hex__']();
@@ -2535,8 +2770,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__pos__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__pos__']();
@@ -2546,8 +2791,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__neg__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__neg__']();
@@ -2557,8 +2812,18 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__abs__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__abs__']();
@@ -2568,9 +2833,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__add__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__add__'](other);
@@ -2580,9 +2855,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__radd__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__radd__'](other);
@@ -2592,9 +2877,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__sub__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__sub__'](other);
@@ -2604,9 +2899,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__rsub__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__rsub__'](other);
@@ -2616,9 +2921,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__floordiv__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__floordiv__'](other);
@@ -2628,9 +2943,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__rfloordiv__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__rfloordiv__'](other);
@@ -2640,9 +2965,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__div__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__div__'](other);
@@ -2652,9 +2987,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__rdiv__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__rdiv__'](other);
@@ -2664,9 +3009,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__mul__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__mul__'](other);
@@ -2676,9 +3031,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__rmul__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__rmul__'](other);
@@ -2688,9 +3053,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__mod__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__mod__'](other);
@@ -2700,9 +3075,19 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__rmod__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__rmod__'](other);
@@ -2712,10 +3097,20 @@ Number['prototype']['__pow__'] = function (y, z) {
 		$method = $pyjs__bind_method2('__pow__', function(y, z) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				y = arguments[1];
 				z = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2f9835c34956d3d701ff49e481121953') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__v']['__pow__'](y, z);
@@ -2728,6 +3123,7 @@ Number['prototype']['__pow__'] = function (y, z) {
 	$m['float_py'] = $m['float'];
 	$m['float'] = $m['float_js'];
 	$m['float_int'] = function(value, radix) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof radix == 'undefined') radix=arguments['callee']['__args__'][3][1];
 
 
@@ -2819,7 +3215,7 @@ var $radix_regex = [
 ];
 
 (function(){
-    /* XXX do not convert to $p['float_int'] - this is correct */
+    /* XXX do not convert to $p['int'] - this is correct */
     var $int = pyjslib['int'] = function (value, radix) {
         var v, i;
         if (typeof radix == 'undefined' || radix === null) {
@@ -2944,7 +3340,7 @@ var $radix_regex = [
                 return new $int(v);
             }
         }
-        return new $p['float_int'](this['__v'])['__lshift__'](y);
+        return new $p['long'](this['__v'])['__lshift__'](y);
     };
 
     $int['__rlshift__'] = function (y) {
@@ -2956,7 +3352,7 @@ var $radix_regex = [
                 return new $int(v);
             }
         }
-        return new $p['float_int'](y)['__lshift__'](this['__v']);
+        return new $p['long'](y)['__lshift__'](this['__v']);
     };
 
     $int['__rshift__'] = function (y) {
@@ -3036,9 +3432,9 @@ var $radix_regex = [
             return new $int(v);
         }
         if (-$max_float_int < v && v < $max_float_int) {
-            return new $p['float_int'](v);
+            return new $p['long'](v);
         }
-        return new $p['float_int'](this['__v'])['__add__'](new $p['float_int'](y));
+        return new $p['long'](this['__v'])['__add__'](new $p['long'](y));
     };
 
     $int['__radd__'] = $int['__add__'];
@@ -3051,9 +3447,9 @@ var $radix_regex = [
             return new $int(v);
         }
         if (-$max_float_int < v && v < $max_float_int) {
-            return new $p['float_int'](v);
+            return new $p['long'](v);
         }
-        return new $p['float_int'](this['__v'])['__sub__'](new $p['float_int'](y));
+        return new $p['long'](this['__v'])['__sub__'](new $p['long'](y));
     };
 
     $int['__rsub__'] = function (y) {
@@ -3064,9 +3460,9 @@ var $radix_regex = [
             return new $int(v);
         }
         if (-$max_float_int < v && v < $max_float_int) {
-            return new $p['float_int'](v);
+            return new $p['long'](v);
         }
-        return new $p['float_int'](y)['__sub__'](new $p['float_int'](this['__v']));
+        return new $p['long'](y)['__sub__'](new $p['long'](this['__v']));
     };
 
     $int['__floordiv__'] = function (y) {
@@ -3105,9 +3501,9 @@ var $radix_regex = [
             return new $int(v);
         }
         if (-$max_float_int < v && v < $max_float_int) {
-            return new $p['float_int'](v);
+            return new $p['long'](v);
         }
-        return new $p['float_int'](this['__v'])['__mul__'](new $p['float_int'](y));
+        return new $p['long'](this['__v'])['__mul__'](new $p['long'](y));
     };
 
     $int['__rmul__'] = $int['__mul__'];
@@ -3134,9 +3530,9 @@ var $radix_regex = [
             return new $int(v);
         }
         if (-$max_float_int < v && v < $max_float_int) {
-            return new $p['float_int'](v);
+            return new $p['long'](v);
         }
-        return new $p['float_int'](this['__v'])['__pow__'](new $p['float_int'](y));
+        return new $p['long'](this['__v'])['__pow__'](new $p['long'](y));
     };
 })();
 
@@ -3688,7 +4084,7 @@ var $radix_regex = [
 
 
 
-    /* XXX do not convert to $p['float_int'] - this is correct */
+    /* XXX do not convert to $p['long'] - this is correct */
     var $long = pyjslib['long'] = function(value, radix) {
         var v, i;
         if (!radix || radix['valueOf']() == 0) {
@@ -4785,7 +5181,20 @@ var $radix_regex = [
 
 	var attrib_remap = $m['attrib_remap'] = ['Function', 'apply', 'break', 'call', 'case', 'catch', 'class', 'comment', 'const', 'constructor', 'continue', 'debugger', 'default', 'delete', 'do', 'else', 'enum', 'export', 'extends', 'false', 'finally', 'for', 'function', 'if', 'import', 'in', 'label', 'name', 'native', 'new', 'prototype', 'replace', 'return', 'split', 'super', 'switch', 'this', 'throw', 'true', 'try', 'typeof', 'var', 'void', 'while', 'with'];
 	var var_remap = $m['var_remap'] = ['Function', 'arguments', 'break', 'case', 'catch', 'char', 'class', 'comment', 'const', 'continue', 'debugger', 'default', 'delete', 'do', 'else', 'enum', 'export', 'extends', 'false', 'final', 'finally', 'for', 'function', 'if', 'import', 'in', 'label', 'native', 'new', 'return', 'super', 'switch', 'this', 'throw', 'true', 'try', 'typeof', 'var', 'void', 'while', 'with'];
-
+	var $constant_int_0 = new $p['int'](0);
+	var $constant_int_1 = new $p['int'](1);
+	var $constant_int_2 = new $p['int'](2);
+	var $constant_int_3 = new $p['int'](3);
+	var $constant_int_100 = new $p['int'](100);
+	var $constant_int_6 = new $p['int'](6);
+	var $constant_int_32 = new $p['int'](32);
+	var $constant_int_8 = new $p['int'](8);
+	var $constant_int_10 = new $p['int'](10);
+	var $constant_int_12 = new $p['int'](12);
+	var $constant_int_256 = new $p['int'](256);
+	var $constant_int_16 = new $p['int'](16);
+	var $constant_int_1000000000 = new $p['int'](1000000000);
+	var $constant_int_4 = new $p['int'](4);
 	$m['tuple'] = (function(){
 		var $cls_definition = new Object();
 		var $method;
@@ -4794,9 +5203,19 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__init__', function(data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 1)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof data == 'undefined') data=arguments['callee']['__args__'][3][1];
 
@@ -4845,8 +5264,18 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $iter7_nextval,i,h,$iter7_array,$iter7_idx,$iter7_iter,$iter7_type;
 			h = $p['list'](['$tuple']);
@@ -4863,13 +5292,23 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__cmp__', function(l) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				l = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']($p['isinstance'](l, $m['tuple'])))) {
-				return 1;
+				return $constant_int_1;
 			}
 
         var n1 = self['__array']['length'],
@@ -4891,10 +5330,20 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__getslice__', function(lower, upper) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				lower = arguments[1];
 				upper = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -4907,14 +5356,24 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__getitem__', function(_index) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_index = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
         var index = _index['valueOf']();
-        if (typeof index == 'boolean') index = $p['float_int'](index);
+        if (typeof index == 'boolean') index = $p['int'](index);
         if (index < 0) index += self['__array']['length'];
         if (index < 0 || index >= self['__array']['length']) {
             throw $m['IndexError']("tuple index out of range");
@@ -4927,21 +5386,41 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__len__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
-			return self['__array']['length'];
+			return new $p['int'](self['__array']['length']);
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['__len__'] = $method;
 		$method = $pyjs__bind_method2('index', function(value, _start) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
 				_start = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof _start == 'undefined') _start=arguments['callee']['__args__'][4][1];
 
@@ -4970,14 +5449,24 @@ var $radix_regex = [
 			throw ($m['ValueError']('list.index(x): x not in list'));
 			return null;
 		}
-	, 1, [null,null,['self'],['value'],['_start', 0]]);
+	, 1, [null,null,['self'],['value'],['_start', $constant_int_0]]);
 		$cls_definition['index'] = $method;
 		$method = $pyjs__bind_method2('__contains__', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $pyjs_try_err;
 			try {
@@ -4996,8 +5485,18 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__iter__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return new $iter_array(self['__array']);
@@ -5022,8 +5521,18 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__enumerate__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return new $enumerate_array(self['__array']);
@@ -5033,8 +5542,18 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('getArray', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr55,$attr56;
 			return self['__array'];
@@ -5044,8 +5563,18 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr58,$attr57;
 			if ($p['bool']($p['callable'](self))) {
@@ -5069,9 +5598,19 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__add__', function(y) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				y = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr59,$attr60;
 			if ($p['bool'](!$p['bool']($p['isinstance'](y, self)))) {
@@ -5084,9 +5623,19 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__mul__', function(n) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				n = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var a,$attr61,$attr62,$sub3,$sub4;
 			if ($p['bool'](!$p['bool'](n !== null && n['__number__'] && (n['__number__'] != 0x01 || isFinite(n))))) {
@@ -5094,7 +5643,7 @@ var $radix_regex = [
 			}
 			a = $p['list']([]);
 			while ($p['bool'](n)) {
-				n = $m['__op_sub']($sub3=n,$sub4=1);
+				n = $m['__op_sub']($sub3=n,$sub4=$constant_int_1);
 				a['extend'](self['__array']);
 			}
 			return a;
@@ -5104,9 +5653,19 @@ var $radix_regex = [
 		$method = $pyjs__bind_method2('__rmul__', function(n) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				n = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '54b59de8af01e70d56009c1081ba6f33') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__mul__'](n);
@@ -5126,8 +5685,18 @@ $m['tuple']['toString'] = $m['tuple']['__str__'];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '95839fbdc04d833dbde234a70f075efb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return "<type 'NotImplementedType'>";
@@ -5137,8 +5706,18 @@ $m['tuple']['toString'] = $m['tuple']['__str__'];
 		$method = $pyjs__bind_method2('__str__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '95839fbdc04d833dbde234a70f075efb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['__repr__']();
@@ -5149,8 +5728,18 @@ $m['tuple']['toString'] = $m['tuple']['__str__'];
 		$method = $pyjs__bind_method2('toString', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '95839fbdc04d833dbde234a70f075efb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['__repr__']();
@@ -5200,7 +5789,7 @@ var $enumerate_array = function (l) {
     this['array'] = l;
     this['i'] = -1;
     this['tuple'] = 
-	$m['tuple']($p['list']([0, '']));
+	$m['tuple']($p['list']([$constant_int_0, '']));
 
     this['tl'] = this['tuple']['__array'];
 };
@@ -5215,7 +5804,7 @@ $enumerate_array['prototype']['next'] = function (noStop, reuseTuple) {
     if (this['tl'][0]['__number__'] == 0x01) {
         this['tl'][0] = this['i'];
     } else {
-        this['tl'][0] = new $p['float_int'](this['i']);
+        this['tl'][0] = new $p['int'](this['i']);
     }
     return reuseTuple === true ? this['tuple'] : $m['tuple'](this['tl']);
 };
@@ -5232,9 +5821,19 @@ $enumerate_array['prototype']['$genfunc'] = $enumerate_array['prototype']['next'
 		$method = $pyjs__bind_method2('__init__', function(data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 1)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof data == 'undefined') data=arguments['callee']['__args__'][3][1];
 
@@ -5283,8 +5882,18 @@ $enumerate_array['prototype']['$genfunc'] = $enumerate_array['prototype']['next'
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['TypeError']('list objects are unhashable'));
@@ -5295,9 +5904,19 @@ $enumerate_array['prototype']['$genfunc'] = $enumerate_array['prototype']['next'
 		$method = $pyjs__bind_method2('append', function(item) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				item = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 self['__array'][self['__array']['length']] = item;
@@ -5307,9 +5926,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('extend', function(data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5358,9 +5987,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('remove', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5377,10 +6016,20 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('index', function(value, _start) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
 				_start = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof _start == 'undefined') _start=arguments['callee']['__args__'][4][1];
 
@@ -5409,15 +6058,25 @@ self['__array'][self['__array']['length']] = item;
 			throw ($m['ValueError']('list.index(x): x not in list'));
 			return null;
 		}
-	, 1, [null,null,['self'],['value'],['_start', 0]]);
+	, 1, [null,null,['self'],['value'],['_start', $constant_int_0]]);
 		$cls_definition['index'] = $method;
 		$method = $pyjs__bind_method2('insert', function(index, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				index = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
     var a = self['__array']; self['__array']=a['slice'](0, index)['concat'](value, a['slice'](index));
@@ -5427,9 +6086,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('pop', function(_index) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 1)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_index = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof _index == 'undefined') _index=arguments['callee']['__args__'][3][1];
 
@@ -5447,20 +6116,30 @@ self['__array'][self['__array']['length']] = item;
         return a;
         
 		}
-	, 1, [null,null,['self'],['_index', (typeof ($usub1=1)=='number'?
+	, 1, [null,null,['self'],['_index', (typeof ($usub1=$constant_int_1)=='number'?
 			-$usub1:
 			$m['op_usub']($usub1))]]);
 		$cls_definition['pop'] = $method;
 		$method = $pyjs__bind_method2('__cmp__', function(l) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				l = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']($p['isinstance'](l, $m['list'])))) {
-				return (typeof ($usub2=1)=='number'?
+				return (typeof ($usub2=$constant_int_1)=='number'?
 					-$usub2:
 					$m['op_usub']($usub2));
 			}
@@ -5484,10 +6163,20 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__getslice__', function(lower, upper) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				lower = arguments[1];
 				upper = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5501,10 +6190,20 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__delslice__', function(_lower, upper) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_lower = arguments[1];
 				upper = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5523,11 +6222,21 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__setslice__', function(lower, upper, data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				lower = arguments[1];
 				upper = arguments[2];
 				data = arguments[3];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var tail;
 			self['__delslice__'](lower, upper);
@@ -5542,14 +6251,24 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__getitem__', function(_index) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_index = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
         var index = _index['valueOf']();
-        if (typeof index == 'boolean') index = $p['float_int'](index);
+        if (typeof index == 'boolean') index = $p['int'](index);
         if (index < 0) index += self['__array']['length'];
         if (index < 0 || index >= self['__array']['length']) {
             throw $m['IndexError']("list index out of range");
@@ -5562,10 +6281,20 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__setitem__', function(_index, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_index = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5582,9 +6311,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__delitem__', function(_index) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_index = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -5601,20 +6340,40 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__len__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
-			return self['__array']['length'];
+			return new $p['int'](self['__array']['length']);
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['__len__'] = $method;
 		$method = $pyjs__bind_method2('__contains__', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $pyjs_try_err;
 			try {
@@ -5633,8 +6392,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__iter__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return new $iter_array(self['__array']);
@@ -5644,8 +6413,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__reversed__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return new $reversed_iter_array(self['__array']);
@@ -5655,8 +6434,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__enumerate__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return new $enumerate_array(self['__array']);
@@ -5666,8 +6455,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('reverse', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
     self['__array']['reverse']();
@@ -5677,21 +6476,32 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('sort', function(cmp, key, reverse) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 4, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				cmp = arguments[1];
 				key = arguments[2];
 				reverse = arguments[3];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 4)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 4, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof cmp == 'undefined') cmp=arguments['callee']['__args__'][3][1];
 			if (typeof key == 'undefined') key=arguments['callee']['__args__'][4][1];
 			if (typeof reverse == 'undefined') reverse=arguments['callee']['__args__'][5][1];
 			var thisSort1,thisSort2,$and18,$and19,thisSort3;
-			if ($p['bool']((cmp === null))) {
+			if ($p['bool']($m['op_is'](cmp, null))) {
 				cmp = $m['__cmp'];
 			}
 			if ($p['bool'](($p['bool']($and18=key)?reverse:$and18))) {
 				thisSort1 = function(a, b) {
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 					return (typeof ($usub3=cmp(key(a), key(b)))=='number'?
 						-$usub3:
@@ -5705,6 +6515,7 @@ self['__array'][self['__array']['length']] = item;
 			}
 			else if ($p['bool'](key)) {
 				thisSort2 = function(a, b) {
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 					return cmp(key(a), key(b));
 				};
@@ -5716,6 +6527,7 @@ self['__array'][self['__array']['length']] = item;
 			}
 			else if ($p['bool'](reverse)) {
 				thisSort3 = function(a, b) {
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 					return (typeof ($usub4=cmp(a, b))=='number'?
 						-$usub4:
@@ -5737,8 +6549,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('getArray', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr64,$attr63;
 			return self['__array'];
@@ -5748,8 +6570,18 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr65,$attr66;
 			if ($p['bool']($p['callable'](self))) {
@@ -5771,9 +6603,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__add__', function(y) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				y = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr67,$attr68;
 			if ($p['bool'](!$p['bool']($p['isinstance'](y, self)))) {
@@ -5786,9 +6628,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__mul__', function(n) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				n = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var a,$attr69,$attr70,$sub6,$sub5;
 			if ($p['bool'](!$p['bool'](n !== null && n['__number__'] && (n['__number__'] != 0x01 || isFinite(n))))) {
@@ -5796,7 +6648,7 @@ self['__array'][self['__array']['length']] = item;
 			}
 			a = $p['list']([]);
 			while ($p['bool'](n)) {
-				n = $m['__op_sub']($sub5=n,$sub6=1);
+				n = $m['__op_sub']($sub5=n,$sub6=$constant_int_1);
 				a['extend'](self['__array']);
 			}
 			return a;
@@ -5806,9 +6658,19 @@ self['__array'][self['__array']['length']] = item;
 		$method = $pyjs__bind_method2('__rmul__', function(n) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				n = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'afd4f857132fd951d288a165e24f34e5') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__mul__'](n);
@@ -5830,18 +6692,28 @@ $m['list']['toString'] = $m['list']['__str__'];
 				var self = this;
 				var args = $p['tuple']($pyjs_array_slice['call'](arguments,1,arguments['length']));
 
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, null, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				a1 = arguments[1];
 				var args = $p['tuple']($pyjs_array_slice['call'](arguments,2,arguments['length']));
 
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, null, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '24e8c86df7ad558306c3a67bdb4942bb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](args)) {
 				self['start'] = a1;
-				self['stop'] = args['__getitem__'](0);
-				if ($p['bool'](($m['cmp']($p['len'](args), 1) == 1))) {
-					self['step'] = args['__getitem__'](1);
+				self['stop'] = args['__getitem__']($constant_int_0);
+				if ($p['bool'](($m['cmp']($p['len'](args), $constant_int_1) == 1))) {
+					self['step'] = args['__getitem__']($constant_int_1);
 				}
 				else {
 					self['step'] = null;
@@ -5859,17 +6731,27 @@ $m['list']['toString'] = $m['list']['__str__'];
 		$method = $pyjs__bind_method2('__cmp__', function(x) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				x = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '24e8c86df7ad558306c3a67bdb4942bb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr82,$attr80,$attr81,$attr79,$attr78,$attr77,$attr76,$attr74,$attr73,$attr72,$attr71,r,$attr75;
 			r = $m['cmp'](self['start'], x['start']);
-			if ($p['bool'](!$m['op_eq'](r, 0))) {
+			if ($p['bool'](!$m['op_eq'](r, $constant_int_0))) {
 				return r;
 			}
 			r = $m['cmp'](self['stop'], x['stop']);
-			if ($p['bool'](!$m['op_eq'](r, 0))) {
+			if ($p['bool'](!$m['op_eq'](r, $constant_int_0))) {
 				return r;
 			}
 			r = $m['cmp'](self['step'], x['step']);
@@ -5880,99 +6762,109 @@ $m['list']['toString'] = $m['list']['__str__'];
 		$method = $pyjs__bind_method2('indices', function(length) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				length = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '24e8c86df7ad558306c3a67bdb4942bb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add44,defstart,$sub16,$and23,$and22,$and21,$and20,$attr83,$attr86,$attr87,$attr84,$attr85,$add46,$attr89,$add43,$add42,$add41,$add40,start,$sub9,$sub8,$sub17,$sub7,$or5,$or4,$sub18,$sub13,$sub12,$sub11,$sub10,stop,$add38,$sub15,$sub14,step,$div2,$div3,$div1,$div4,$attr94,defstop,$add39,$attr91,$attr90,$attr93,$attr92,slicelength,$add37,$add45,$attr88;
-			step = 0;
-			start = 0;
-			stop = 0;
-			if ($p['bool']((self['step'] === null))) {
-				step = 1;
+			step = $constant_int_0;
+			start = $constant_int_0;
+			stop = $constant_int_0;
+			if ($p['bool']($m['op_is'](self['step'], null))) {
+				step = $constant_int_1;
 			}
 			else {
 				step = self['step'];
-				if ($p['bool']($m['op_eq'](step, 0))) {
+				if ($p['bool']($m['op_eq'](step, $constant_int_0))) {
 					throw ($m['ValueError']('slice step cannot be zero'));
 				}
 			}
-			if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-				defstart = $m['__op_sub']($sub7=length,$sub8=1);
-				defstop = (typeof ($usub5=1)=='number'?
+			if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+				defstart = $m['__op_sub']($sub7=length,$sub8=$constant_int_1);
+				defstop = (typeof ($usub5=$constant_int_1)=='number'?
 					-$usub5:
 					$m['op_usub']($usub5));
 			}
 			else {
-				defstart = 0;
+				defstart = $constant_int_0;
 				defstop = length;
 			}
-			if ($p['bool']((self['start'] === null))) {
+			if ($p['bool']($m['op_is'](self['start'], null))) {
 				start = defstart;
 			}
 			else {
 				start = self['start'];
-				if ($p['bool'](($m['cmp'](start, 0) == -1))) {
+				if ($p['bool'](($m['cmp'](start, $constant_int_0) == -1))) {
 					start = $m['__op_add']($add37=start,$add38=length);
 				}
-				if ($p['bool'](($m['cmp'](start, 0) == -1))) {
-					if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-						start = (typeof ($usub6=1)=='number'?
+				if ($p['bool'](($m['cmp'](start, $constant_int_0) == -1))) {
+					if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+						start = (typeof ($usub6=$constant_int_1)=='number'?
 							-$usub6:
 							$m['op_usub']($usub6));
 					}
 					else {
-						start = 0;
+						start = $constant_int_0;
 					}
 				}
 				if ($p['bool'](((($m['cmp'](start, length))|1) == 1))) {
-					if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-						start = $m['__op_sub']($sub9=length,$sub10=1);
+					if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+						start = $m['__op_sub']($sub9=length,$sub10=$constant_int_1);
 					}
 					else {
 						start = length;
 					}
 				}
 			}
-			if ($p['bool']((self['stop'] === null))) {
+			if ($p['bool']($m['op_is'](self['stop'], null))) {
 				stop = defstop;
 			}
 			else {
 				stop = self['stop'];
-				if ($p['bool'](($m['cmp'](stop, 0) == -1))) {
+				if ($p['bool'](($m['cmp'](stop, $constant_int_0) == -1))) {
 					stop = $m['__op_add']($add39=stop,$add40=length);
 				}
-				if ($p['bool'](($m['cmp'](stop, 0) == -1))) {
-					if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-						stop = (typeof ($usub7=1)=='number'?
+				if ($p['bool'](($m['cmp'](stop, $constant_int_0) == -1))) {
+					if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+						stop = (typeof ($usub7=$constant_int_1)=='number'?
 							-$usub7:
 							$m['op_usub']($usub7));
 					}
 					else {
-						stop = 0;
+						stop = $constant_int_0;
 					}
 				}
 				if ($p['bool'](((($m['cmp'](stop, length))|1) == 1))) {
-					if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-						stop = $m['__op_sub']($sub11=length,$sub12=1);
+					if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+						stop = $m['__op_sub']($sub11=length,$sub12=$constant_int_1);
 					}
 					else {
 						stop = length;
 					}
 				}
 			}
-			if ($p['bool'](($p['bool']($or4=($p['bool']($and20=($m['cmp'](step, 0) == -1))?((($m['cmp'](stop, start))|1) == 1):$and20))?$or4:($p['bool']($and22=($m['cmp'](step, 0) == 1))?((($m['cmp'](start, stop))|1) == 1):$and22)))) {
-				slicelength = 0;
+			if ($p['bool'](($p['bool']($or4=($p['bool']($and20=($m['cmp'](step, $constant_int_0) == -1))?((($m['cmp'](stop, start))|1) == 1):$and20))?$or4:($p['bool']($and22=($m['cmp'](step, $constant_int_0) == 1))?((($m['cmp'](start, stop))|1) == 1):$and22)))) {
+				slicelength = $constant_int_0;
 			}
-			else if ($p['bool'](($m['cmp'](step, 0) == -1))) {
-				slicelength = $m['__op_add']($add43=(typeof ($div1=$m['__op_add']($add41=$m['__op_sub']($sub13=stop,$sub14=start),$add42=1))==typeof ($div2=step) && typeof $div1=='number' && $div2 !== 0?
+			else if ($p['bool'](($m['cmp'](step, $constant_int_0) == -1))) {
+				slicelength = $m['__op_add']($add43=(typeof ($div1=$m['__op_add']($add41=$m['__op_sub']($sub13=stop,$sub14=start),$add42=$constant_int_1))==typeof ($div2=step) && typeof $div1=='number' && $div2 !== 0?
 					$div1/$div2:
-					$m['op_div']($div1,$div2)),$add44=1);
+					$m['op_div']($div1,$div2)),$add44=$constant_int_1);
 			}
 			else {
-				slicelength = $m['__op_add']($add45=(typeof ($div3=$m['__op_sub']($sub17=$m['__op_sub']($sub15=stop,$sub16=start),$sub18=1))==typeof ($div4=step) && typeof $div3=='number' && $div4 !== 0?
+				slicelength = $m['__op_add']($add45=(typeof ($div3=$m['__op_sub']($sub17=$m['__op_sub']($sub15=stop,$sub16=start),$sub18=$constant_int_1))==typeof ($div4=step) && typeof $div3=='number' && $div4 !== 0?
 					$div3/$div4:
-					$m['op_div']($div3,$div4)),$add46=1);
+					$m['op_div']($div3,$div4)),$add46=$constant_int_1);
 			}
 			return $p['tuple']([start, stop, step]);
 		}
@@ -5981,8 +6873,18 @@ $m['list']['toString'] = $m['list']['__str__'];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '24e8c86df7ad558306c3a67bdb4942bb') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr95,$attr97,$attr96,$attr99,$attr98,$attr100;
 			return $p['sprintf']('slice(%s, %s, %s)', $p['tuple']([self['start'], self['stop'], self['step']]));
@@ -6008,6 +6910,7 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 				} else {
 					delete kwargs['$pyjs_is_kwarg'];
 				}
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				seq = arguments[1];
@@ -6016,6 +6919,15 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 					kwargs = arguments[arguments['length']+1];
 				} else {
 					delete kwargs['$pyjs_is_kwarg'];
+				}
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
 				}
 			}
 			if (typeof kwargs == 'undefined') {
@@ -6037,6 +6949,7 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 			var init;
 			self['__object'] = {};
 			init = function(_data) {
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
         var item, i, n, sKey;
@@ -6144,8 +7057,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['TypeError']('dict objects are unhashable'));
@@ -6156,10 +7079,20 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__setitem__', function(key, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6175,9 +7108,19 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__getitem__', function(key) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6194,8 +7137,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['TypeError']('dict objects are unhashable'));
@@ -6206,8 +7159,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__nonzero__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6222,9 +7185,19 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__cmp__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']($p['isinstance'](other, $m['dict'])))) {
@@ -6269,15 +7242,25 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__len__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var size;
-			size = 0;
+			size = $constant_int_0;
 
         for (var i in self['__object']) size++;
         
-			return size;
+			return new $p['int'](size);
 			return null;
 		}
 	, 1, [null,null,['self']]);
@@ -6285,9 +7268,19 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__delitem__', function(key) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6300,9 +7293,19 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__contains__', function(key) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6315,8 +7318,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('keys', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6333,6 +7346,7 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 	, 1, [null,null,['self']]);
 		$cls_definition['keys'] = $method;
 		$method = $pyjs__bind_method2('fromkeys', function(iterable, v) {
+			if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 			if (typeof v == 'undefined') v=arguments['callee']['__args__'][3][1];
 			var $iter8_idx,d,i,$iter8_type,$iter8_array,$iter8_iter,$iter8_nextval;
 			d = $p['dict']([]);
@@ -6349,8 +7363,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('values', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6367,8 +7391,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('items', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6386,8 +7420,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__iter__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6404,8 +7448,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__enumerate__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6422,8 +7476,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('itervalues', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['values']()['__iter__']();
@@ -6434,8 +7498,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('iteritems', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['items']()['__iter__']();
@@ -6446,10 +7520,20 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('setdefault', function(key, default_value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
 				default_value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6462,10 +7546,20 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('get', function(key, default_value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				key = arguments[1];
 				default_value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof default_value == 'undefined') default_value=arguments['callee']['__args__'][4][1];
 
@@ -6494,6 +7588,7 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 				} else {
 					delete kwargs['$pyjs_is_kwarg'];
 				}
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, null, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				var args = $p['tuple']($pyjs_array_slice['call'](arguments,1,arguments['length']-1));
@@ -6504,6 +7599,15 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 					kwargs = arguments[arguments['length']+1];
 				} else {
 					delete kwargs['$pyjs_is_kwarg'];
+				}
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, null, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
 				}
 			}
 			if (typeof kwargs == 'undefined') {
@@ -6518,10 +7622,10 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 			}
 			var $iter12_type,$iter10_nextval,$iter10_iter,$iter9_iter,$iter9_nextval,$iter9_idx,$iter11_idx,$iter9_type,$iter10_idx,$iter11_iter,$iter12_array,$iter11_array,$iter11_nextval,d,k,$iter11_type,$iter10_array,$iter12_nextval,$iter12_iter,v,$iter10_type,$iter12_idx,$iter9_array;
 			if ($p['bool'](args)) {
-				if ($p['bool'](($m['cmp']($p['len'](args), 1) == 1))) {
+				if ($p['bool'](($m['cmp']($p['len'](args), $constant_int_1) == 1))) {
 					throw ($m['TypeError']($p['sprintf']('update expected at most 1 arguments, got %d', $p['len'](args))));
 				}
-				d = args['__getitem__'](0);
+				d = args['__getitem__']($constant_int_0);
 				if ($p['bool']($p['hasattr'](d, 'iteritems'))) {
 					$iter9_iter = d['iteritems']();
 					$iter9_nextval=$p['__iter_prepare']($iter9_iter,false);
@@ -6570,15 +7674,25 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 				var self = this;
 				var d = $p['tuple']($pyjs_array_slice['call'](arguments,1,arguments['length']));
 
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, null, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				k = arguments[1];
 				var d = $p['tuple']($pyjs_array_slice['call'](arguments,2,arguments['length']));
 
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] < 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, null, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add48,$add47,res,$pyjs_try_err;
-			if ($p['bool'](($m['cmp']($p['len'](d), 1) == 1))) {
-				throw ($m['TypeError']($p['sprintf']('pop expected at most 2 arguments, got %s', $m['__op_add']($add47=1,$add48=$p['len'](d)))));
+			if ($p['bool'](($m['cmp']($p['len'](d), $constant_int_1) == 1))) {
+				throw ($m['TypeError']($p['sprintf']('pop expected at most 2 arguments, got %s', $m['__op_add']($add47=$constant_int_1,$add48=$p['len'](d)))));
 			}
 			try {
 				res = self['__getitem__'](k);
@@ -6589,7 +7703,7 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 				$pyjs['__last_exception__'] = {'error': $pyjs_try_err, 'module': $m};
 				if (($pyjs_try_err_name == $m['KeyError']['__name__'])||$p['_isinstance']($pyjs_try_err,$m['KeyError'])) {
 					if ($p['bool'](d)) {
-						return d['__getitem__'](0);
+						return d['__getitem__']($constant_int_0);
 					}
 					else {
 						throw ($pyjs['__last_exception__']?
@@ -6605,8 +7719,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('popitem', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $iter13_nextval,$iter13_iter,$iter13_type,$iter13_idx,v,k,$iter13_array;
 			$iter13_iter = self['iteritems']();
@@ -6625,8 +7749,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('getObject', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr102,$attr101;
 			return self['__object'];
@@ -6636,8 +7770,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('copy', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return $m['dict'](self['items']());
@@ -6647,8 +7791,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('clear', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['__object'] = {};
@@ -6659,8 +7813,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr104,$attr103;
 			if ($p['bool']($p['callable'](self))) {
@@ -6687,8 +7851,18 @@ $m['slice']['toString'] = $m['slice']['__str__'];
 		$method = $pyjs__bind_method2('toString', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'fe1d4ba078372f997b7ef4574acc48ef') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return self['__repr__']();
@@ -6702,6 +7876,7 @@ $m['dict']['has_key'] = $m['dict']['__contains__'];
 $m['dict']['iterkeys'] = $m['dict']['__iter__'];
 $m['dict']['__str__'] = $m['dict']['__repr__'];
 	$m['__empty_dict'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, 0, arguments['length']);
 
 
     var dict__init__ = $m['dict']['__init__'];
@@ -6726,13 +7901,23 @@ $m['dict']['__str__'] = $m['dict']['__repr__'];
 		$method = $pyjs__bind_method2('__init__', function(_data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 1)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof _data == 'undefined') _data=arguments['callee']['__args__'][3][1];
 
-			if ($p['bool']((_data === null))) {
+			if ($p['bool']($m['op_is'](_data, null))) {
 var data = [];
 			}
 			else {
@@ -6829,13 +8014,23 @@ var data = _data;
 		$method = $pyjs__bind_method2('__cmp__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
-				return 2;
+				return $constant_int_2;
 			}
 
         var selfObj = self['__object'],
@@ -6868,12 +8063,22 @@ var data = _data;
 		$method = $pyjs__bind_method2('__contains__', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
-			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), 1))) {
+			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), $constant_int_1))) {
 
             var hashes = new Array(),
                 obj = self['__object'],
@@ -6893,8 +8098,18 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['TypeError']('set objects are unhashable'));
@@ -6905,8 +8120,18 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__iter__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -6924,23 +8149,43 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__len__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var size;
 			size = 0.0;
 
         for (var i in self['__object']) size++;
         
-			return size;
+			return new $p['int'](size);
 		}
 	, 1, [null,null,['self']]);
 		$cls_definition['__len__'] = $method;
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr106,$attr105;
 			if ($p['bool']($p['callable'](self))) {
@@ -6964,9 +8209,19 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__and__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -6979,9 +8234,19 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__or__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -6994,9 +8259,19 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__xor__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7009,9 +8284,19 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('__sub__', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7024,9 +8309,19 @@ return $p['__hash'](value) in self['__object'];
 		$method = $pyjs__bind_method2('add', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 self['__object'][$p['hash'](value)] = value;
@@ -7037,8 +8332,18 @@ self['__object'][$p['hash'](value)] = value;
 		$method = $pyjs__bind_method2('clear', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 self['__object'] = {};
@@ -7049,8 +8354,18 @@ self['__object'] = {};
 		$method = $pyjs__bind_method2('copy', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var new_set;
 			new_set = $m['set']();
@@ -7068,9 +8383,19 @@ self['__object'] = {};
 		$method = $pyjs__bind_method2('difference', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var new_set;
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7094,9 +8419,19 @@ self['__object'] = {};
 		$method = $pyjs__bind_method2('difference_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7118,12 +8453,22 @@ self['__object'] = {};
 		$method = $pyjs__bind_method2('discard', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
-			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), 1))) {
+			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), $constant_int_1))) {
 				value = $p['frozenset'](value);
 			}
 delete self['__object'][$p['hash'](value)];
@@ -7134,9 +8479,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('intersection', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var new_set;
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7160,9 +8515,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('intersection_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7184,9 +8549,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('isdisjoint', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7213,9 +8588,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('issubset', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7228,9 +8613,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('issuperset', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7243,8 +8638,18 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('pop', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -7262,12 +8667,22 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('remove', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var val;
-			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), 1))) {
+			if ($p['bool']($m['op_eq']((typeof isSet == "undefined"?$m['isSet']:isSet)(value), $constant_int_1))) {
 				val = $p['frozenset'](value);
 			}
 			else {
@@ -7286,9 +8701,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('symmetric_difference', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var new_set;
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7317,9 +8742,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('symmetric_difference_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(other)))) {
@@ -7348,9 +8783,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('union', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var new_set;
 			new_set = $m['set']();
@@ -7377,9 +8822,19 @@ delete self['__object'][$p['hash'](value)];
 		$method = $pyjs__bind_method2('update', function(data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5d0ade069ada2db5e825a6618d40edd8') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			if ($p['bool'](!$p['bool']((typeof isSet == "undefined"?$m['isSet']:isSet)(data)))) {
@@ -7411,9 +8866,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('__init__', function(_data) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 1)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				_data = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof _data == 'undefined') _data=arguments['callee']['__args__'][3][1];
 
@@ -7427,8 +8892,18 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('__hash__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 
@@ -7445,9 +8920,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('add', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7458,8 +8943,18 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('clear', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7470,9 +8965,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('difference_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7483,9 +8988,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('discard', function(value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				value = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7496,9 +9011,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('intersection_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7509,8 +9034,18 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('pop', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7521,9 +9056,19 @@ $m['set']['toString'] = $m['set']['__repr__'];
 		$method = $pyjs__bind_method2('symmetric_difference_update', function(other) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				other = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5910a5cd7bacd5088201b54cec5bd418') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['AttributeError']('frozenset is immutable'));
@@ -7544,12 +9089,22 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('__init__', function(fget, fset, fdel, doc) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 0 || arguments['length'] > 4)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 5, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				fget = arguments[1];
 				fset = arguments[2];
 				fdel = arguments[3];
 				doc = arguments[4];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 5)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 5, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof fget == 'undefined') fget=arguments['callee']['__args__'][3][1];
 			if (typeof fset == 'undefined') fset=arguments['callee']['__args__'][4][1];
@@ -7559,7 +9114,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 			self['fget'] = fget;
 			self['fset'] = fset;
 			self['fdel'] = fdel;
-			if ($p['bool'](($p['bool']($or6=!$p['bool']((doc === null)))?$or6:!$p['bool']($p['hasattr'](fget, '__doc__'))))) {
+			if ($p['bool'](($p['bool']($or6=!$p['bool']($m['op_is'](doc, null)))?$or6:!$p['bool']($p['hasattr'](fget, '__doc__'))))) {
 				self['__doc__'] = doc;
 			}
 			else {
@@ -7572,17 +9127,27 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('__get__', function(obj, objtype) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				obj = arguments[1];
 				objtype = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof objtype == 'undefined') objtype=arguments['callee']['__args__'][4][1];
 			var $attr110,$attr109;
-			if ($p['bool']((obj === null))) {
+			if ($p['bool']($m['op_is'](obj, null))) {
 				return self;
 			}
-			if ($p['bool']((self['fget'] === null))) {
+			if ($p['bool']($m['op_is'](self['fget'], null))) {
 
 				var $pyjs__raise_expr1 = $m['AttributeError'];
 				var $pyjs__raise_expr2 = 'unreadable attribute';
@@ -7603,13 +9168,23 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('__set__', function(obj, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				obj = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr111,$attr112;
-			if ($p['bool']((self['fset'] === null))) {
+			if ($p['bool']($m['op_is'](self['fset'], null))) {
 
 				var $pyjs__raise_expr1 = $m['AttributeError'];
 				var $pyjs__raise_expr2 = "can't set attribute";
@@ -7631,12 +9206,22 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('__delete__', function(obj) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				obj = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr113,$attr114;
-			if ($p['bool']((self['fdel'] === null))) {
+			if ($p['bool']($m['op_is'](self['fdel'], null))) {
 
 				var $pyjs__raise_expr1 = $m['AttributeError'];
 				var $pyjs__raise_expr2 = "can't delete attribute";
@@ -7658,9 +9243,19 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('setter', function(fset) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				fset = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['fset'] = fset;
@@ -7671,9 +9266,19 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$method = $pyjs__bind_method2('deleter', function(fdel) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				fdel = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'e8658b013cc299100bc07c2eb7e48d17') {
+					if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['fdel'] = fdel;
@@ -7685,6 +9290,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		return $pyjs_type('property', $bases, $cls_definition);
 	})();
 	$m['staticmethod'] = function(func) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     var fnwrap = function() {
@@ -7701,6 +9307,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['staticmethod']['__bind_type__'] = 0;
 	$m['staticmethod']['__args__'] = [null,null,['func']];
 	$m['$$super'] = function(typ, object_or_type) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof object_or_type == 'undefined') object_or_type=arguments['callee']['__args__'][3][1];
 		var i;
 		if ($p['bool'](!$p['bool']((typeof _issubtype == "undefined"?$m['_issubtype']:_issubtype)(object_or_type, typ)))) {
@@ -7743,12 +9350,13 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['$$super']['__bind_type__'] = 0;
 	$m['$$super']['__args__'] = [null,null,['typ'],['object_or_type', null]];
 	$m['xrange'] = function(start, stop, step) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
 		if (typeof stop == 'undefined') stop=arguments['callee']['__args__'][3][1];
 		if (typeof step == 'undefined') step=arguments['callee']['__args__'][4][1];
 		var $attr119,$attr118,rval,$attr115,$attr117,$attr116,$attr120,$assign1,nval;
-		if ($p['bool']((stop === null))) {
+		if ($p['bool']($m['op_is'](stop, null))) {
 			stop = start;
-			start = 0;
+			start = $constant_int_0;
 		}
 		if ($p['bool'](!$p['bool'](start!== null && start['__number__'] && (start['__number__'] != 0x01 || isFinite(start))))) {
 			throw ($m['TypeError']($p['sprintf']('xrange() integer start argument expected, got %s', start['__class__']['__name__'])));
@@ -7781,7 +9389,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
             rval = nval;
             nval += step;
 
-		return rval;
+		return new $p['int'](rval);
 
         },
         '$genfunc': function() {
@@ -7815,10 +9423,11 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['xrange']['__name__'] = 'xrange';
 
 	$m['xrange']['__bind_type__'] = 0;
-	$m['xrange']['__args__'] = [null,null,['start'],['stop', null],['step', 1]];
+	$m['xrange']['__args__'] = [null,null,['start'],['stop', null],['step', $constant_int_1]];
 	$m['get_len_of_range'] = function(lo, hi, step) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
 		var n;
-		n = 0;
+		n = $constant_int_0;
 
     var diff = hi - lo - 1;
     n = Math['floor'](diff / step) + 1;
@@ -7830,12 +9439,13 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['get_len_of_range']['__bind_type__'] = 0;
 	$m['get_len_of_range']['__args__'] = [null,null,['lo'],['hi'],['step']];
 	$m['range'] = function(start, stop, step) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
 		if (typeof stop == 'undefined') stop=arguments['callee']['__args__'][3][1];
 		if (typeof step == 'undefined') step=arguments['callee']['__args__'][4][1];
 		var r,$attr121,items,$attr122,ilow,$attr123,$attr124,$attr125,$attr126,n;
-		if ($p['bool']((stop === null))) {
+		if ($p['bool']($m['op_is'](stop, null))) {
 			stop = start;
-			start = 0;
+			start = $constant_int_0;
 		}
 		ilow = start;
 		if ($p['bool'](!$p['bool'](start!== null && start['__number__'] && (start['__number__'] != 0x01 || isFinite(start))))) {
@@ -7847,10 +9457,10 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		if ($p['bool'](!$p['bool'](step!== null && step['__number__'] && (step['__number__'] != 0x01 || isFinite(step))))) {
 			throw ($m['TypeError']($p['sprintf']('xrange() integer step argument expected, got %s', step['__class__']['__name__'])));
 		}
-		if ($p['bool']($m['op_eq'](step, 0))) {
+		if ($p['bool']($m['op_eq'](step, $constant_int_0))) {
 			throw ($m['ValueError']('range() step argument must not be zero'));
 		}
-		if ($p['bool'](($m['cmp'](step, 0) == 1))) {
+		if ($p['bool'](($m['cmp'](step, $constant_int_0) == 1))) {
 			n = $m['get_len_of_range'](ilow, stop, step);
 		}
 		else {
@@ -7863,7 +9473,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 
     for (var i = 0; i < n; i++) {
     
-		items['push'](ilow);
+		items['push'](new $p['int'](ilow));
 
         ilow += step;
     }
@@ -7874,8 +9484,9 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['range']['__name__'] = 'range';
 
 	$m['range']['__bind_type__'] = 0;
-	$m['range']['__args__'] = [null,null,['start'],['stop', null],['step', 1]];
+	$m['range']['__args__'] = [null,null,['start'],['stop', null],['step', $constant_int_1]];
 	$m['__getslice'] = function(object, lower, upper) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
 
 
     if (object=== null) {
@@ -7895,6 +9506,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['__getslice']['__bind_type__'] = 0;
 	$m['__getslice']['__args__'] = [null,null,['object'],['lower'],['upper']];
 	$m['__delslice'] = function(object, lower, upper) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
 
 
     if (typeof object['__delslice__'] == 'function') {
@@ -7919,6 +9531,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 	$m['__delslice']['__bind_type__'] = 0;
 	$m['__delslice']['__args__'] = [null,null,['object'],['lower'],['upper']];
 	$m['__setslice'] = function(object, lower, upper, value) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']);
 
 
     if (typeof object['__setslice__'] == 'function') {
@@ -7938,6 +9551,7 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		$cls_definition['__module__'] = 'pyjslib';
 		$cls_definition['__md5__'] = '2c6b74ef2791d2d19a17da3ca230eb36';
 		$method = $pyjs__bind_method2('__new__', function(self, text) {
+			if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 			if (typeof text == 'undefined') text=arguments['callee']['__args__'][3][1];
 
 
@@ -7966,9 +9580,10 @@ $m['frozenset']['toString'] = $m['frozenset']['__repr__'];
 		return $pyjs_type('str', $bases, $cls_definition);
 	})();
 	$m['ord'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $and25,$and24;
-		if ($p['bool'](($p['bool']($and24=typeof x== 'string')?($p['len'](x) === 1):$and24))) {
-			return x['charCodeAt'](0);
+		if ($p['bool'](($p['bool']($and24=typeof x== 'string')?$m['op_is']($p['len'](x), $constant_int_1):$and24))) {
+			return new $p['int'](x['charCodeAt']($constant_int_0));
 		}
 		else {
 throw $m['TypeError']("ord() expected string of length 1");
@@ -7980,6 +9595,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['ord']['__bind_type__'] = 0;
 	$m['ord']['__args__'] = [null,null,['x']];
 	$m['chr'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
         return String['fromCharCode'](x);
@@ -7990,6 +9606,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['chr']['__bind_type__'] = 0;
 	$m['chr']['__args__'] = [null,null,['x']];
 	$m['is_basetype'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
        var t = typeof(x);
@@ -8005,6 +9622,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['is_basetype']['__bind_type__'] = 0;
 	$m['is_basetype']['__args__'] = [null,null,['x']];
 	$m['get_pyjs_classtype'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
         if (x!== null && typeof x['__is_instance__'] == 'boolean') {
@@ -8019,6 +9637,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['get_pyjs_classtype']['__bind_type__'] = 0;
 	$m['get_pyjs_classtype']['__args__'] = [null,null,['x']];
 	$m['repr'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
        if (x=== null)
@@ -8084,8 +9703,9 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['repr']['__bind_type__'] = 0;
 	$m['repr']['__args__'] = [null,null,['x']];
 	$m['len'] = function(object) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var v;
-		v = 0;
+		v = $constant_int_0;
 
     if (typeof object== 'undefined') {
         throw $m['UndefinedValueError']("obj");
@@ -8101,13 +9721,14 @@ throw $m['TypeError']("ord() expected string of length 1");
     else throw $m['TypeError']("object has no len()");
     if (v['__number__'] & 0x06) return v;
     
-		return v;
+		return new $p['int'](v);
 	};
 	$m['len']['__name__'] = 'len';
 
 	$m['len']['__bind_type__'] = 0;
 	$m['len']['__args__'] = [null,null,['object']];
 	$m['isinstance'] = function(object_, classinfo) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 		var $iter14_array,$iter14_type,ci,$iter14_iter,$iter14_idx,$iter14_nextval;
 
     if (typeof object_== 'undefined') {
@@ -8171,6 +9792,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['isinstance']['__bind_type__'] = 0;
 	$m['isinstance']['__args__'] = [null,null,['object_'],['classinfo']];
 	$m['_isinstance'] = function(object_, classinfo) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (   object_['__is_instance__'] !== true
@@ -8198,6 +9820,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['_isinstance']['__bind_type__'] = 0;
 	$m['_isinstance']['__args__'] = [null,null,['object_'],['classinfo']];
 	$m['issubclass'] = function(class_, classinfo) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 		var ci,$iter15_array,$iter15_idx,$iter15_nextval,$iter15_type,$iter15_iter;
 		if ($p['bool']( typeof class_ == 'undefined' || class_ === null || class_['__is_instance__'] !== false )) {
 			throw ($m['TypeError']('arg 1 must be a class'));
@@ -8226,6 +9849,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['issubclass']['__bind_type__'] = 0;
 	$m['issubclass']['__args__'] = [null,null,['class_'],['classinfo']];
 	$m['_issubtype'] = function(object_, classinfo) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (   object_['__is_instance__'] === null
@@ -8253,6 +9877,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['_issubtype']['__bind_type__'] = 0;
 	$m['_issubtype']['__args__'] = [null,null,['object_'],['classinfo']];
 	$m['__getattr_check'] = function(attr, attr_left, attr_right, attrstr, bound_methods, descriptors, attribute_checking, source_tracking) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 8) $pyjs__exception_func_param(arguments['callee']['__name__'], 8, 8, arguments['length']);
 
  		return null;
 	};
@@ -8261,6 +9886,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['__getattr_check']['__bind_type__'] = 0;
 	$m['__getattr_check']['__args__'] = [null,null,['attr'],['attr_left'],['attr_right'],['attrstr'],['bound_methods'],['descriptors'],['attribute_checking'],['source_tracking']];
 	$m['getattr'] = function(obj, name, default_value) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
 		if (typeof default_value == 'undefined') default_value=arguments['callee']['__args__'][4][1];
 
 
@@ -8319,6 +9945,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['getattr']['__bind_type__'] = 0;
 	$m['getattr']['__args__'] = [null,null,['obj'],['name'],['default_value', null]];
 	$m['_del'] = function(obj) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (typeof obj['__delete__'] == 'function') {
@@ -8333,6 +9960,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['_del']['__bind_type__'] = 0;
 	$m['_del']['__args__'] = [null,null,['obj']];
 	$m['delattr'] = function(obj, name) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (typeof obj== 'undefined') {
@@ -8375,6 +10003,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['delattr']['__bind_type__'] = 0;
 	$m['delattr']['__args__'] = [null,null,['obj'],['name']];
 	$m['setattr'] = function(obj, name, value) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
 
 
     if (typeof obj== 'undefined') {
@@ -8405,6 +10034,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['setattr']['__bind_type__'] = 0;
 	$m['setattr']['__args__'] = [null,null,['obj'],['name'],['value']];
 	$m['hasattr'] = function(obj, name) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (typeof obj== 'undefined') {
@@ -8425,6 +10055,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['hasattr']['__bind_type__'] = 0;
 	$m['hasattr']['__args__'] = [null,null,['obj'],['name']];
 	$m['dir'] = function(obj) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (typeof obj== 'undefined') {
@@ -8447,10 +10078,11 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['dir']['__bind_type__'] = 0;
 	$m['dir']['__args__'] = [null,null,['obj']];
 	$m['filter'] = function(obj, method, sequence) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
 		if (typeof sequence == 'undefined') sequence=arguments['callee']['__args__'][4][1];
 		var $iter16_array,$iter17_nextval,$iter17_array,$iter17_iter,$iter16_type,items,$iter16_idx,item,$iter17_type,$iter16_nextval,$iter16_iter,$iter17_idx;
 		items = $p['list']([]);
-		if ($p['bool']((sequence === null))) {
+		if ($p['bool']($m['op_is'](sequence, null))) {
 			sequence = method;
 			method = obj;
 			$iter16_iter = sequence;
@@ -8479,10 +10111,11 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['filter']['__bind_type__'] = 0;
 	$m['filter']['__args__'] = [null,null,['obj'],['method'],['sequence', null]];
 	$m['map'] = function(obj, method, sequence) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
 		if (typeof sequence == 'undefined') sequence=arguments['callee']['__args__'][4][1];
 		var $iter18_type,$iter18_iter,$iter19_idx,$iter18_array,items,$iter19_nextval,$iter19_array,$iter19_iter,item,$iter18_idx,$iter19_type,$iter18_nextval;
 		items = $p['list']([]);
-		if ($p['bool']((sequence === null))) {
+		if ($p['bool']($m['op_is'](sequence, null))) {
 			sequence = method;
 			method = obj;
 			$iter18_iter = sequence;
@@ -8507,6 +10140,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['map']['__bind_type__'] = 0;
 	$m['map']['__args__'] = [null,null,['obj'],['method'],['sequence', null]];
 	$m['reduce'] = function(func, iterable, initializer) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
 		if (typeof initializer == 'undefined') initializer=arguments['callee']['__args__'][4][1];
 		var $iter20_iter,$iter20_nextval,$iter20_type,$iter20_idx,emtpy,$pyjs_try_err,value,$iter20_array;
 		try {
@@ -8566,11 +10200,12 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['reduce']['__bind_type__'] = 0;
 	$m['reduce']['__args__'] = [null,null,['func'],['iterable'],['initializer', (function(){return;})()]];
 	$m['zip'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] < 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, null, arguments['length']);
 		var iterables = $p['tuple']($pyjs_array_slice['call'](arguments,0,arguments['length']));
 
 		var $add50,$add49,i,n,lst,$pyjs_try_err,t;
 		n = $m['len'](iterables);
-		if ($p['bool']($m['op_eq'](n, 0))) {
+		if ($p['bool']($m['op_eq'](n, $constant_int_0))) {
 			return $p['list']([]);
 		}
 		lst = $p['list']([]);
@@ -8588,10 +10223,10 @@ throw $m['TypeError']("ord() expected string of length 1");
 		try {
 			while ($p['bool'](true)) {
 				t = $p['list']([]);
-				i = 0;
+				i = $constant_int_0;
 				while ($p['bool'](($m['cmp'](i, n) == -1))) {
 					t['append'](iterables['__getitem__'](i)['next']());
-					i = $m['__op_add']($add49=i,$add50=1);
+					i = $m['__op_add']($add49=i,$add50=$constant_int_1);
 				}
 				lst['append']($m['tuple'](t));
 			}
@@ -8608,6 +10243,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['zip']['__bind_type__'] = 0;
 	$m['zip']['__args__'] = ['iterables',null];
 	$m['sorted'] = function(iterable, cmp, key, reverse) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 4)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 4, arguments['length']);
 		if (typeof cmp == 'undefined') cmp=arguments['callee']['__args__'][3][1];
 		if (typeof key == 'undefined') key=arguments['callee']['__args__'][4][1];
 		if (typeof reverse == 'undefined') reverse=arguments['callee']['__args__'][5][1];
@@ -8621,17 +10257,18 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['sorted']['__bind_type__'] = 0;
 	$m['sorted']['__args__'] = [null,null,['iterable'],['cmp', null],['key', null],['reverse', false]];
 	$m['reversed'] = function(iterable) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var l,$pyjs_try_err,v,$and27,$and26;
 		if ($p['bool']($m['hasattr'](iterable, '__reversed__'))) {
 			return iterable['__reversed__']();
 		}
 		if ($p['bool'](($p['bool']($and26=$m['hasattr'](iterable, '__len__'))?$m['hasattr'](iterable, '__getitem__'):$and26))) {
-			if ($p['bool']($m['op_eq']($m['len'](iterable), 0))) {
+			if ($p['bool']($m['op_eq']($m['len'](iterable), $constant_int_0))) {
 				l = $p['list']([]);
 				return l['__iter__']();
 			}
 			try {
-				v = iterable['__getitem__'](0);
+				v = iterable['__getitem__']($constant_int_0);
 				return (typeof _reversed == "undefined"?$m['_reversed']:_reversed)(iterable);
 			} catch($pyjs_try_err) {
 				var $pyjs_try_err_name = (typeof $pyjs_try_err['__name__'] == 'undefined' ? $pyjs_try_err['name'] : $pyjs_try_err['__name__'] );
@@ -8648,6 +10285,7 @@ throw $m['TypeError']("ord() expected string of length 1");
 	$m['reversed']['__bind_type__'] = 0;
 	$m['reversed']['__args__'] = [null,null,['iterable']];
 	$m['_reversed'] = function(iterable) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $sub22,$sub19,$sub21,i,$sub20;
 var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc = null, $is_executing=false;
 		var $generator = function () {};
@@ -8747,10 +10385,10 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 				$generator_state[0]=2;
 			}
 			if ($generator_state[0] == 2) {
-				for (;($generator_state[1] > 0)||($p['bool'](($m['cmp'](i, 0) == 1)));$generator_state[1] = 0) {
+				for (;($generator_state[1] > 0)||($p['bool'](($m['cmp'](i, $constant_int_0) == 1)));$generator_state[1] = 0) {
 					if (typeof $generator_state[1] == 'undefined' || $generator_state[1] === 0) {
 						for (var $i = 1 ; $i < ($generator_state['length']<3?3:$generator_state['length']); $i++) $generator_state[$i]=0;
-						i = $m['__op_sub']($sub21=i,$sub22=1);
+						i = $m['__op_sub']($sub21=i,$sub22=$constant_int_1);
 						$yield_value = iterable['__getitem__'](i);
 						$yielding = true;
 						$generator_state[1] = 1;
@@ -8785,6 +10423,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['_reversed']['__bind_type__'] = 0;
 	$m['_reversed']['__args__'] = [null,null,['iterable']];
 	$m['enumerate'] = function(seq) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (typeof seq['__enumerate__'] == 'function') {
@@ -8798,6 +10437,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['enumerate']['__bind_type__'] = 0;
 	$m['enumerate']['__args__'] = [null,null,['seq']];
 	$m['_enumerate'] = function(sequence) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $add51,$add52,$add53,$add54,$iter22_array,$iter23_iter,$iter23_idx,$iter22_nextval,$iter22_idx,item,$iter23_nextval,nextIndex,$iter22_type,$iter23_type,$iter23_array,$iter22_iter;
 var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc = null, $is_executing=false;
 		var $generator = function () {};
@@ -8889,7 +10529,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 					$generator_state[0] = -1;
 					throw $exc;
 				}
-				nextIndex = 0;
+				nextIndex = $constant_int_0;
 				$iter23_iter = sequence;
 				$iter23_nextval=$p['__iter_prepare']($iter23_iter,false);
 				$generator_state[0]=1;
@@ -8915,7 +10555,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 							$generator_state[1] = -1;
 							throw $exc;
 						}
-						nextIndex = $m['__op_add']($add53=nextIndex,$add54=1);
+						nextIndex = $m['__op_add']($add53=nextIndex,$add54=$constant_int_1);
 						$generator_state[1]=2;
 					}
 					if ($generator_state[1] == 2) {
@@ -8938,9 +10578,10 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['_enumerate']['__bind_type__'] = 0;
 	$m['_enumerate']['__args__'] = [null,null,['sequence']];
 	$m['iter'] = function(iterable, sentinel) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof sentinel == 'undefined') sentinel=arguments['callee']['__args__'][3][1];
 
-		if ($p['bool']((sentinel === null))) {
+		if ($p['bool']($m['op_is'](sentinel, null))) {
 			if ($p['bool']((typeof isIteratable == "undefined"?$m['isIteratable']:isIteratable)(iterable))) {
 				return iterable['__iter__']();
 			}
@@ -8960,6 +10601,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['iter']['__bind_type__'] = 0;
 	$m['iter']['__args__'] = [null,null,['iterable'],['sentinel', null]];
 	$m['_iter_getitem'] = function(object) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $add55,$add56,$add57,i,$add58,$pyjs_try_err;
 var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc = null, $is_executing=false;
 		var $generator = function () {};
@@ -9051,7 +10693,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 					$generator_state[0] = -1;
 					throw $exc;
 				}
-				i = 0;
+				i = $constant_int_0;
 				$generator_state[0]=1;
 			}
 			if ($generator_state[0] == 1) {
@@ -9085,7 +10727,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 									$generator_state[2] = -1;
 									throw $exc;
 								}
-								i = $m['__op_add']($add57=i,$add58=1);
+								i = $m['__op_add']($add57=i,$add58=$constant_int_1);
 								$generator_state[2]=2;
 							}
 							if ($generator_state[2] == 2) {
@@ -9133,6 +10775,7 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['_iter_getitem']['__bind_type__'] = 0;
 	$m['_iter_getitem']['__args__'] = [null,null,['object']];
 	$m['_iter_callable'] = function(callable, sentinel) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 		var nextval;
 var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc = null, $is_executing=false;
 		var $generator = function () {};
@@ -9272,21 +10915,22 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['_iter_callable']['__bind_type__'] = 0;
 	$m['_iter_callable']['__args__'] = [null,null,['callable'],['sentinel']];
 	$m['min'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] < 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, null, arguments['length']);
 		var sequence = $p['tuple']($pyjs_array_slice['call'](arguments,0,arguments['length']));
 
 		var $iter24_idx,minValue,item,$iter24_array,$iter24_type,$iter24_iter,$iter24_nextval;
-		if ($p['bool']($m['op_eq']($m['len'](sequence), 1))) {
-			sequence = sequence['__getitem__'](0);
+		if ($p['bool']($m['op_eq']($m['len'](sequence), $constant_int_1))) {
+			sequence = sequence['__getitem__']($constant_int_0);
 		}
 		minValue = null;
 		$iter24_iter = sequence;
 		$iter24_nextval=$p['__iter_prepare']($iter24_iter,false);
 		while (typeof($p['__wrapped_next']($iter24_nextval)['$nextval']) != 'undefined') {
 			item = $iter24_nextval['$nextval'];
-			if ($p['bool']((minValue === null))) {
+			if ($p['bool']($m['op_is'](minValue, null))) {
 				minValue = item;
 			}
-			else if ($p['bool']($m['op_eq']($m['cmp'](item, minValue), (typeof ($usub9=1)=='number'?
+			else if ($p['bool']($m['op_eq']($m['cmp'](item, minValue), (typeof ($usub9=$constant_int_1)=='number'?
 				-$usub9:
 				$m['op_usub']($usub9))))) {
 				minValue = item;
@@ -9299,21 +10943,22 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['min']['__bind_type__'] = 0;
 	$m['min']['__args__'] = ['sequence',null];
 	$m['max'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] < 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, null, arguments['length']);
 		var sequence = $p['tuple']($pyjs_array_slice['call'](arguments,0,arguments['length']));
 
 		var $iter25_nextval,$iter25_array,maxValue,$iter25_iter,item,$iter25_idx,$iter25_type;
-		if ($p['bool']($m['op_eq']($m['len'](sequence), 1))) {
-			sequence = sequence['__getitem__'](0);
+		if ($p['bool']($m['op_eq']($m['len'](sequence), $constant_int_1))) {
+			sequence = sequence['__getitem__']($constant_int_0);
 		}
 		maxValue = null;
 		$iter25_iter = sequence;
 		$iter25_nextval=$p['__iter_prepare']($iter25_iter,false);
 		while (typeof($p['__wrapped_next']($iter25_nextval)['$nextval']) != 'undefined') {
 			item = $iter25_nextval['$nextval'];
-			if ($p['bool']((maxValue === null))) {
+			if ($p['bool']($m['op_is'](maxValue, null))) {
 				maxValue = item;
 			}
-			else if ($p['bool']($m['op_eq']($m['cmp'](item, maxValue), 1))) {
+			else if ($p['bool']($m['op_eq']($m['cmp'](item, maxValue), $constant_int_1))) {
 				maxValue = item;
 			}
 		}
@@ -9324,10 +10969,11 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 	$m['max']['__bind_type__'] = 0;
 	$m['max']['__args__'] = ['sequence',null];
 	$m['sum'] = function(iterable, start) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof start == 'undefined') start=arguments['callee']['__args__'][3][1];
 		var i,$iter26_type,$iter26_nextval,$add59,$iter26_idx,$iter26_array,$iter26_iter,$add60;
-		if ($p['bool']((start === null))) {
-			start = 0;
+		if ($p['bool']($m['op_is'](start, null))) {
+			start = $constant_int_0;
 		}
 		$iter26_iter = iterable;
 		$iter26_nextval=$p['__iter_prepare']($iter26_iter,false);
@@ -9349,10 +10995,20 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 		$method = $pyjs__bind_method2('__init__', function(real, imag) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				real = arguments[1];
 				imag = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'd20759f5cde02ecde599fb331b8cfe8a') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['real'] = $m['float'](real);
@@ -9364,8 +11020,18 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 		$method = $pyjs__bind_method2('__repr__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'd20759f5cde02ecde599fb331b8cfe8a') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr134,$attr133,$attr132,$attr131,$attr130,$attr127,$attr128,$attr129;
 			if ($p['bool'](self['real'])) {
@@ -9381,9 +11047,19 @@ var $generator_state = [0], $generator_exc = [null], $yield_value = null, $exc =
 		$method = $pyjs__bind_method2('__add__', function(b) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				b = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'd20759f5cde02ecde599fb331b8cfe8a') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr142,$add64,$attr140,$add61,$attr144,$add63,$add62,$add66,$add65,$attr145,$attr141,$attr137,$attr136,$attr135,$attr146,$attr139,$attr138,$attr143;
 			if ($p['bool']($m['isinstance'](b, $m['complex']))) {
@@ -9501,6 +11177,7 @@ $p['hash'] = function(obj) {
         
 	}
 	$m['isObject'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return (a!== null && (typeof a== 'object')) || typeof a== 'function';
@@ -9511,6 +11188,7 @@ $p['hash'] = function(obj) {
 	$m['isObject']['__bind_type__'] = 0;
 	$m['isObject']['__args__'] = [null,null,['a']];
 	$m['isFunction'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return typeof a== 'function';
@@ -9522,6 +11200,7 @@ $p['hash'] = function(obj) {
 	$m['isFunction']['__args__'] = [null,null,['a']];
 	$m['callable'] = $m['isFunction'];
 	$m['isString'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return typeof a== 'string';
@@ -9532,6 +11211,7 @@ $p['hash'] = function(obj) {
 	$m['isString']['__bind_type__'] = 0;
 	$m['isString']['__args__'] = [null,null,['a']];
 	$m['isNull'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return typeof a== 'object' && !a;
@@ -9542,6 +11222,7 @@ $p['hash'] = function(obj) {
 	$m['isNull']['__bind_type__'] = 0;
 	$m['isNull']['__args__'] = [null,null,['a']];
 	$m['isArray'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return $m['isObject'](a) && a['constructor'] === Array;
@@ -9552,6 +11233,7 @@ $p['hash'] = function(obj) {
 	$m['isArray']['__bind_type__'] = 0;
 	$m['isArray']['__args__'] = [null,null,['a']];
 	$m['isUndefined'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return typeof a== 'undefined';
@@ -9562,6 +11244,7 @@ $p['hash'] = function(obj) {
 	$m['isUndefined']['__bind_type__'] = 0;
 	$m['isUndefined']['__args__'] = [null,null,['a']];
 	$m['isIteratable'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (a=== null) return false;
@@ -9573,6 +11256,7 @@ $p['hash'] = function(obj) {
 	$m['isIteratable']['__bind_type__'] = 0;
 	$m['isIteratable']['__args__'] = [null,null,['a']];
 	$m['isNumber'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     return a!== null && a['__number__'] &&
@@ -9584,6 +11268,7 @@ $p['hash'] = function(obj) {
 	$m['isNumber']['__bind_type__'] = 0;
 	$m['isNumber']['__args__'] = [null,null,['a']];
 	$m['isInteger'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     switch (a['__number__']) {
@@ -9601,6 +11286,7 @@ $p['hash'] = function(obj) {
 	$m['isInteger']['__bind_type__'] = 0;
 	$m['isInteger']['__args__'] = [null,null,['a']];
 	$m['isSet'] = function(a) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (a=== null) return false;
@@ -9620,6 +11306,7 @@ $p['hash'] = function(obj) {
 	$m['isSet']['__bind_type__'] = 0;
 	$m['isSet']['__args__'] = [null,null,['a']];
 	$m['toJSObjects'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $attr148,$attr147;
 		if ($p['bool']($m['isArray'](x))) {
 
@@ -9677,6 +11364,7 @@ $p['hash'] = function(obj) {
 	$m['toJSObjects']['__bind_type__'] = 0;
 	$m['toJSObjects']['__args__'] = [null,null,['x']];
 	$m['sprintf'] = function(strng, args) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     var re_exp = /(.*)([+-])(.*)/;
@@ -9784,14 +11472,14 @@ $p['hash'] = function(obj) {
                 subst = $m['str'](param);
                 break;
             case 'o':
-                param = $p['float_int'](param);
+                param = $p['int'](param);
                 subst = param['toString'](8);
                 if (subst != '0' && flags['indexOf']('#') >= 0) {
                     subst = '0' + subst;
                 }
                 break;
             case 'x':
-                param = $p['float_int'](param);
+                param = $p['int'](param);
                 subst = param['toString'](16);
                 if (flags['indexOf']('#') >= 0) {
                     if (left_padding) {
@@ -9801,7 +11489,7 @@ $p['hash'] = function(obj) {
                 }
                 break;
             case 'X':
-                param = $p['float_int'](param);
+                param = $p['int'](param);
                 subst = param['toString'](16)['toUpperCase']();
                 if (flags['indexOf']('#') >= 0) {
                     if (left_padding) {
@@ -9892,6 +11580,7 @@ $p['hash'] = function(obj) {
 	$m['sprintf']['__args__'] = [null,null,['strng'],['args']];
 	$m['__module_internals'] = $m['set']($p['list'](['__track_lines__']));
 	$m['_globals'] = function(module) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $iter27_nextval,d,$iter27_array,$iter27_idx,$iter27_iter,$iter27_type,name;
 		d = $m['dict']();
 		$iter27_iter = $m['dir'](module);
@@ -9909,6 +11598,7 @@ $p['hash'] = function(obj) {
 	$m['_globals']['__bind_type__'] = 0;
 	$m['_globals']['__args__'] = [null,null,['module']];
 	$m['debugReport'] = function(msg) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     $p['printFunc']([msg], true);
@@ -9940,6 +11630,7 @@ if (   typeof $wnd['console'] != 'undefined'
 }
 
 	$m['_print_to_console'] = function(s) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if ($printFunc === null) return null;
@@ -9951,6 +11642,7 @@ if (   typeof $wnd['console'] != 'undefined'
 	$m['_print_to_console']['__bind_type__'] = 0;
 	$m['_print_to_console']['__args__'] = [null,null,['s']];
 	$m['printFunc'] = function(objs, newline) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     var s = "";
@@ -9969,11 +11661,12 @@ if (   typeof $wnd['console'] != 'undefined'
 	$m['printFunc']['__bind_type__'] = 0;
 	$m['printFunc']['__args__'] = [null,null,['objs'],['newline']];
 	$m['pow'] = function(x, y, z) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
 		if (typeof z == 'undefined') z=arguments['callee']['__args__'][4][1];
 		var p,$mod1,$mod2;
 		p = null;
 p = Math['pow'](x, y);
-		if ($p['bool']((z === null))) {
+		if ($p['bool']($m['op_is'](z, null))) {
 			return $m['float'](p);
 		}
 		return $m['float']((typeof ($mod1=p)==typeof ($mod2=z) && typeof $mod1=='number'?
@@ -9985,6 +11678,7 @@ p = Math['pow'](x, y);
 	$m['pow']['__bind_type__'] = 0;
 	$m['pow']['__args__'] = [null,null,['x'],['y'],['z', null]];
 	$m['hex'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (typeof x == 'number') {
@@ -10008,6 +11702,7 @@ p = Math['pow'](x, y);
 	$m['hex']['__bind_type__'] = 0;
 	$m['hex']['__args__'] = [null,null,['x']];
 	$m['oct'] = function(x) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
 
     if (typeof x == 'number') {
@@ -10031,9 +11726,10 @@ p = Math['pow'](x, y);
 	$m['oct']['__bind_type__'] = 0;
 	$m['oct']['__args__'] = [null,null,['x']];
 	$m['round'] = function(x, n) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof n == 'undefined') n=arguments['callee']['__args__'][3][1];
 		var r;
-		n = $m['pow'](10, n);
+		n = $m['pow']($constant_int_10, n);
 		r = null;
 r = Math['round'](n*x)/n;
 		return $m['float'](r);
@@ -10041,8 +11737,9 @@ r = Math['round'](n*x)/n;
 	$m['round']['__name__'] = 'round';
 
 	$m['round']['__bind_type__'] = 0;
-	$m['round']['__args__'] = [null,null,['x'],['n', 0]];
+	$m['round']['__args__'] = [null,null,['x'],['n', $constant_int_0]];
 	$m['divmod'] = function(x, y) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 
 
     if (x !== null && y !== null) {
@@ -10064,11 +11761,11 @@ r = Math['round'](n*x)/n;
             case 0x0202:
                 if (y['__v'] == 0) throw $m['ZeroDivisionError']('integer division or modulo by zero');
                 var f = Math['floor'](x['__v'] / y['__v']);
-                return $m['tuple']([new $p['float_int'](f), new $p['float_int'](x['__v'] - f * y['__v'])]);
+                return $m['tuple']([new $p['int'](f), new $p['int'](x['__v'] - f * y['__v'])]);
             case 0x0204:
-                return y['__rdivmod__'](new $p['float_int'](x['__v']));
+                return y['__rdivmod__'](new $p['long'](x['__v']));
             case 0x0402:
-                return x['__divmod__'](new $p['float_int'](y['__v']));
+                return x['__divmod__'](new $p['long'](y['__v']));
             case 0x0404:
                 return x['__divmod__'](y);
         }
@@ -10091,6 +11788,7 @@ r = Math['round'](n*x)/n;
 	$m['divmod']['__bind_type__'] = 0;
 	$m['divmod']['__args__'] = [null,null,['x'],['y']];
 	$m['all'] = function(iterable) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $iter28_array,$iter28_nextval,$iter28_idx,element,$iter28_iter,$iter28_type;
 		$iter28_iter = iterable;
 		$iter28_nextval=$p['__iter_prepare']($iter28_iter,false);
@@ -10107,6 +11805,7 @@ r = Math['round'](n*x)/n;
 	$m['all']['__bind_type__'] = 0;
 	$m['all']['__args__'] = [null,null,['iterable']];
 	$m['any'] = function(iterable) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 		var $iter29_type,$iter29_iter,element,$iter29_nextval,$iter29_idx,$iter29_array;
 		$iter29_iter = iterable;
 		$iter29_nextval=$p['__iter_prepare']($iter29_iter,false);
@@ -10130,8 +11829,18 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('__init__', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '620b5610687ac0254c025fd566da78e6') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['l'] = $p['list']([]);
@@ -10143,9 +11852,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('append', function(s) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				s = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '620b5610687ac0254c025fd566da78e6') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['l']['append'](s);
@@ -10156,11 +11875,21 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('append_slice', function(s, start, end) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				s = arguments[1];
 				start = arguments[2];
 				end = arguments[3];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '620b5610687ac0254c025fd566da78e6') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['l']['append']($p['__getslice'](s, start, end));
@@ -10171,10 +11900,20 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('append_multiple_char', function(c, times) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				c = arguments[1];
 				times = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '620b5610687ac0254c025fd566da78e6') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $mul2,$mul1;
 			self['l']['append']((typeof ($mul1=c)==typeof ($mul2=times) && typeof $mul1=='number'?
@@ -10187,8 +11926,18 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('build', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '620b5610687ac0254c025fd566da78e6') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr149,$attr150;
 			return self['tp']('')['join'](self['l']);
@@ -10199,17 +11948,18 @@ r = Math['round'](n*x)/n;
 		return $pyjs_type('StringBuilder', $bases, $cls_definition);
 	})();
 	$m['_parse_int'] = function(s, start, end) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
 		var $sub23,c,$add70,$sub24,i,$add69,$add67,$add68,$pyjs_try_err,result,msg,$mul4,$mul3;
-		result = 0;
+		result = $constant_int_0;
 		i = start;
 		while ($p['bool'](($m['cmp'](i, end) == -1))) {
 			c = $m['ord'](s['__getitem__'](i));
 			if ($p['bool']((($m['cmp']($m['ord']('0'), ($compare1 = c)) < 1)&&($m['cmp']($compare1, ($compare2 = $m['ord']('9'))) < 1)))) {
 				try {
-					result = (typeof ($mul3=result)==typeof ($mul4=10) && typeof $mul3=='number'?
+					result = (typeof ($mul3=result)==typeof ($mul4=$constant_int_10) && typeof $mul3=='number'?
 						$mul3*$mul4:
 						$m['op_mul']($mul3,$mul4));
-					if ($p['bool'](($m['cmp'](result, 1000000000) == 1))) {
+					if ($p['bool'](($m['cmp'](result, $constant_int_1000000000) == 1))) {
 						throw ($m['OverflowError']);
 					}
 				} catch($pyjs_try_err) {
@@ -10225,10 +11975,10 @@ r = Math['round'](n*x)/n;
 			else {
 				break;
 			}
-			i = $m['__op_add']($add69=i,$add70=1);
+			i = $m['__op_add']($add69=i,$add70=$constant_int_1);
 		}
 		if ($p['bool']($m['op_eq'](i, start))) {
-			result = (typeof ($usub10=1)=='number'?
+			result = (typeof ($usub10=$constant_int_1)=='number'?
 				-$usub10:
 				$m['op_usub']($usub10));
 		}
@@ -10243,16 +11993,26 @@ r = Math['round'](n*x)/n;
 		var $method;
 		$cls_definition['__module__'] = 'pyjslib';
 		$cls_definition['__md5__'] = '99d4cfa142843b6f836a504118f1e987';
-		$cls_definition['ANS_INIT'] = 1;
-		$cls_definition['ANS_AUTO'] = 2;
-		$cls_definition['ANS_MANUAL'] = 3;
+		$cls_definition['ANS_INIT'] = $constant_int_1;
+		$cls_definition['ANS_AUTO'] = $constant_int_2;
+		$cls_definition['ANS_MANUAL'] = $constant_int_3;
 		$method = $pyjs__bind_method2('__init__', function(space, template) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				space = arguments[1];
 				template = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['space'] = space;
@@ -10266,36 +12026,56 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('build', function(args, kw) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				args = arguments[1];
 				kw = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr154,$attr151,$attr153,$attr152;
 			var $tupleassign5 = $p['__ass_unpack']($p['tuple']([args, kw]), 2, null);
 			self['args'] = $tupleassign5[0];
 			self['kwargs'] = $tupleassign5[1];
-			self['auto_numbering'] = 0;
+			self['auto_numbering'] = $constant_int_0;
 			self['auto_numbering_state'] = self['ANS_INIT'];
-			return self['_build_string'](0, $m['len'](self['template']), 2);
+			return self['_build_string']($constant_int_0, $m['len'](self['template']), $constant_int_2);
 		}
 	, 1, [null,null,['self'],['args'],['kw']]);
 		$cls_definition['build'] = $method;
 		$method = $pyjs__bind_method2('_build_string', function(start, end, level) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				start = arguments[1];
 				end = arguments[2];
 				level = arguments[3];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 4, 4, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr155,$attr156,$sub25,s,$sub26,out;
 			out = $m['StringBuilder']();
 			if ($p['bool'](!$p['bool'](level))) {
 				throw ($m['ValueError']('Recursion depth exceeded'));
 			}
-			level = $m['__op_sub']($sub25=level,$sub26=1);
+			level = $m['__op_sub']($sub25=level,$sub26=$constant_int_1);
 			s = self['template'];
 			return self['_do_build_string'](start, end, level, out, s);
 		}
@@ -10304,6 +12084,7 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_do_build_string', function(start, end, level, out, s) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 5) $pyjs__exception_func_param(arguments['callee']['__name__'], 6, 6, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				start = arguments[1];
@@ -10311,6 +12092,15 @@ r = Math['round'](n*x)/n;
 				level = arguments[3];
 				out = arguments[4];
 				s = arguments[5];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 6) $pyjs__exception_func_param(arguments['callee']['__name__'], 6, 6, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var field_start,rendered,$sub27,$add82,$sub28,$sub29,nested,$add79,recursive,last_literal,$add81,$sub30,$add80,$add77,$or9,$or8,$add74,$add76,markup_follows,c,$add75,$add72,$add73,i,$add71,$add78,at_end,$or11,$or10,$assign2;
 			$assign2 = start;
@@ -10318,7 +12108,7 @@ r = Math['round'](n*x)/n;
 			i = $assign2;
 			while ($p['bool'](($m['cmp'](i, end) == -1))) {
 				c = s['__getitem__'](i);
-				i = $m['__op_add']($add71=i,$add72=1);
+				i = $m['__op_add']($add71=i,$add72=$constant_int_1);
 				if ($p['bool'](($p['bool']($or8=$m['op_eq'](c, '{'))?$or8:$m['op_eq'](c, '}')))) {
 					at_end = $m['op_eq'](i, end);
 					markup_follows = true;
@@ -10326,7 +12116,7 @@ r = Math['round'](n*x)/n;
 						if ($p['bool'](($p['bool']($or10=at_end)?$or10:!$m['op_eq'](s['__getitem__'](i), '}')))) {
 							throw ($m['ValueError']("Single '}'"));
 						}
-						i = $m['__op_add']($add73=i,$add74=1);
+						i = $m['__op_add']($add73=i,$add74=$constant_int_1);
 						markup_follows = false;
 					}
 					if ($p['bool']($m['op_eq'](c, '{'))) {
@@ -10334,38 +12124,38 @@ r = Math['round'](n*x)/n;
 							throw ($m['ValueError']("Single '{'"));
 						}
 						if ($p['bool']($m['op_eq'](s['__getitem__'](i), '{'))) {
-							i = $m['__op_add']($add75=i,$add76=1);
+							i = $m['__op_add']($add75=i,$add76=$constant_int_1);
 							markup_follows = false;
 						}
 					}
-					out['append_slice'](s, last_literal, $m['__op_sub']($sub27=i,$sub28=1));
+					out['append_slice'](s, last_literal, $m['__op_sub']($sub27=i,$sub28=$constant_int_1));
 					if ($p['bool'](!$p['bool'](markup_follows))) {
 						last_literal = i;
 						continue;
 					}
-					nested = 1;
+					nested = $constant_int_1;
 					field_start = i;
 					recursive = false;
 					while ($p['bool'](($m['cmp'](i, end) == -1))) {
 						c = s['__getitem__'](i);
 						if ($p['bool']($m['op_eq'](c, '{'))) {
 							recursive = true;
-							nested = $m['__op_add']($add77=nested,$add78=1);
+							nested = $m['__op_add']($add77=nested,$add78=$constant_int_1);
 						}
 						else if ($p['bool']($m['op_eq'](c, '}'))) {
-							nested = $m['__op_sub']($sub29=nested,$sub30=1);
+							nested = $m['__op_sub']($sub29=nested,$sub30=$constant_int_1);
 							if ($p['bool'](!$p['bool'](nested))) {
 								break;
 							}
 						}
-						i = $m['__op_add']($add79=i,$add80=1);
+						i = $m['__op_add']($add79=i,$add80=$constant_int_1);
 					}
 					if ($p['bool'](nested)) {
 						throw ($m['ValueError']("Unmatched '{'"));
 					}
 					rendered = self['_render_field'](field_start, i, recursive, level);
 					out['append'](rendered);
-					i = $m['__op_add']($add81=i,$add82=1);
+					i = $m['__op_add']($add81=i,$add82=$constant_int_1);
 					last_literal = i;
 				}
 			}
@@ -10377,10 +12167,20 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_parse_field', function(start, end) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				start = arguments[1];
 				end = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add89,$add88,$add83,$add87,$add86,$add85,$add84,conversion,end_name,$add90,w_msg,c,$add92,$add91,$attr157,i,$attr158,s,$or13,$or12;
 			s = self['template'];
@@ -10390,28 +12190,28 @@ r = Math['round'](n*x)/n;
 				if ($p['bool'](($p['bool']($or12=$m['op_eq'](c, ':'))?$or12:$m['op_eq'](c, '!')))) {
 					end_name = i;
 					if ($p['bool']($m['op_eq'](c, '!'))) {
-						i = $m['__op_add']($add83=i,$add84=1);
+						i = $m['__op_add']($add83=i,$add84=$constant_int_1);
 						if ($p['bool']($m['op_eq'](i, end))) {
 							w_msg = 'expected conversion';
 							throw ($m['ValueError'](w_msg));
 						}
 						conversion = s['__getitem__'](i);
-						i = $m['__op_add']($add85=i,$add86=1);
+						i = $m['__op_add']($add85=i,$add86=$constant_int_1);
 						if ($p['bool'](($m['cmp'](i, end) == -1))) {
 							if ($p['bool'](!$m['op_eq'](s['__getitem__'](i), ':'))) {
 								w_msg = "expected ':' after format specifier";
 								throw ($m['ValueError'](w_msg));
 							}
-							i = $m['__op_add']($add87=i,$add88=1);
+							i = $m['__op_add']($add87=i,$add88=$constant_int_1);
 						}
 					}
 					else {
 						conversion = null;
-						i = $m['__op_add']($add89=i,$add90=1);
+						i = $m['__op_add']($add89=i,$add90=$constant_int_1);
 					}
 					return $p['tuple']([$p['__getslice'](s, start, end_name), conversion, i]);
 				}
-				i = $m['__op_add']($add91=i,$add92=1);
+				i = $m['__op_add']($add91=i,$add92=$constant_int_1);
 			}
 			return $p['tuple']([$p['__getslice'](s, start, end), null, end]);
 		}
@@ -10420,37 +12220,47 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_get_argument', function(name) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				name = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr173,kwarg,$and29,$and28,arg_key,$attr177,index,end,$attr169,$attr164,$attr165,$attr167,$attr160,$attr161,$attr162,$attr163,$pyjs_try_err,use_numeric,msg,empty,w_msg,$add94,$add95,$add96,stop,$add93,$attr168,c,$attr178,i,$attr176,$attr175,$attr174,$attr159,$attr172,$attr171,$attr170,$or15,$or14,$or17,$or16,$attr166,w_arg;
-			i = 0;
+			i = $constant_int_0;
 			end = $m['len'](name);
 			while ($p['bool'](($m['cmp'](i, end) == -1))) {
 				c = name['__getitem__'](i);
 				if ($p['bool'](($p['bool']($or14=$m['op_eq'](c, '['))?$or14:$m['op_eq'](c, '.')))) {
 					break;
 				}
-				i = $m['__op_add']($add93=i,$add94=1);
+				i = $m['__op_add']($add93=i,$add94=$constant_int_1);
 			}
 			empty = !$p['bool'](i);
 			if ($p['bool'](empty)) {
-				index = (typeof ($usub11=1)=='number'?
+				index = (typeof ($usub11=$constant_int_1)=='number'?
 					-$usub11:
 					$m['op_usub']($usub11));
 			}
 			else {
-				var $tupleassign6 = $p['__ass_unpack']($m['_parse_int'](name, 0, i), 2, null);
+				var $tupleassign6 = $p['__ass_unpack']($m['_parse_int'](name, $constant_int_0, i), 2, null);
 				index = $tupleassign6[0];
 				stop = $tupleassign6[1];
 				if ($p['bool'](!$m['op_eq'](stop, i))) {
-					index = (typeof ($usub12=1)=='number'?
+					index = (typeof ($usub12=$constant_int_1)=='number'?
 						-$usub12:
 						$m['op_usub']($usub12));
 				}
 			}
-			use_numeric = ($p['bool']($or16=empty)?$or16:!$m['op_eq'](index, (typeof ($usub13=1)=='number'?
+			use_numeric = ($p['bool']($or16=empty)?$or16:!$m['op_eq'](index, (typeof ($usub13=$constant_int_1)=='number'?
 				-$usub13:
 				$m['op_usub']($usub13))));
 			if ($p['bool'](($p['bool']($and28=$m['op_eq'](self['auto_numbering_state'], self['ANS_INIT']))?use_numeric:$and28))) {
@@ -10475,9 +12285,9 @@ r = Math['round'](n*x)/n;
 			}
 			if ($p['bool'](empty)) {
 				index = self['auto_numbering'];
-				self['auto_numbering'] = $m['__op_add']($add95=self['auto_numbering'],$add96=1);
+				self['auto_numbering'] = $m['__op_add']($add95=self['auto_numbering'],$add96=$constant_int_1);
 			}
-			if ($p['bool']($m['op_eq'](index, (typeof ($usub14=1)=='number'?
+			if ($p['bool']($m['op_eq'](index, (typeof ($usub14=$constant_int_1)=='number'?
 				-$usub14:
 				$m['op_usub']($usub14))))) {
 				kwarg = $p['__getslice'](name, 0, i);
@@ -10515,33 +12325,43 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_resolve_lookups', function(w_obj, name, start, end) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 5, 5, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_obj = arguments[1];
 				name = arguments[2];
 				start = arguments[3];
 				end = arguments[4];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 5) $pyjs__exception_func_param(arguments['callee']['__name__'], 5, 5, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var got_bracket,$attr182,reached,$add99,index,w_attr,msg,w_item,$add101,$add100,$add103,$add102,$add98,$add104,$add106,$add97,w_msg,$attr180,$attr181,$and30,$and31,c,$attr179,i,$add105,$or19,$or18;
 			i = start;
 			while ($p['bool'](($m['cmp'](i, end) == -1))) {
 				c = name['__getitem__'](i);
 				if ($p['bool']($m['op_eq'](c, '.'))) {
-					i = $m['__op_add']($add97=i,$add98=1);
+					i = $m['__op_add']($add97=i,$add98=$constant_int_1);
 					start = i;
 					while ($p['bool'](($m['cmp'](i, end) == -1))) {
 						c = name['__getitem__'](i);
 						if ($p['bool'](($p['bool']($or18=$m['op_eq'](c, '['))?$or18:$m['op_eq'](c, '.')))) {
 							break;
 						}
-						i = $m['__op_add']($add99=i,$add100=1);
+						i = $m['__op_add']($add99=i,$add100=$constant_int_1);
 					}
 					if ($p['bool']($m['op_eq'](start, i))) {
 						w_msg = 'Empty attribute in format string';
 						throw ($m['ValueError'](w_msg));
 					}
 					w_attr = $p['__getslice'](name, start, i);
-					if ($p['bool']((w_obj !== null))) {
+					if ($p['bool'](!$m['op_is'](w_obj, null))) {
 						w_obj = $m['getattr'](w_obj, w_attr);
 					}
 					else {
@@ -10550,7 +12370,7 @@ r = Math['round'](n*x)/n;
 				}
 				else if ($p['bool']($m['op_eq'](c, '['))) {
 					got_bracket = false;
-					i = $m['__op_add']($add101=i,$add102=1);
+					i = $m['__op_add']($add101=i,$add102=$constant_int_1);
 					start = i;
 					while ($p['bool'](($m['cmp'](i, end) == -1))) {
 						c = name['__getitem__'](i);
@@ -10558,7 +12378,7 @@ r = Math['round'](n*x)/n;
 							got_bracket = true;
 							break;
 						}
-						i = $m['__op_add']($add103=i,$add104=1);
+						i = $m['__op_add']($add103=i,$add104=$constant_int_1);
 					}
 					if ($p['bool'](!$p['bool'](got_bracket))) {
 						throw ($m['ValueError']("Missing ']'"));
@@ -10569,7 +12389,7 @@ r = Math['round'](n*x)/n;
 					var $tupleassign7 = $p['__ass_unpack']($m['_parse_int'](name, start, i), 2, null);
 					index = $tupleassign7[0];
 					reached = $tupleassign7[1];
-					if ($p['bool'](($p['bool']($and30=!$m['op_eq'](index, (typeof ($usub15=1)=='number'?
+					if ($p['bool'](($p['bool']($and30=!$m['op_eq'](index, (typeof ($usub15=$constant_int_1)=='number'?
 						-$usub15:
 						$m['op_usub']($usub15))))?$m['op_eq'](reached, i):$and30))) {
 						w_item = index;
@@ -10577,8 +12397,8 @@ r = Math['round'](n*x)/n;
 					else {
 						w_item = $p['__getslice'](name, start, i);
 					}
-					i = $m['__op_add']($add105=i,$add106=1);
-					if ($p['bool']((w_obj !== null))) {
+					i = $m['__op_add']($add105=i,$add106=$constant_int_1);
+					if ($p['bool'](!$m['op_is'](w_obj, null))) {
 						w_obj = w_obj['__getitem__'](w_item);
 					}
 					else {
@@ -10597,36 +12417,46 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('formatter_field_name_split', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var index,c,w_first,end,name,$add107,i,$add108,$attr184,$attr185,stop,$attr183,$or21,$attr186,$or20;
 			name = self['template'];
-			i = 0;
+			i = $constant_int_0;
 			end = $m['len'](name);
 			while ($p['bool'](($m['cmp'](i, end) == -1))) {
 				c = name['__getitem__'](i);
 				if ($p['bool'](($p['bool']($or20=$m['op_eq'](c, '['))?$or20:$m['op_eq'](c, '.')))) {
 					break;
 				}
-				i = $m['__op_add']($add107=i,$add108=1);
+				i = $m['__op_add']($add107=i,$add108=$constant_int_1);
 			}
-			if ($p['bool']($m['op_eq'](i, 0))) {
-				index = (typeof ($usub16=1)=='number'?
+			if ($p['bool']($m['op_eq'](i, $constant_int_0))) {
+				index = (typeof ($usub16=$constant_int_1)=='number'?
 					-$usub16:
 					$m['op_usub']($usub16));
 			}
 			else {
-				var $tupleassign8 = $p['__ass_unpack']($m['_parse_int'](name, 0, i), 2, null);
+				var $tupleassign8 = $p['__ass_unpack']($m['_parse_int'](name, $constant_int_0, i), 2, null);
 				index = $tupleassign8[0];
 				stop = $tupleassign8[1];
 				if ($p['bool'](!$m['op_eq'](stop, i))) {
-					index = (typeof ($usub17=1)=='number'?
+					index = (typeof ($usub17=$constant_int_1)=='number'?
 						-$usub17:
 						$m['op_usub']($usub17));
 				}
 			}
-			if ($p['bool'](((($m['cmp'](index, 0))|1) == 1))) {
+			if ($p['bool'](((($m['cmp'](index, $constant_int_0))|1) == 1))) {
 				w_first = index;
 			}
 			else {
@@ -10641,13 +12471,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_convert', function(w_obj, conversion) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_obj = arguments[1];
 				conversion = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var conv;
-			conv = conversion['__getitem__'](0);
+			conv = conversion['__getitem__']($constant_int_0);
 			if ($p['bool']($m['op_eq'](conv, 'r'))) {
 				return $m['repr'](w_obj);
 			}
@@ -10664,12 +12504,22 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_render_field', function(start, end, recursive, level) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 4) $pyjs__exception_func_param(arguments['callee']['__name__'], 5, 5, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				start = arguments[1];
 				end = arguments[2];
 				recursive = arguments[3];
 				level = arguments[4];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 5) $pyjs__exception_func_param(arguments['callee']['__name__'], 5, 5, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr191,$attr190,$attr193,$attr192,$attr195,$attr194,$attr197,$attr196,$attr198,$add110,conversion,spec,$sub31,$sub32,$attr188,$attr189,$add109,$attr187,w_obj,w_entry,startm1,name,w_rendered,spec_start;
 			var $tupleassign9 = $p['__ass_unpack'](self['_parse_field'](start, end), 3, null);
@@ -10677,20 +12527,20 @@ r = Math['round'](n*x)/n;
 			conversion = $tupleassign9[1];
 			spec_start = $tupleassign9[2];
 			spec = $p['__getslice'](self['template'], spec_start, end);
-			if ($p['bool']((self['parser_list_w'] !== null))) {
-				if ($p['bool']($m['op_eq'](level, 1))) {
-					startm1 = $m['__op_sub']($sub31=start,$sub32=1);
+			if ($p['bool'](!$m['op_is'](self['parser_list_w'], null))) {
+				if ($p['bool']($m['op_eq'](level, $constant_int_1))) {
+					startm1 = $m['__op_sub']($sub31=start,$sub32=$constant_int_1);
 					if (!( ((($m['cmp'](startm1, self['last_end']))|1) == 1) )) {
 					   throw $m['AssertionError']();
 					 }
 					w_entry = self['space']['newtuple']($p['list']([$p['__getslice'](self['template'], self['last_end'], startm1), name, spec, conversion]));
 					self['parser_list_w']['append'](w_entry);
-					self['last_end'] = $m['__op_add']($add109=end,$add110=1);
+					self['last_end'] = $m['__op_add']($add109=end,$add110=$constant_int_1);
 				}
 				return self['empty'];
 			}
 			w_obj = self['_get_argument'](name);
-			if ($p['bool']((conversion !== null))) {
+			if ($p['bool'](!$m['op_is'](conversion, null))) {
 				w_obj = self['_convert'](w_obj, conversion);
 			}
 			if ($p['bool'](recursive)) {
@@ -10704,13 +12554,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('formatter_parser', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '99d4cfa142843b6f836a504118f1e987') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var w_lastentry,$attr215,$attr211,$attr210,$attr199,$attr216,$attr212,$attr214,$attr209,$attr208,$attr213,$attr205,$attr204,$attr207,$attr206,$attr201,$attr200,$attr203,$attr202;
 			self['parser_list_w'] = $p['list']([]);
-			self['last_end'] = 0;
-			self['_build_string'](0, $m['len'](self['template']), 2);
+			self['last_end'] = $constant_int_0;
+			self['_build_string']($constant_int_0, $m['len'](self['template']), $constant_int_2);
 			if ($p['bool'](($m['cmp'](self['last_end'], $m['len'](self['template'])) == -1))) {
 				w_lastentry = self['space']['newtuple']($p['list']([$p['__getslice'](self['template'], self['last_end'], null), self['space']['w_None'], self['space']['w_None'], self['space']['w_None']]));
 				self['parser_list_w']['append'](w_lastentry);
@@ -10738,10 +12598,20 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_int_or_long', function(w_num, kind) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_num = arguments[1];
 				kind = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2ef02f2050d704b3973cfbcfe119ce80') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['NotImplementedError']);
@@ -10752,9 +12622,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_float', function(w_num) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_num = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2ef02f2050d704b3973cfbcfe119ce80') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['NotImplementedError']);
@@ -10765,9 +12645,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_complex', function(w_num) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_num = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '2ef02f2050d704b3973cfbcfe119ce80') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			throw ($m['NotImplementedError']);
@@ -10778,11 +12668,11 @@ r = Math['round'](n*x)/n;
 		var $bases = new Array($m['object']);
 		return $pyjs_type('BaseFormatter', $bases, $cls_definition);
 	})();
-	$m['INT_KIND'] = 1;
-	$m['LONG_KIND'] = 2;
-	$m['NO_LOCALE'] = 1;
-	$m['DEFAULT_LOCALE'] = 2;
-	$m['CURRENT_LOCALE'] = 3;
+	$m['INT_KIND'] = $constant_int_1;
+	$m['LONG_KIND'] = $constant_int_2;
+	$m['NO_LOCALE'] = $constant_int_1;
+	$m['DEFAULT_LOCALE'] = $constant_int_2;
+	$m['CURRENT_LOCALE'] = $constant_int_3;
 	$m['Formatter'] = (function(){
 		var $cls_definition = new Object();
 		var $method;
@@ -10792,10 +12682,20 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('__init__', function(space, spec) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				space = arguments[1];
 				spec = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			self['space'] = space;
@@ -10808,9 +12708,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_is_alignment', function(c) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				c = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $or24,$or25,$or22,$or23;
 			return ($p['bool']($or22=$m['op_eq'](c, '<'))?$or22:($p['bool']($or23=$m['op_eq'](c, '>'))?$or23:($p['bool']($or24=$m['op_eq'](c, '='))?$or24:$m['op_eq'](c, '^'))));
@@ -10820,9 +12730,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_is_sign', function(c) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				c = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $or27,$or26,$or28;
 			return ($p['bool']($or26=$m['op_eq'](c, ' '))?$or26:($p['bool']($or27=$m['op_eq'](c, '+'))?$or27:$m['op_eq'](c, '-')));
@@ -10832,18 +12752,28 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_parse_spec', function(default_type, default_align) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				default_type = arguments[1];
 				default_align = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $and46,$add129,$add118,$add119,$add116,$add117,$add114,$add115,$add112,$add113,$add111,$attr221,$attr224,tp,$sub40,$sub41,$sub42,$sub43,$add125,$sub45,$sub46,$add122,$add123,$add121,$or32,$and45,$and44,$add120,$and41,$attr218,$and43,$and42,got_align,$or30,the_type,$or29,$attr222,spec,$attr226,$or36,$add127,$add126,$sub33,$add124,$sub35,$sub34,$sub37,$sub36,$sub39,$sub38,$add128,$and38,$and39,$and34,$and35,$and36,$and37,$and32,$and33,$attr225,$or31,$attr223,start_i,i,$add130,$or35,$or33,presentation_type,length,$attr219,$or37,$and40,$attr220,$or34,$sub44,$attr217;
-			self['_fill_char'] = self['_lit']('\x00')['__getitem__'](0);
+			self['_fill_char'] = self['_lit']('\x00')['__getitem__']($constant_int_0);
 			self['_align'] = default_align;
 			self['_alternate'] = false;
 			self['_sign'] = '\x00';
 			self['_thousands_sep'] = false;
-			self['_precision'] = (typeof ($usub18=1)=='number'?
+			self['_precision'] = (typeof ($usub18=$constant_int_1)=='number'?
 				-$usub18:
 				$m['op_usub']($usub18));
 			the_type = default_type;
@@ -10852,34 +12782,34 @@ r = Math['round'](n*x)/n;
 				return true;
 			}
 			length = $m['len'](spec);
-			i = 0;
+			i = $constant_int_0;
 			got_align = true;
-			if ($p['bool'](($p['bool']($and32=((($m['cmp']($m['__op_sub']($sub33=length,$sub34=i), 2))|1) == 1))?self['_is_alignment'](spec['__getitem__']($m['__op_add']($add111=i,$add112=1))):$and32))) {
-				self['_align'] = spec['__getitem__']($m['__op_add']($add113=i,$add114=1));
+			if ($p['bool'](($p['bool']($and32=((($m['cmp']($m['__op_sub']($sub33=length,$sub34=i), $constant_int_2))|1) == 1))?self['_is_alignment'](spec['__getitem__']($m['__op_add']($add111=i,$add112=$constant_int_1))):$and32))) {
+				self['_align'] = spec['__getitem__']($m['__op_add']($add113=i,$add114=$constant_int_1));
 				self['_fill_char'] = spec['__getitem__'](i);
-				i = $m['__op_add']($add115=i,$add116=2);
+				i = $m['__op_add']($add115=i,$add116=$constant_int_2);
 			}
-			else if ($p['bool'](($p['bool']($and34=((($m['cmp']($m['__op_sub']($sub35=length,$sub36=i), 1))|1) == 1))?self['_is_alignment'](spec['__getitem__'](i)):$and34))) {
+			else if ($p['bool'](($p['bool']($and34=((($m['cmp']($m['__op_sub']($sub35=length,$sub36=i), $constant_int_1))|1) == 1))?self['_is_alignment'](spec['__getitem__'](i)):$and34))) {
 				self['_align'] = spec['__getitem__'](i);
-				i = $m['__op_add']($add117=i,$add118=1);
+				i = $m['__op_add']($add117=i,$add118=$constant_int_1);
 			}
 			else {
 				got_align = false;
 			}
-			if ($p['bool'](($p['bool']($and36=((($m['cmp']($m['__op_sub']($sub37=length,$sub38=i), 1))|1) == 1))?self['_is_sign'](spec['__getitem__'](i)):$and36))) {
+			if ($p['bool'](($p['bool']($and36=((($m['cmp']($m['__op_sub']($sub37=length,$sub38=i), $constant_int_1))|1) == 1))?self['_is_sign'](spec['__getitem__'](i)):$and36))) {
 				self['_sign'] = spec['__getitem__'](i);
-				i = $m['__op_add']($add119=i,$add120=1);
+				i = $m['__op_add']($add119=i,$add120=$constant_int_1);
 			}
-			if ($p['bool'](($p['bool']($and38=((($m['cmp']($m['__op_sub']($sub39=length,$sub40=i), 1))|1) == 1))?$m['op_eq'](spec['__getitem__'](i), '#'):$and38))) {
+			if ($p['bool'](($p['bool']($and38=((($m['cmp']($m['__op_sub']($sub39=length,$sub40=i), $constant_int_1))|1) == 1))?$m['op_eq'](spec['__getitem__'](i), '#'):$and38))) {
 				self['_alternate'] = true;
-				i = $m['__op_add']($add121=i,$add122=1);
+				i = $m['__op_add']($add121=i,$add122=$constant_int_1);
 			}
-			if ($p['bool'](($p['bool']($and40=$m['op_eq'](self['_fill_char'], '\x00'))?($p['bool']($and41=((($m['cmp']($m['__op_sub']($sub41=length,$sub42=i), 1))|1) == 1))?$m['op_eq'](spec['__getitem__'](i), '0'):$and41):$and40))) {
-				self['_fill_char'] = self['_lit']('0')['__getitem__'](0);
+			if ($p['bool'](($p['bool']($and40=$m['op_eq'](self['_fill_char'], '\x00'))?($p['bool']($and41=((($m['cmp']($m['__op_sub']($sub41=length,$sub42=i), $constant_int_1))|1) == 1))?$m['op_eq'](spec['__getitem__'](i), '0'):$and41):$and40))) {
+				self['_fill_char'] = self['_lit']('0')['__getitem__']($constant_int_0);
 				if ($p['bool'](!$p['bool'](got_align))) {
 					self['_align'] = '=';
 				}
-				i = $m['__op_add']($add123=i,$add124=1);
+				i = $m['__op_add']($add123=i,$add124=$constant_int_1);
 			}
 			start_i = i;
 			var $tupleassign10 = $p['__ass_unpack']($m['_parse_int'](spec, i, length), 2, null);
@@ -10887,26 +12817,26 @@ r = Math['round'](n*x)/n;
 			i = $tupleassign10[1];
 			if ($p['bool'](($p['bool']($and43=!$m['op_eq'](length, i))?$m['op_eq'](spec['__getitem__'](i), ','):$and43))) {
 				self['_thousands_sep'] = true;
-				i = $m['__op_add']($add125=i,$add126=1);
+				i = $m['__op_add']($add125=i,$add126=$constant_int_1);
 			}
 			if ($p['bool'](($p['bool']($and45=!$m['op_eq'](length, i))?$m['op_eq'](spec['__getitem__'](i), '.'):$and45))) {
-				i = $m['__op_add']($add127=i,$add128=1);
+				i = $m['__op_add']($add127=i,$add128=$constant_int_1);
 				var $tupleassign11 = $p['__ass_unpack']($m['_parse_int'](spec, i, length), 2, null);
 				self['_precision'] = $tupleassign11[0];
 				i = $tupleassign11[1];
-				if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub19=1)=='number'?
+				if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub19=$constant_int_1)=='number'?
 					-$usub19:
 					$m['op_usub']($usub19))))) {
 					throw ($m['ValueError']('no precision given'));
 				}
 			}
-			if ($p['bool'](($m['cmp']($m['__op_sub']($sub43=length,$sub44=i), 1) == 1))) {
+			if ($p['bool'](($m['cmp']($m['__op_sub']($sub43=length,$sub44=i), $constant_int_1) == 1))) {
 				throw ($m['ValueError']('invalid format spec'));
 			}
-			if ($p['bool']($m['op_eq']($m['__op_sub']($sub45=length,$sub46=i), 1))) {
+			if ($p['bool']($m['op_eq']($m['__op_sub']($sub45=length,$sub46=i), $constant_int_1))) {
 				presentation_type = spec['__getitem__'](i);
 				the_type = presentation_type;
-				i = $m['__op_add']($add129=i,$add130=1);
+				i = $m['__op_add']($add129=i,$add130=$constant_int_1);
 			}
 			self['_type'] = the_type;
 			if ($p['bool'](self['_thousands_sep'])) {
@@ -10924,13 +12854,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_calc_padding', function(string, length) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				string = arguments[1];
 				length = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr234,right,$attr230,$attr231,$attr232,$attr233,$sub48,$sub49,$sub52,total,$sub47,$and48,$attr227,$sub54,$sub53,$sub51,$sub50,$attr229,$attr228,$div6,$div5,align,$or39,$or38,$and47,left;
-			if ($p['bool'](($p['bool']($and47=!$m['op_eq'](self['_width'], (typeof ($usub20=1)=='number'?
+			if ($p['bool'](($p['bool']($and47=!$m['op_eq'](self['_width'], (typeof ($usub20=$constant_int_1)=='number'?
 				-$usub20:
 				$m['op_usub']($usub20))))?($m['cmp'](length, self['_width']) == -1):$and47))) {
 				total = self['_width'];
@@ -10943,12 +12883,12 @@ r = Math['round'](n*x)/n;
 				left = $m['__op_sub']($sub47=total,$sub48=length);
 			}
 			else if ($p['bool']($m['op_eq'](align, '^'))) {
-				left = (typeof ($div5=$m['__op_sub']($sub49=total,$sub50=length))==typeof ($div6=2) && typeof $div5=='number' && $div6 !== 0?
+				left = (typeof ($div5=$m['__op_sub']($sub49=total,$sub50=length))==typeof ($div6=$constant_int_2) && typeof $div5=='number' && $div6 !== 0?
 					$div5/$div6:
 					$m['op_div']($div5,$div6));
 			}
 			else if ($p['bool'](($p['bool']($or38=$m['op_eq'](align, '<'))?$or38:$m['op_eq'](align, '=')))) {
-				left = 0;
+				left = $constant_int_0;
 			}
 			else {
 				throw ($m['AssertionError']("shouldn't be here"));
@@ -10963,9 +12903,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_lit', function(s) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				s = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return s;
@@ -10975,9 +12925,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_pad', function(string) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				string = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr241,$attr235,$attr236,$attr237,$attr240,builder,$attr238,$attr239,$attr242;
 			builder = self['_builder']();
@@ -10991,8 +12951,18 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_builder', function() {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']+1);
 			} else {
 				var self = arguments[0];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 
 			return $m['StringBuilder']();
@@ -11002,9 +12972,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_unknown_presentation', function(tp) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				tp = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr243,$attr244,w_msg,$mod4,$mod3,msg;
 			msg = "unknown presentation for %s: '%s'";
@@ -11019,9 +12999,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_string', function(string) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				string = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr245,$attr247,$attr246,$attr249,$attr248,$attr255,$attr252,$attr253,$attr250,$attr251,$attr256,length,$and50,precision,msg,$and49,$attr254;
 			if ($p['bool'](self['_parse_spec']('s', '<'))) {
@@ -11044,17 +13034,17 @@ r = Math['round'](n*x)/n;
 			}
 			length = $m['len'](string);
 			precision = self['_precision'];
-			if ($p['bool'](($p['bool']($and49=!$m['op_eq'](precision, (typeof ($usub21=1)=='number'?
+			if ($p['bool'](($p['bool']($and49=!$m['op_eq'](precision, (typeof ($usub21=$constant_int_1)=='number'?
 				-$usub21:
 				$m['op_usub']($usub21))))?((($m['cmp'](length, precision))|1) == 1):$and49))) {
-				if (!( ((($m['cmp'](precision, 0))|1) == 1) )) {
+				if (!( ((($m['cmp'](precision, $constant_int_0))|1) == 1) )) {
 				   throw $m['AssertionError']();
 				 }
 				length = precision;
 				string = $p['__getslice'](string, 0, precision);
 			}
 			if ($p['bool']($m['op_eq'](self['_fill_char'], '\x00'))) {
-				self['_fill_char'] = self['_lit'](' ')['__getitem__'](0);
+				self['_fill_char'] = self['_lit'](' ')['__getitem__']($constant_int_0);
 			}
 			self['_calc_padding'](string, length);
 			return self['_pad'](string);
@@ -11064,9 +13054,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_get_locale', function(tp) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				tp = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr258,$attr257,dec,thousands,grouping;
 			if ($p['bool']($m['op_eq'](tp, 'n'))) {
@@ -11095,6 +13095,7 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_calc_num_width', function(n_prefix, sign_char, to_number, n_number, n_remainder, has_dec, digits) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 7) $pyjs__exception_func_param(arguments['callee']['__name__'], 8, 8, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				n_prefix = arguments[1];
@@ -11104,31 +13105,40 @@ r = Math['round'](n*x)/n;
 				n_remainder = arguments[5];
 				has_dec = arguments[6];
 				digits = arguments[7];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 8) $pyjs__exception_func_param(arguments['callee']['__name__'], 8, 8, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var extra_length,spec,$attr292,$attr293,$attr290,$attr291,$attr296,$attr297,$attr294,$attr295,$attr298,$attr299,n_grouped_digits,$attr278,$attr279,$attr270,$attr271,$attr272,$attr273,$attr274,$attr275,$attr276,$attr277,$attr285,$attr284,$attr287,$attr281,$attr280,$attr283,$attr282,$attr289,$attr288,$attr269,$attr268,$attr300,$attr263,$attr262,$attr261,$attr260,$attr267,$attr266,$attr265,$attr264,$and52,$and51,$floordiv2,$floordiv1,$attr259,$sub64,$sub62,$sub63,$sub60,$sub61,$add145,$add144,$add147,$add146,$add141,$add140,$add143,$add142,$add149,$add148,n_padding,sign,align,$add152,$add150,$add151,$add134,$add135,$add136,$add137,$add131,$add132,$add133,$add138,$add139,$sub57,$sub56,$sub55,$sub59,$sub58,$attr286;
 			spec = $m['NumberSpec']();
 			spec['n_digits'] = $m['__op_sub']($sub57=$m['__op_sub']($sub55=n_number,$sub56=n_remainder),$sub58=has_dec);
 			spec['n_prefix'] = n_prefix;
-			spec['n_lpadding'] = 0;
-			spec['n_decimal'] = $p['float_int'](has_dec);
+			spec['n_lpadding'] = $constant_int_0;
+			spec['n_decimal'] = $p['int'](has_dec);
 			spec['n_remainder'] = n_remainder;
-			spec['n_spadding'] = 0;
-			spec['n_rpadding'] = 0;
-			spec['n_min_width'] = 0;
-			spec['n_total'] = 0;
+			spec['n_spadding'] = $constant_int_0;
+			spec['n_rpadding'] = $constant_int_0;
+			spec['n_min_width'] = $constant_int_0;
+			spec['n_total'] = $constant_int_0;
 			spec['sign'] = '\x00';
-			spec['n_sign'] = 0;
+			spec['n_sign'] = $constant_int_0;
 			sign = self['_sign'];
 			if ($p['bool']($m['op_eq'](sign, '+'))) {
-				spec['n_sign'] = 1;
+				spec['n_sign'] = $constant_int_1;
 				spec['sign'] = ($p['bool']($m['op_eq'](sign_char, '-'))? ('-') : ('+'));
 			}
 			else if ($p['bool']($m['op_eq'](sign, ' '))) {
-				spec['n_sign'] = 1;
+				spec['n_sign'] = $constant_int_1;
 				spec['sign'] = ($p['bool']($m['op_eq'](sign_char, '-'))? ('-') : (' '));
 			}
 			else if ($p['bool']($m['op_eq'](sign_char, '-'))) {
-				spec['n_sign'] = 1;
+				spec['n_sign'] = $constant_int_1;
 				spec['sign'] = '-';
 			}
 			extra_length = $m['__op_add']($add135=$m['__op_add']($add133=$m['__op_add']($add131=spec['n_sign'],$add132=spec['n_prefix']),$add134=spec['n_decimal']),$add136=spec['n_remainder']);
@@ -11143,7 +13153,7 @@ r = Math['round'](n*x)/n;
 				n_grouped_digits = spec['n_digits'];
 			}
 			n_padding = $m['__op_sub']($sub61=self['_width'],$sub62=$m['__op_add']($add137=extra_length,$add138=n_grouped_digits));
-			if ($p['bool'](($m['cmp'](n_padding, 0) == 1))) {
+			if ($p['bool'](($m['cmp'](n_padding, $constant_int_0) == 1))) {
 				align = self['_align'];
 				if ($p['bool']($m['op_eq'](align, '<'))) {
 					spec['n_rpadding'] = n_padding;
@@ -11152,7 +13162,7 @@ r = Math['round'](n*x)/n;
 					spec['n_lpadding'] = n_padding;
 				}
 				else if ($p['bool']($m['op_eq'](align, '^'))) {
-					spec['n_lpadding'] = (typeof ($floordiv1=n_padding)==typeof ($floordiv2=2) && typeof $floordiv1=='number' && $floordiv2 !== 0?
+					spec['n_lpadding'] = (typeof ($floordiv1=n_padding)==typeof ($floordiv2=$constant_int_2) && typeof $floordiv1=='number' && $floordiv2 !== 0?
 						Math['floor']($floordiv1/$floordiv2):
 						$m['op_floordiv']($floordiv1,$floordiv2));
 					spec['n_rpadding'] = $m['__op_sub']($sub63=n_padding,$sub64=spec['n_lpadding']);
@@ -11172,6 +13182,7 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_fill_digits', function(buf, digits, d_state, n_chars, n_zeros, thousands_sep) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 6) $pyjs__exception_func_param(arguments['callee']['__name__'], 7, 7, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				buf = arguments[1];
@@ -11180,6 +13191,15 @@ r = Math['round'](n*x)/n;
 				n_chars = arguments[4];
 				n_zeros = arguments[5];
 				thousands_sep = arguments[6];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 7) $pyjs__exception_func_param(arguments['callee']['__name__'], 7, 7, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $iter32_idx,$iter32_nextval,$iter31_nextval,$iter32_iter,$iter30_array,$sub68,$sub69,$sub66,$sub67,$sub65,$iter30_nextval,$iter31_idx,$iter32_type,$iter32_array,$iter30_type,$iter31_array,$iter30_idx,$sub70,c,$iter30_iter,i,$iter31_iter,$iter31_type;
 			if ($p['bool'](thousands_sep)) {
@@ -11190,7 +13210,7 @@ r = Math['round'](n*x)/n;
 					buf['append'](c);
 				}
 			}
-			$iter31_iter = $m['range']($m['__op_sub']($sub65=d_state,$sub66=1), $m['__op_sub']($sub69=$m['__op_sub']($sub67=d_state,$sub68=n_chars),$sub70=1), (typeof ($usub22=1)=='number'?
+			$iter31_iter = $m['range']($m['__op_sub']($sub65=d_state,$sub66=$constant_int_1), $m['__op_sub']($sub69=$m['__op_sub']($sub67=d_state,$sub68=n_chars),$sub70=$constant_int_1), (typeof ($usub22=$constant_int_1)=='number'?
 				-$usub22:
 				$m['op_usub']($usub22)));
 			$iter31_nextval=$p['__iter_prepare']($iter31_iter,false);
@@ -11211,53 +13231,63 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_group_digits', function(spec, digits) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				spec = arguments[1];
 				digits = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr312,$attr311,$attr305,done,n_ts,min_width,previous,group,$sub71,$attr310,ts,grouping_state,$add154,$sub72,$attr304,count,$attr306,$attr307,$attr301,$attr302,$attr303,$attr308,$attr309,n_chars,$sub79,n_zeros,$sub78,$sub75,$sub74,$sub77,$sub76,buf,$sub73,groupings,$and54,$and53,$add153,need_separator,$sub80,final_grouping,grouping,left;
 			buf = $p['list']([]);
 			grouping = self['_loc_grouping'];
 			min_width = spec['n_min_width'];
-			grouping_state = 0;
-			count = 0;
+			grouping_state = $constant_int_0;
+			count = $constant_int_0;
 			left = spec['n_digits'];
 			n_ts = $m['len'](self['_loc_thousands']);
 			need_separator = false;
 			done = false;
 			groupings = $m['len'](grouping);
-			previous = 0;
+			previous = $constant_int_0;
 			while ($p['bool'](true)) {
 				group = $m['ord'](grouping['__getitem__'](grouping_state));
-				if ($p['bool'](($m['cmp'](group, 0) == 1))) {
-					if ($p['bool']($m['op_eq'](group, 256))) {
+				if ($p['bool'](($m['cmp'](group, $constant_int_0) == 1))) {
+					if ($p['bool']($m['op_eq'](group, $constant_int_256))) {
 						break;
 					}
-					grouping_state = $m['__op_add']($add153=grouping_state,$add154=1);
+					grouping_state = $m['__op_add']($add153=grouping_state,$add154=$constant_int_1);
 					previous = group;
 				}
 				else {
 					group = previous;
 				}
-				final_grouping = $m['min'](group, $m['max'](left, $m['max'](min_width, 1)));
-				n_zeros = $m['max'](0, $m['__op_sub']($sub71=final_grouping,$sub72=left));
-				n_chars = $m['max'](0, $m['min'](left, final_grouping));
+				final_grouping = $m['min'](group, $m['max'](left, $m['max'](min_width, $constant_int_1)));
+				n_zeros = $m['max']($constant_int_0, $m['__op_sub']($sub71=final_grouping,$sub72=left));
+				n_chars = $m['max']($constant_int_0, $m['min'](left, final_grouping));
 				ts = ($p['bool'](need_separator)? (self['_loc_thousands']) : (null));
 				self['_fill_digits'](buf, digits, left, n_chars, n_zeros, ts);
 				need_separator = true;
 				left = $m['__op_sub']($sub73=left,$sub74=n_chars);
 				min_width = $m['__op_sub']($sub75=min_width,$sub76=final_grouping);
-				if ($p['bool'](($p['bool']($and53=($m['cmp'](left, 0) < 1))?($m['cmp'](min_width, 0) < 1):$and53))) {
+				if ($p['bool'](($p['bool']($and53=($m['cmp'](left, $constant_int_0) < 1))?($m['cmp'](min_width, $constant_int_0) < 1):$and53))) {
 					done = true;
 					break;
 				}
 				min_width = $m['__op_sub']($sub77=min_width,$sub78=n_ts);
 			}
 			if ($p['bool'](!$p['bool'](done))) {
-				group = $m['max']($m['max'](left, min_width), 1);
-				n_zeros = $m['max'](0, $m['__op_sub']($sub79=group,$sub80=left));
-				n_chars = $m['max'](0, $m['min'](left, group));
+				group = $m['max']($m['max'](left, min_width), $constant_int_1);
+				n_zeros = $m['max']($constant_int_0, $m['__op_sub']($sub79=group,$sub80=left));
+				n_chars = $m['max']($constant_int_0, $m['min'](left, group));
 				ts = ($p['bool'](need_separator)? (self['_loc_thousands']) : (null));
 				self['_fill_digits'](buf, digits, left, n_chars, n_zeros, ts);
 			}
@@ -11270,9 +13300,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_upcase_string', function(s) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				s = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $iter33_iter,$iter33_nextval,$iter33_type,index,c,$iter33_idx,$sub81,$sub82,buf,$iter33_array;
 			buf = $p['list']([]);
@@ -11282,7 +13322,7 @@ r = Math['round'](n*x)/n;
 				c = $iter33_nextval['$nextval'];
 				index = $m['ord'](c);
 				if ($p['bool']((($m['cmp']($m['ord']('a'), ($compare3 = index)) < 1)&&($m['cmp']($compare3, ($compare4 = $m['ord']('z'))) < 1)))) {
-					c = $m['chr']($m['__op_sub']($sub81=index,$sub82=32));
+					c = $m['chr']($m['__op_sub']($sub81=index,$sub82=$constant_int_32));
 				}
 				buf['append'](c);
 			}
@@ -11293,6 +13333,7 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_fill_number', function(spec, num, to_digits, to_prefix, fill_char, to_remainder, upper, grouped_digits) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 7 || arguments['length'] > 8)) $pyjs__exception_func_param(arguments['callee']['__name__'], 8, 9, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				spec = arguments[1];
@@ -11303,12 +13344,21 @@ r = Math['round'](n*x)/n;
 				to_remainder = arguments[6];
 				upper = arguments[7];
 				grouped_digits = arguments[8];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && (arguments['length'] < 8 || arguments['length'] > 9)) $pyjs__exception_func_param(arguments['callee']['__name__'], 8, 9, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			if (typeof grouped_digits == 'undefined') grouped_digits=arguments['callee']['__args__'][10][1];
 			var $attr317,$attr315,$attr314,$attr313,$attr316,$attr319,sign,$add157,out,$attr327,pref,$attr339,$attr328,$attr329,$attr322,$attr323,$attr320,$attr321,$attr326,$attr324,$attr325,$attr343,$attr340,$attr341,$attr342,$attr338,stop,$attr318,$attr337,$attr344,digits,$add156,$add155,$attr335,$attr334,$add158,$attr336,$attr331,$attr330,$attr333,$attr332;
 			out = self['_builder']();
 			if ($p['bool'](spec['n_lpadding'])) {
-				out['append_multiple_char'](fill_char['__getitem__'](0), spec['n_lpadding']);
+				out['append_multiple_char'](fill_char['__getitem__']($constant_int_0), spec['n_lpadding']);
 			}
 			if ($p['bool'](spec['n_sign'])) {
 				sign = spec['sign'];
@@ -11322,23 +13372,23 @@ r = Math['round'](n*x)/n;
 				out['append'](pref);
 			}
 			if ($p['bool'](spec['n_spadding'])) {
-				out['append_multiple_char'](fill_char['__getitem__'](0), spec['n_spadding']);
+				out['append_multiple_char'](fill_char['__getitem__']($constant_int_0), spec['n_spadding']);
 			}
-			if ($p['bool'](!$m['op_eq'](spec['n_digits'], 0))) {
+			if ($p['bool'](!$m['op_eq'](spec['n_digits'], $constant_int_0))) {
 				if ($p['bool'](self['_loc_thousands'])) {
-					if ($p['bool']((grouped_digits !== null))) {
+					if ($p['bool'](!$m['op_is'](grouped_digits, null))) {
 						digits = grouped_digits;
 					}
 					else {
 						digits = self['_grouped_digits'];
-						if (!( (digits !== null) )) {
+						if (!( !$m['op_is'](digits, null) )) {
 						   throw $m['AssertionError']();
 						 }
 					}
 				}
 				else {
 					stop = $m['__op_add']($add157=to_digits,$add158=spec['n_digits']);
-					if (!( ((($m['cmp'](stop, 0))|1) == 1) )) {
+					if (!( ((($m['cmp'](stop, $constant_int_0))|1) == 1) )) {
 					   throw $m['AssertionError']();
 					 }
 					digits = $p['__getslice'](num, to_digits, stop);
@@ -11355,7 +13405,7 @@ r = Math['round'](n*x)/n;
 				out['append']($p['__getslice'](num, to_remainder, null));
 			}
 			if ($p['bool'](spec['n_rpadding'])) {
-				out['append_multiple_char'](fill_char['__getitem__'](0), spec['n_rpadding']);
+				out['append_multiple_char'](fill_char['__getitem__']($constant_int_0), spec['n_rpadding']);
 			}
 			return out['build']();
 		}
@@ -11364,13 +13414,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_format_int_or_long', function(w_num, kind) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_num = arguments[1];
 				kind = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var upper,$attr358,n_remainder,$attr353,$attr352,$attr351,$attr350,$attr357,$attr356,$attr355,$attr354,$sub84,n_digits,to_numeric,$sub83,fill,sign_char,tp,msg,$or43,$or40,to_prefix,spec,$attr348,$attr349,$add162,$add161,$add160,$attr345,$attr346,$attr347,$or42,base,$or41,value,to_remainder,n_prefix,$add159,skip_leading,result;
-			if ($p['bool'](!$m['op_eq'](self['_precision'], (typeof ($usub23=1)=='number'?
+			if ($p['bool'](!$m['op_eq'](self['_precision'], (typeof ($usub23=$constant_int_1)=='number'?
 				-$usub23:
 				$m['op_usub']($usub23))))) {
 				msg = 'precision not allowed in integer type';
@@ -11385,29 +13445,29 @@ r = Math['round'](n*x)/n;
 				}
 				value = w_num;
 				result = $m['chr'](value);
-				n_digits = 1;
-				n_remainder = 1;
-				to_remainder = 0;
-				n_prefix = 0;
-				to_prefix = 0;
-				to_numeric = 0;
+				n_digits = $constant_int_1;
+				n_remainder = $constant_int_1;
+				to_remainder = $constant_int_0;
+				n_prefix = $constant_int_0;
+				to_prefix = $constant_int_0;
+				to_numeric = $constant_int_0;
 			}
 			else {
 				if ($p['bool']($m['op_eq'](tp, 'b'))) {
-					base = 2;
-					skip_leading = 2;
+					base = $constant_int_2;
+					skip_leading = $constant_int_2;
 				}
 				else if ($p['bool']($m['op_eq'](tp, 'o'))) {
-					base = 8;
-					skip_leading = 2;
+					base = $constant_int_8;
+					skip_leading = $constant_int_2;
 				}
 				else if ($p['bool'](($p['bool']($or40=$m['op_eq'](tp, 'x'))?$or40:$m['op_eq'](tp, 'X')))) {
-					base = 16;
-					skip_leading = 2;
+					base = $constant_int_16;
+					skip_leading = $constant_int_2;
 				}
 				else if ($p['bool'](($p['bool']($or42=$m['op_eq'](tp, 'n'))?$or42:$m['op_eq'](tp, 'd')))) {
-					base = 10;
-					skip_leading = 0;
+					base = $constant_int_10;
+					skip_leading = $constant_int_0;
 				}
 				else {
 					throw ($m['AssertionError']("shouldn't reach"));
@@ -11418,16 +13478,16 @@ r = Math['round'](n*x)/n;
 				else {
 					result = self['_int_to_base'](base, w_num);
 				}
-				n_prefix = ($p['bool'](self['_alternate'])? (skip_leading) : (0));
-				to_prefix = 0;
-				if ($p['bool']($m['op_eq'](result['__getitem__'](0), '-'))) {
+				n_prefix = ($p['bool'](self['_alternate'])? (skip_leading) : ($constant_int_0));
+				to_prefix = $constant_int_0;
+				if ($p['bool']($m['op_eq'](result['__getitem__']($constant_int_0), '-'))) {
 					sign_char = '-';
-					skip_leading = $m['__op_add']($add159=skip_leading,$add160=1);
-					to_prefix = $m['__op_add']($add161=to_prefix,$add162=1);
+					skip_leading = $m['__op_add']($add159=skip_leading,$add160=$constant_int_1);
+					to_prefix = $m['__op_add']($add161=to_prefix,$add162=$constant_int_1);
 				}
 				n_digits = $m['__op_sub']($sub83=$m['len'](result),$sub84=skip_leading);
-				n_remainder = 0;
-				to_remainder = 0;
+				n_remainder = $constant_int_0;
+				to_remainder = $constant_int_0;
 				to_numeric = skip_leading;
 			}
 			self['_get_locale'](tp);
@@ -11441,23 +13501,33 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_int_to_base', function(base, value) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				base = arguments[1];
 				value = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $sub95,$add170,$mod6,$sub94,$add169,$mod5,$sub85,$sub86,$sub87,$sub104,$sub105,$sub106,$sub107,$sub108,$sub88,$sub89,negative,$sub99,$sub101,digit,$add168,$add163,$add167,$add166,$add165,$add164,$sub93,$sub92,$sub91,$sub97,$sub96,$mul9,$mul8,$mul7,$mul6,$mul5,$sub98,buf,mod,$sub100,$mul10,i,$sub102,$floordiv6,$floordiv5,$floordiv4,$floordiv3,$sub90,div,$sub103;
-			if ($p['bool']($m['op_eq'](base, 10))) {
+			if ($p['bool']($m['op_eq'](base, $constant_int_10))) {
 				return $m['str'](value);
 			}
-			negative = ($m['cmp'](value, 0) == -1);
+			negative = ($m['cmp'](value, $constant_int_0) == -1);
 			value = $p['abs'](value);
-			buf = (typeof ($mul7=$p['list'](['\x00']))==typeof ($mul8=$m['__op_add']($add163=(typeof ($mul5=8)==typeof ($mul6=8) && typeof $mul5=='number'?
+			buf = (typeof ($mul7=$p['list'](['\x00']))==typeof ($mul8=$m['__op_add']($add163=(typeof ($mul5=$constant_int_8)==typeof ($mul6=$constant_int_8) && typeof $mul5=='number'?
 				$mul5*$mul6:
-				$m['op_mul']($mul5,$mul6)),$add164=6)) && typeof $mul7=='number'?
+				$m['op_mul']($mul5,$mul6)),$add164=$constant_int_6)) && typeof $mul7=='number'?
 				$mul7*$mul8:
 				$m['op_mul']($mul7,$mul8));
-			i = $m['__op_sub']($sub85=$m['len'](buf),$sub86=1);
+			i = $m['__op_sub']($sub85=$m['len'](buf),$sub86=$constant_int_1);
 			while ($p['bool'](true)) {
 				div = (typeof ($floordiv3=value)==typeof ($floordiv4=base) && typeof $floordiv3=='number' && $floordiv4 !== 0?
 					Math['floor']($floordiv3/$floordiv4):
@@ -11466,44 +13536,44 @@ r = Math['round'](n*x)/n;
 					$mul9*$mul10:
 					$m['op_mul']($mul9,$mul10)));
 				digit = $p['abs'](mod);
-				digit = $m['__op_add']($add165=digit,$add166=($p['bool'](($m['cmp'](digit, 10) == -1))? ($m['ord']('0')) : ($m['__op_sub']($sub89=$m['ord']('a'),$sub90=10))));
+				digit = $m['__op_add']($add165=digit,$add166=($p['bool'](($m['cmp'](digit, $constant_int_10) == -1))? ($m['ord']('0')) : ($m['__op_sub']($sub89=$m['ord']('a'),$sub90=$constant_int_10))));
 				buf['__setitem__'](i, $m['chr'](digit));
 				value = div;
-				i = $m['__op_sub']($sub91=i,$sub92=1);
+				i = $m['__op_sub']($sub91=i,$sub92=$constant_int_1);
 				if ($p['bool'](!$p['bool'](value))) {
 					break;
 				}
 			}
-			if ($p['bool']($m['op_eq'](base, 2))) {
+			if ($p['bool']($m['op_eq'](base, $constant_int_2))) {
 				buf['__setitem__'](i, 'b');
-				buf['__setitem__']($m['__op_sub']($sub93=i,$sub94=1), '0');
+				buf['__setitem__']($m['__op_sub']($sub93=i,$sub94=$constant_int_1), '0');
 			}
-			else if ($p['bool']($m['op_eq'](base, 8))) {
+			else if ($p['bool']($m['op_eq'](base, $constant_int_8))) {
 				buf['__setitem__'](i, 'o');
-				buf['__setitem__']($m['__op_sub']($sub95=i,$sub96=1), '0');
+				buf['__setitem__']($m['__op_sub']($sub95=i,$sub96=$constant_int_1), '0');
 			}
-			else if ($p['bool']($m['op_eq'](base, 16))) {
+			else if ($p['bool']($m['op_eq'](base, $constant_int_16))) {
 				buf['__setitem__'](i, 'x');
-				buf['__setitem__']($m['__op_sub']($sub97=i,$sub98=1), '0');
+				buf['__setitem__']($m['__op_sub']($sub97=i,$sub98=$constant_int_1), '0');
 			}
 			else {
 				buf['__setitem__'](i, '#');
-				buf['__setitem__']($m['__op_sub']($sub99=i,$sub100=1), $m['chr']($m['__op_add']($add167=$m['ord']('0'),$add168=(typeof ($mod5=base)==typeof ($mod6=10) && typeof $mod5=='number'?
+				buf['__setitem__']($m['__op_sub']($sub99=i,$sub100=$constant_int_1), $m['chr']($m['__op_add']($add167=$m['ord']('0'),$add168=(typeof ($mod5=base)==typeof ($mod6=$constant_int_10) && typeof $mod5=='number'?
 					(($mod5=$mod5%$mod6)<0&&$mod6>0?$mod5+$mod6:$mod5):
 					$m['op_mod']($mod5,$mod6)))));
-				if ($p['bool'](($m['cmp'](base, 10) == 1))) {
-					buf['__setitem__']($m['__op_sub']($sub101=i,$sub102=2), $m['chr']($m['__op_add']($add169=$m['ord']('0'),$add170=(typeof ($floordiv5=base)==typeof ($floordiv6=10) && typeof $floordiv5=='number' && $floordiv6 !== 0?
+				if ($p['bool'](($m['cmp'](base, $constant_int_10) == 1))) {
+					buf['__setitem__']($m['__op_sub']($sub101=i,$sub102=$constant_int_2), $m['chr']($m['__op_add']($add169=$m['ord']('0'),$add170=(typeof ($floordiv5=base)==typeof ($floordiv6=$constant_int_10) && typeof $floordiv5=='number' && $floordiv6 !== 0?
 						Math['floor']($floordiv5/$floordiv6):
 						$m['op_floordiv']($floordiv5,$floordiv6)))));
-					i = $m['__op_sub']($sub103=i,$sub104=1);
+					i = $m['__op_sub']($sub103=i,$sub104=$constant_int_1);
 				}
 			}
-			i = $m['__op_sub']($sub105=i,$sub106=1);
+			i = $m['__op_sub']($sub105=i,$sub106=$constant_int_1);
 			if ($p['bool'](negative)) {
-				i = $m['__op_sub']($sub107=i,$sub108=1);
+				i = $m['__op_sub']($sub107=i,$sub108=$constant_int_1);
 				buf['__setitem__'](i, '-');
 			}
-			if (!( ((($m['cmp'](i, 0))|1) == 1) )) {
+			if (!( ((($m['cmp'](i, $constant_int_0))|1) == 1) )) {
 			   throw $m['AssertionError']();
 			 }
 			return self['empty']['join']($p['__getslice'](buf, i, null));
@@ -11513,10 +13583,20 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_int_or_long', function(w_num, kind) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_num = arguments[1];
 				kind = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr359,w_float,$or55,$or56,$or57,tp,$or54,$or48,$or49,$attr360,$or51,$or50,$or53,$or52,$or46,$or47,$or44,$or45;
 			if ($p['bool'](self['_parse_spec']('d', '>'))) {
@@ -11540,20 +13620,30 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_parse_number', function(s, i) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				s = arguments[1];
 				i = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $add173,$and58,$add171,$and55,$add174,rest,dec_point,$and56,length,$and57,$add172;
 			length = $m['len'](s);
 			while ($p['bool'](($p['bool']($and55=($m['cmp'](i, length) == -1))?(($m['cmp']('0', ($compare5 = s['__getitem__'](i))) < 1)&&($m['cmp']($compare5, ($compare6 = '9')) < 1)):$and55))) {
-				i = $m['__op_add']($add171=i,$add172=1);
+				i = $m['__op_add']($add171=i,$add172=$constant_int_1);
 			}
 			rest = i;
 			dec_point = ($p['bool']($and57=($m['cmp'](i, length) == -1))?$m['op_eq'](s['__getitem__'](i), '.'):$and57);
 			if ($p['bool'](dec_point)) {
-				rest = $m['__op_add']($add173=rest,$add174=1);
+				rest = $m['__op_add']($add173=rest,$add174=$constant_int_1);
 			}
 			return $p['tuple']([dec_point, rest]);
 		}
@@ -11562,13 +13652,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_format_float', function(w_float) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_float = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr371,$attr370,$attr372,n_remainder,$add175,$add176,sign,n_digits,result,$sub109,fill,add_pct,to_number,tp,default_precision,msg,have_dec_point,spec,$attr368,$attr369,$attr366,$attr367,$attr364,$attr365,$attr362,$attr363,$attr361,$sub112,$sub111,$sub110,digits,$mul12,$mul11,value,to_remainder,flags;
-			flags = 0;
-			default_precision = 6;
+			flags = $constant_int_0;
+			default_precision = $constant_int_6;
 			if ($p['bool'](self['_alternate'])) {
 				msg = 'alternate form not allowed in float formats';
 				throw ($m['ValueError'](msg));
@@ -11577,8 +13677,8 @@ r = Math['round'](n*x)/n;
 			self['_get_locale'](tp);
 			if ($p['bool']($m['op_eq'](tp, '\x00'))) {
 				tp = 'g';
-				default_precision = 12;
-				flags |= (typeof DTSF_ADD_DOT_0 == "undefined"?$m['DTSF_ADD_DOT_0']:DTSF_ADD_DOT_0);
+				default_precision = $constant_int_12;
+				flags = $m['op_bitor2'](flags, (typeof DTSF_ADD_DOT_0 == "undefined"?$m['DTSF_ADD_DOT_0']:DTSF_ADD_DOT_0));
 			}
 			else if ($p['bool']($m['op_eq'](tp, 'n'))) {
 				tp = 'g';
@@ -11586,7 +13686,7 @@ r = Math['round'](n*x)/n;
 			value = $m['float'](w_float);
 			if ($p['bool']($m['op_eq'](tp, '%'))) {
 				tp = 'f';
-				value = (typeof ($mul11=value)==typeof ($mul12=100) && typeof $mul11=='number'?
+				value = (typeof ($mul11=value)==typeof ($mul12=$constant_int_100) && typeof $mul11=='number'?
 					$mul11*$mul12:
 					$m['op_mul']($mul11,$mul12));
 				add_pct = true;
@@ -11594,7 +13694,7 @@ r = Math['round'](n*x)/n;
 			else {
 				add_pct = false;
 			}
-			if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub24=1)=='number'?
+			if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub24=$constant_int_1)=='number'?
 				-$usub24:
 				$m['op_usub']($usub24))))) {
 				self['_precision'] = default_precision;
@@ -11604,32 +13704,42 @@ r = Math['round'](n*x)/n;
 				result = $m['__op_add']($add175=result,$add176='%');
 			}
 			n_digits = $m['len'](result);
-			if ($p['bool']($m['op_eq'](result['__getitem__'](0), '-'))) {
+			if ($p['bool']($m['op_eq'](result['__getitem__']($constant_int_0), '-'))) {
 				sign = '-';
-				to_number = 1;
-				n_digits = $m['__op_sub']($sub109=n_digits,$sub110=1);
+				to_number = $constant_int_1;
+				n_digits = $m['__op_sub']($sub109=n_digits,$sub110=$constant_int_1);
 			}
 			else {
 				sign = '\x00';
-				to_number = 0;
+				to_number = $constant_int_0;
 			}
 			var $tupleassign13 = $p['__ass_unpack'](self['_parse_number'](result, to_number), 2, null);
 			have_dec_point = $tupleassign13[0];
 			to_remainder = $tupleassign13[1];
 			n_remainder = $m['__op_sub']($sub111=$m['len'](result),$sub112=to_remainder);
 			digits = result;
-			spec = self['_calc_num_width'](0, sign, to_number, n_digits, n_remainder, have_dec_point, digits);
+			spec = self['_calc_num_width']($constant_int_0, sign, to_number, n_digits, n_remainder, have_dec_point, digits);
 			fill = ($p['bool']($m['op_eq'](self['_fill_char'], '\x00'))? (self['_lit'](' ')) : (self['_fill_char']));
-			return self['_fill_number'](spec, digits, to_number, 0, fill, to_remainder, false);
+			return self['_fill_number'](spec, digits, to_number, $constant_int_0, fill, to_remainder, false);
 		}
 	, 1, [null,null,['self'],['w_float']]);
 		$cls_definition['_format_float'] = $method;
 		$method = $pyjs__bind_method2('format_float', function(w_float) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_float = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $or60,$or61,$attr373,$or63,$or64,$attr374,$or66,$or62,tp,$or59,$or58,$or65;
 			if ($p['bool'](self['_parse_spec']('\x00', '>'))) {
@@ -11647,14 +13757,24 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('_format_complex', function(w_complex) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_complex = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var re_grouped_digits,$sub120,n_im_digits,add_parens,im_have_dec,tp,re_num,im_n_remainder,$add181,$add180,$add182,re_remainder_ptr,skip_re,im_spec,$add178,$add179,$attr375,$attr377,$attr376,$attr379,$attr378,$add177,$mod7,$mod8,out,im_remainder_ptr,re_spec,tmp_align,re_n_remainder,$mul14,$mul13,$and59,tmp_fill_char,im_num,tmp_width,$attr418,$attr419,$attr410,$attr411,$attr412,$attr413,$attr414,$attr415,$attr416,$attr417,default_precision,$attr388,$attr389,$attr384,$attr385,$attr386,$attr387,$attr380,$attr381,$attr382,$attr383,msg,$attr409,$attr408,$attr403,$attr402,$attr401,$attr400,$attr407,$attr406,$attr405,$attr404,$sub113,$sub117,$sub116,$sub115,$sub114,$sub119,$sub118,$attr399,$attr398,$attr397,$attr396,$attr395,$attr394,$attr393,$attr392,$attr391,$attr390,$assign3,to_real_number,to_imag_number,re_sign,re_have_dec,$and60,fill,im_grouped_digits,n_re_digits,$attr420,im_sign;
 			tp = self['_type'];
 			self['_get_locale'](tp);
-			default_precision = 6;
+			default_precision = $constant_int_6;
 			if ($p['bool']($m['op_eq'](self['_align'], '='))) {
 				msg = "'=' alignment flag is not allowed in complex format specifier";
 				throw ($m['ValueError'](msg));
@@ -11669,22 +13789,22 @@ r = Math['round'](n*x)/n;
 					(($mod7=$mod7%$mod8)<0&&$mod8>0?$mod7+$mod8:$mod7):
 					$m['op_mod']($mod7,$mod8))));
 			}
-			skip_re = 0;
-			add_parens = 0;
+			skip_re = $constant_int_0;
+			add_parens = $constant_int_0;
 			if ($p['bool']($m['op_eq'](tp, '\x00'))) {
 				tp = 'g';
-				default_precision = 12;
-				if ($p['bool'](($p['bool']($and59=$m['op_eq'](w_complex['realval'], 0))?$m['op_eq']((typeof copysign == "undefined"?$m['copysign']:copysign)(1.0, w_complex['realval']), 1.0):$and59))) {
-					skip_re = 1;
+				default_precision = $constant_int_12;
+				if ($p['bool'](($p['bool']($and59=$m['op_eq'](w_complex['realval'], $constant_int_0))?$m['op_eq']((typeof copysign == "undefined"?$m['copysign']:copysign)(1.0, w_complex['realval']), 1.0):$and59))) {
+					skip_re = $constant_int_1;
 				}
 				else {
-					add_parens = 1;
+					add_parens = $constant_int_1;
 				}
 			}
 			if ($p['bool']($m['op_eq'](tp, 'n'))) {
 				tp = 'g';
 			}
-			if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub25=1)=='number'?
+			if ($p['bool']($m['op_eq'](self['_precision'], (typeof ($usub25=$constant_int_1)=='number'?
 				-$usub25:
 				$m['op_usub']($usub25))))) {
 				self['_precision'] = default_precision;
@@ -11693,27 +13813,27 @@ r = Math['round'](n*x)/n;
 			im_num = (typeof formatd == "undefined"?$m['formatd']:formatd)(w_complex['imagval'], tp, self['_precision']);
 			n_re_digits = $m['len'](re_num);
 			n_im_digits = $m['len'](im_num);
-			to_real_number = 0;
-			to_imag_number = 0;
+			to_real_number = $constant_int_0;
+			to_imag_number = $constant_int_0;
 			$assign3 = '';
 			re_sign = $assign3;
 			im_sign = $assign3;
-			if ($p['bool']($m['op_eq'](re_num['__getitem__'](0), '-'))) {
+			if ($p['bool']($m['op_eq'](re_num['__getitem__']($constant_int_0), '-'))) {
 				re_sign = '-';
-				to_real_number = 1;
-				n_re_digits = $m['__op_sub']($sub113=n_re_digits,$sub114=1);
+				to_real_number = $constant_int_1;
+				n_re_digits = $m['__op_sub']($sub113=n_re_digits,$sub114=$constant_int_1);
 			}
-			if ($p['bool']($m['op_eq'](im_num['__getitem__'](0), '-'))) {
+			if ($p['bool']($m['op_eq'](im_num['__getitem__']($constant_int_0), '-'))) {
 				im_sign = '-';
-				to_imag_number = 1;
-				n_im_digits = $m['__op_sub']($sub115=n_im_digits,$sub116=1);
+				to_imag_number = $constant_int_1;
+				n_im_digits = $m['__op_sub']($sub115=n_im_digits,$sub116=$constant_int_1);
 			}
 			tmp_fill_char = self['_fill_char'];
 			tmp_align = self['_align'];
 			tmp_width = self['_width'];
 			self['_fill_char'] = '\x00';
 			self['_align'] = '<';
-			self['_width'] = (typeof ($usub26=1)=='number'?
+			self['_width'] = (typeof ($usub26=$constant_int_1)=='number'?
 				-$usub26:
 				$m['op_usub']($usub26));
 			var $tupleassign14 = $p['__ass_unpack'](self['_parse_number'](re_num, to_real_number), 2, null);
@@ -11724,38 +13844,38 @@ r = Math['round'](n*x)/n;
 			im_remainder_ptr = $tupleassign15[1];
 			re_n_remainder = $m['__op_sub']($sub117=$m['len'](re_num),$sub118=re_remainder_ptr);
 			im_n_remainder = $m['__op_sub']($sub119=$m['len'](im_num),$sub120=im_remainder_ptr);
-			re_spec = self['_calc_num_width'](0, re_sign, to_real_number, n_re_digits, re_n_remainder, re_have_dec, re_num);
+			re_spec = self['_calc_num_width']($constant_int_0, re_sign, to_real_number, n_re_digits, re_n_remainder, re_have_dec, re_num);
 			re_grouped_digits = self['_grouped_digits'];
 			if ($p['bool'](!$p['bool'](skip_re))) {
 				self['_sign'] = '+';
 			}
-			im_spec = self['_calc_num_width'](0, im_sign, to_imag_number, n_im_digits, im_n_remainder, im_have_dec, im_num);
+			im_spec = self['_calc_num_width']($constant_int_0, im_sign, to_imag_number, n_im_digits, im_n_remainder, im_have_dec, im_num);
 			im_grouped_digits = self['_grouped_digits'];
 			if ($p['bool'](skip_re)) {
-				re_spec['n_total'] = 0;
+				re_spec['n_total'] = $constant_int_0;
 			}
 			self['_align'] = tmp_align;
 			self['_width'] = tmp_width;
 			self['_fill_char'] = tmp_fill_char;
-			self['_calc_padding'](self['empty'], $m['__op_add']($add181=$m['__op_add']($add179=$m['__op_add']($add177=re_spec['n_total'],$add178=im_spec['n_total']),$add180=1),$add182=(typeof ($mul13=add_parens)==typeof ($mul14=2) && typeof $mul13=='number'?
+			self['_calc_padding'](self['empty'], $m['__op_add']($add181=$m['__op_add']($add179=$m['__op_add']($add177=re_spec['n_total'],$add178=im_spec['n_total']),$add180=$constant_int_1),$add182=(typeof ($mul13=add_parens)==typeof ($mul14=$constant_int_2) && typeof $mul13=='number'?
 				$mul13*$mul14:
 				$m['op_mul']($mul13,$mul14))));
 			out = self['_builder']();
 			fill = self['_fill_char'];
 			if ($p['bool']($m['op_eq'](fill, '\x00'))) {
-				fill = self['_lit'](' ')['__getitem__'](0);
+				fill = self['_lit'](' ')['__getitem__']($constant_int_0);
 			}
 			out['append_multiple_char'](fill, self['_left_pad']);
 			if ($p['bool'](add_parens)) {
-				out['append'](self['_lit']('(')['__getitem__'](0));
+				out['append'](self['_lit']('(')['__getitem__']($constant_int_0));
 			}
 			if ($p['bool'](!$p['bool'](skip_re))) {
-				out['append'](self['_fill_number'](re_spec, re_num, to_real_number, 0, fill, re_remainder_ptr, false, re_grouped_digits));
+				out['append'](self['_fill_number'](re_spec, re_num, to_real_number, $constant_int_0, fill, re_remainder_ptr, false, re_grouped_digits));
 			}
-			out['append'](self['_fill_number'](im_spec, im_num, to_imag_number, 0, fill, im_remainder_ptr, false, im_grouped_digits));
-			out['append'](self['_lit']('j')['__getitem__'](0));
+			out['append'](self['_fill_number'](im_spec, im_num, to_imag_number, $constant_int_0, fill, im_remainder_ptr, false, im_grouped_digits));
+			out['append'](self['_lit']('j')['__getitem__']($constant_int_0));
 			if ($p['bool'](add_parens)) {
-				out['append'](self['_lit'](')')['__getitem__'](0));
+				out['append'](self['_lit'](')')['__getitem__']($constant_int_0));
 			}
 			out['append_multiple_char'](fill, self['_right_pad']);
 			return out['build']();
@@ -11765,9 +13885,19 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format_complex', function(w_complex) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_complex = arguments[1];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== '5fbc80712012f3edbe9afeb1dd63ab10') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $attr421,$or73,$or72,$or71,$or67,$or68,$or69,$or70,tp,$attr422,$or74;
 			if ($p['bool'](self['_parse_spec']('\x00', '>'))) {
@@ -11793,13 +13923,23 @@ r = Math['round'](n*x)/n;
 		$method = $pyjs__bind_method2('format', function(w_obj, spec) {
 			if (this['__is_instance__'] === true) {
 				var self = this;
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']+1);
 			} else {
 				var self = arguments[0];
 				w_obj = arguments[1];
 				spec = arguments[2];
+				if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+				if ($pyjs['options']['arg_count'] && arguments['length'] != 3) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 3, arguments['length']);
+			}
+			if ($pyjs['options']['arg_instance_type']) {
+				if (self.prototype['__md5__'] !== 'c6ae281a312f180b86a04084ad76eafd') {
+					if (!$m['_isinstance'](self, arguments['callee']['__class__'])) {
+						$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					}
+				}
 			}
 			var $and62,$and61,fmt;
-			if ($p['bool'](($p['bool']($and61=$m['isinstance'](w_obj, $m['object']))?!$p['bool']($m['isinstance'](w_obj, $p['tuple']([$p['float_int'], $m['float'], $m['basestring']]))):$and61))) {
+			if ($p['bool'](($p['bool']($and61=$m['isinstance'](w_obj, $m['object']))?!$p['bool']($m['isinstance'](w_obj, $p['tuple']([$p['int'], $m['float'], $m['basestring']]))):$and61))) {
 				if ($p['bool']($m['hasattr'](w_obj, '__format__'))) {
 					return w_obj['__format__'](spec);
 				}
@@ -11811,7 +13951,7 @@ r = Math['round'](n*x)/n;
 			if ($p['bool']($m['isinstance'](w_obj, $m['basestring']))) {
 				return fmt['format_string'](w_obj);
 			}
-			else if ($p['bool']($m['isinstance'](w_obj, $p['float_int']))) {
+			else if ($p['bool']($m['isinstance'](w_obj, $p['int']))) {
 				return fmt['format_int_or_long'](w_obj, spec);
 			}
 			else if ($p['bool']($m['isinstance'](w_obj, $m['float']))) {
@@ -11830,17 +13970,18 @@ r = Math['round'](n*x)/n;
 		var $bases = new Array($m['object']);
 		return $pyjs_type('StringFormatSpace', $bases, $cls_definition);
 	})();
-	$m['DTSF_STR_PRECISION'] = 12;
-	$m['DTSF_SIGN'] = 1;
-	$m['DTSF_ADD_DOT_0'] = 2;
-	$m['DTSF_ALT'] = 4;
-	$m['DIST_FINITE'] = 1;
-	$m['DIST_NAN'] = 2;
-	$m['DIST_INFINITY'] = 3;
+	$m['DTSF_STR_PRECISION'] = $constant_int_12;
+	$m['DTSF_SIGN'] = $constant_int_1;
+	$m['DTSF_ADD_DOT_0'] = $constant_int_2;
+	$m['DTSF_ALT'] = $constant_int_4;
+	$m['DIST_FINITE'] = $constant_int_1;
+	$m['DIST_NAN'] = $constant_int_2;
+	$m['DIST_INFINITY'] = $constant_int_3;
 	$m['formatd'] = function(x, code, precision, flags) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 3 || arguments['length'] > 4)) $pyjs__exception_func_param(arguments['callee']['__name__'], 3, 4, arguments['length']);
 		if (typeof flags == 'undefined') flags=arguments['callee']['__args__'][5][1];
 		var sign,$and64,$and63,$sub122,$sub123,alt,$sub121,$mod9,$sub124,fmt,$add188,$add183,$add185,$add184,$add187,$add186,$mod10,$iter34_nextval,c,$iter34_test,idx,$iter34_array,$iter34_idx,s,$iter34_iter,$iter34_type;
-		if ($p['bool']((flags)&($m['DTSF_ALT']))) {
+		if ($p['bool']($m['op_bitand2'](flags, $m['DTSF_ALT']))) {
 			alt = '#';
 		}
 		else {
@@ -11855,20 +13996,20 @@ r = Math['round'](n*x)/n;
 		s = (typeof ($mod9=fmt)==typeof ($mod10=$p['tuple']([x])) && typeof $mod9=='number'?
 			(($mod9=$mod9%$mod10)<0&&$mod10>0?$mod9+$mod10:$mod9):
 			$m['op_mod']($mod9,$mod10));
-		if ($p['bool']((flags)&($m['DTSF_ADD_DOT_0']))) {
+		if ($p['bool']($m['op_bitand2'](flags, $m['DTSF_ADD_DOT_0']))) {
 			idx = $m['len'](s);
-			$iter34_iter = $m['range']($m['len'](s), 0, (typeof ($usub27=1)=='number'?
+			$iter34_iter = $m['range']($m['len'](s), $constant_int_0, (typeof ($usub27=$constant_int_1)=='number'?
 				-$usub27:
 				$m['op_usub']($usub27)));
 			$iter34_nextval=$p['__iter_prepare']($iter34_iter,false);
 			while ($iter34_test = typeof($p['__wrapped_next']($iter34_nextval)['$nextval']) != 'undefined') {
 				idx = $iter34_nextval['$nextval'];
-				c = s['__getitem__']($m['__op_sub']($sub121=idx,$sub122=1));
+				c = s['__getitem__']($m['__op_sub']($sub121=idx,$sub122=$constant_int_1));
 				if ($p['bool']('eE'['__contains__'](c))) {
 					if ($p['bool']('+-'['__contains__'](s['__getitem__'](idx)))) {
-						idx = $m['__op_add']($add183=idx,$add184=1);
+						idx = $m['__op_add']($add183=idx,$add184=$constant_int_1);
 					}
-					s = $m['__op_add']($add185=$p['__getslice'](s, 0, idx),$add186=$m['sprintf']('%02d', $p['float_int']($p['__getslice'](s, idx, null))));
+					s = $m['__op_add']($add185=$p['__getslice'](s, 0, idx),$add186=$m['sprintf']('%02d', $p['int']($p['__getslice'](s, idx, null))));
 					break;
 				}
 				if ($p['bool']('.eE'['__contains__'](c))) {
@@ -11881,15 +14022,15 @@ r = Math['round'](n*x)/n;
 				}
 				else {
 					sign = '+';
-					if ($p['bool'](($m['cmp'](x, 1) == -1))) {
+					if ($p['bool'](($m['cmp'](x, $constant_int_1) == -1))) {
 						sign = '-';
 					}
-					s = $m['sprintf']('%s.%se%s%02d', $p['tuple']([s['__getitem__'](0), $p['__getslice'](s, 1, null), sign, $m['__op_sub']($sub123=$m['len'](s),$sub124=1)]));
+					s = $m['sprintf']('%s.%se%s%02d', $p['tuple']([s['__getitem__']($constant_int_0), $p['__getslice'](s, $constant_int_1, null), sign, $m['__op_sub']($sub123=$m['len'](s),$sub124=$constant_int_1)]));
 				}
 			}
 		}
 		else if ($p['bool'](($p['bool']($and63=$m['op_eq'](code, 'r'))?s['endswith']('.0'):$and63))) {
-			s = $p['__getslice'](s, 0, (typeof ($usub28=2)=='number'?
+			s = $p['__getslice'](s, 0, (typeof ($usub28=$constant_int_2)=='number'?
 				-$usub28:
 				$m['op_usub']($usub28)));
 		}
@@ -11898,8 +14039,9 @@ r = Math['round'](n*x)/n;
 	$m['formatd']['__name__'] = 'formatd';
 
 	$m['formatd']['__bind_type__'] = 0;
-	$m['formatd']['__args__'] = [null,null,['x'],['code'],['precision'],['flags', 0]];
+	$m['formatd']['__args__'] = [null,null,['x'],['code'],['precision'],['flags', $constant_int_0]];
 	$m['numeric_formatting'] = function() {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 0) $pyjs__exception_func_param(arguments['callee']['__name__'], 0, 0, arguments['length']);
 
 		return $p['tuple'](['.', ',', '\x03\x00']);
 	};
@@ -11908,6 +14050,7 @@ r = Math['round'](n*x)/n;
 	$m['numeric_formatting']['__bind_type__'] = 0;
 	$m['numeric_formatting']['__args__'] = [null,null];
 	$m['_string_format'] = function(s, args, kw) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 3, arguments['length']);
 		if (typeof args == 'undefined') args=arguments['callee']['__args__'][3][1];
 		if (typeof kw == 'undefined') kw=arguments['callee']['__args__'][4][1];
 		var space,res,fm;
@@ -11921,6 +14064,7 @@ r = Math['round'](n*x)/n;
 	$m['_string_format']['__bind_type__'] = 0;
 	$m['_string_format']['__args__'] = [null,null,['s'],['args', $p['list']([])],['kw', $p['dict']([])]];
 	$m['format'] = function(val, spec) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 2, arguments['length']);
 		if (typeof spec == 'undefined') spec=arguments['callee']['__args__'][3][1];
 		var args,space;
 		args = $p['list']([val]);
@@ -12015,6 +14159,7 @@ r = Math['round'](n*x)/n;
     }
 };
 	$m['__with'] = function(mgr, func) {
+		if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
 		var $attr423,$attr424,value,$pyjs_try_err,exit,exc;
 		exit = $m['type'](mgr)['__exit__'];
 		value = $m['type'](mgr)['__enter__'](mgr);
@@ -12052,13 +14197,14 @@ r = Math['round'](n*x)/n;
 	$m['Ellipsis'] = $m['EllipsisType']();
 	$m['__nondynamic_modules__'] = $p['dict']([]);
 	$m['__import__'] = function(name, globals, locals, fromlist, level) {
+		if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 5)) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 5, arguments['length']);
 		if (typeof globals == 'undefined') globals=arguments['callee']['__args__'][3][1];
 		if (typeof locals == 'undefined') locals=arguments['callee']['__args__'][4][1];
 		if (typeof fromlist == 'undefined') fromlist=arguments['callee']['__args__'][5][1];
 		if (typeof level == 'undefined') level=arguments['callee']['__args__'][6][1];
 		var $add190,module,$add189,$and66,$and65;
 		module = $m['___import___'](name, null);
-		if ($p['bool'](($p['bool']($and65=!$p['bool']((module === null)))?$m['hasattr'](module, '__was_initialized__'):$and65))) {
+		if ($p['bool'](($p['bool']($and65=!$p['bool']($m['op_is'](module, null)))?$m['hasattr'](module, '__was_initialized__'):$and65))) {
 			return module;
 		}
 		throw ($m['ImportError']($m['__op_add']($add189='No module named ',$add190=name)));
@@ -12067,7 +14213,7 @@ r = Math['round'](n*x)/n;
 	$m['__import__']['__name__'] = '__import__';
 
 	$m['__import__']['__bind_type__'] = 0;
-	$m['__import__']['__args__'] = [null,null,['name'],['globals', $p['dict']([])],['locals', $p['dict']([])],['fromlist', $p['list']([])],['level', (typeof ($usub29=1)=='number'?
+	$m['__import__']['__args__'] = [null,null,['name'],['globals', $p['dict']([])],['locals', $p['dict']([])],['fromlist', $p['list']([])],['level', (typeof ($usub29=$constant_int_1)=='number'?
 		-$usub29:
 		$m['op_usub']($usub29))]];
 	$m['sys'] = $m['___import___']('sys', null);

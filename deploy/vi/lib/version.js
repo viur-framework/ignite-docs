@@ -6,17 +6,12 @@ $pyjs['loaded_modules']['version'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'version';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'version.py, line 1:\n    builddate="Fri Feb  3 16:46:50 CET 2017"';
-	$m.__track_lines__[2] = 'version.py, line 2:\n    revision="4b4c5c9a3009a66247c3f2ffc5e2877c772a9b5c"';
+	try {
 
 
-	$pyjs['track']['module']='version';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=1;
-	$m['builddate'] = 'Fri Feb  3 16:46:50 CET 2017';
-	$pyjs['track']['lineno']=2;
-	$m['revision'] = '4b4c5c9a3009a66247c3f2ffc5e2877c772a9b5c';
+		$m['builddate'] = 'Fr 22. M\xc3\xa4r 16:32:44 CET 2019';
+		$m['revision'] = 'fd3715ded630ea93b3ca4d915abb0b4e851103ca';
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end version */
 

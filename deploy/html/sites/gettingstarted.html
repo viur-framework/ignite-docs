@@ -1,5 +1,5 @@
 {% set isActive="gettingstarted" %}
-{% extends "viur_base.html" %}
+{% extends "template.html" %}
 {%- block additionalTitle -%}Getting Started{%- endblock additionalTitle -%}
 
 {% block content %}
@@ -27,7 +27,7 @@ Git (https://git-scm.com)</pre>
 		<pre>$ npm run setup</pre>
 
 		<div class="msg msg-vSuccess has-icon">
-			{{ icon("check") }}
+			{{ embedSvg("check") }}
 			<h3 class="msg-headline">You did it!</h3>
 			<p>Let's start.</p>
 		</div>
@@ -58,7 +58,7 @@ Git (https://git-scm.com)</pre>
 		<pre>$ gulp watch</pre>
 
 		<div class="msg msg-vSuccess has-icon">
-			{{ icon("check") }}
+			{{ embedSvg("check") }}
 			<h3 class="msg-headline">Well Done!</h3>
 			<p>Open your project in a browser.</p>
 		</div>

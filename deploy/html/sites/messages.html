@@ -1,5 +1,5 @@
 {% set isActive="messages" %}
-{% extends "viur_base.html" %}
+{% extends "template.html" %}
 {% block additionalTitle %}Alerts and Messages{% endblock additionalTitle %}
 
 {% block content %}
@@ -22,7 +22,7 @@
 		<p></p>
 		<div class="sandbox js-codeChild">
 			<div class="msg msg-vSuccess has-icon">
-				{{ icon("check") }}
+				{{ embedSvg("check") }}
 				<h3 class="msg-headline">Success!</h3>
 				<p>This was successful.</p>
 			</div>
@@ -35,7 +35,7 @@
 		<p></p>
 		<div class="sandbox js-codeChild">
 			<div class="msg msg-vWarn has-icon">
-				{{ icon("flash") }}
+				{{ embedSvg("flash") }}
 				<h3 class="msg-headline">Attention!</h3>
 				<p>This is a warning.</p>
 			</div>
@@ -48,7 +48,7 @@
 		<p></p>
 		<div class="sandbox js-codeChild">
 			<div class="msg msg-vError has-icon">
-				{{ icon("cross") }}
+				{{ embedSvg("cross") }}
 				<h3 class="msg-headline">Error!</h3>
 				<p>This was a mistake.</p>
 			</div>
@@ -61,7 +61,7 @@
 		<p></p>
 		<div class="sandbox js-codeChild">
 			<div class="msg has-icon">
-				{{ icon("heart") }}
+				{{ embedSvg("heart") }}
 				<h3 class="msg-headline">Icon!</h3>
 				<p>This is an inline icon. It changes the color according to its parent.</p>
 			</div>
@@ -72,22 +72,22 @@
 {% block additionalBody %}
 	<div class="alertGroup">
 		<div class="alert has-icon">
-			{{ icon("heart") }}
+			{{ embedSvg("heart") }}
 			<h4 class="alert-headline">Advice!</h4>
 			<p>This gives some advice.</p>
 		</div>
 		<div class="alert alert-vSuccess has-icon">
-			{{ icon("check") }}
+			{{ embedSvg("check") }}
 			<h4 class="alert-headline">Success!</h4>
 			<p>This was successful.</p>
 		</div>
 		<div class="alert alert-vWarn has-icon">
-			{{ icon("flash") }}
+			{{ embedSvg("flash") }}
 			<h4 class="alert-headline">Warning!</h4>
 			<p>This is a warning.</p>
 		</div>
 		<div class="alert alert-vError has-icon">
-			{{ icon("cross") }}
+			{{ embedSvg("cross") }}
 			<h4 class="alert-headline">Error!</h4>
 			<p>This was a mistake.</p>
 		</div>

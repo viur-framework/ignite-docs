@@ -6,58 +6,18 @@ $pyjs['loaded_modules']['config'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'config';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'config.py, line 1:\n    #-*- coding: utf-8 -*-';
-	$m.__track_lines__[2] = 'config.py, line 2:\n    from event import EventDispatcher';
-	$m.__track_lines__[3] = 'config.py, line 3:\n    from i18n import translate';
-	$m.__track_lines__[5] = 'config.py, line 5:\n    conf = {';
+	try {
 
-
-	$pyjs['track']['module']='config';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=2;
-	$pyjs['track']={'module':$pyjs['track']['module'],'lineno':$pyjs['track']['lineno']};$pyjs['trackstack']['push']($pyjs['track']);
-	$m['EventDispatcher'] = $p['___import___']('event.EventDispatcher', null, null, false);
-	$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-	$pyjs['track']['lineno']=3;
-	$pyjs['track']={'module':$pyjs['track']['module'],'lineno':$pyjs['track']['lineno']};$pyjs['trackstack']['push']($pyjs['track']);
-	$m['translate'] = $p['___import___']('i18n.translate', null, null, false);
-	$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-	$pyjs['track']['lineno']=5;
-	$m['conf'] = (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([['vi.version', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['tuple']([2, 0, 1]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})()], ['vi.version.appendix', ''], ['mainConfig', null], ['mainWindow', null], ['server', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_2_err){if (!$p['isinstance']($pyjs_dbg_2_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_2_err);}throw $pyjs_dbg_2_err;
-}})()], ['server.version', null], ['modules', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([['_tasks', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([['handler', 'singleton'], ['name', 'Tasks']]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_3_err){if (!$p['isinstance']($pyjs_dbg_3_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_3_err);}throw $pyjs_dbg_3_err;
-}})()]]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_4_err){if (!$p['isinstance']($pyjs_dbg_4_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_4_err);}throw $pyjs_dbg_4_err;
-}})()], ['tasks', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([['server', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['list']([]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_5_err){if (!$p['isinstance']($pyjs_dbg_5_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_5_err);}throw $pyjs_dbg_5_err;
-}})()], ['client', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['list']([]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_6_err){if (!$p['isinstance']($pyjs_dbg_6_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_6_err);}throw $pyjs_dbg_6_err;
-}})()]]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_7_err){if (!$p['isinstance']($pyjs_dbg_7_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_7_err);}throw $pyjs_dbg_7_err;
-}})()], ['currentlanguage', 'de'], ['currentUser', null], ['empty_value', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $m['translate']('-');
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_8_err){if (!$p['isinstance']($pyjs_dbg_8_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_8_err);}throw $pyjs_dbg_8_err;
-}})()], ['initialHashEvent', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $m['EventDispatcher']('initialHash');
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_9_err){if (!$p['isinstance']($pyjs_dbg_9_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_9_err);}throw $pyjs_dbg_9_err;
-}})()], ['toplevelactions', (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['list'](['tasks', 'userstate', 'logout']);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_10_err){if (!$p['isinstance']($pyjs_dbg_10_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_10_err);}throw $pyjs_dbg_10_err;
-}})()], ['batchSize', 20], ['showBoneNames', false], ['internalPreview', true], ['maxMultiBoneEntries', 5]]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_11_err){if (!$p['isinstance']($pyjs_dbg_11_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_11_err);}throw $pyjs_dbg_11_err;
-}})();
+		var $constant_int_0 = new $p['int'](0);
+		var $constant_int_2 = new $p['int'](2);
+		var $constant_int_3 = new $p['int'](3);
+		var $constant_int_20 = new $p['int'](20);
+		var $constant_int_5 = new $p['int'](5);
+		$m['EventDispatcher'] = $p['___import___']('event.EventDispatcher', null, null, false);
+		$m['translate'] = $p['___import___']('i18n.translate', null, null, false);
+		$m['Interpreter'] = $p['___import___']('logics.Interpreter', null, null, false);
+		$m['conf'] = $p['dict']([['vi.version', $p['tuple']([$constant_int_2, $constant_int_3, $constant_int_0])], ['vi.version.appendix', ''], ['vi.viur', 'ViUR'], ['vi.name', 'ViUR Visual Interface'], ['vi.title.delimiter', ' - '], ['vi.access.rights', $p['list'](['admin', 'root'])], ['mainConfig', null], ['mainWindow', null], ['server', $p['dict']([])], ['server.version', null], ['startupHash', (typeof eval == "undefined"?$m['eval']:eval)('window.top.location.hash')], ['modules', $p['dict']([['_tasks', $p['dict']([['handler', 'singleton'], ['name', 'Tasks']])]])], ['tasks', $p['dict']([['server', $p['list']([])], ['client', $p['list']([])]])], ['currentlanguage', 'de'], ['currentUser', null], ['empty_value', $m['translate']('-')], ['initialHashEvent', $m['EventDispatcher']('initialHash')], ['toplevelactions', $p['list'](['tasks', 'userstate', 'logout'])], ['batchSize', $constant_int_20], ['showBoneNames', false], ['internalPreview', true], ['maxMultiBoneEntries', $constant_int_5], ['logics', $m['Interpreter']()]]);
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end config */
 
@@ -66,5 +26,5 @@ $pyjs['loaded_modules']['config'] = function (__mod_name__) {
 
 
 /*
-PYJS_DEPS: ['event.EventDispatcher', 'event', 'i18n.translate', 'i18n']
+PYJS_DEPS: ['event.EventDispatcher', 'event', 'i18n.translate', 'i18n', 'logics.Interpreter', 'logics']
 */

@@ -7,13 +7,11 @@ $pyjs['loaded_modules']['html5.html5Attr'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'html5.html5Attr';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	$pyjs['loaded_modules']['html5']['html5Attr'] = $pyjs['loaded_modules']['html5.html5Attr'];
-	$m.__track_lines__[1] = 'html5.html5Attr.py, line 1:\n    ';
+	try {
 
 
-	$pyjs['track']['module']='html5.html5Attr';
-	$pyjs['track']['lineno']=1;
+ 	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end html5.html5Attr */
 

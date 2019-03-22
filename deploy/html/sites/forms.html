@@ -1,5 +1,5 @@
 {% set isActive="forms" %}
-{% extends "viur_base.html" %}
+{% extends "template.html" %}
 {% block additionalTitle %}Forms{% endblock additionalTitle %}
 
 {% block content %}
@@ -68,7 +68,7 @@
 					<button class="btn" type="button">Button</button>
 				</div>
 				<div class="inputGroup">
-					<label class="label has-icon" for="inputGroup-input3">{{ icon("heart") }}Label with icon</label>
+					<label class="label has-icon" for="inputGroup-input3">{{ embedSvg("heart") }}Label with icon</label>
 					<input class="input" id="inputGroup-input3" type="text" placeholder="Default input">
 					<button class="btn" type="button">Button</button>
 				</div>

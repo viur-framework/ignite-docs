@@ -7,17 +7,12 @@ $pyjs['loaded_modules']['os.path'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'os.path';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	$pyjs['loaded_modules']['os']['path'] = $pyjs['loaded_modules']['os.path'];
-	$m.__track_lines__[1] = 'os.path.py, line 1:\n    from pyjspath import *';
+	try {
 
 
-	$pyjs['track']['module']='os.path';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']={'module':$pyjs['track']['module'],'lineno':$pyjs['track']['lineno']};$pyjs['trackstack']['push']($pyjs['track']);
-	$p['__import_all__']('pyjspath', 'os', $m, null, false);
-	$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
+		$p['__import_all__']('pyjspath', 'os', $m, null, false);
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end os.path */
 

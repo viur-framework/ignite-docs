@@ -7,19 +7,12 @@ $pyjs['loaded_modules']['translations.en'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'translations.en';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	$pyjs['loaded_modules']['translations']['en'] = $pyjs['loaded_modules']['translations.en'];
-	$m.__track_lines__[1] = 'translations.en.py, line 1:\n    #-*- coding: utf-8 -*-';
-	$m.__track_lines__[3] = 'translations.en.py, line 3:\n    lngEn = {';
+	try {
 
 
-	$pyjs['track']['module']='translations.en';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=3;
-	$m['lngEn'] = (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['dict']([['vi.login.title', 'Login'], ['vi.login.handler.userpassword', 'User'], ['username', 'Username'], ['password', 'Password'], ['login', 'Login'], ['one time password', 'One Time Password'], ['verify', 'Verify'], ['vi.login.handler.googleaccount', 'Google'], ['login with google', 'Login with Google']]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})();
+		$m['lngEn'] = $p['dict']([['vi.login.title', 'Login'], ['vi.login.handler.userpassword', 'User'], ['username', 'Username'], ['password', 'Password'], ['login', 'Login'], ['one time password', 'One Time Password'], ['verify', 'Verify'], ['vi.login.handler.googleaccount', 'Google'], ['login with google', 'Login with Google'], ['vi.login.insufficient-rights', 'Your current user has insufficient access rights to use this part of the software.\n\nPlease login under a different user.'], ['login as different user', 'Log-out current user'], ['vi.action.edit.refresh.question', 'This will reload the currently shown dataset.\nUnsafed changes will be lost.\nDo you really want to continue?'], ['vi.action.edit.refresh.title', 'Refresh dataset from server']]);
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end translations.en */
 

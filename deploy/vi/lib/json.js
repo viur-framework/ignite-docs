@@ -6,125 +6,99 @@ $pyjs['loaded_modules']['json'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'json';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'json.py, line 1:\n    # TODO: make this more json module compliant (exceptions etc.)';
-	$m.__track_lines__[3] = 'json.py, line 3:\n    from __pyjamas__ import JS';
-	$m.__track_lines__[5] = 'json.py, line 5:\n    """';
-	$m.__track_lines__[55] = 'json.py, line 55:\n    class JSONParser:';
-	$m.__track_lines__[56] = 'json.py, line 56:\n    def decode(self, s):';
-	$m.__track_lines__[57] = 'json.py, line 57:\n    return self.jsObjectToPy(self.parseJSON(s))';
-	$m.__track_lines__[59] = 'json.py, line 59:\n    def decodeAsObject(self, s, object_hook=None):';
-	$m.__track_lines__[60] = 'json.py, line 60:\n    return self.jsObjectToPyObject(self.parseJSON(s))';
-	$m.__track_lines__[62] = 'json.py, line 62:\n    def encode(self, obj):';
-	$m.__track_lines__[63] = 'json.py, line 63:\n    return self.toJSONString(obj)';
-	$m.__track_lines__[65] = 'json.py, line 65:\n    def jsObjectToPy(self, obj):';
-	$m.__track_lines__[66] = 'json.py, line 66:\n    JS("""';
-	$m.__track_lines__[81] = 'json.py, line 81:\n    def jsObjectToPyObject(self, obj):';
-	$m.__track_lines__[82] = 'json.py, line 82:\n    JS("""';
-	$m.__track_lines__[212] = 'json.py, line 212:\n    def parseJSON(self, str):';
-	$m.__track_lines__[213] = 'json.py, line 213:\n    JS(r"""';
-	$m.__track_lines__[223] = 'json.py, line 223:\n    parser = JSONParser()';
-	$m.__track_lines__[224] = "json.py, line 224:\n    dumps = getattr(parser, 'encode')";
-	$m.__track_lines__[225] = "json.py, line 225:\n    loads = getattr(parser, 'decodeAsObject')";
-	$m.__track_lines__[226] = 'json.py, line 226:\n    JSONDecodeException = None';
-	$m.__track_lines__[110] = 'json.py, line 110:\n    def toJSONString(self, obj):';
-	$m.__track_lines__[111] = 'json.py, line 111:\n    JS(r"""';
+	try {
 
 
-	$pyjs['track']['module']='json';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=3;
-	$pyjs['track']['lineno']=5;
-	$pyjs['track']['lineno']=55;
-	$m['JSONParser'] = (function(){
-		var $cls_definition = new Object();
-		var $method;
-		$cls_definition['__module__'] = 'json';
-		$pyjs['track']['lineno']=56;
-		$method = $pyjs__bind_method2('decode', function(s) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				s = arguments[1];
+		$m['JSONParser'] = (function(){
+			var $cls_definition = new Object();
+			var $method;
+			$cls_definition['__module__'] = 'json';
+			$cls_definition['__md5__'] = '0de792bc98342f133ceb1465de7d4c67';
+			$method = $pyjs__bind_method2('decode', function(s) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					s = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
+
+				return self['jsObjectToPy'](self['parseJSON'](s));
 			}
-
-			$pyjs['track']={'module':'json', 'lineno':56};$pyjs['trackstack']['push']($pyjs['track']);
-			$pyjs['track']['module']='json';
-			$pyjs['track']['lineno']=56;
-			$pyjs['track']['lineno']=57;
-			$pyjs['track']['lineno']=57;
-			var $pyjs__ret = (function(){try{try{$pyjs['in_try_except'] += 1;
-			return self['jsObjectToPy']((function(){try{try{$pyjs['in_try_except'] += 1;
-			return self['parseJSON'](s);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})());
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_2_err){if (!$p['isinstance']($pyjs_dbg_2_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_2_err);}throw $pyjs_dbg_2_err;
-}})();
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return $pyjs__ret;
-		}
 	, 1, [null,null,['self'],['s']]);
-		$cls_definition['decode'] = $method;
-		$pyjs['track']['lineno']=59;
-		$method = $pyjs__bind_method2('decodeAsObject', function(s, object_hook) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				s = arguments[1];
-				object_hook = arguments[2];
-			}
-			if (typeof object_hook == 'undefined') object_hook=arguments['callee']['__args__'][4][1];
+			$cls_definition['decode'] = $method;
+			$method = $pyjs__bind_method2('decodeAsObject', function(s, object_hook) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && (arguments['length'] < 1 || arguments['length'] > 2)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					s = arguments[1];
+					object_hook = arguments[2];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && (arguments['length'] < 2 || arguments['length'] > 3)) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 3, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
+				if (typeof object_hook == 'undefined') object_hook=arguments['callee']['__args__'][4][1];
 
-			$pyjs['track']={'module':'json', 'lineno':59};$pyjs['trackstack']['push']($pyjs['track']);
-			$pyjs['track']['module']='json';
-			$pyjs['track']['lineno']=59;
-			$pyjs['track']['lineno']=60;
-			$pyjs['track']['lineno']=60;
-			var $pyjs__ret = (function(){try{try{$pyjs['in_try_except'] += 1;
-			return self['jsObjectToPyObject']((function(){try{try{$pyjs['in_try_except'] += 1;
-			return self['parseJSON'](s);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_3_err){if (!$p['isinstance']($pyjs_dbg_3_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_3_err);}throw $pyjs_dbg_3_err;
-}})());
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_4_err){if (!$p['isinstance']($pyjs_dbg_4_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_4_err);}throw $pyjs_dbg_4_err;
-}})();
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return $pyjs__ret;
-		}
+				return self['jsObjectToPyObject'](self['parseJSON'](s));
+			}
 	, 1, [null,null,['self'],['s'],['object_hook', null]]);
-		$cls_definition['decodeAsObject'] = $method;
-		$pyjs['track']['lineno']=62;
-		$method = $pyjs__bind_method2('encode', function(obj) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				obj = arguments[1];
-			}
+			$cls_definition['decodeAsObject'] = $method;
+			$method = $pyjs__bind_method2('encode', function(obj) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					obj = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
-			$pyjs['track']={'module':'json', 'lineno':62};$pyjs['trackstack']['push']($pyjs['track']);
-			$pyjs['track']['module']='json';
-			$pyjs['track']['lineno']=62;
-			$pyjs['track']['lineno']=63;
-			$pyjs['track']['lineno']=63;
-			var $pyjs__ret = (function(){try{try{$pyjs['in_try_except'] += 1;
-			return self['toJSONString'](obj);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_5_err){if (!$p['isinstance']($pyjs_dbg_5_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_5_err);}throw $pyjs_dbg_5_err;
-}})();
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return $pyjs__ret;
-		}
-	, 1, [null,null,['self'],['obj']]);
-		$cls_definition['encode'] = $method;
-		$pyjs['track']['lineno']=65;
-		$method = $pyjs__bind_method2('jsObjectToPy', function(obj) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				obj = arguments[1];
+				return self['toJSONString'](obj);
 			}
+	, 1, [null,null,['self'],['obj']]);
+			$cls_definition['encode'] = $method;
+			$method = $pyjs__bind_method2('jsObjectToPy', function(obj) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					obj = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
 
         if (pyjslib['isArray'](obj)) {
@@ -140,17 +114,26 @@ $pyjs['loaded_modules']['json'] = function (__mod_name__) {
 
         return obj;
         
-		}
-	, 1, [null,null,['self'],['obj']]);
-		$cls_definition['jsObjectToPy'] = $method;
-		$pyjs['track']['lineno']=81;
-		$method = $pyjs__bind_method2('jsObjectToPyObject', function(obj) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				obj = arguments[1];
 			}
+	, 1, [null,null,['self'],['obj']]);
+			$cls_definition['jsObjectToPy'] = $method;
+			$method = $pyjs__bind_method2('jsObjectToPyObject', function(obj) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					obj = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
 
         if (pyjslib['isArray'](obj)) {
@@ -178,17 +161,26 @@ $pyjs['loaded_modules']['json'] = function (__mod_name__) {
 
         return obj;
         
-		}
-	, 1, [null,null,['self'],['obj']]);
-		$cls_definition['jsObjectToPyObject'] = $method;
-		$pyjs['track']['lineno']=110;
-		$method = $pyjs__bind_method2('toJSONString', function(obj) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				obj = arguments[1];
 			}
+	, 1, [null,null,['self'],['obj']]);
+			$cls_definition['jsObjectToPyObject'] = $method;
+			$method = $pyjs__bind_method2('toJSONString', function(obj) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					obj = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
 
    var m = {
@@ -290,17 +282,26 @@ $pyjs['loaded_modules']['json'] = function (__mod_name__) {
         f=s[typ];
         return f(obj);
         
-		}
-	, 1, [null,null,['self'],['obj']]);
-		$cls_definition['toJSONString'] = $method;
-		$pyjs['track']['lineno']=212;
-		$method = $pyjs__bind_method2('parseJSON', function(str) {
-			if (this['__is_instance__'] === true) {
-				var self = this;
-			} else {
-				var self = arguments[0];
-				str = arguments[1];
 			}
+	, 1, [null,null,['self'],['obj']]);
+			$cls_definition['toJSONString'] = $method;
+			$method = $pyjs__bind_method2('parseJSON', function(str) {
+				if (this['__is_instance__'] === true) {
+					var self = this;
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']+1);
+				} else {
+					var self = arguments[0];
+					str = arguments[1];
+					if ($pyjs['options']['arg_is_instance'] && self['__is_instance__'] !== true) $pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+					if ($pyjs['options']['arg_count'] && arguments['length'] != 2) $pyjs__exception_func_param(arguments['callee']['__name__'], 2, 2, arguments['length']);
+				}
+				if ($pyjs['options']['arg_instance_type']) {
+					if (self.prototype['__md5__'] !== '0de792bc98342f133ceb1465de7d4c67') {
+						if (!$p['_isinstance'](self, arguments['callee']['__class__'])) {
+							$pyjs__exception_func_instance_expected(arguments['callee']['__name__'], arguments['callee']['__class__']['__name__'], self);
+						}
+					}
+				}
 
 
         try {
@@ -310,32 +311,19 @@ $pyjs['loaded_modules']['json'] = function (__mod_name__) {
             return false;
         }
         
-		}
+			}
 	, 1, [null,null,['self'],['str']]);
-		$cls_definition['parseJSON'] = $method;
-		$pyjs['track']['lineno']=55;
-		var $bases = new Array(pyjslib['object']);
-		var $data = $p['dict']();
-		for (var $item in $cls_definition) { $data['__setitem__']($item, $cls_definition[$item]); }
-		return $p['_create_class']('JSONParser', $p['tuple']($bases), $data);
-	})();
-	$pyjs['track']['lineno']=223;
-	$m['parser'] = (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $m['JSONParser']();
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_6_err){if (!$p['isinstance']($pyjs_dbg_6_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_6_err);}throw $pyjs_dbg_6_err;
-}})();
-	$pyjs['track']['lineno']=224;
-	$m['dumps'] = (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['getattr']($m['parser'], 'encode');
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_7_err){if (!$p['isinstance']($pyjs_dbg_7_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_7_err);}throw $pyjs_dbg_7_err;
-}})();
-	$pyjs['track']['lineno']=225;
-	$m['loads'] = (function(){try{try{$pyjs['in_try_except'] += 1;
-	return $p['getattr']($m['parser'], 'decodeAsObject');
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_8_err){if (!$p['isinstance']($pyjs_dbg_8_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_8_err);}throw $pyjs_dbg_8_err;
-}})();
-	$pyjs['track']['lineno']=226;
-	$m['JSONDecodeException'] = null;
+			$cls_definition['parseJSON'] = $method;
+			var $bases = new Array(pyjslib['object']);
+			var $data = $p['dict']();
+			for (var $item in $cls_definition) { $data['__setitem__']($item, $cls_definition[$item]); }
+			return $p['_create_class']('JSONParser', $p['tuple']($bases), $data);
+		})();
+		$m['parser'] = $m['JSONParser']();
+		$m['dumps'] = $p['getattr']($m['parser'], 'encode');
+		$m['loads'] = $p['getattr']($m['parser'], 'decodeAsObject');
+		$m['JSONDecodeException'] = null;
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end json */
 

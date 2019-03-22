@@ -6,21 +6,12 @@ $pyjs['loaded_modules']['sidebarwidgets'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'sidebarwidgets';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
-	$m.__track_lines__[1] = 'sidebarwidgets.py, line 1:\n    import sidebarwidgets.internalpreview';
-	$m.__track_lines__[2] = 'sidebarwidgets.py, line 2:\n    import sidebarwidgets.filterselector';
+	try {
 
 
-	$pyjs['track']['module']='sidebarwidgets';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']={'module':$pyjs['track']['module'],'lineno':$pyjs['track']['lineno']};$pyjs['trackstack']['push']($pyjs['track']);
-	$m['sidebarwidgets'] = $p['___import___']('sidebarwidgets.internalpreview', 'sidebarwidgets');
-	$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-	$pyjs['track']['lineno']=2;
-	$pyjs['track']={'module':$pyjs['track']['module'],'lineno':$pyjs['track']['lineno']};$pyjs['trackstack']['push']($pyjs['track']);
-	$m['sidebarwidgets'] = $p['___import___']('sidebarwidgets.filterselector', 'sidebarwidgets');
-	$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
+		$m['sidebarwidgets'] = $p['___import___']('sidebarwidgets.internalpreview', 'sidebarwidgets');
+		$m['sidebarwidgets'] = $p['___import___']('sidebarwidgets.filterselector', 'sidebarwidgets');
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end sidebarwidgets */
 

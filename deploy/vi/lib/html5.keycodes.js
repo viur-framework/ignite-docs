@@ -7,158 +7,81 @@ $pyjs['loaded_modules']['html5.keycodes'] = function (__mod_name__) {
 	$m['__was_initialized__'] = true;
 	if ((__mod_name__ === null) || (typeof __mod_name__ == 'undefined')) __mod_name__ = 'html5.keycodes';
 	$m['__name__'] = __mod_name__;
-	$m.__track_lines__ = new Array();
 	$pyjs['loaded_modules']['html5']['keycodes'] = $pyjs['loaded_modules']['html5.keycodes'];
-	$m.__track_lines__[1] = 'html5.keycodes.py, line 1:\n    ';
-	$m.__track_lines__[2] = 'html5.keycodes.py, line 2:\n    def isSingleSelectionKey(keyCode):';
-	$m.__track_lines__[6] = 'html5.keycodes.py, line 6:\n    if keyCode == 17: # "ctrl" on all major platforms';
-	$m.__track_lines__[7] = 'html5.keycodes.py, line 7:\n    return True';
-	$m.__track_lines__[10] = 'html5.keycodes.py, line 10:\n    if keyCode in [224, 17, 91, 93]:';
-	$m.__track_lines__[11] = 'html5.keycodes.py, line 11:\n    return True';
-	$m.__track_lines__[13] = 'html5.keycodes.py, line 13:\n    return False';
-	$m.__track_lines__[15] = 'html5.keycodes.py, line 15:\n    def isArrowLeft(keyCode):';
-	$m.__track_lines__[16] = 'html5.keycodes.py, line 16:\n    return keyCode == 37';
-	$m.__track_lines__[18] = 'html5.keycodes.py, line 18:\n    def isArrowUp(keyCode):';
-	$m.__track_lines__[19] = 'html5.keycodes.py, line 19:\n    return keyCode == 38';
-	$m.__track_lines__[21] = 'html5.keycodes.py, line 21:\n    def isArrowRight(keyCode):';
-	$m.__track_lines__[22] = 'html5.keycodes.py, line 22:\n    return keyCode == 39';
-	$m.__track_lines__[24] = 'html5.keycodes.py, line 24:\n    def isArrowDown(keyCode):';
-	$m.__track_lines__[25] = 'html5.keycodes.py, line 25:\n    return keyCode == 40';
-	$m.__track_lines__[27] = 'html5.keycodes.py, line 27:\n    def isReturn(keyCode):';
-	$m.__track_lines__[28] = 'html5.keycodes.py, line 28:\n    return keyCode == 13';
+	try {
 
+		var $constant_int_224 = new $p['int'](224);
+		var $constant_int_37 = new $p['int'](37);
+		var $constant_int_38 = new $p['int'](38);
+		var $constant_int_39 = new $p['int'](39);
+		var $constant_int_40 = new $p['int'](40);
+		var $constant_int_13 = new $p['int'](13);
+		var $constant_int_17 = new $p['int'](17);
+		var $constant_int_91 = new $p['int'](91);
+		var $constant_int_93 = new $p['int'](93);
+		$m['isSingleSelectionKey'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-	$pyjs['track']['module']='html5.keycodes';
-	$pyjs['track']['lineno']=1;
-	$pyjs['track']['lineno']=2;
-	$m['isSingleSelectionKey'] = function(keyCode) {
-
-		$pyjs['track']={'module':'html5.keycodes','lineno':2};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=2;
-		$pyjs['track']['lineno']=6;
-		if ((function(){try{try{$pyjs['in_try_except'] += 1;
-			return $p['bool']($p['op_eq'](keyCode, 17));
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_1_err){if (!$p['isinstance']($pyjs_dbg_1_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_1_err);}throw $pyjs_dbg_1_err;
-}})()) {
-			$pyjs['track']['lineno']=7;
-			$pyjs['track']['lineno']=7;
-			var $pyjs__ret = true;
-			$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-			return $pyjs__ret;
-		}
-		else if ((function(){try{try{$pyjs['in_try_except'] += 1;
-			return $p['bool']((function(){try{try{$pyjs['in_try_except'] += 1;
-		return (typeof eval == "undefined"?$m['eval']:eval)('navigator.appVersion.indexOf("Mac") != -1');
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_2_err){if (!$p['isinstance']($pyjs_dbg_2_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_2_err);}throw $pyjs_dbg_2_err;
-}})());
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_3_err){if (!$p['isinstance']($pyjs_dbg_3_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_3_err);}throw $pyjs_dbg_3_err;
-}})()) {
-			$pyjs['track']['lineno']=10;
-			if ((function(){try{try{$pyjs['in_try_except'] += 1;
-				return $p['bool']((function(){try{try{$pyjs['in_try_except'] += 1;
-			return $p['list']([224, 17, 91, 93]);
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_4_err){if (!$p['isinstance']($pyjs_dbg_4_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_4_err);}throw $pyjs_dbg_4_err;
-}})()['__contains__'](keyCode));
-}finally{$pyjs['in_try_except']-=1;}}catch($pyjs_dbg_5_err){if (!$p['isinstance']($pyjs_dbg_5_err, $p['StopIteration'])){$p['_handle_exception']($pyjs_dbg_5_err);}throw $pyjs_dbg_5_err;
-}})()) {
-				$pyjs['track']['lineno']=11;
-				$pyjs['track']['lineno']=11;
-				var $pyjs__ret = true;
-				$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-				return $pyjs__ret;
+			if ($p['bool']($p['op_eq'](keyCode, $constant_int_17))) {
+				return true;
 			}
-		}
-		$pyjs['track']['lineno']=13;
-		$pyjs['track']['lineno']=13;
-		var $pyjs__ret = false;
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isSingleSelectionKey']['__name__'] = 'isSingleSelectionKey';
+			else if ($p['bool']((typeof eval == "undefined"?$m['eval']:eval)('navigator.appVersion.indexOf("Mac") != -1'))) {
+				if ($p['bool']($p['list']([$constant_int_224, $constant_int_17, $constant_int_91, $constant_int_93])['__contains__'](keyCode))) {
+					return true;
+				}
+			}
+			return false;
+		};
+		$m['isSingleSelectionKey']['__name__'] = 'isSingleSelectionKey';
 
-	$m['isSingleSelectionKey']['__bind_type__'] = 0;
-	$m['isSingleSelectionKey']['__args__'] = [null,null,['keyCode']];
-	$pyjs['track']['lineno']=15;
-	$m['isArrowLeft'] = function(keyCode) {
+		$m['isSingleSelectionKey']['__bind_type__'] = 0;
+		$m['isSingleSelectionKey']['__args__'] = [null,null,['keyCode']];
+		$m['isArrowLeft'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-		$pyjs['track']={'module':'html5.keycodes','lineno':15};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=15;
-		$pyjs['track']['lineno']=16;
-		$pyjs['track']['lineno']=16;
-		var $pyjs__ret = $p['op_eq'](keyCode, 37);
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isArrowLeft']['__name__'] = 'isArrowLeft';
+			return $p['op_eq'](keyCode, $constant_int_37);
+		};
+		$m['isArrowLeft']['__name__'] = 'isArrowLeft';
 
-	$m['isArrowLeft']['__bind_type__'] = 0;
-	$m['isArrowLeft']['__args__'] = [null,null,['keyCode']];
-	$pyjs['track']['lineno']=18;
-	$m['isArrowUp'] = function(keyCode) {
+		$m['isArrowLeft']['__bind_type__'] = 0;
+		$m['isArrowLeft']['__args__'] = [null,null,['keyCode']];
+		$m['isArrowUp'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-		$pyjs['track']={'module':'html5.keycodes','lineno':18};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=18;
-		$pyjs['track']['lineno']=19;
-		$pyjs['track']['lineno']=19;
-		var $pyjs__ret = $p['op_eq'](keyCode, 38);
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isArrowUp']['__name__'] = 'isArrowUp';
+			return $p['op_eq'](keyCode, $constant_int_38);
+		};
+		$m['isArrowUp']['__name__'] = 'isArrowUp';
 
-	$m['isArrowUp']['__bind_type__'] = 0;
-	$m['isArrowUp']['__args__'] = [null,null,['keyCode']];
-	$pyjs['track']['lineno']=21;
-	$m['isArrowRight'] = function(keyCode) {
+		$m['isArrowUp']['__bind_type__'] = 0;
+		$m['isArrowUp']['__args__'] = [null,null,['keyCode']];
+		$m['isArrowRight'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-		$pyjs['track']={'module':'html5.keycodes','lineno':21};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=21;
-		$pyjs['track']['lineno']=22;
-		$pyjs['track']['lineno']=22;
-		var $pyjs__ret = $p['op_eq'](keyCode, 39);
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isArrowRight']['__name__'] = 'isArrowRight';
+			return $p['op_eq'](keyCode, $constant_int_39);
+		};
+		$m['isArrowRight']['__name__'] = 'isArrowRight';
 
-	$m['isArrowRight']['__bind_type__'] = 0;
-	$m['isArrowRight']['__args__'] = [null,null,['keyCode']];
-	$pyjs['track']['lineno']=24;
-	$m['isArrowDown'] = function(keyCode) {
+		$m['isArrowRight']['__bind_type__'] = 0;
+		$m['isArrowRight']['__args__'] = [null,null,['keyCode']];
+		$m['isArrowDown'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-		$pyjs['track']={'module':'html5.keycodes','lineno':24};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=24;
-		$pyjs['track']['lineno']=25;
-		$pyjs['track']['lineno']=25;
-		var $pyjs__ret = $p['op_eq'](keyCode, 40);
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isArrowDown']['__name__'] = 'isArrowDown';
+			return $p['op_eq'](keyCode, $constant_int_40);
+		};
+		$m['isArrowDown']['__name__'] = 'isArrowDown';
 
-	$m['isArrowDown']['__bind_type__'] = 0;
-	$m['isArrowDown']['__args__'] = [null,null,['keyCode']];
-	$pyjs['track']['lineno']=27;
-	$m['isReturn'] = function(keyCode) {
+		$m['isArrowDown']['__bind_type__'] = 0;
+		$m['isArrowDown']['__args__'] = [null,null,['keyCode']];
+		$m['isReturn'] = function(keyCode) {
+			if ($pyjs['options']['arg_count'] && arguments['length'] != 1) $pyjs__exception_func_param(arguments['callee']['__name__'], 1, 1, arguments['length']);
 
-		$pyjs['track']={'module':'html5.keycodes','lineno':27};$pyjs['trackstack']['push']($pyjs['track']);
-		$pyjs['track']['module']='html5.keycodes';
-		$pyjs['track']['lineno']=27;
-		$pyjs['track']['lineno']=28;
-		$pyjs['track']['lineno']=28;
-		var $pyjs__ret = $p['op_eq'](keyCode, 13);
-		$pyjs['trackstack']['pop']();$pyjs['track']=$pyjs['trackstack']['pop']();$pyjs['trackstack']['push']($pyjs['track']);
-		return $pyjs__ret;
-	};
-	$m['isReturn']['__name__'] = 'isReturn';
+			return $p['op_eq'](keyCode, $constant_int_13);
+		};
+		$m['isReturn']['__name__'] = 'isReturn';
 
-	$m['isReturn']['__bind_type__'] = 0;
-	$m['isReturn']['__args__'] = [null,null,['keyCode']];
+		$m['isReturn']['__bind_type__'] = 0;
+		$m['isReturn']['__args__'] = [null,null,['keyCode']];
+	} catch ($pyjs_attr_err) {throw $p['_errorMapping']($pyjs_attr_err);};
 	return this;
 }; /* end html5.keycodes */
 
