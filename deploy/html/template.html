@@ -86,20 +86,20 @@
 				{% endblock content %}
 				<section class="section">
 					<nav class="bar">
-						{%- set getPrevMenuItem = getPrevMenuItem() -%}
-						{% if getPrevMenuItem and if getPrevMenuItem.site and getPrevMenuItem.name %}
+						{%- set prevMenuItem = getPrevMenuItem() -%}
+						{% if prevMenuItem and prevMenuItem.site and prevMenuItem.name %}
 							<div class="bar-group--left">
-								<a class="btn btn--small" href="/s/{{ getPrevMenuItem.site }}">
-									Previous: {{ getPrevMenuItem.name }}
+								<a class="btn btn--small" href="/s/{{ prevMenuItem.site }}">
+									Previous: {{ prevMenuItem.name }}
 								</a>
 							</div>
 						{% endif %}
 
-						{%- set getNextMenuItem = getNextMenuItem() -%}
-						{% if getNextMenuItem and if getNextMenuItem.site and getNextMenuItem.name %}
+						{%- set nextMenuItem = getNextMenuItem() -%}
+						{% if nextMenuItem and nextMenuItem.site and nextMenuItem.name %}
 							<div class="bar-group--right">
-								<a class="btn btn--small" href="/s/{{ getNextMenuItem.site }}">
-									Next: {{ getNextMenuItem.name }}
+								<a class="btn btn--small" href="/s/{{ nextMenuItem.site }}">
+									Next: {{ nextMenuItem.name }}
 								</a>
 							</div>
 						{% endif %}
