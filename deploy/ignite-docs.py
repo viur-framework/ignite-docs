@@ -71,7 +71,6 @@ conf["docs.menu"] = [
 		[u"bar", u"Bar"],
 		[u"buttons", u"Buttons"],
 		[u"forms", u"Forms"],
-		[u"grid", u"Grid"],
 		[u"helper", u"Helper"],
 		[u"tables", u"Table"],
 		[u"types", u"Typography"]

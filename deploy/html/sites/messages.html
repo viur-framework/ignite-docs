@@ -7,11 +7,13 @@
 		<h1 class="headline">Alerts and Messages</h1>
 
 		<h2 class="headline">Default message</h2>
-		<p>This is a standard message.</p>
+		<p class="msg-content">This is a standard message.</p>
 		<div class="sandbox js-codeChild">
-			<div class="msg">
-				<h3 class="msg-headline">Advice!</h3>
-				<p>This gives some advice.</p>
+			<div class="msg is-active">
+				<div class="msg-content">
+					<h3 class="msg-headline">Advice!</h3>
+					<p>This gives some advice.</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -21,10 +23,12 @@
 		<h2 class="headline">Success message</h2>
 		<p></p>
 		<div class="sandbox js-codeChild">
-			<div class="msg msg--success has-icon">
-				{{ embedSvg("check") }}
-				<h3 class="msg-headline">Success!</h3>
-				<p>This was successful.</p>
+			<div class="msg is-active msg--success">
+				{{ embedSvg("icon-check") }}
+				<div class="msg-content">
+					<h3 class="msg-headline">Success!</h3>
+					<p>This was successful.</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -34,10 +38,12 @@
 		<h2 class="headline">Warning message</h2>
 		<p></p>
 		<div class="sandbox js-codeChild">
-			<div class="msg msg--warn has-icon">
-				{{ embedSvg("flash") }}
-				<h3 class="msg-headline">Attention!</h3>
-				<p>This is a warning.</p>
+			<div class="msg is-active msg--warn">
+				{{ embedSvg("icon-flash") }}
+				<div class="msg-content">
+					<h3 class="msg-headline">Attention!</h3>
+					<p>This is a warning.</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -47,10 +53,12 @@
 		<h2 class="headline">Error message</h2>
 		<p></p>
 		<div class="sandbox js-codeChild">
-			<div class="msg msg--error has-icon">
-				{{ embedSvg("cross") }}
-				<h3 class="msg-headline">Error!</h3>
-				<p>This was a mistake.</p>
+			<div class="msg is-active msg--error">
+				{{ embedSvg("icon-cross") }}
+				<div class="msg-content">
+					<h3 class="msg-headline">Error!</h3>
+					<p>This was a mistake.</p>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -60,36 +68,13 @@
 		<h2 class="headline">Message with icon</h2>
 		<p></p>
 		<div class="sandbox js-codeChild">
-			<div class="msg has-icon">
-				{{ embedSvg("heart") }}
-				<h3 class="msg-headline">Icon!</h3>
-				<p>This is an inline icon. It changes the color according to its parent.</p>
+			<div class="msg is-active">
+				{{ embedSvg("icon-heart") }}
+				<div class="msg-content">
+					<h3 class="msg-headline">Icon!</h3>
+					<p>This is an inline icon. It changes the color according to its parent.</p>
+				</div>
 			</div>
 		</div>
 	</section>
 {% endblock content %}
-
-{% block additionalBody %}
-	<div class="alertGroup">
-		<div class="alert has-icon">
-			{{ embedSvg("heart") }}
-			<h4 class="alert-headline">Advice!</h4>
-			<p>This gives some advice.</p>
-		</div>
-		<div class="alert alert--success has-icon">
-			{{ embedSvg("check") }}
-			<h4 class="alert-headline">Success!</h4>
-			<p>This was successful.</p>
-		</div>
-		<div class="alert alert--warn has-icon">
-			{{ embedSvg("flash") }}
-			<h4 class="alert-headline">Warning!</h4>
-			<p>This is a warning.</p>
-		</div>
-		<div class="alert alert--error has-icon">
-			{{ embedSvg("cross") }}
-			<h4 class="alert-headline">Error!</h4>
-			<p>This was a mistake.</p>
-		</div>
-	</div>
-{% endblock additionalBody %}

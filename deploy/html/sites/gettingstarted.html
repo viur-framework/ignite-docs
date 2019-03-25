@@ -26,10 +26,12 @@ Git (https://git-scm.com)</pre>
 		<p>Install gulp global and all dependencies local, you will need them later to compile the less:</p>
 		<pre>$ npm run setup</pre>
 
-		<div class="msg msg--success has-icon">
-			{{ embedSvg("check") }}
-			<h3 class="msg-headline">You did it!</h3>
-			<p>Let's start.</p>
+		<div class="msg msg--success is-active">
+			{{ embedSvg("icon-check") }}
+			<div class="msg-content">
+				<h3 class="msg-headline">You did it!</h3>
+				<p>Let's start.</p>
+			</div>
 		</div>
 	</section>
 
@@ -57,10 +59,12 @@ Git (https://git-scm.com)</pre>
 		<p>For faster workflows you can use the gulp watch task, it will compile the less after changes in files automatically.</p>
 		<pre>$ gulp watch</pre>
 
-		<div class="msg msg--success has-icon">
-			{{ embedSvg("check") }}
-			<h3 class="msg-headline">Well Done!</h3>
-			<p>Open your project in a browser.</p>
+		<div class="msg msg--success is-active">
+			{{ embedSvg("icon-check") }}
+			<div class="msg-content">
+				<h3 class="msg-headline">Well Done!</h3>
+				<p>Open your project in a browser.</p>
+			</div>
 		</div>
 	</section>
 {% endblock content %}
