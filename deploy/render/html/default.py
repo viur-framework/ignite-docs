@@ -7,34 +7,32 @@ import logging
 from collections import OrderedDict
 
 
-def getMenu():
-	if "docs.menu" in conf and conf["docs.menu"]:
-		return conf["docs.menu"]
-
-
-# FIXME: works not properly
 def getLastMenuItem(reverse=False):
-	currSite = u""
-	if len(request.current.get().args) > 0:
+	currSite = u"start"
+	if len(request.current.get().args) > 0 and request.current.get().args[0]:
 		currSite = request.current.get().args[0]
 
-	for menu in getMenu():
+	for menu in conf.get("docs.menu", {}):
 		last = None
 		lastName = None
-		for site, name in OrderedDict(sorted(menu.items(), reverse=reverse)).items():
+
+		if reverse:
+			menu = OrderedDict(list(menu.items())[::-1])
+
+		for site, name in menu.items():
 			if site == currSite:
-				break
+				return {"site": last, "name": lastName}
 			last = site
 			lastName = name
 
-	return {"site": last, "name": lastName}
+	return {"site": None, "name": None}
 
 
 class Render(defaultRender):
 
 	@jinjaGlobalFunction
 	def getMenu(self):
-		return getMenu()
+		return conf.get("docs.menu", {})
 
 	@jinjaGlobalFunction
 	def getPrevMenuItem(self):
