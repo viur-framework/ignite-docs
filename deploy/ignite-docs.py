@@ -67,7 +67,7 @@ conf["docs.menu"] = [
 		[u"variables", u"Variables/Settings"]
 	]),
 	OrderedDict([
-		[u"messages", u"Alerts and Messages"],
+		[u"messages", u"Messages"],
 		[u"bar", u"Bar"],
 		[u"buttons", u"Buttons"],
 		[u"forms", u"Forms"],

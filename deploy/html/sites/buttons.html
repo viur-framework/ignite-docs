@@ -6,8 +6,16 @@
 	<section class="section">
 		<h1 class="headline">Buttons</h1>
 
+		<h2 class="headline">Source Code</h2>
+		<p>To initialize the buttons on this site we used this piece of less.</p>
+
+		<script src="https://gist.github.com/sveneberth/58ded7a9757bcdd3342cbab2c864f68d.js?file=button.less"></script>
+	</section>
+
+
+	<section class="section">
 		<h2 class="headline">Default buttons</h2>
-		<p>This is a standard button. It is rendered the same way on every tag. </p>
+		<p>This is a standard button. It is rendered the same way on every tag.</p>
 		<div class="sandbox js-codeChild">
 			<button class="btn" type="button">Button</button>
 			<span class="btn">Span</span>
@@ -19,10 +27,16 @@
 			<a href="#" class="btn btn--small">A Link</a>
 			<input class="btn btn--small" type="button" value="Input">
 		</div>
-		<div class="msg">
-			<h3 class="msg-headline">Be accessible!</h3>
-			<p>It is recommended to use the <code>button</code> element whenever possible. <br>
-				For further information please read the <a href="https://www.w3.org/TR/aria-in-html/">Notes on Using ARIA in HTML</a>.</p>
+
+		<div class="msg is-active">
+			<div class="msg-content">
+				<h3 class="msg-headline">Be accessible!</h3>
+				<p>
+					It is recommended to use the <code>button</code> element whenever possible.<br>
+					For further information please read the <a href="https://www.w3.org/TR/aria-in-html/">Notes on Using
+						ARIA in HTML</a>.
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -111,17 +125,11 @@
 		</p>
 		<div class="sandbox js-codeChild">
 			<button class="btn btn--edit is-disabled">
-				<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-					<path fill="#d00f1c"
-						  d="M32.069 56.11a.172.172 0 0 1-.07-.012c-.023.01-.039.018-.07.012a.243.243 0 0 1-.172-.071L5.725 30.007c-7.913-7.914-7.621-16.229.864-24.718l.258-.259C10.185 1.693 13.714 0 17.333 0c4.458 0 9.085 2.461 14.144 7.521l.523.474.531-.481C37.58 2.461 42.21 0 46.666 0c3.618 0 7.148 1.693 10.486 5.03l.257.259c8.487 8.488 8.778 16.805.866 24.718L32.242 56.039a.242.242 0 0 1-.173.071z"/>
-				</svg>
+				{{ embedSvg("icon-heart") }}
 				Inline Button
 			</button>
 			<button class="btn btn--small btn--primary">
-				<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-					<path fill="#d00f1c"
-						  d="M32.069 56.11a.172.172 0 0 1-.07-.012c-.023.01-.039.018-.07.012a.243.243 0 0 1-.172-.071L5.725 30.007c-7.913-7.914-7.621-16.229.864-24.718l.258-.259C10.185 1.693 13.714 0 17.333 0c4.458 0 9.085 2.461 14.144 7.521l.523.474.531-.481C37.58 2.461 42.21 0 46.666 0c3.618 0 7.148 1.693 10.486 5.03l.257.259c8.487 8.488 8.778 16.805.866 24.718L32.242 56.039a.242.242 0 0 1-.173.071z"/>
-				</svg>
+				{{ embedSvg("icon-heart") }}
 				Small Inline Button
 			</button>
 		</div>

@@ -4,15 +4,29 @@
 
 {% block content %}
 	<section class="section">
-		<h1 class="headline">Alerts and Messages</h1>
+		<h1 class="headline">Messages</h1>
+		<h2 class="headline">Source Code</h2>
+		<p>To initialize the messages on this site we used this piece of less.</p>
 
+		<script src="https://gist.github.com/sveneberth/58ded7a9757bcdd3342cbab2c864f68d.js?file=message.less"></script>
+	</section>
+
+
+	<section class="section">
 		<h2 class="headline">Default message</h2>
 		<p class="msg-content">This is a standard message.</p>
 		<div class="sandbox js-codeChild">
+			<div class="msg">
+				<div class="msg-content">
+					<h3 class="msg-headline">Hidden Message!</h3>
+					<p>Without is-active the message will not be visible.</p>
+				</div>
+			</div>
+
 			<div class="msg is-active">
 				<div class="msg-content">
-					<h3 class="msg-headline">Advice!</h3>
-					<p>This gives some advice.</p>
+					<h3 class="msg-headline">Visible Message</h3>
+					<p>Append is-active to show the message.</p>
 				</div>
 			</div>
 		</div>
