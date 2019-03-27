@@ -47,28 +47,26 @@ conf["viur.forceSSL"] = True
 conf["admin.vi.name"] = "Ignite Documentation"
 #conf["admin.vi.logo"] = "/static/meta/logo.svg"
 
+
 # ------------------------------------------------------------------------------
 # Content Security Policy
 #
 
-conf["viur.security.contentSecurityPolicy"] = {}
 from server.securityheaders import addCspRule
 
 addCspRule("default-src", "self", "enforce")
-addCspRule("default-src", "unsafe-inline", "enforce")
-addCspRule("default-src", "*.github.com", "enforce")
 
-addCspRule("script-src", "self", "enforce")
-addCspRule("script-src", "unsafe-eval", "enforce")
-addCspRule("script-src", "*.github.com", "enforce")
-addCspRule("script-src", "*.github.io", "enforce")
+addCspRule("script-src", "unsafe-eval", "enforce")  # SyntaxHighlighter
+addCspRule("script-src", "*.github.com", "enforce")  # github api for gist
+addCspRule("script-src", "*.github.io", "enforce")  # github buttons
 
-addCspRule("style-src", "self", "enforce")
-addCspRule("style-src", "unsafe-inline", "enforce")
-addCspRule("style-src", "*.githubassets.com", "enforce")
+addCspRule("connect-src", "*.github.com", "enforce")  # github buttons
 
-addCspRule("img-src", "self", "enforce")
-addCspRule("img-src", "data:", "enforce")
+addCspRule("style-src", "*.githubassets.com", "enforce")  # gist stylesheet
+
+addCspRule("img-src", "data:", "enforce")  # css background-urls
+
+# conf["viur.security.contentSecurityPolicy"] = {}
 
 
 # ------------------------------------------------------------------------------
@@ -82,14 +80,14 @@ conf["docs.menu"] = [
 		[u"guidelines", u"Guidelines"],
 		[u"components", u"Components"],
 		[u"states", u"States"],
-		[u"variables", u"Variables/Settings"]
+		[u"variables", u"Variables/Settings"],
+		[u"mixins", u"Mixins"]
 	]),
 	OrderedDict([
 		[u"messages", u"Messages"],
 		[u"bar", u"Bar"],
 		[u"buttons", u"Buttons"],
 		[u"forms", u"Forms"],
-		[u"helper", u"Helper"],
 		[u"tables", u"Table"],
 		[u"types", u"Typography"]
 	])

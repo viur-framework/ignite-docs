@@ -37,18 +37,18 @@
     transform: rotate(-90deg);
     transition-delay: 0s;
   }
-  &.is-accordion > .menu-vSub > .menu-item {
+  &.is-accordion > .menu--sub > .menu-item {
     transition: all .7s ease;
     transition-delay: 2s;
     max-height:0;
   }
-  &.is-accordion:hover > .menu-vSub > .menu-item {
+  &.is-accordion:hover > .menu--sub > .menu-item {
     max-height:450px;
     transition-delay: 0s;
   }
 }
 
-.menu-vSub {
+.menu--sub {
   box-shadow: none;
   margin: 0;
   overflow: hidden;
@@ -64,7 +64,7 @@
   .is-accordion:hover > & {max-height:450px; min-height:45px; transition-delay: 0s;}
 }
 
-.menu-vSub .menu-vSub {
+.menu--sub .menu--sub {
   a.menu-link {
     padding-left: 44px;
     color: contrast(darken(@menuBackgroundColor,10%), @textColor, @invTextColor);
@@ -135,7 +135,7 @@ a.menu-link {
   .icon {margin: 4px 7px 0 -5px;}
 }
 
-.menu-vFixed {
+.menu--fixed {
   position: fixed;
   left: 0;
   top: 0;
@@ -144,7 +144,7 @@ a.menu-link {
   max-width: 250px;
 }
 
-.menu-vRow {
+.menu--row {
   flex-direction: row;
   .menu-item {
     a.menu-link {
