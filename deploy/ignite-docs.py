@@ -52,6 +52,24 @@ conf["admin.vi.name"] = "Ignite Documentation"
 #
 
 conf["viur.security.contentSecurityPolicy"] = {}
+from server.securityheaders import addCspRule
+
+addCspRule("default-src", "self", "enforce")
+addCspRule("default-src", "unsafe-inline", "enforce")
+addCspRule("default-src", "*.github.com", "enforce")
+
+addCspRule("script-src", "self", "enforce")
+addCspRule("script-src", "unsafe-eval", "enforce")
+addCspRule("script-src", "*.github.com", "enforce")
+addCspRule("script-src", "*.github.io", "enforce")
+
+addCspRule("style-src", "self", "enforce")
+addCspRule("style-src", "unsafe-inline", "enforce")
+addCspRule("style-src", "*.githubassets.com", "enforce")
+
+addCspRule("img-src", "self", "enforce")
+addCspRule("img-src", "data:", "enforce")
+
 
 # ------------------------------------------------------------------------------
 # Content Security Policy
