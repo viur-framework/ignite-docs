@@ -1699,10 +1699,15 @@ ol.is-list {
 	outline: 1px dotted #ddd;
 }
 
-.docs-headline {
+h1.docs-headline {
 	border-bottom: 1px solid #eeeeee;
-	margin-bottom: 20px;
+	margin-bottom: 1em;
 	font-size: 2.1em;
+}
+
+h2.docs-headline {
+	font-size: 1.4em;
+	margin-bottom: 0.25em;
 }
 
 .btn {
