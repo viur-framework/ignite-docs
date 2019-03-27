@@ -4,11 +4,11 @@
 
 {% block content %}
 	<section class="section">
-		<h1 class="headline">Forms</h1>
+		<h1 class="headline docs-headline">Forms</h1>
 
 		<h2 class="headline">Default Form</h2>
 		<p>This is a standard form.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<label class="label" for="defaultinput">Label</label>
 				<input class="input" type="text" placeholder="Default input" id="defaultinput">
@@ -23,7 +23,7 @@
 	<section class="section">
 		<h2 class="headline">Selection</h2>
 		<p>This is a select menu.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<label class="label" for="select">Select an option</label>
 				<select class="select" id="select">
@@ -39,7 +39,7 @@
 	<section class="section">
 		<h2 class="headline">Small selection</h2>
 		<p>This is a small select menu.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<label class="label label--small" for="selectSmall">Select an option</label>
 				<select class="select select--small" id="selectSmall">
@@ -55,7 +55,7 @@
 	<section class="section">
 		<h2 class="headline">Input connected with button</h2>
 		<p>This is an input directly connected to a button.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="input-group">
 					<label class="label" for="input-group-input1">Label</label>
@@ -68,7 +68,7 @@
 					<button class="btn" type="button">Button</button>
 				</div>
 				<div class="input-group">
-					<label class="label has-icon" for="input-group-input3">{{ embedSvg("heart") }}Label with icon</label>
+					<label class="label" for="input-group-input3">{{ embedSvg("icon-heart") }}Label with icon</label>
 					<input class="input" id="input-group-input3" type="text" placeholder="Default input">
 					<button class="btn" type="button">Button</button>
 				</div>
@@ -80,7 +80,7 @@
 	<section class="section">
 		<h2 class="headline">Small input</h2>
 		<p>This is a small input.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<input class="input input--small" type="text" placeholder="Small input">
 			</form>
@@ -91,7 +91,7 @@
 	<section class="section">
 		<h2 class="headline">Large input</h2>
 		<p>This is a large input.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<input class="input input--large" type="text" placeholder="Large input">
 			</form>
@@ -102,7 +102,7 @@
 	<section class="section">
 		<h2 class="headline">Disabled and read-only inputs</h2>
 		<p>This is a disabled and a read-only input.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<label class="label is-disabled">Label</label>
 				<input class="input is-disabled" type="text" value="No input here" disabled="disabled">
@@ -115,8 +115,8 @@
 	<section class="section">
 		<h2 class="headline">Error, recommended and accepted on input</h2>
 		<p>These are examples for an error, a recommendation and an accepted status.</p>
-		<div class="sandbox js-codeChild">
-			<form>
+		<div class="sandbox js-code-child">
+			<form class="form-group--validation">
 				<div class="input-group">
 					<label class="label is-invalid" for="input-group-input4">Label</label>
 					<input class="input is-invalid" type="text" placeholder="Input" id="input-group-input4">
@@ -137,7 +137,7 @@
 	<section class="section">
 		<h2 class="headline">Switch</h2>
 		<p>This is a simple, yet elegant, boolean switch.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="input-group">
 					<label class="label" for="switch1">Label</label>
@@ -154,7 +154,7 @@
 	<section class="section">
 		<h2 class="headline">Radio</h2>
 		<p>These are simple radio buttons. You may group them.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="input-group">
 					<label class="label">Label</label>
@@ -175,7 +175,7 @@
 				</div>
 			</form>
 		</div>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="input-group">
 					<label class="label">Label</label>
@@ -203,7 +203,7 @@
 		<h2 class="headline">Checkboxes</h2>
 		<p>These are simple checkboxes. You may group them.</p>
 		<form>
-			<div class="sandbox js-codeChild">
+			<div class="sandbox js-code-child">
 				<div class="input-group">
 					<label class="label">Label</label>
 					<div class="option-group">
@@ -230,10 +230,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="sandbox js-codeChild">
+			<div class="sandbox js-code-child">
 				<div class="input-group">
 					<label class="label">Label</label>
-					<div class="option-group option-group--selectionList">
+					<div class="option-group option-group--selection-list">
 						<div class="check">
 							<input class="check-input" id="check-list1" type="checkbox" name="checkgroup2"/>
 							<label class="check-label" for="check-list1">Check Option 1</label>
@@ -263,15 +263,14 @@
 	<section class="section">
 		<h2 class="headline">Textarea</h2>
 		<p>This is an example of a textarea.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="input-group">
-					<label class="label" for="textarea">Textarea1
-					</label>
-					<textarea class="textarea" id="textarea"></textarea>
+					<label class="label" for="textarea">Textarea1</label>
+					<textarea class="textarea" id="textarea" placeholder="Enter your text"></textarea>
 				</div>
 
-				<textarea class="textarea textarea--block">Textarea as block.</textarea>
+				<textarea class="textarea textarea--block" placeholder="Textarea as block"></textarea>
 			</form>
 		</div>
 	</section>
@@ -280,7 +279,7 @@
 	<section class="section">
 		<h2 class="headline">Form actions with bar</h2>
 		<p>Use <code>.bar</code> to float submit buttons to the right at the end of your form.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<form>
 				<div class="bar">
 					<div class="bar-group bar-group--right">

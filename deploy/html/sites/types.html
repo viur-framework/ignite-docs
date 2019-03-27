@@ -4,7 +4,7 @@
 
 {% block content %}
 	<section class="section">
-		<h1 class="headline">Typography</h1>
+		<h1 class="headline docs-headline">Typography</h1>
 
 		<p> ViUR Ignite CSS supports the <a
 			href="https://medium.com/@xtianmiller/your-body-text-is-too-small-5e02d36dc902"
@@ -21,7 +21,7 @@
 	<section class="section">
 		<h2 class="headline">Headlines and sublines</h2>
 		<p>These are the standard headlines.</p>
-		<div class="sandbox js-codeChild demo-headline">
+		<div class="sandbox js-code-child demo-headline">
 			<h1 class="headline">The headline! Use only <strong>one</strong> on every page (h1)</h1>
 			<h2 class="headline">Second level Headline (h2)</h2>
 			<h3 class="headline">Third level Headline (h3)</h3>
@@ -36,11 +36,17 @@
 			<h5 class="subline">Fifth level Subline (h5)</h5>
 			<h6 class="subline">Sixth level Subline (h6)</h6>
 		</div>
-		<div class="msg">
-			<p>Please style your own headlines with the help of classes (e.g.: <code>.headline</code>, <code>.subline</code>) in your <em>style.less</em> file.</p>
+		<div class="msg is-active">
+			<div class="msg-content">
+				<p>Please style your own headlines with the help of classes (e.g.: <code>.headline</code>, <code>.subline</code>)
+					in your <em>style.less</em> file.</p>
+			</div>
 		</div>
-		<div class="msg msg--warn">
-			<p>Don't use a <code>h1</code> more than once whether <code>.headline</code> or <code>.subline</code>.</p>
+		<div class="msg is-active msg--warn">
+			<div class="msg-content">
+				<p>Don't use a <code>h1</code> more than once whether <code>.headline</code> or <code>.subline</code>.
+				</p>
+			</div>
 		</div>
 	</section>
 
@@ -48,59 +54,49 @@
 	<section class="section">
 		<h2 class="headline">Body text</h2>
 		<p>This is an example of a body text. The first paragraph is emphasized with <code>.lead</code></p>
-		<div class="sandbox js-codeChild">
-			<p class="lead"><a class="has-footnote" href="#maecenas" id="maecenas-ref">Maecenas</a> sed diam eget risus varius blandit sit amet non magna. Donec id elit non mi
-				porta gravida at eget metus. Duis mollis, est non commodo luctus, nisi erat porttitor ligula,
-				eget lacinia odio sem nec elit.</p>
-			<p>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis
-				parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
-			<p>Cum sociis natoque <a class="has-footnote" href="#penatibus" id="penatibus-ref">penatibus</a> et magnis dis parturient montes, nascetur ridiculus mus. Donec
-				ullamcorper nulla non metus auctor fringilla. Duis mollis, est non commodo luctus, nisi erat
-				porttitor <a class="has-footnote" href="#ligula" id="ligula-ref">ligula</a>, eget lacinia odio sem nec elit. Donec ullamcorper nulla non metus auctor
-				fringilla.</p>
-		</div>
-	</section>
-
-
-	<section class="section">
-		<h2 class="headline">Text Alignments</h2>
-		<p>You can change the text alignment of an element by adding <code>.txt-left</code>, <code>.txt-right</code>, <code>.txt-center</code> or <code>.txt-justify</code> to an element.</p>
-		<div class="sandbox js-codeChild">
-			<p class="txt-left"><strong>This text is left-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p class="txt-right"><strong>This text is right-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p class="txt-center"><strong>This text is center-aligned.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-			<p class="txt-justify"><strong>This text is justified.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-		</div>
-	</section>
-
-
-	<section class="section">
-		<h2 class="headline">Text Transformation</h2>
-		<p>You can change the text transform of an element by adding <code>.txt-lowercase</code>, <code>.txt-uppercase</code> or <code>.txt-capitalize</code> to an element.</p>
-		<div class="sandbox js-codeChild">
-			<p class="txt-lowercase">Lowercased text.</p>
-			<p class="txt-uppercase">Uppercased text.</p>
-			<p class="txt-capitalize">Capitalized text.</p>
-		</div>
+		<div class="sandbox js-code-child">
+			<p class="lead">
+				Maecenas sed diam eget risus varius blandit sit amet non magna.
+				Donec id elit non mi porta gravida at eget metus. Duis mollis,
+				est non commodo luctus, nisi erat porttitor ligula, eget
+				lacinia odio sem nec elit.
+			</p>
+			<p>
+				Nullam quis risus eget urna mollis ornare vel eu leo.
+				Cum sociis natoque penatibus et magnis dis parturient montes,
+				nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
+			</p>
 	</section>
 
 
 	<section class="section">
 		<h2 class="headline">Inline text elements</h2>
 		<p>This is an example of inline text elements.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<p><strong>This line rendered as bold text.</strong></p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p><em>This line rendered as italicized text.</em></p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p>H<sub>2</sub>O, this is sub and super text<sup>2</sup>.</p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p>You can use the mark tag to <mark>highlight</mark> text.</p>
-			<p>
-				<del>This line of text is meant to be treated as deleted text.</del>
-			</p>
-			<p>
-				<ins>This line of text is meant to be treated as an addition to the document.</ins>
-			</p>
+		</div>
+		<div class="sandbox js-code-child">
+			<p><del>This line of text is meant to be treated as deleted text.</del></p>
+		</div>
+		<div class="sandbox js-code-child">
+			<p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p><small>This line of text is meant to be treated as fine print.</small></p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p>This line has an <code>inline code</code> element.</p>
+		</div>
+		<div class="sandbox js-code-child">
 			<p>Press <kbd>ctrl</kbd> + <kbd>S</kbd> to save your document.</p>
 			<p>
 				Press <kbd class="kbd--dark">ctrl</kbd> + <kbd class="kbd--dark">N</kbd>
@@ -113,7 +109,7 @@
 	<section class="section">
 		<h2 class="headline">Block text elements</h2>
 		<p>This is an example of block text elements.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 <pre>This Block is a pure Codeblock
 on multiple lines
 to represent code.</pre>
@@ -124,7 +120,7 @@ to represent code.</pre>
 	<section class="section">
 		<h2 class="headline">Blockquote</h2>
 		<p>This is an example of a blockquote.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<blockquote cite="https://groups.google.com/forum/#!original/comp.lang.perl.misc/5vPTrjRdnjY/88xwcrF5aA8J">
 				<p>Perl is worse than Python because people wanted it worse.</p>
 				<cite>
@@ -140,7 +136,7 @@ to represent code.</pre>
 	<section class="section">
 		<h2 class="headline">Unordered Lists</h2>
 		<p>Here is an example of an unordered list.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<ul class="is-list">
 				<li>Make a list
 					<ul>
@@ -162,7 +158,7 @@ to represent code.</pre>
 	<section class="section">
 		<h2 class="headline">Ordered List</h2>
 		<p>Here is an example of an ordered list.</p>
-		<div class="sandbox js-codeChild">
+		<div class="sandbox js-code-child">
 			<ol class="is-list">
 				<li>Make a list
 					<ol>
@@ -179,13 +175,4 @@ to represent code.</pre>
 			</ol>
 		</div>
 	</section>
-
-
-	<footer class="footnotes">
-		<ol class="footnotes-list">
-			<li id="maecenas">Maecenas sed diam eget risus varius blandit sit amet non magna. <a class="footnotes-backlink" href="#maecenas-ref" aria-label="Back to content">↩</a></li>
-			<li id="penatibus">Cum sociis natoque penatibus et magnis dis parturient montes <a class="footnotes-backlink" href="#penatibus-ref" aria-label="Back to content">↩</a></li>
-			<li id="ligula">Nisi erat porttitor ligula. <a class="footnotes-backlink" href="#ligula-ref" aria-label="Back to content">↩</a></li>
-		</ol>
-	</footer>
 {% endblock content %}

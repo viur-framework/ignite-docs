@@ -3,40 +3,53 @@
 {% block additionalTitle %}Bar{% endblock additionalTitle %}
 
 {% block content %}
-	<h1 class="headline">Bar element</h1>
-	<p>Use bar elements for vertical alignment and horizontal distribution, such as navigation bars or inline forms.
-		It can contain other elements, like buttons, form elements or links.
-		The elements will be centered vertically and can be grouped to the left, right or center.</p>
+	<section class="section">
+		<h1 class="headline docs-headline">Bar element</h1>
+		<p>
+			Use bar elements for vertical alignment and horizontal distribution, such as navigation bars or inline
+			forms.
+			It can contain other elements, like buttons, form elements or links.
+			The elements will be centered vertically and can be grouped to the left, right or center.
+		</p>
 
-	<div class="sandbox js-codeChild">
-		<nav class="bar">
-			<div class="bar-group bar-group--left">
-				<span class="bar-item">Just some Text</span>
-			</div>
-			<div class="bar-group bar-group--center">
-				<button class="btn btn--small">A Button</button>
-				<a class="bar-link" href="#">A Link</a>
-				<span class="bar-item">Just some Text</span>
-			</div>
-			<div class="bar-group bar-group--right">
-				<span class="bar-item">Just some Text</span>
-				<a class="bar-link" href="#">A Link</a>
-				<a class="bar-link" href="#">A Link</a>
+		<h2 class="headline">Source Code</h2>
+		<p>To initialize the messages on this site we used this piece of less.</p>
 
-			</div>
-		</nav>
-	</div>
+		<script src="https://gist.github.com/sveneberth/58ded7a9757bcdd3342cbab2c864f68d.js?file=bar.less"></script>
+	</section>
 
-	<div class="sandbox js-codeChild">
-		<form class="bar">
-			<div class="bar-group bar-group--left input-group">
-				<label class="label">Label</label>
-				<input class="input" type="text" />
-			</div>
-			<div class="bar-group bar-group--right">
-				<input class="btn btn--danger" type="reset" />
-				<input class="btn btn--primary" type="submit" />
-			</div>
-		</form>
-	</div>
+
+	<section class="section">
+		<div class="sandbox js-code-child">
+			<nav class="bar">
+				<div class="bar-group bar-group--left">
+					<span class="bar-item">Just some Text</span>
+				</div>
+				<div class="bar-group bar-group--center">
+					<button class="btn btn--small">A Button</button>
+					<a class="bar-link" href="#">A Link</a>
+					<span class="bar-item">Just some Text</span>
+				</div>
+				<div class="bar-group bar-group--right">
+					<span class="bar-item">Just some Text</span>
+					<a class="bar-link" href="#">A Link</a>
+					<a class="bar-link" href="#">A Link</a>
+
+				</div>
+			</nav>
+		</div>
+
+		<div class="sandbox js-code-child">
+			<form class="bar">
+				<div class="bar-group bar-group--left input-group">
+					<label class="label">Label</label>
+					<input class="input" type="text"/>
+				</div>
+				<div class="bar-group bar-group--right">
+					<input class="btn btn--danger" type="reset"/>
+					<input class="btn btn--primary" type="submit"/>
+				</div>
+			</form>
+		</div>
+	</section>
 {% endblock content %}

@@ -1,26 +1,33 @@
-{% set currSite="components" %}
-{% extends "template.html" %}
-{% block additionalTitle %}Components{% endblock additionalTitle %}
+{%- set currSite="components" -%}
+{%- extends "template.html" -%}
+{%- block additionalTitle -%}Components{%- endblock additionalTitle -%}
 
 {% block content %}
 	<section class="section">
-		<h1 class="headline">Components</h1>
+		<h1 class="headline docs-headline">Components</h1>
 		<pre>.componentName</pre>
 		<p>
-			Ignite is a libary of different interface components.
+			Ignite is a library of different interface components.
 			Components are self-contained objects.
 			You can think of components as custom elements that enclose specific semantics, styling, and behaviour.
 			Every component is stored in its LESS file — <code>button.less</code>, <code>form.less</code> etc.
-			All LESS files are catagolized in the <code>viur.less</code>.
+			All LESS files are categorized in the <code>ignite.less</code>.
 		</p>
+
 		<p>Component driven development offers several benefits when reading and writing HTML and CSS:</p>
 		<ul class="is-list">
-			<li>It helps to distinguish between the classes for the root of the component, descendant elements, and modifications.</li>
+			<li>It helps to distinguish between the classes for the root of the component, descendant elements, and
+				modifications.
+			</li>
 			<li>It keeps the specificity of selectors low.</li>
 			<li>It helps to decouple presentation semantics from document semantics.</li>
 		</ul>
-		<p>Every component has to create its own namespace to seperate its enclosed specifics from the rest of the page, like <code>.input-</code> or <code>.footer-</code>.
-			Namespacing should be made at a descriptive, functional level.</p>
+
+		<p>
+			Every component has to create its own namespace to seperate its enclosed specifics from the rest of the
+			page, like <code>.input-</code> or <code>.footer-</code>.
+			Namespacing should be made at a descriptive, functional level.
+		</p>
 	</section>
 
 
@@ -28,7 +35,8 @@
 		<h2 class="headline">Page styling</h2>
 		<p>
 			Prefer components over page level styles.
-			Pages should largely be reusing the general component level styles, such as <code>.btn</code> or <code>.wrap</code>.
+			Pages should largely be reusing the general component level styles, such as <code>.btn</code> or
+			<code>.wrap</code>.
 			Page level name-spaces however can be helpful for overriding generic components in very specific contexts.
 			Page level overrides should be minimal and under a single page level class nest.
 		</p>
@@ -40,7 +48,8 @@
 		<p>
 			Avoid nesting whenever possible.
 			Nesting makes it harder to tell at a glance where css selector optimizations can be made.
-			Although in the name (cascading style sheets) cascading can introduce unnecessary performance overhead for applying styles.
+			Although in the name (cascading style sheets) cascading can introduce unnecessary performance overhead for
+			applying styles.
 		</p>
 	</section>
 
@@ -59,7 +68,8 @@
 		<h2 class="headline">Component variation</h2>
 		<pre>.componentName--variationName</pre>
 		<p>
-			A component variation is a class that modifies the presentation of the base component in some form, e.g. color, direction or size.
+			A component variation is a class that modifies the presentation of the base component in some form, e.g.
+			color, direction or size.
 			The class should be included in the HTML <strong>in addition</strong> to the base component class.
 		</p>
 	</section>
@@ -77,11 +87,16 @@
 
 	<section class="section">
 		<h2 class="headline">Generic elements</h2>
-		<p>Generic elements are built as <a href="http://lesscss.org/functions/#misc-functions-default" target="_blank" title="LESS Reference: Mixin">less mixin function</a>, so they have to initialize before use.</p>
-		<pre>.mygrid {
-	.grid(10px, 12) // default values: @gridSpace, @gridColumns
-}</pre>
-		<p>The code above init the grid system. Now you can use it with the namespace <code>.mygrid-</code>.</p>
+		<p>
+			Generic elements are built as
+			<a href="http://lesscss.org/functions/#misc-functions-default" target="_blank" rel="noopener noreferrer"
+			   title="LESS Reference: Mixin">less mixin function</a>,
+			so they have to initialize before use.
+		</p>
+
+		<script src="https://gist.github.com/sveneberth/58ded7a9757bcdd3342cbab2c864f68d.js?file=table.less"></script>
+
+		<p>The code above init the table. Now you can use it with the namespace <code>.table-</code>.</p>
 
 	</section>
 {% endblock content %}

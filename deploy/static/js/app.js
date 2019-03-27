@@ -8,10 +8,10 @@ $(function () {
 			: $('<p>').append(this.eq(0).clone()).html();
 	};
 
-	$('.js-codeMe').each(function () {
+	$('.js-code-self').each(function () {
 		var html = $(this).outerHTML()
-			.replace(' js-codeMe', '')
-			.replace('js-codeMe', '')
+			.replace(' js-code-self', '')
+			.replace('js-code-self', '')
 			.replace(' class=""', '')
 			.replace('class=""', '');
 		var escaped = $('<div>').text(html).html();
@@ -27,7 +27,7 @@ $(function () {
 		SyntaxHighlighter.highlight()
 	});
 
-	$('.js-codeChild').each(function () {
+	$('.js-code-child').each(function () {
 		var html = $(this).html();
 		var escaped = $('<div>').text(html).html();
 

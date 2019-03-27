@@ -4,7 +4,7 @@
 
 {% block content %}
 <section class="section">
-		<h1 class="headline">Getting Started</h1>
+		<h1 class="headline docs-headline">Getting Started</h1>
 
 
 		<h2 class="headline">Dependencies</h2>
@@ -16,55 +16,31 @@ Git (https://git-scm.com)</pre>
 
 	<section class="section">
 		<h2 class="headline">Install</h2>
-		<p>Get the framework from Github:</p>
-		<pre>$ git clone git@github.com:viur-framework/ignite.git</pre>
+		<p>Get the framework from Github. We recommend to add ignite as submodule in your project:</p>
+		<pre>git submodule add git@github.com:viur-framework/ignite.git</pre>
+		or
+		<pre>git submodule add git@github.com:viur-framework/ignite.git</pre>
 
-		<p>As an alternativ, you can <a href="https://github.com/viur-framework/ignite/archive/master.zip">download it as ZIP</a>
-		<p>Change into the Ignite root directory:</p>
-		<pre>$ cd ignite</pre>
+		<p>As an alternative, you can <a href="https://github.com/viur-framework/ignite/archive/master.zip">download it as ZIP</a>
 
-		<p>Install gulp global and all dependencies local, you will need them later to compile the less:</p>
-		<pre>$ npm run setup</pre>
-
-		<div class="msg msg--success is-active">
-			{{ embedSvg("icon-check") }}
-			<div class="msg-content">
-				<h3 class="msg-headline">You did it!</h3>
-				<p>Let's start.</p>
-			</div>
-		</div>
 	</section>
 
 
 	<section class="section">
-		<h2 class="headline">Style your project</h2>
-			<p>Because Ignite is designed for VIUR projects it uses a specific dictionarystructure. Of cource you can customize  it for your workflow.</p>
-			<p>In <code>../static/less/</code> your find the <code>style.less</code> which is imported as default by ignite. Change this in the <code>viur.less</code>, if required.</p>
-			<p>Gulp and the other dependencies will output the css in <code>../static/css/</code>. Change this in the <code>gulpfile.js</code>, if required.</p>
-		</ul>
+		<h2 class="headline">Import</h2>
+		<p>Than you can import ignite in your project style.less:</p>
+		<pre>@import "ignite/ignite";</pre>
 	</section>
 
 
 	<section class="section">
-		<h2 class="headline">... And Make it</h2>
-
-		<p>Change back into the ignite root directory:</p>
-		<pre>$ cd ignite</pre>
-
-		<p>And run the gulp file to compile the less:</p>
-		<pre>$ gulp</pre>
-		<p></p>
-
-		<h4 class="subline">Use the gulp watch task!</h4>
-		<p>For faster workflows you can use the gulp watch task, it will compile the less after changes in files automatically.</p>
-		<pre>$ gulp watch</pre>
-
-		<div class="msg msg--success is-active">
-			{{ embedSvg("icon-check") }}
-			<div class="msg-content">
-				<h3 class="msg-headline">Well Done!</h3>
-				<p>Open your project in a browser.</p>
-			</div>
-		</div>
+		<h2 class="headline">Enable Opt-Ins</h2>
+		<p>
+			Don't forget to enable the Op-Ins if you want to use elements of Ignite.
+			A detailed instruction you find on the next sites.
+		</p>
+		<pre>// Opt-Ins
+@bar: true;
+@icon: true;</pre>
 	</section>
 {% endblock content %}
