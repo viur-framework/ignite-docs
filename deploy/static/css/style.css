@@ -525,7 +525,7 @@ code {
 	hyphens: none;
 	padding: 3px;
 	border-radius: 3px;
-	margin: 0px 3px;
+	margin: 0 3px;
 }
 
 code:before,
@@ -566,13 +566,13 @@ kbd.kbd--dark {
 }
 
 ul.is-list {
-	padding: 3px 18px;
+	padding: 3px 4ch;
 	margin: 0;
 	list-style-type: disc;
 }
 
 .is-list ul {
-	padding: 3px 18px;
+	padding: 3px 4ch;
 	list-style-type: square;
 }
 
@@ -582,19 +582,29 @@ ul.is-list {
 }
 
 ol.is-list {
-	padding: 3px 20px;
+	padding: 3px 4ch;
 	margin: 0;
 	list-style-type: decimal;
 }
 
 .is-list ol {
-	padding: 3px 20px;
+	padding: 3px 4ch;
 	list-style-type: upper-roman;
 }
 
 .is-list ol ol,
 .is-list ul ol {
 	list-style-type: upper-alpha;
+}
+
+::selection {
+	background-color: #a00c16;
+	text-shadow: none;
+	color: #ffffff;
+}
+
+:focus {
+	outline: 1px dotted #ddd;
 }
 
 .outerwrap {
@@ -1687,16 +1697,6 @@ ol.is-list {
 .icon polyline {
 	fill: inherit;
 	stroke: none;
-}
-
-::selection {
-	background-color: #a00c16;
-	text-shadow: none;
-	color: #ffffff;
-}
-
-:focus {
-	outline: 1px dotted #ddd;
 }
 
 h1.docs-headline {
@@ -3139,6 +3139,10 @@ html {
 
 .nav-trigger:checked ~ .menuWrapper {
 	right: 0;
+}
+
+.wrap {
+	overflow: hidden;
 }
 
 }
