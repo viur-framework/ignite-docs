@@ -1,12 +1,11 @@
-{% set currSite="guidelines" %}
-{% extends "template.html" %}
-{% block additionalTitle %}Guidelines for Ignite{% endblock additionalTitle %}
+{%- extends "template.html" -%}
 
 {% block content %}
 	<section class="section">
 		<h1 class="headline docs-headline">Guidelines for Ignite</h1>
 		<p>Ignite based on modern coding styles and syntax. A summery of them can you see below</p>
-		<p>This Guideline is a summery of different detailed Guilines like <a href="http://cssguidelin.es">CSS Guidelin.es</a> and <a href="http://primercss.io/guidelines/">Primer CSS Guidelines</a></p>
+		<p>This Guideline is a summery of different detailed Guidelines like <a href="http://cssguidelin.es">CSS
+			Guidelin.es</a> and <a href="http://primercss.io/guidelines/">Primer CSS Guidelines</a></p>
 	</section>
 
 
@@ -16,7 +15,7 @@
 		<h3 class="headline">Syntax</h3>
 		<ul class="is-list">
 			<li>two space indent</li>
-			<li>max. 80 charactars per line</li>
+			<li>max. 80 characters per line</li>
 		</ul>
 
 		<h3 class="headline">Selector</h3>
@@ -25,15 +24,15 @@
 }</pre>
 		<ul class="is-list">
 			<li>related selectors on the same line; unrelated selectors on new lines;</li>
-			<li>a space before our opening brace ({);</li>
+			<li>a space before our opening brace (<code>{</code>);</li>
 			<li>properties and values on the same line;</li>
-			<li>a space after our property–value delimiting colon (:);</li>
+			<li>a space after our property–value delimiting colon (<code>:</code>);</li>
 			<li>each declaration on its own new line;</li>
-			<li>the opening brace ({) on the same line as our last selector;</li>
-			<li>our first declaration on a new line after our opening brace ({);</li>
-			<li>our closing brace (}) on its own new line;</li>
+			<li>the opening brace (<code>{</code>) on the same line as our last selector;</li>
+			<li>our first declaration on a new line after our opening brace (<code>{</code>);</li>
+			<li>our closing brace (<code>}</code>) on its own new line;</li>
 			<li>each declaration indented by two (2) spaces;</li>
-			<li>a trailing semi-colon (;) on our last declaration.</li>
+			<li>a trailing semi-colon (<code>;</code>) on our last declaration.</li>
 		</ul>
 	</section>
 
@@ -44,18 +43,24 @@
 		<h3 class="headline">Syntax</h3>
 		<ul class="is-list">
 			<li>four tab indent</li>
-			<li>Avoid writing closing tag comments, like <code>&lt;!-- /.element --&gt;</code>. This just adds to page load time.<br>
-			Plus, most editors have indentation guides and open-close tag highlighting.</li>
-			<li>Avoid trailing slashes in self-closing elements. For example: <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;img&gt;</code>.</li>
-			<li>Avoid values in boolean attributes. For example: <code>disabled</code>, <code>checked</code>, <code>required</code>.</li>
+			<li>Avoid writing closing tag comments, like <code>&lt;!-- /.element --&gt;</code>. This just adds to page
+				load time.<br>
+				Plus, most editors have indentation guides and open-close tag highlighting.
+			</li>
+			<li>Avoid trailing slashes in self-closing elements. For example: <code>&lt;br&gt;</code>,
+				<code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;img&gt;</code>.
+			</li>
+			<li>Avoid values in boolean attributes. For example: <code>disabled</code>, <code>checked</code>, <code>required</code>.
+			</li>
 		</ul>
 
 		<h3 class="headline">Don't mix HTML and CSS</h3>
-		<p>HTML and CSS are two different things: HTML structured the Website and CSS add the styling. Therefore seperate them consistent.</p>
+		<p>HTML and CSS are two different things: HTML structured the Website and CSS add the styling. Therefore
+			separate them consistent.</p>
 		<p>Avoid <code>style="..."</code> and <code>&lt;style&gt;</code>-Tags in your HTML.</p>
 
 		<h3 class="headline">Write Smart</h3>
-		<p>Avoid unnecessary elemtent. It have a positive effect on the readabilty and page load time.</p>
+		<p>Avoid unnecessary elements. It have a positive effect on the readability and page load time.</p>
 		<pre class="brush: html">&lt;!-- Bad --&gt;
 &lt;span class="avatar"&gt;
 	&lt;img src="..."&gt;

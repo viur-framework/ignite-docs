@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{%- set lang = getLanguage() -%}
+{% set lang = getLanguage() -%}
 
 {%- if not title -%}
 	{%- set title="Ignite Docs" -%}
@@ -13,9 +13,8 @@
 {%- if not pageContent -%}
 	{%- set pageContent="index" -%}
 {%- endif -%}
-{%- if not currSite -%}
-	{%- set currSite="start" -%}
-{%- endif -%}
+{%- set currSiteKey = getCurrSiteKey() -%}
+{%- set currSiteName = getCurrSiteName() -%}
 <html lang="{{ lang }}">
 <head>
 	<meta charset="utf-8">
@@ -23,7 +22,7 @@
 	<!-- Herzlich willkommen bei-->
 	<meta name="twitter:title" content="{{ title }}">
 	<meta property="og:title" content="{{ title }}">
-	<title>{% block additionalTitle %}{{ title }}{% endblock additionalTitle %} - {{ title }}</title>
+	<title>{{ currSiteName }} - {{ title }}</title>
 
 	<!-- Descriptions -->
 	<meta name="description" lang="{{ lang }}" content="{{ metaDescr }}">
@@ -38,7 +37,7 @@
 	<meta name="author" content="Mausbrand Informationssysteme GmbH">
 
 	<meta name="robots" content="index, follow, noarchive">
-	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+currSite if currSite != 'start' }}" />
+	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+currSiteKey if currSiteKey != 'start' }}" />
 	<meta property="og:type" content="website">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -117,14 +116,14 @@
 							{% for site, name in menu.items() %}
 								{% if site == "start" %}
 									<li class="menu-item">
-										<a class="menu-link is-primary {{ 'is-active' if currSite == site }}"
+										<a class="menu-link is-primary {{ 'is-active' if currSiteKey == site }}"
 										   href="/">
 											{{ name }}
 										</a>
 									</li>
 								{% else %}
 									<li class="menu-item">
-										<a class="menu-link {{ 'is-active' if currSite == site }}"
+										<a class="menu-link {{ 'is-active' if currSiteKey == site }}"
 										   href="/s/{{ site }}">
 											{{ name }}
 										</a>
@@ -142,8 +141,6 @@
 
 	{% block additionalBody %}
 	{% endblock additionalBody %}
-
-
 
 	<!-- js -->
 	<script src="/static/js/jquery-3.2.1.min.js"></script>

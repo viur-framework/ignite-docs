@@ -7,11 +7,14 @@ import logging
 from collections import OrderedDict
 
 
-def getLastMenuItem(reverse=False):
+def getCurrSiteKey():
 	currSite = u"start"
 	if len(request.current.get().args) > 0 and request.current.get().args[0]:
 		currSite = request.current.get().args[0]
+	return currSite
 
+
+def getLastMenuItem(reverse=False):
 	for menu in conf.get("docs.menu", {}):
 		last = None
 		lastName = None
@@ -20,7 +23,7 @@ def getLastMenuItem(reverse=False):
 			menu = OrderedDict(list(menu.items())[::-1])
 
 		for site, name in menu.items():
-			if site == currSite:
+			if site == getCurrSiteKey():
 				return {"site": last, "name": lastName}
 			last = site
 			lastName = name
@@ -41,3 +44,17 @@ class Render(defaultRender):
 	@jinjaGlobalFunction
 	def getNextMenuItem(self):
 		return getLastMenuItem(reverse=True)
+
+	@jinjaGlobalFunction
+	def getCurrSiteKey(self):
+		return getCurrSiteKey()
+
+	@jinjaGlobalFunction
+	def getCurrSiteName(self):
+		currSite = getCurrSiteKey()
+
+		for menu in conf.get("docs.menu", {}):
+			if menu.get(currSite):
+				return menu.get(currSite)
+
+		return u"Start"

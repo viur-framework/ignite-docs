@@ -1,6 +1,4 @@
-{%- set currSite="components" -%}
 {%- extends "template.html" -%}
-{%- block additionalTitle -%}Components{%- endblock additionalTitle -%}
 
 {% block content %}
 	<section class="section">
@@ -16,7 +14,8 @@
 
 		<p>Component driven development offers several benefits when reading and writing HTML and CSS:</p>
 		<ul class="is-list">
-			<li>It helps to distinguish between the classes for the root of the component, descendant elements, and
+			<li>
+				It helps to distinguish between the classes for the root of the component, descendant elements, and
 				modifications.
 			</li>
 			<li>It keeps the specificity of selectors low.</li>
@@ -24,7 +23,7 @@
 		</ul>
 
 		<p>
-			Every component has to create its own namespace to seperate its enclosed specifics from the rest of the
+			Every component has to create its own namespace to separate its enclosed specifics from the rest of the
 			page, like <code>.input-</code> or <code>.footer-</code>.
 			Namespacing should be made at a descriptive, functional level.
 		</p>
@@ -56,7 +55,7 @@
 
 	<section class="section">
 		<h2 class="headline docs-headline">Component parts</h2>
-		<pre>.componentName-part-name</pre>
+		<pre>.componentname-partname</pre>
 		<p>
 			A component part is a class that is attached to a descendant node of a component.
 			It's responsible for applying presentation directly to the descendant on behalf of a particular component.
@@ -66,7 +65,7 @@
 
 	<section class="section">
 		<h2 class="headline docs-headline">Component variation</h2>
-		<pre>.componentName--variation-name</pre>
+		<pre>.componentname--variationname</pre>
 		<p>
 			A component variation is a class that modifies the presentation of the base component in some form, e.g.
 			color, direction or size.
@@ -78,9 +77,9 @@
 	<section class="section">
 		<h2 class="headline docs-headline">Syntax</h2>
 		<ul class="is-list">
-			<li>Components, component parts and component variations are writen in lowerCamelCase.</li>
+			<li>Components, component parts and component variations are writen in lowercase.</li>
 			<li>Component parts are separated by a hyphen.</li>
-			<li>Component variation names are separated from the component name by a hyphen and a small v.</li>
+			<li>Component variation names are separated from the component name by two hyphen.</li>
 		</ul>
 	</section>
 
