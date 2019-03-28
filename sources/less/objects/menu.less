@@ -10,7 +10,7 @@
 
 .menu-list {
   list-style: none;
-  .shd; // default shadow class.
+  .shd(); // default shadow class.
   display: flex;
   flex-direction: column;
   margin: 1em 0;
@@ -157,41 +157,27 @@ a.menu-link {
 }
 
 // Hamburger Menu
-.nav-trigger {
-  display: none;
-}
+.burger {
+  .burger(@color: #fff, @border-radius: 2px, @gutter: 4px);
 
-label[for="nav-trigger"] {
-  display: block;
   position: absolute;
   top: 0;
   right: 10px;
   z-index: 9999;
   width: 40px;
-  height: 35px;
+  height: 33px;
+  padding: 5px;
   cursor: pointer;
   background-color: @mainColor;
-  background-size: contain;
   box-shadow: 0 0 3px 1px #777777;
   border-radius: 0 0 3px 3px;
-  &:before {
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect style='fill:#fff' width='30' height='6'/><rect style='fill:#fff' y='24' width='30' height='6'/><rect style='fill:#fff' y='12' width='30' height='6'/></svg>");
-    background-size: contain;
-    display: block;
-    content: '';
-    height: 27px;
-    width: 32px;
-    margin-top: 4px;
-    margin-left: 4px;
-  }
-  .mq-min(@breakMedium, {display:none;})
 }
 
 // #FIXME
 // (@breakMedium + 1em) is only a hotfix
 // @breakMedium will be decreased in mq-max mixin,
 // but this its not desired here
-.menuWrapper {
+.menu-wrap {
   .mq-max((@breakMedium + 1em), {
     width: 70%;
     position: absolute;
@@ -204,7 +190,7 @@ label[for="nav-trigger"] {
     .menu-list {
       margin: 0;
     }
-    .nav-trigger:checked ~ & {
+    &.is-active {
       right: 0;
     }
   })

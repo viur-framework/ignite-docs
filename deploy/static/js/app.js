@@ -87,5 +87,10 @@ $(function () {
 		$item.after('<pre class="brush: html">' + escaped + '</pre>');
 
 		SyntaxHighlighter.highlight()
+	});
+
+	$('.js-menu-btn').on('click', function () {
+		$('.js-menu').toggleClass('is-active');
+		$('.js-menu-btn').toggleClass('burger--to-cross');
 	})
 });

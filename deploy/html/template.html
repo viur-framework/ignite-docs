@@ -2,13 +2,13 @@
 {% set lang = getLanguage() -%}
 
 {%- if not title -%}
-	{%- set title="Ignite Docs" -%}
+	{%- set title="Ignite Documentation" -%}
 {%- endif -%}
 {%- if not metaDescr -%}
 	{%- set metaDescr="Ignite - The first attempt in building a sturdy foundation of CSS (LESS) for ViUR products and Mausbrand projects. Official Documentation" -%}
 {%- endif -%}
 {%- if not metaKeywords -%}
-	{%- set metaKeywords="ViUR, Ignite, Docs, CSS, LESS, framework, NPM" -%}
+	{%- set metaKeywords="ViUR, Ignite, Docs, CSS, LESS, Framework" -%}
 {%- endif -%}
 {%- if not pageContent -%}
 	{%- set pageContent="index" -%}
@@ -37,7 +37,7 @@
 	<meta name="author" content="Mausbrand Informationssysteme GmbH">
 
 	<meta name="robots" content="index, follow, noarchive">
-	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+currSiteKey if currSiteKey != 'start' }}" />
+	<link rel="canonical" href="{{ getHostUrl() }}{{ '/s/'+currSiteKey if currSiteKey != 'start' }}">
 	<meta property="og:type" content="website">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
@@ -45,7 +45,7 @@
 	<link rel="shortcut icon" href="/static/meta/favicon.png" type="image/png">
 
 	<!-- css -->
-	<link href="/static/css/style.css?v=1.0.0" rel="stylesheet">
+	<link href="/static/css/style.css?v=1.0.2" rel="stylesheet">
 
 	<!-- iPhone -->
 	<link href="/static/meta/apple-touch-icon-precomposed.png" sizes="57x57" rel="apple-touch-icon">
@@ -79,6 +79,10 @@
 <body>
 
 	<article class="wrap">
+		<div class="burger js-menu-btn">
+			<span class="burger-box"></span>
+		</div>
+
 		<div class="bind">
 			<article class="content {{pageContent}}" role="main">
 				{% block content %}
@@ -107,10 +111,7 @@
 			</article>
 
 			{% block sidebar %}
-				<input type="checkbox" id="nav-trigger" class="nav-trigger">
-				<label for="nav-trigger"></label>
-
-				<div class="sidebar menuWrapper sidebar--left">
+				<div class="sidebar sidebar--left menu-wrap js-menu">
 					{% for menu in getMenu() %}
 						<ul class="menu-list">
 							{% for site, name in menu.items() %}
