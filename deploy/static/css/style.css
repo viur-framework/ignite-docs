@@ -2986,6 +2986,10 @@ a.menu-link .icon {
   .table-body-cell,
   .table-foot-cell {
     padding: 0.2em 0.25em;
+  }
+
+  .table-body-row:not(:last-of-type) .table-body-cell,
+  .table-foot-row:not(:last-of-type) .table-foot-cell {
     border-bottom: 1px solid #d8d8d8;
   }
 }
