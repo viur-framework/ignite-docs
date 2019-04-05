@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.footer {
+  display: flex;
+  flex: 1 0 100%;
+  position: relative;
+  max-width: @pageWidth;
+  padding: 0 @outerSpace;
+  margin: 0 auto;
+  font-size: .85em;
+  color: lighten(@textColor, 20%);
+  margin-top: 2em;
+  padding-bottom: 20px;
+  flex-direction: column;
+
+  .mq-min(@breakMedium, {flex-direction: row});
+
+  a {
+    color: inherit;
+    &:hover,
+    &:active {
+      color: darken(@mainColor, 10%);
+    }
+  }
+
+  &-item {
+    flex: 0 0 auto;
+    &--copyright {
+      margin-left: auto;
+    }
+  }
+}
