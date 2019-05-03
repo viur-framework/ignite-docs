@@ -17,7 +17,7 @@
 #   I N F O R M A T I O N    S Y S T E M
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-# Project:      ignite-docs
+# Project:      ignite-viur
 # Started:	    2017-07-26 15:37:25
 # Copyright:    mausbrand GmbH, Dortmund
 # Author:       sven
