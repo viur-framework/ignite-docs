@@ -247,12 +247,6 @@ form {
   margin: 0;
 }
 
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
 legend {
   border: 0;
   padding: 0;
@@ -336,7 +330,7 @@ html {
 html {
   overflow-y: scroll;
   overflow-x: hidden;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 body {
@@ -348,6 +342,7 @@ body {
   -webkit-text-size-adjust: 100%;
   min-height: 100vh;
   font-size: 100.01%;
+  font-weight: 400;
 }
 
 a,
@@ -719,6 +714,7 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
   background-color: #fff;
   color: #222222;
@@ -957,6 +953,7 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -1054,7 +1051,9 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
+  color: #222222;
   max-width: 100%;
   min-width: 0;
   padding-right: 38px;
@@ -1166,6 +1165,7 @@ ol.is-list {
   background-size: 15px;
   background-repeat: no-repeat;
   text-align: left;
+  font-weight: 300;
 }
 
 .textarea--block {
@@ -1189,6 +1189,7 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
   background-color: #fafafa;
   color: #000000;
@@ -1254,6 +1255,7 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
@@ -1333,6 +1335,7 @@ ol.is-list {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
   background-color: #fafafa;
   border: 1px solid #e0e0e0;
@@ -1484,6 +1487,9 @@ ol.is-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .input-group .select,
@@ -1761,8 +1767,8 @@ h2.docs-headline {
   margin-bottom: 0.25em;
   vertical-align: middle;
   font-size: 1em;
+  line-height: 1.4;
   font-weight: 300;
-  font-weight: 400;
   color: #222222;
   background-color: #e7e5e5;
   -webkit-box-shadow: none;
@@ -1832,7 +1838,8 @@ h2.docs-headline {
 .btn > .icon {
   -ms-flex-item-align: center;
   align-self: center;
-  font-size: 1.4em;
+  width: 1.3em;
+  height: 1.3em;
 }
 
 .btn > .icon:first-child {
@@ -2839,11 +2846,26 @@ a.menu-link .icon {
   color: rgba(34, 34, 34, 0.75);
 }
 
-@media (min-width: 37.5em) {
-  html {
-    font-size: 17px;
+@media (min-width: 37.5em) and (orientation: landscape) {
+  .bind {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
   }
 
+  .content ~ .sidebar {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    -webkit-box-ordinal-group: 205;
+    -ms-flex-order: 204;
+    order: 204;
+    padding: 10px 0 20px 10px;
+  }
+}
+
+@media (min-width: 37.5em) {
   .bar {
     font-size: 0.9rem;
     -webkit-box-align: stretch;
@@ -2988,28 +3010,9 @@ a.menu-link .icon {
   }
 }
 
-@media (min-width: 37.5em) and (orientation: landscape) {
-  .bind {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-  }
-
-  .content ~ .sidebar {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 25%;
-    flex: 0 0 25%;
-    -webkit-box-ordinal-group: 205;
-    -ms-flex-order: 204;
-    order: 204;
-    padding: 10px 0 20px 10px;
-  }
-}
-
 @media (min-width: 56.25em) {
   html {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .bind {
@@ -3173,7 +3176,7 @@ a.menu-link .icon {
 
 @media (min-width: 75em) {
   html {
-    font-size: 20px;
+    font-size: 19px;
   }
 
   .table-head-cell {
@@ -3186,7 +3189,11 @@ a.menu-link .icon {
   }
 }
 
-@media (min-width: 112.5em) {
+@media (min-width: 93.75em) {
+  html {
+    font-size: 21px;
+  }
+
   .table {
     font-size: 0.8rem;
   }
@@ -3198,6 +3205,18 @@ a.menu-link .icon {
   .table-body-cell,
   .table-foot-cell {
     padding: 0.3em 0.6em;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 23px;
+  }
+}
+
+@media (min-width: 225em) {
+  html {
+    font-size: 25px;
   }
 }
 
