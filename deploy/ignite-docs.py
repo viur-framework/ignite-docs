@@ -15,7 +15,7 @@
 #    vvvv       iii   uuuuuu   rr    rrr
 #
 #   I N F O R M A T I O N    S Y S T E M
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
 # Project:      ignite-viur
 # Started:	    2017-07-26 15:37:25
@@ -23,29 +23,42 @@
 # Author:       sven
 #
 
-from server import conf
 from collections import OrderedDict
+
+from server import conf, errors, request
 
 # ------------------------------------------------------------------------------
 # General configuration
 #
 
 conf["viur.forceSSL"] = True
-#conf["viur.disableCache"] = True
+
+
+# conf["viur.disableCache"] = True
+
+def requestPreprocessor(path):
+	url = request.current.get().request.url
+	if "://ignite.viur.is" in url:
+		raise errors.Redirect(url.replace("://ignite.viur.is", "://ignite.viur.dev"), status=301)
+
+	return path
+
+
+conf["viur.requestPreprocessor"] = requestPreprocessor
 
 # ------------------------------------------------------------------------------
 # Language-specific configuration
 #
 
-#conf["viur.languageMethod"] = "url"
-#conf["viur.availableLanguages"] = ["en", "de"]
+# conf["viur.languageMethod"] = "url"
+# conf["viur.availableLanguages"] = ["en", "de"]
 
 # ------------------------------------------------------------------------------
 # ViUR admin tool specific configurations
 #
 
 conf["admin.vi.name"] = "Ignite Documentation"
-#conf["admin.vi.logo"] = "/static/meta/logo.svg"
+# conf["admin.vi.logo"] = "/static/meta/logo.svg"
 
 
 # ------------------------------------------------------------------------------
@@ -93,14 +106,13 @@ conf["docs.menu"] = [
 	])
 ]
 
-
 # ------------------------------------------------------------------------------
 # Server startup
 #
 
 import server, modules
 
-#server.setDefaultLanguage("en") #set default language!
+# server.setDefaultLanguage("en") #set default language!
 application = server.setup(modules, server.render)
 
 if __name__ == '__main__':
