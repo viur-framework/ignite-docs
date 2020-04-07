@@ -7,7 +7,7 @@
 		<p>
 			Ignite is a library of different interface components.
 			Components are self-contained objects.
-			You can think of components as custom elements that enclose specific semantics, styling, and behaviour.
+			You can think of components as custom elements that incorporate specific semantics, styling, and behaviour.
 			Every component is stored in its LESS file — <code>button.less</code>, <code>form.less</code> etc.
 			All LESS files are categorized in the <code>ignite.less</code>.
 		</p>
@@ -15,7 +15,7 @@
 		<p>Component driven development offers several benefits when reading and writing HTML and CSS:</p>
 		<ul class="is-list">
 			<li>
-				It helps to distinguish between the classes for the root of the component, descendant elements, and
+				It helps to distinguish between the classes for the root of the component, descendent elements, and
 				modifications.
 			</li>
 			<li>It keeps the specificity of selectors low.</li>
@@ -57,7 +57,7 @@
 		<h2 class="headline docs-headline">Component parts</h2>
 		<pre>.componentname-partname</pre>
 		<p>
-			A component part is a class that is attached to a descendant node of a component.
+			A component part is a class that is attached to a descendent node of a component.
 			It's responsible for applying presentation directly to the descendant on behalf of a particular component.
 		</p>
 	</section>
@@ -79,7 +79,7 @@
 		<ul class="is-list">
 			<li>Components, component parts and component variations are writen in lowercase.</li>
 			<li>Component parts are separated by a hyphen.</li>
-			<li>Component variation names are separated from the component name by two hyphen.</li>
+			<li>Component variation names are separated from the component name by two hyphens.</li>
 		</ul>
 	</section>
 
@@ -90,12 +90,12 @@
 			Generic elements are built as
 			<a href="http://lesscss.org/functions/#misc-functions-default" target="_blank" rel="noopener noreferrer"
 			   title="LESS Reference: Mixin">less mixin function</a>,
-			so they have to initialize before use.
+			so they have to be initialized before use.
 		</p>
 
 		<div class="js-gist" data-key="58ded7a9757bcdd3342cbab2c864f68d" data-file="table.less"></div>
 
-		<p>The code above init the table. Now you can use it with the namespace <code>.table-</code>.</p>
+		<p>The code above initializes the table. Now you can use it with the namespace <code>.table-</code>.</p>
 
 	</section>
 {% endblock content %}
