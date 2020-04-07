@@ -2,7 +2,7 @@
 
 >The Ignite Framework is the first attempt at building a sturdy foundation for ViUR products and Mausbrand projects.
 
-On [ignite.viur.is](http://ignite.viur.is) you can find the official documentation
+On [ignite.viur.dev](https://ignite.viur.dev) you can find the official documentation
 
 
 ## Contribution guidelines

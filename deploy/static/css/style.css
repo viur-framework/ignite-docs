@@ -749,7 +749,7 @@ ol.is-list {
   background-color: #fff8f7;
   background-image: url(true);
   background-position: 95% center;
-  background-image: url('data:image/svg+xml, %3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cg%3E%3Cpath%20fill%3D%22%23f44336%22%20d%3D%22M37.285%2012.258L6.833%2042.822%203.186%2056.801l14.158-3.879%2030.452-30.565zM49.83%2020.294L39.319%2010.195%2046.291%203.2l10.511%2010.097z%22/%3E%3C/g%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cg%3E%3Cpath%20fill%3D%22%23f44336%22%20d%3D%22M37.285%2012.258L6.833%2042.822%203.186%2056.801l14.158-3.879%2030.452-30.565zM49.83%2020.294L39.319%2010.195%2046.291%203.2l10.511%2010.097z%22/%3E%3C/g%3E%3C/svg%3E');
 }
 
 .input-group.is-invalid .form-group--validation .input:focus,
@@ -781,7 +781,7 @@ ol.is-list {
   background-color: #d0edf9;
   background-image: url(true);
   background-position: 95% center;
-  background-image: url('data:image/svg+xml, %3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cg%3E%3Cpath%20fill%3D%22%231da7e0%22%20d%3D%22M37.285%2012.258L6.833%2042.822%203.186%2056.801l14.158-3.879%2030.452-30.565zM49.83%2020.294L39.319%2010.195%2046.291%203.2l10.511%2010.097z%22/%3E%3C/g%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cg%3E%3Cpath%20fill%3D%22%231da7e0%22%20d%3D%22M37.285%2012.258L6.833%2042.822%203.186%2056.801l14.158-3.879%2030.452-30.565zM49.83%2020.294L39.319%2010.195%2046.291%203.2l10.511%2010.097z%22/%3E%3C/g%3E%3C/svg%3E');
 }
 
 .input-group.is-recommended .form-group--validation .input:focus,
@@ -813,7 +813,7 @@ ol.is-list {
   background-color: #d1eccf;
   background-image: url(true);
   background-position: 95% center;
-  background-image: url('data:image/svg+xml, %3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%234cad42%22%20d%3D%22M58.868%2013.128l-6.472-6.144-31.649%2031.398L7.426%2025.703l-6.343%206.276%2019.78%2018.849z%22/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%234cad42%22%20d%3D%22M58.868%2013.128l-6.472-6.144-31.649%2031.398L7.426%2025.703l-6.343%206.276%2019.78%2018.849z%22/%3E%3C/svg%3E');
 }
 
 .input-group.is-valid .form-group--validation .input:focus,
@@ -868,7 +868,7 @@ ol.is-list {
   background-image: url(true);
   background-position: 95% center;
   cursor: not-allowed;
-  background-image: url('data:image/svg+xml, %3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%23d9d9d9%22%20d%3D%22M29.999%201.5C14.285%201.5%201.5%2014.285%201.5%2029.999%201.5%2045.715%2014.285%2058.5%2029.999%2058.5%2045.715%2058.5%2058.5%2045.715%2058.5%2029.999%2058.5%2014.285%2045.715%201.5%2029.999%201.5zM7.962%2029.999c0-12.15%209.887-22.037%2022.037-22.037%205.004%200%209.606%201.695%2013.309%204.513L12.475%2043.307c-2.819-3.703-4.513-8.304-4.513-13.308zm22.037%2022.039a21.913%2021.913%200%200%201-12.267-3.742l30.564-30.563a21.914%2021.914%200%200%201%203.74%2012.266c.001%2012.151-9.885%2022.039-22.037%2022.039z%22/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%23d9d9d9%22%20d%3D%22M29.999%201.5C14.285%201.5%201.5%2014.285%201.5%2029.999%201.5%2045.715%2014.285%2058.5%2029.999%2058.5%2045.715%2058.5%2058.5%2045.715%2058.5%2029.999%2058.5%2014.285%2045.715%201.5%2029.999%201.5zM7.962%2029.999c0-12.15%209.887-22.037%2022.037-22.037%205.004%200%209.606%201.695%2013.309%204.513L12.475%2043.307c-2.819-3.703-4.513-8.304-4.513-13.308zm22.037%2022.039a21.913%2021.913%200%200%201-12.267-3.742l30.564-30.563a21.914%2021.914%200%200%201%203.74%2012.266c.001%2012.151-9.885%2022.039-22.037%2022.039z%22/%3E%3C/svg%3E');
   -webkit-box-shadow: none;
   box-shadow: none;
   border-style: dashed;
@@ -1058,7 +1058,7 @@ ol.is-list {
   min-width: 0;
   padding-right: 38px;
   background-color: #fff;
-  background-image: url('data:image/svg+xml, %3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2250%22%20width%3D%2280%22%20viewBox%3D%220%200%20137.14286%2050%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%23222222%22%20d%3D%22M0%2016.429l30-34.286%2030%2034.286H0zm0%2017.142l30%2034.286%2030-34.286H0z%22/%3E%3C/svg%3E');
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2250%22%20width%3D%2280%22%20viewBox%3D%220%200%20137.14286%2050%22%20class%3D%22icon%22%3E%3Cpath%20fill%3D%22%23222222%22%20d%3D%22M0%2016.429l30-34.286%2030%2034.286H0zm0%2017.142l30%2034.286%2030-34.286H0z%22/%3E%3C/svg%3E');
   background-size: 20px;
   background-repeat: no-repeat;
   background-position: right center;
