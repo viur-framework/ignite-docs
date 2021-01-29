@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+.msg {
+  .genericMsg;
+
+  &--success {
+    .colorizeMsg(@successColor);
+  }
+
+  &--warn {
+    .colorizeMsg(@warnColor);
+  }
+
+  &--error {
+    .colorizeMsg(@failColor);
+  }
+}

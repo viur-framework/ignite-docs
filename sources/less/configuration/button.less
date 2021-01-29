@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+.btn {
+  .genericBtn();
+
+  &--primary {
+    .colorizeBtn(@successColor);
+  }
+
+  &--danger {
+    .invertColorizedBtn(@failColor);
+  }
+
+  &--edit {
+    .invertColorizedBtn(@hintColor);
+  }
+}
