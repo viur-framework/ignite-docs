@@ -37,8 +37,19 @@ conf["viur.forceSSL"] = True
 # conf["viur.disableCache"] = True
 
 def requestPreprocessor(path):
+	def isWhitelisted():
+		reqPath = request.current.get().request.path
+		for testUrl in conf["viur.noSSLCheckUrls"]:
+			if testUrl.endswith("*"):
+				if reqPath.startswith(testUrl[:-1]):
+					return True
+			else:
+				if testUrl == reqPath:
+					return True
+		return False
+
 	url = request.current.get().request.url
-	if "://ignite.viur.is" in url:
+	if "://ignite.viur.is" in url and not isWhitelisted():
 		raise errors.Redirect(url.replace("://ignite.viur.is", "://ignite.viur.dev"), status=301)
 
 	return path
