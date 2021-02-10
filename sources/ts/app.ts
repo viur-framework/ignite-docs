@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const menuBtn: Element = document.querySelector('.js-menu-btn')!;
 
 	menuBtn.addEventListener('click', () => {
-		menu.classList.toggle('active');
+		menu.classList.toggle('is-active');
 		menuBtn.classList.toggle('burger--to-cross');
 	});
 

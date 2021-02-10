@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var menu = document.querySelector('.js-menu');
     var menuBtn = document.querySelector('.js-menu-btn');
     menuBtn.addEventListener('click', function () {
-        menu.classList.toggle('active');
+        menu.classList.toggle('is-active');
         menuBtn.classList.toggle('burger--to-cross');
     });
     document.querySelectorAll('.js-code-me').forEach(function (block) {
