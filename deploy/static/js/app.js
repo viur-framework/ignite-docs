@@ -19,10 +19,10 @@ function escapeHtml(html) {
     div.appendChild(document.createTextNode(html));
     return div.innerHTML;
 }
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
     var menu = document.querySelector('.js-menu');
     var menuBtn = document.querySelector('.js-menu-btn');
-    menuBtn.addEventListener('click', function (e) {
+    menuBtn.addEventListener('click', function () {
         menu.classList.toggle('active');
         menuBtn.classList.toggle('burger--to-cross');
     });

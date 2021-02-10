@@ -14,6 +14,7 @@ const destpaths = {
 // Dependencies and Plugins
 
 const gulp = require('gulp');
+const gulpIf = require('gulp-if');
 
 const rename = require('gulp-rename');
 
@@ -28,6 +29,7 @@ const nano = require('gulp-cssnano');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
 const ts = require('gulp-typescript');
+const eslint = require('gulp-eslint');
 
 const tsProject = ts.createProject('tsconfig.json');
 
@@ -56,6 +58,17 @@ gulp.task('js', () =>
 	tsProject.src()
 		.pipe(tsProject()).js
 		.pipe(gulp.dest(destpaths.js))
+);
+
+gulp.task('eslint', () =>
+	gulp.src(srcpaths.ts)
+		.pipe(eslint({fix: true}))
+		.pipe(eslint.format())
+		.pipe(gulpIf(
+			file => file.eslint != null && file.eslint.fixed,
+			gulp.dest(srcpaths.ts.split('/*', 1)[0])
+		))
+		.pipe(eslint.failAfterError())
 );
 
 gulp.task('watch', () => {
