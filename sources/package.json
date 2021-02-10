@@ -1,12 +1,14 @@
 {
   "name": "ignite-docs",
   "version": "1.1.1",
+  "private": true,
   "description": "Gulp Tasks for ViUR Ignite Docs",
   "main": "gulpfile.js",
   "scripts": {
     "lint": "eslint ./ts --ext .ts",
     "lint-and-fix": "eslint ./ts --ext .ts --fix",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "cd .. && husky install sources/.husky",
+    "test": "npm run lint"
   },
   "author": "Mausbrand Infosys",
   "license": "GPL-3.0",
@@ -43,10 +45,5 @@
     "last 1 version",
     "> 1%",
     "IE 10"
-  ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-and-fix"
-    }
-}
+  ]
 }
