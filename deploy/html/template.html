@@ -45,7 +45,9 @@
 	<link rel="shortcut icon" href="/static/meta/favicon.png" type="image/png">
 
 	<!-- css -->
-	<link href="/static/css/style.css?v=1.0.17" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/styles/github-gist.min.css">
+	<link href="/static/css/style.css?v={{ getChangeDate("css/style.css") }}" rel="stylesheet">
+
 
 	<!-- iPhone -->
 	<link href="/static/meta/apple-touch-icon-precomposed.png" sizes="57x57" rel="apple-touch-icon">
@@ -155,10 +157,10 @@
 	{% endblock additionalBody %}
 
 	<!-- js -->
-	<script src="/static/js/jquery-3.2.1.min.js"></script>
-	<script src="/static/js/shCore.js"></script>
-	<script src="/static/js/shBrushXml.js"></script>
-	<script src="/static/js/app.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/highlight.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.6.0/build/languages/less.min.js"></script>
+	<script src="/static/js/app.js?v={{ getChangeDate("js/app.js") }}"></script>
 
 	{% block additionalFooter %}
 	{% endblock additionalFooter %}

@@ -1,4 +1,5 @@
 {%- extends "template.html" -%}
+{%- from "macros/functions.html" import codeSnippet -%}
 
 {% block content %}
 	<section class="section">
@@ -93,7 +94,13 @@
 			so they have to be initialized before use.
 		</p>
 
-		<div class="js-gist" data-key="58ded7a9757bcdd3342cbab2c864f68d" data-file="table.less"></div>
+		{% call codeSnippet("less") %}
+			.table {
+			  .table(); // ignite mixin
+
+			  width: 100%; // custom styling
+			}
+		{% endcall %}
 
 		<p>The code above initializes the table. Now you can use it with the namespace <code>.table-</code>.</p>
 

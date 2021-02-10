@@ -69,13 +69,14 @@ from server.securityheaders import addCspRule
 
 addCspRule("default-src", "self", "enforce")
 
-addCspRule("script-src", "unsafe-eval", "enforce")  # SyntaxHighlighter
 addCspRule("script-src", "*.github.com", "enforce")  # github api for gist
 addCspRule("script-src", "*.github.io", "enforce")  # github buttons
+addCspRule("script-src", "cdn.jsdelivr.net", "enforce")  # external libs
 
 addCspRule("connect-src", "*.github.com", "enforce")  # github buttons
 
 addCspRule("style-src", "*.githubassets.com", "enforce")  # gist stylesheet
+addCspRule("style-src", "cdn.jsdelivr.net", "enforce")  # external libs
 
 addCspRule("img-src", "data:", "enforce")  # css background-urls
 

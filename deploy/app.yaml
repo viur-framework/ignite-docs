@@ -9,6 +9,7 @@ handlers:
   static_dir: vi
 - url: /static
   static_dir: static
+  application_readable: true
 - url: /resources
   static_dir: server/resources
 - url: /_tasks

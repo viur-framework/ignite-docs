@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-
-from server.render.html import default as defaultRender
-from server.render.html.utils import jinjaGlobalFilter, jinjaGlobalExtension, jinjaGlobalFunction
-from server import conf, request
-import logging
+import os
 from collections import OrderedDict
+
+from server import conf, request
+from server.render.html import default as defaultRender
+from server.render.html.utils import jinjaGlobalFunction
 
 
 def getCurrSiteKey():
@@ -58,3 +58,10 @@ class Render(defaultRender):
 				return menu.get(currSite)
 
 		return u"Start"
+
+	@jinjaGlobalFunction
+	def getChangeDate(self, path):
+		if ".." in path or path.startswith("/") or path.startswith("~"):
+			raise ValueError()
+
+		return os.path.getmtime(os.path.join(os.getcwd(), "static/", path))

@@ -1,13 +1,20 @@
 {%- extends "template.html" -%}
+{%- from "macros/functions.html" import codeSnippet -%}
 
 {% block content %}
 	<section class="section">
 		<h1 class="headline docs-headline">Table</h1>
 
 		<h2 class="headline docs-headline">Source Code</h2>
-		<p>To initialize the messages on this site we used this piece of less.</p>
+		<p>To initialize the tables on this site we used this piece of less.</p>
 
-		<div class="js-gist" data-key="58ded7a9757bcdd3342cbab2c864f68d" data-file="table.less"></div>
+		{% call codeSnippet("less") %}
+			.table {
+			  .table(); // ignite mixin
+
+			  width: 100%; // custom styling
+			}
+		{% endcall %}
 	</section>
 
 

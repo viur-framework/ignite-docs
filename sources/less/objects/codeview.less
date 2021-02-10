@@ -7,7 +7,6 @@
   margin: 30px 0 20px;
   padding: 20px;
   position: relative;
-  min-height: 200px;
 
   &:before {
     background: lighten(@complementColor, 50%);
@@ -34,4 +33,56 @@
   border: 1px solid #ccc;
   display: inline-block;
   margin-right: 5px;
+}
+
+.hljs {
+  width: 100%;
+  position: relative;
+  overflow: auto;
+  background-color: darken(@backgroundColor, 3%);
+  border: 1px solid lighten(@complementColor, 40%);
+  padding: 0;
+  margin: 1em 0;
+  border-radius: 0;
+  font-size: .8em;
+
+
+  .sandbox + & {
+    border-top-width: 0;
+    margin: -20px 0 20px;
+  }
+
+  &:before,
+  &:after {
+    display: none;
+  }
+}
+
+
+.hljs-ln {
+  // for block of numbers
+  td.hljs-ln-numbers {
+    user-select: none;
+    text-align: right;
+    color: lighten(@textColor, 50%);
+    border-right: 1px solid lighten(@complementColor, 40%);
+    padding: 0 .5em;
+    min-width: 2em; // to have an even border on multiple code-blocks
+    background-color: darken(@backgroundColor, 2%);
+  }
+
+  // for block of code
+  td.hljs-ln-code {
+    padding-left: 1em;
+  }
+
+  tr:first-of-type td.hljs-ln-numbers,
+  tr:first-of-type td.hljs-ln-code {
+    padding-top: .5em;
+  }
+
+  tr:last-of-type td.hljs-ln-numbers,
+  tr:last-of-type td.hljs-ln-code {
+    padding-bottom: .5em;
+  }
 }

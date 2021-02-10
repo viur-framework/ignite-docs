@@ -1,11 +1,13 @@
 // Project data
 
-var srcpaths = {
+const srcpaths = {
 	less: './less/**/*.less',
+	ts: './ts/**/*.ts',
 };
 
-var destpaths = {
+const destpaths = {
 	css: '../deploy/static/css',
+	js: '../deploy/static/js',
 };
 
 
@@ -25,7 +27,9 @@ const nocomments = require('postcss-discard-comments');
 const nano = require('gulp-cssnano');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
+const ts = require('gulp-typescript');
 
+const tsProject = ts.createProject('tsconfig.json');
 
 gulp.task('css', () =>
 	gulp.src('./less/style.less')
@@ -33,26 +37,32 @@ gulp.task('css', () =>
 			paths: [path.join(__dirname, 'less', 'includes')]
 		}))
 		.pipe(postcss([
-			autoprefixer({
-				browsers: ['last 2 versions'],
+			autoprefixer({ // add vendor prefixes
 				cascade: false
 			}),
 			nocomments, // discard comments
 			focus, // add focus to hover-states
-			zindex, // reduce z-index values
+			// zindex, // reduce z-index values - deprecated, use .zIndex()-mixin
 		])) // clean up css
 		.pipe(jmq())
-		.pipe(stylefmt()) // syntax formatting
+		//#fixme: .pipe(plugins.stylefmt()) // syntax formatting, stylefmt destroys background inline-svg
 		.pipe(gulp.dest(destpaths.css)) // save cleaned version
-		.pipe(nano()) // minify css
-		.pipe(rename({suffix: '.min'})) // save minified version
-		.pipe(gulp.dest(destpaths.css))
+		.pipe(nano({zindex: false})) // minify css
+		.pipe(rename({suffix: '.min'}))
+		.pipe(gulp.dest(destpaths.css)) // save minified version
 );
 
-gulp.task('watch', function () {
+gulp.task('js', () =>
+	tsProject.src()
+		.pipe(tsProject()).js
+		.pipe(gulp.dest(destpaths.js))
+);
+
+gulp.task('watch', () => {
 	gulp.watch(srcpaths.less, gulp.series('css'));
+	gulp.watch(srcpaths.ts, gulp.series('js'));
 });
 
 gulp.task('default', gulp.series([
-	'css',
+	'css', 'js'
 ]));

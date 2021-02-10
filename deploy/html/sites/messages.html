@@ -1,4 +1,5 @@
 {%- extends "template.html" -%}
+{%- from "macros/functions.html" import codeSnippet -%}
 
 {% block content %}
 	<section class="section">
@@ -6,7 +7,25 @@
 		<h2 class="headline docs-headline">Source Code</h2>
 		<p>To initialize the messages on this site we used this piece of less.</p>
 
-		<div class="js-gist" data-key="58ded7a9757bcdd3342cbab2c864f68d" data-file="message.less"></div>
+		{% call codeSnippet("less") %}
+			@message: true;
+
+			.msg {
+			  .msg;
+
+			  &--success {
+				.colorizeMsg(@successColor);
+			  }
+
+			  &--warn {
+				.colorizeMsg(@warnColor);
+			  }
+
+			  &--error {
+				.colorizeMsg(@failColor);
+			  }
+			}
+		{% endcall %}
 	</section>
 
 
