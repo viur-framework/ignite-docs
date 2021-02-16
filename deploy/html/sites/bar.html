@@ -15,8 +15,10 @@
 		<p>To initialize the messages on this site we used this piece of less.</p>
 
 		{% call codeSnippet("less") %}
-			/* enable bar */
-			@bar: true;
+			/* enable .bar */
+			.bar {
+				.genericBar();
+			}
 		{% endcall %}
 	</section>
 

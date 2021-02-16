@@ -8,10 +8,8 @@
 		<p>To initialize the messages on this site we used this piece of less.</p>
 
 		{% call codeSnippet("less") %}
-			@message: true;
-
 			.msg {
-			  .msg;
+			  .genericMsg();
 
 			  &--success {
 				.colorizeMsg(@successColor);

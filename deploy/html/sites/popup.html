@@ -1,0 +1,39 @@
+{%- extends "template.html" -%}
+{% from "macros/ignite.html" import popup %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline docs-headline">Popups</h1>
+
+		<p>A popup (or dialog) is a window that elicits a response from the user.
+   Many dialogs let people provide several responses at once.
+   A popup can contain any type of content:
+   - As an alert it provides important information about an error condition
+    or warns the user about a potentially hazardous situation or consequence.
+   - As a modal or panel it may provide additional information related to the active document or selection,
+    controls concerning a task or a list of possible options to choose from.
+
+   Both popup and popout need additional DOM structures and styling — e.g. boxes, frames, lists and buttons.
+			They just provide a basic container that can be positioned with several modifiers (<code>--n, --e, --s, --w, --local</code> etc.).
+
+			A popup is invisible at first, but can be activated via <code>.is-active</code> status.
+   It appears above other content onscreen and can hide/block it with an overlay.</p>
+		<h2 class="headline docs-headline">Source Code</h2>
+
+		<p>To initialize the messages on this site we used this piece of less.</p>
+		{% call codeSnippet("less") %}
+			.popup {
+			  .genericPopup();
+			}
+		{% endcall %}
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline docs-headline">Default popup</h2>
+		<p>This is a standard popup.</p>
+		<div class="sandbox js-code-child">
+			{{ popup(head="Standard popup", body) }}
+		</div>
+	</section>
+{% endblock content %}

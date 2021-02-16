@@ -20,10 +20,9 @@
 		<p>To initialize the buttons on this site we used this piece of less.</p>
 
 		{% call codeSnippet("less") %}
-			@button: true;
-
+			/* enable .btn */
 			.btn {
-			  .btn;
+			  .genericBtn();
 
 			  &--primary {
 				.colorizeBtn(@successColor);

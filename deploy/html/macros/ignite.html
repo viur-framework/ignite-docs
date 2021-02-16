@@ -1,0 +1,65 @@
+{% macro bar(left=False, right=False, center=False, identifier=False, addClass=False) %}
+	<div class="bar{{ ' ignt-' + identifier if identifier }}{{ ' ' + addClass if addClass }}">
+		{% if left %}
+		<div class="bar-group{{ ' ignt-' + identifier + '-left' if identifier }} bar-group--left">
+			{{ left }}
+		</div>
+		{% endif %}
+		{% if center %}
+		<div class="bar-group{{ ' ignt-' + identifier + '-center' if identifier }} bar-group--center">
+			{{ center }}
+		</div>
+		{% endif %}
+		{% if right %}
+		<div class="bar-group{{ ' ignt-' + identifier + '-right' if identifier }} bar-group--right">
+			{{ right }}
+		</div>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro box(head=False, body=False, foot=False, identifier=False, addClass=False) %}
+	<div class="box{{ ' ignt-' + identifier if identifier }}{{ ' ' + addClass if addClass }}">
+		{% if head %}
+			<header class="box-head{{ ' ignt-' + identifier + '-head' if identifier }} box--content">
+				{{ head }}
+			</header>
+		{% endif %}
+		{% if body %}
+			<div class="box-body{{ ' ignt-' + identifier + '-body' if identifier }} box--content">
+				{{ body }}
+			</div>
+		{% endif %}
+		{% if foot %}
+			<footer class="box-foot{{ ' ignt-' + identifier + '-foot' if identifier }} box--content">
+				{{ foot }}
+			</footer>
+		{% endif %}
+	</div>
+{% endmacro %}
+
+{% macro msg(msg=None, headline=None, icon=False, type=False, addClass=None, active=False, condition=True) %}
+	{% if condition and (headline or msg) %}
+		<div class="msg{{ ' msg--' + type if type }}{{ ' is-active' if active }}{{ ' ' + addClass if addClass }}">
+			{{ embedSvg(icon) if icon }}
+			<div class="msg-content">
+				{% if headline %}<h3 class="msg-headline">{{ headline }}</h3>{% endif %}
+				{% if msg %}<p>{{ msg }}</p>{% msg %}
+			</div>
+		</div>
+	{% endif %}
+{% endmacro %}
+
+{% macro popup(position="center", active=False, closable=True, overlay=False, identifier=False, addClass=False) %}
+	<div class="popup popup--{{ position }}{{ ' ignt-' + identifier if identifier }}{{ ' is-active' if active }}{{ ' ' + addClass if addClass }}">
+		{{ caller() }}
+		{% if closable %}
+			<button class="popup-close{{ ' ignt-' + identifier + '-close' if identifier }} has-icon">&times;</button>
+		{% endif %}
+	</div>
+	{% if overlay %}
+		<div class="popup-overlay{{ ' ignt-' + identifier + '-overlay' if identifier }}"></div>
+	{% endif %}
+{% endmacro %}
+
+
