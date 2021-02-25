@@ -80,13 +80,13 @@
 </head>
 <body>
 
-	<article class="wrap">
+	<div class="wrap">
 		<div class="burger js-menu-btn">
 			<span class="burger-box"></span>
 		</div>
 
 		<div class="bind">
-			<article class="content {{pageContent}}" role="main">
+			<main class="content {{pageContent}}" role="main">
 				{% block content %}
 				{% endblock content %}
 				<section class="section">
@@ -110,7 +110,7 @@
 						{% endif %}
 					</nav>
 				</section>
-			</article>
+			</main>
 
 			{% block sidebar %}
 				<div class="sidebar sidebar--left menu-wrap js-menu">
@@ -150,7 +150,7 @@
 				Dortmund</a>
 			</div>
 		</footer>
-	</article>
+	</div>
 
 
 	{% block additionalBody %}

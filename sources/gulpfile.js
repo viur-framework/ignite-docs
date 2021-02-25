@@ -25,7 +25,7 @@ const zindex = require('postcss-zindex');
 const autoprefixer = require('autoprefixer');
 const focus = require('postcss-focus');
 const nocomments = require('postcss-discard-comments');
-const nano = require('gulp-cssnano');
+const cleancss = require('gulp-clean-css');
 const jmq = require('gulp-join-media-queries');
 const stylefmt = require('gulp-stylefmt');
 const ts = require('gulp-typescript');
@@ -49,7 +49,7 @@ gulp.task('css', () =>
 		.pipe(jmq())
 		//#fixme: .pipe(plugins.stylefmt()) // syntax formatting, stylefmt destroys background inline-svg
 		.pipe(gulp.dest(destpaths.css)) // save cleaned version
-		.pipe(nano({zindex: false})) // minify css
+		.pipe(cleancss({zindex: false})) // minify css
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest(destpaths.css)) // save minified version
 );
