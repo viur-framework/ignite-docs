@@ -61,12 +61,14 @@
 
 		<h3 class="headline">Write Smart</h3>
 		<p>Avoid unnecessary elements. It has a positive effect on the readability and page load time.</p>
-		<pre class="brush: html">&lt;!-- Bad --&gt;
-&lt;span class="avatar"&gt;
-	&lt;img src="..."&gt;
-&lt;/span&gt;
+        {% call codeSnippet("html") %}
+			<!-- Bad -->
+			<span class="avatar">
+				<img src="...">
+			</span>
 
-&lt;!-- Good --&gt;
-&lt;img class="avatar" src="..."&gt;</pre>
+			<!-- Good -->
+			<img class="avatar" src="...">
+		{% endcall %}
 	</section>
 {% endblock content %}

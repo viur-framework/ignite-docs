@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var codeNode = document.createElement('code');
         codeNode.classList.add('hljs', 'language-html', 'syntaxhighlighter');
         codeNode.innerHTML = escapedHtml;
-        item.parentElement.appendChild(codeNode);
+        item.parentElement.insertBefore(codeNode, item.nextSibling);
         hljs.highlightBlock(codeNode);
         hljs.lineNumbersBlock(codeNode);
     });
