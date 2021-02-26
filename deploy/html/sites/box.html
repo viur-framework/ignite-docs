@@ -1,0 +1,35 @@
+{%- extends "template.html" -%}
+{% from "macros/ignite.html" import box %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline docs-headline">Box</h1>
+
+		<p>Boxes are a type of view that create distinct, logical groupings of controls, text fields, and other interface elements.
+For example, the content of a popup or popout may appear in a box. A box consists of a head area, a body area and a foot area.
+The head area may show a title and general controls — for example to close the popup.
+The body area lets the user view and interact with content. It is scrollable.
+The foot area may provide further information or interaction with the body's content — for example page numbers and page controls.
+The foot area is optional.
+
+			Use the <code>.{box}--content</code> class for padding if needed.
+		</p>
+		<h2 class="headline docs-headline">Source Code</h2>
+
+		<p>To initialize the messages on this site we used this piece of less.</p>
+		{% call codeSnippet("less") %}
+			.box {
+			  .genericBox();
+			}
+		{% endcall %}
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline docs-headline">Default box</h2>
+		<p>This is a standard box.</p>
+		<div class="sandbox js-code-child">
+			{{ box(head="Standard Box Head", body="Standard Box Body", foot="Standard Box Foot") }}
+		</div>
+	</section>
+{% endblock content %}

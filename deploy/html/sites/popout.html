@@ -1,0 +1,37 @@
+{%- extends "template.html" -%}
+{% from "macros/ignite.html" import popout, box %}
+
+{% block content %}
+	<section class="section">
+		<h1 class="headline docs-headline">Popouts</h1>
+
+		<p>A popout (or popover) is a view that appears above other content onscreen when you click a control or view.
+   For example, an information button may display extra information in a popout when you click on it.
+   Typically, a popout includes an arrow pointing to the location from which it emerged.
+
+   Both popout and popup need additional DOM structures and styling — e.g. boxes, frames, lists and buttons.
+   They just provide a basic container that can be positioned with several modifiers (<code>--n, --e, --s, --w</code> etc.).
+
+   A popout is invisible at first, but can be activated via <code>{popout}-opener:hover</code> or <code>.is-active</code> status.
+		</p>
+		<h2 class="headline docs-headline">Source Code</h2>
+
+		<p>To initialize the messages on this site we used this piece of less.</p>
+		{% call codeSnippet("less") %}
+			.popout {
+			  .genericPopout();
+			}
+		{% endcall %}
+	</section>
+
+
+	<section class="section">
+		<h2 class="headline docs-headline">Default popout</h2>
+		<p>This is a standard popout.</p>
+		<div class="sandbox js-code-child">
+			{% call popout(text="Standard popout") %}
+				{{ box(head="Standard popout") }}
+			{% endcall %}
+		</div>
+	</section>
+{% endblock content %}

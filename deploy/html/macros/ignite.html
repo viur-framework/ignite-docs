@@ -110,4 +110,11 @@
 	{% endif %}
 {% endmacro %}
 
-
+{% macro popout(text=None, position="s", active=False, modifiers=None, identifier=None, addClass=None) %}
+	<div class="btn popout-opener popout-anchor popout--{{ position }}{% if modifiers %}{% for modifier in modifiers %}{{ ' popout--' + modifier if modifier }}{% endfor %}{% endif %}{{ ' ignt-' + identifier if identifier }}{{ ' is-active' if active }}{{ ' ' + addClass if addClass }}">
+		{{ text if text }}
+		<div class="popout">
+			{{ caller() }}
+		</div>
+	</div>
+{% endmacro %}
