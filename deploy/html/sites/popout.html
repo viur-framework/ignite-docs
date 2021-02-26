@@ -34,4 +34,18 @@
 			{% endcall %}
 		</div>
 	</section>
+	<section class="section">
+		<h2 class="headline docs-headline">Popout positions</h2>
+		<p>Example positioning: left (<code>--w</code>) and right (<code>--e</code>).</p>
+		<div class="sandbox js-code-child">
+			{% call popout(position="w", text="Standard popout") %}
+				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+		<div class="sandbox js-code-child">
+			{% call popout(position="e", text="Standard popout") %}
+				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+	</section>
 {% endblock content %}

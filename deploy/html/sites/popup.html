@@ -1,5 +1,5 @@
 {%- extends "template.html" -%}
-{% from "macros/ignite.html" import popup, box %}
+{% from "macros/ignite.html" import popup, box, msg %}
 
 {% block content %}
 	<section class="section">
@@ -34,6 +34,29 @@
 		<div class="sandbox sandbox--large js-code-child">
 			{% call popup(modifiers=["local"], active=True) %}
 				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+	</section>
+	<section class="section">
+		<h2 class="headline docs-headline">Popup positions</h2>
+		<p>Example positioning: left (<code>--w</code>) and right (<code>--e</code>).</p>
+		<div class="sandbox sandbox--large js-code-child">
+			{% call popup(position="w", modifiers=["local"], active=True) %}
+				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+		<div class="sandbox sandbox--large js-code-child">
+			{% call popup(position="e", modifiers=["local"], active=True) %}
+				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+	</section>
+	<section class="section">
+		<h2 class="headline docs-headline">Variable content</h2>
+		<p>You can use any other element in a popup.</p>
+		<div class="sandbox sandbox--large js-code-child">
+			{% call popup(modifiers=["local"], active=True) %}
+				{{ msg(text="Positioned with a popup.", headline="This is a message!", active=True) }}
 			{% endcall %}
 		</div>
 	</section>
