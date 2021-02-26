@@ -1,5 +1,5 @@
 {%- extends "template.html" -%}
-{% from "macros/ignite.html" import popout, box %}
+{% from "macros/ignite.html" import popout, box, msg %}
 
 {% block content %}
 	<section class="section">
@@ -45,6 +45,15 @@
 		<div class="sandbox js-code-child">
 			{% call popout(position="e", text="Standard popout") %}
 				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
+			{% endcall %}
+		</div>
+	</section>
+	<section class="section">
+		<h2 class="headline docs-headline">Variable content</h2>
+		<p>You can use any other element in a popout.</p>
+		<div class="sandbox js-code-child">
+			{% call popout(text="Standard popout") %}
+				{{ msg(text="Positioned with a popup.", headline="This is a message!", active=True) }}
 			{% endcall %}
 		</div>
 	</section>
