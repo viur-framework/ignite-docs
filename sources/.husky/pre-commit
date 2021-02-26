@@ -1,11 +1,6 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
-
 export PATH=/usr/local/bin:$PATH
-node -v
-which node
-which npm
-id
 pushd sources
 npm test
 popd
