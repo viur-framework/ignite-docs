@@ -3,6 +3,9 @@
 
 export PATH=/usr/local/bin:$PATH
 node -v
+which node
+which npm
+id
 pushd sources
-#npm test
+npm test
 popd
