@@ -46,6 +46,8 @@
     "> 1%",
     "IE 10"
   ],
-  "engineStrict" : true,
-  "engines" : { "node" : "15.9.0" }
+  "engineStrict": true,
+  "engines": {
+    "node": "15.9.0"
+  }
 }

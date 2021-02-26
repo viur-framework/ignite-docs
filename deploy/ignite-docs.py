@@ -98,10 +98,13 @@ conf["docs.menu"] = [
 		[u"mixins", u"Mixins"]
 	]),
 	OrderedDict([
-		[u"messages", u"Messages"],
 		[u"bar", u"Bar"],
+		[u"box", u"Boxes"],
 		[u"buttons", u"Buttons"],
 		[u"forms", u"Forms"],
+		[u"messages", u"Messages"],
+		[u"popout", u"Popouts"],
+		[u"popup", u"Popup"],
 		[u"tables", u"Table"],
 		[u"types", u"Typography"]
 	])

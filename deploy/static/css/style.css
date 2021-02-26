@@ -581,6 +581,61 @@ h2.docs-headline {
 	margin-bottom: 0.25em;
 }
 
+.box {
+	display: -ms-flexbox;
+	display: flex;
+	min-height: 0;
+	max-height: 100%;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	background-color: #ffffff;
+	border-radius: 0.4em;
+	border: 1px solid #ccc;
+	box-shadow: none;
+}
+
+.box-head {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	background-color: #f2f2f2;
+	border: 1px solid #ccc;
+	margin: -1px -1px 0 -1px;
+	border-top-left-radius: 0.4em;
+	border-top-right-radius: 0.4em;
+}
+
+.box-head > *:first-child {
+	border-top-left-radius: 0.4em;
+	border-top-right-radius: 0.4em;
+}
+
+.box-body {
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.box-foot:not(:empty) {
+	z-index: 201;
+	margin-top: -1px;
+	border-top: 1px solid #ccc;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+}
+
+.box--content {
+	padding: 10px;
+}
+
+.box--content-wide {
+	padding: 20px;
+}
+
 .burger {
 	display: block;
 	-ms-flex-item-align: center;
@@ -2117,6 +2172,7 @@ h2.docs-headline {
 	display: flex;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	border-radius: 0.4em;
 }
 
 .popout:before {
@@ -2524,6 +2580,11 @@ h2.docs-headline {
 	margin: 30px 0 20px;
 	padding: 20px;
 	position: relative;
+	min-height: 100px;
+}
+
+.sandbox--large {
+	min-height: 200px;
 }
 
 .sandbox:before {
@@ -3328,7 +3389,6 @@ html {
 	z-index: 9999;
 	padding: 0 !important;
 	transition: right 0.6s ease;
-	box-shadow: 0 0 5px 0px #777777;
 }
 
 .menu-wrap .menu-list {

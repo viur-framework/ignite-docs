@@ -28,13 +28,12 @@
 		{% endcall %}
 	</section>
 
-
 	<section class="section">
 		<h2 class="headline docs-headline">Default popup</h2>
 		<p>This is a standard popup.</p>
-		<div class="sandbox js-code-child">
-			{% call popup(modifiers=["local"]) %}
-				{{ box(head="Standard popout") }}
+		<div class="sandbox sandbox--large js-code-child">
+			{% call popup(modifiers=["local"], active=True) %}
+				{{ box(head="Standard popup", body="With a box, some text.", foot="And a footer.") }}
 			{% endcall %}
 		</div>
 	</section>
