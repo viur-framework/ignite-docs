@@ -33,7 +33,7 @@
     "gulp-stylefmt": "^1.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
     "husky": "^5.0.9",
-    "postcss": "^8.2.10",
+    "postcss": "^8.2.13",
     "postcss-discard-comments": "^4.0.2",
     "postcss-focus": "^4.0.0",
     "postcss-zindex": "^4.0.1",
