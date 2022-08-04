@@ -1,5 +1,79 @@
-{% macro SkelViewRelBoneFormat(format, value, prefix="") %}
+{#
+skelview.html provides collection of macros used for ViUR skeleton rendering in Jinja2/HTML.
+
+## Available macros ##
+
+- `SkelViewRelBoneFormat()` is (mostly internally) used to replace values in a format string
+- `SkelViewBone()` is used to render the value of one bone
+- `SkelView()` is used to render a skeleton
+- `CatSkelView()` is used to render a skeleton and grouping bones into their categories
+
+### Example calls ###
+
+
+### Output a skeleton ###
+```jinja2
+{% from "macros/skelview.html" import SkelView %}
+{{ SkelView(skel) }}
+```
+
+### Output a skeleton with categories ###
+```jinja2
+{% from "macros/skelview.html" import CatSkelView %}
+{{ CatSkelView(skel) }}
+```
+
+## Parameters ##
+
+Available options (see macros for implementation details):
+
+- `cssBaseClass` allows to override the CSS-base class for styling
+- `drillDepth` when specified > 0, then relationalBones are deep-rendered also
+- `drillFull` when specified, loads the entire referenced skeleton and outputs it
+- `drillIgnore` paths to ignore when diving into relationalBone
+- `emptyValue` allows to define how unset values are displayed (default: "-")
+- `ignore` allows to specifiy a list of paths to be ignored
+- `module` defines the module to which `skel` matches; If this is not provided, `moduleName()` is called.
+- `paths` allows to specify a list of paths to view. A path can also be something like "reference.dest.name"
+	When this is left empty, all visible fields are printed, except ingored ones
+- `options` defines a dictionary with advanced options; This is the newer way to supply customizatons to the macros.
+	See section below for further information.
+
+## Options ##
+
+Options to SkelView styling and behavior are supplied using the `option` dictionary.
+
+### showHidden ###
+
+Defines if hidden bones would be generally shown.
+
+```python
+options={"showHidden": True}
+```
+
+### keyLink ###
+
+If set, bones containing a key are rendered as a link to the URL provided as `keyLink`.
+The provided value may contain variables in the format $(var) referring to fields from the skeleton. A special variable $(module) is provided and replaced by the module's name.
+
+```python
+options={"keyLink": "/$(module)/view/$(key)?style=raw"}
+```
+
+#}
+
+
+{% macro SkelViewRelBoneFormat(format, value, prefix="", vars={}) %}
     {% set ret = {"value": format} %}
+
+    {% for key, val in vars.items() %}
+        {% if val|isDict %}
+            {% do ret.update({"value": SkelViewRelBoneFormat(ret["value"], val, prefix = "%s." % key)}) %}
+        {% else %}
+            {% do ret.update({"value": ret["value"].replace("$(%s)" % (prefix + key), val|string)}) %}
+        {% endif %}
+    {% endfor %}
+
     {% for key, val in value.items() %}
         {% if val|isDict %}
             {% do ret.update({"value": SkelViewRelBoneFormat(ret["value"], val, prefix = "%s." % key)}) %}
@@ -11,24 +85,28 @@
     {{ ret["value"] }}
 {% endmacro %}
 
-{% macro SkelViewBone(module, skel, path, level = 0, cssBaseClass = "skelview", drillDepth = 0, drillIgnore=[], drillFull=None, structures = {},
-                        emptyValue = "-", skelType="viewSkel", descr=None,
-                            mainTag="li", descrTag="span", valueTag="span") %}
+{% macro SkelViewBone(skel, path, module=None, level = 0, cssBaseClass = "skelview", drillDepth = 0, drillIgnore=[],
+            drillFull=None, options = {}, structures = {}, emptyValue = "-", skelType="viewSkel", descr=None,
+                mainTag="li", descrTag="span", valueTag="span") %}
+	{% if not module %}
+		{% set module = moduleName() %}
+	{% endif %}
+
+	{% if module not in structures.keys() %}
+		{% do structures.update({module: getSkel(module, skel=skelType)}) %}
+	{% endif %}
+
     {% for step in path.split(".") %}
         {% if loop.last %}
             {% if not cssBaseClass %}
                 {% set cssBaseClass = "%s-view" % module %}
             {% endif %}
 
-            {% if module not in structures.keys() %}
-                {% do structures.update({module: getSkel(module, skel=skelType)}) %}
-            {% endif %}
-
             {% set structure = structures[module] %}
 
             {% if step in structure.keys() %} {# step in skel.keys() and structure[step]["visible"]  #}
                 {% set value = skel[step] or None %}
-                {% if not value and not emptyValue %}
+                {% if not options["showHidden"] and (not structure[step]["visible"] or (not value and not emptyValue)) %}
                     {% continue %}
                 {% endif %}
 
@@ -39,10 +117,14 @@
                         {{ descr or structure[step]["descr"] }}
                     </{{ descrTag }}>
                     <{{ valueTag }} class="{{ cssBaseClass }}-bone-value {{ step }}">
-                        {% if structure[step]["type"] == "selectone" %}
+                        {% if value and (structure[step]["type"] == "select" or structure[step]["type"].startswith("select.")) and not structure[step]["multiple"] %}
                             {{ value.descr if value }}
+                        {% elif value and value|isList and (structure[step]["type"] == "select" or structure[step]["type"].startswith("select.")) and structure[step]["multiple"] %}
+							{% for val in value %}
+								{{val.descr or val|string}}{{", " if not loop.last}}
+							{% endfor %}
                         {% elif structure[step]["type"] == "bool" %}
-                            {{ _("Yes") if value else _("No") }}
+                            {{ ("Yes") if value else ("No") }}
                         {% elif structure[step]["type"] == "date" %}
                             {% if value %}
                                 {% if structure[step]["date"] and structure[step]["time"] %}
@@ -105,27 +187,34 @@
                                     {% if (drillFull|isList and step in drillFull)
                                             or (drillFull and not drillFull|isList) %}
                                         {% set dvalue = getEntry(structure[step]["module"], dvalue["key"]) %}
-                                        {% do structures.update({"REL_SKEL": getSkel(structure[step]["module"])}) %}
+                                        {% do structures.update({structure[step]["module"]: getSkel(structure[step]["module"])}) %}
                                     {% else %}
-                                        {% do structures.update({"REL_SKEL": structure[step]["relskel"]}) %}
+                                        {% do structures.update({structure[step]["module"]: structure[step]["relskel"]}) %}
                                     {% endif %}
 
-                                    {{ SkelView("REL_SKEL", dvalue,
-                                                    level = level + 1,
-                                                        drillDepth = drillDepth - 1,
-                                                            structures = structures,
-                                                                emptyValue = emptyValue,
-                                                                    ignore = drillIgnore) }}
+                                    {{ SkelView(
+                                        dvalue,
+                                        module=structure[step]["module"],
+                                        level = level + 1,
+                                        drillDepth = drillDepth - 1,
+                                        options = options,
+                                        structures = structures,
+                                        emptyValue = emptyValue,
+                                        ignore = drillIgnore
+                                    ) }}
 
                                     {% if rvalue %}
-                                        {% do structures.update({"USING_SKEL": structure[step]["using"]}) %}
+                                        {% do structures.update({"$USING_SKEL": structure[step]["using"]}) %}
 
-                                        {{ SkelView("USING_SKEL", rvalue,
-                                                        level = level + 1,
-                                                            drillDepth = drillDepth - 1,
-                                                                structures = structures,
-                                                                    emptyValue = emptyValue,
-                                                                        ignore = drillIgnore) }}
+                                        {{ SkelView(
+                                            rvalue, module="$USING_SKEL",
+                                            level = level + 1,
+                                            drillDepth = drillDepth - 1,
+                                            options = options,
+                                            structures = structures,
+                                            emptyValue = emptyValue,
+                                            ignore = drillIgnore
+                                        ) }}
                                     {% endif %}
                                 {% endfor %}
 
@@ -161,9 +250,16 @@
                             {% endif %}
                         {% elif structure[step]["type"] == "str.email" and value %}
                             <a href="mailto:{{ value }}">{{ value }}</a>
+                        {% elif step == "key" and value and options["keyLink"] %}
+                            <a href="{{ SkelViewRelBoneFormat(options["keyLink"], skel, vars={"module": module}) }}">
+                               {{ value }}
+                            </a>
                         {% elif value and value|isList %}
-                            {{ ", ".join(value) }}
+                            {% for entry in value %}
+                            	{{entry|string}}{{ "," if not loop.last }}
+                            {% endfor %}
                         {% else %}
+                            {# {{ structure[step]["type"] }}| #}
                             {{ value if value else emptyValue }}
                         {% endif %}
                     </{{ valueTag }}>
@@ -176,15 +272,19 @@
     {% endfor %}
 {% endmacro %}
 
-{% macro SkelView(module, skel, paths=[], ignore=[], level=0, skelType="viewSkel",
+{% macro SkelView(skel, paths=[], ignore=[], module=None, level=0, skelType="viewSkel",
                     cssBaseClass="skelview", drillDepth = 0, drillIgnore=[], drillFull=None,
-                        structures = {}, emptyValue = "-") %}
+                        options = {}, structures = {}, emptyValue = "-", collapsable=None) %}
     {% if not cssBaseClass %}
         {% set cssBaseClass = "%s-view" % module %}
     {% endif %}
 
+    {% if not module %}
+        {% set module = moduleName() %}
+    {% endif %}
+
     {% if module not in structures.keys() %}
-        {% do structures.update({module: getSkel(module, skel=skelType)}) %}
+        {% do structures.update({module: getStructure(module, skel=skelType)}) %}
     {% endif %}
 
     <ul class="{{ cssBaseClass }} {{ "level-%d" % level }}">
@@ -194,27 +294,49 @@
                     {% continue %}
                 {% endif %}
 
-                {{ SkelViewBone(module, skel, bone, level=level, cssBaseClass=cssBaseClass,
-                                    drillDepth=drillDepth, drillIgnore=drillIgnore, drillFull=drillFull,
-                                        structures=structures, emptyValue=emptyValue) }}
+                {{ SkelViewBone(
+                    skel, bone,
+                    module=module,
+                    level=level,
+                    cssBaseClass=cssBaseClass,
+                    drillDepth=drillDepth,
+                    drillIgnore=drillIgnore,
+                    drillFull=drillFull,
+                    options=options,
+                    structures=structures,
+                    emptyValue=emptyValue
+                ) }}
             {% endfor %}
         {% else %}
             {% for path in paths %}
-                {{ SkelViewBone(module, skel, path, level=level, cssBaseClass=cssBaseClass,
-                                    drillDepth=drillDepth, drillIgnore=drillIgnore, drillFull=drillFull,
-                                        structures=structures, emptyValue=emptyValue) }}
+                {{ SkelViewBone(
+                    skel, path,
+                    module=module,
+                    level=level,
+                    cssBaseClass=cssBaseClass,
+                    drillDepth=drillDepth,
+                    drillIgnore=drillIgnore,
+                    drillFull=drillFull,
+                    options=options,
+                    structures=structures,
+                    emptyValue=emptyValue
+                ) }}
             {% endfor %}
         {% endif %}
     </ul>
 {% endmacro %}
 
-{% macro CatSkelView(module, skel, paths=[], ignore=[], skelType="viewSkel",
+{% macro CatSkelView(skel, paths=[], ignore=[], module=None, skelType="viewSkel",
                         cssBaseClass="skelview", level=0, drillDepth = 0, drillIgnore=[], drillFull=None,
-                            structures = {}, defaultCat = "", emptyValue="-",
-                                sectionTag="div", titleTag="div", bodyTag="div") %}
+                            options = {}, structures = {}, defaultCat = "", emptyValue="-",
+                                sectionTag="div", titleTag="div", bodyTag="div", collapsable=None) %}
     {% if not cssBaseClass %}
         {% set cssBaseClass = "%s-view" % module %}
     {% endif %}
+
+	{% if not module %}
+		{% set module = moduleName() %}
+	{% endif %}
 
     {% if module not in structures.keys() %}
         {% do structures.update({module: getSkel(module, skel=skelType)}) %}
@@ -260,10 +382,20 @@
         {% endif %}
 
         <{{ bodyTag or "div" }} class="{{ cssBaseClass }}-section-view">
-            {{ SkelView(module, skel, paths=cat[mycat], level = level,
-                        skelType = skelType, cssBaseClass = cssBaseClass,
-                            drillDepth = drillDepth, drillIgnore = drillIgnore,
-                                drillFull = drillFull, structures = structures) }}
+            {{ SkelView(
+                skel,
+                paths=cat[mycat],
+                module=module,
+                level = level,
+                skelType = skelType,
+                cssBaseClass = cssBaseClass,
+                drillDepth = drillDepth,
+                drillIgnore = drillIgnore,
+                drillFull = drillFull,
+                options = options,
+                structures = structures,
+                collapsable=collapsable
+            ) }}
         </{{ bodyTag or "div" }}>
 
         {% if sectionTag %}

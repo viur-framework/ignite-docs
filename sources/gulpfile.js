@@ -1,40 +1,41 @@
+/* ignite-docs-viur3 GULP SCRIPT */
+
 // Project data
-
-const srcpaths = {
+var srcpaths = {
 	less: './less/**/*.less',
-	ts: './ts/**/*.ts',
+	images: './images/**/*',
+	embedsvg: './embedsvg/**/*',
 };
 
-const destpaths = {
+var destpaths = {
 	css: '../deploy/static/css',
-	js: '../deploy/static/js',
+	images: '../deploy/static/images',
+	embedsvg: '../deploy/static/svgs'
 };
 
+// Variables and requirements
+import gulp from 'gulp';
+import path from 'path';
+globalThis.__dirname = path.dirname(import.meta.url);
 
-// Dependencies and Plugins
+import del from 'del';
+import rename from 'gulp-rename';
+import less from 'gulp-less';
+import autoprefixer from 'autoprefixer';
+import postcss from 'gulp-postcss'
+import zindex from 'postcss-zindex';
+import focus from 'postcss-focus';
+import nocomments from 'postcss-discard-comments';
+import cleancss from 'gulp-clean-css';
+import jmq from 'gulp-join-media-queries';
+import imagemin from 'gulp-imagemin';
+import cheerio from 'gulp-cheerio';
 
-const gulp = require('gulp');
-const gulpIf = require('gulp-if');
+// compilation and postproduction of LESS to CSS
+gulp.task('css', () => {
+	del([destpaths.css + '/**/*'], {force: true});
 
-const rename = require('gulp-rename');
-
-const path = require('path');
-const less = require('gulp-less');
-const postcss = require('gulp-postcss');
-const zindex = require('postcss-zindex');
-const autoprefixer = require('autoprefixer');
-const focus = require('postcss-focus');
-const nocomments = require('postcss-discard-comments');
-const cleancss = require('gulp-clean-css');
-const jmq = require('gulp-join-media-queries');
-const stylefmt = require('gulp-stylefmt');
-const ts = require('gulp-typescript');
-const eslint = require('gulp-eslint');
-
-const tsProject = ts.createProject('tsconfig.json');
-
-gulp.task('css', () =>
-	gulp.src('./less/style.less')
+	return gulp.src('./less/style.less')
 		.pipe(less({
 			paths: [path.join(__dirname, 'less', 'includes')]
 		}))
@@ -44,38 +45,66 @@ gulp.task('css', () =>
 			}),
 			nocomments, // discard comments
 			focus, // add focus to hover-states
-			// zindex, // reduce z-index values - deprecated, use .zIndex()-mixin
+			zindex, // reduce z-index values
 		])) // clean up css
 		.pipe(jmq())
-		//#fixme: .pipe(plugins.stylefmt()) // syntax formatting, stylefmt destroys background inline-svg
 		.pipe(gulp.dest(destpaths.css)) // save cleaned version
-		.pipe(cleancss({zindex: false})) // minify css
+		.pipe(cleancss()) // minify css
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest(destpaths.css)) // save minified version
-);
+		.pipe(gulp.dest(destpaths.css)); // save minified version
+});
 
-gulp.task('js', () =>
-	tsProject.src()
-		.pipe(tsProject()).js
-		.pipe(gulp.dest(destpaths.js))
-);
+// reduce images for web
+gulp.task('images', () => {
+	del([destpaths.images + '/**/*'], {force: true});
 
-gulp.task('eslint', () =>
-	gulp.src(srcpaths.ts)
-		.pipe(eslint({fix: true}))
-		.pipe(eslint.format())
-		.pipe(gulpIf(
-			file => file.eslint != null && file.eslint.fixed,
-			gulp.dest(srcpaths.ts.split('/*', 1)[0])
-		))
-		.pipe(eslint.failAfterError())
-);
+	return gulp.src(srcpaths.images)
+		.pipe(imagemin([
+			imagemin.mozjpeg({progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: false},
+					{removeDimensions: true}
+				]
+			})
+		]))
+		.pipe(gulp.dest(destpaths.images));
+});
+
+// reduce embedsvg icons for web
+gulp.task('embedsvg', () => {
+	del([destpaths.embedsvg + '/**/*'], {force: true});
+
+	return gulp.src(srcpaths.embedsvg)
+		.pipe(imagemin([
+			imagemin.mozjpeg({progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}),
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: false},
+					{removeDimensions: true}
+				]
+			})
+		]))
+		.pipe(cheerio({
+			run: function ($, file) {
+				$('style').remove()
+				$('[id]').removeAttr('id')
+				$('[fill]').removeAttr('fill')
+				$('svg').addClass('icon')
+			},
+			parserOptions: {xmlMode: true}
+		}))
+		.pipe(rename({prefix: 'icon-'}))
+		.pipe(gulp.dest(destpaths.embedsvg));
+});
+
 
 gulp.task('watch', () => {
 	gulp.watch(srcpaths.less, gulp.series('css'));
-	gulp.watch(srcpaths.ts, gulp.series('js'));
+	gulp.watch(srcpaths.embedsvg, gulp.series('embedsvg'));
+	gulp.watch(srcpaths.images, gulp.series('images'));
 });
 
-gulp.task('default', gulp.series([
-	'css', 'js'
-]));
+gulp.task('default', gulp.series(['css', 'images', 'embedsvg']));

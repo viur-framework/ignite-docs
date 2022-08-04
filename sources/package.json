@@ -1,53 +1,55 @@
 {
-  "name": "ignite-docs",
-  "version": "1.1.1",
-  "private": true,
-  "description": "Gulp Tasks for ViUR Ignite Docs",
-  "main": "gulpfile.js",
+  "name": "ignite-docs-viur3",
+  "version": "2.6.0",
+  "description": "ignite-docs-viur3",
   "scripts": {
-    "lint": "eslint ./ts --ext .ts",
-    "lint-and-fix": "eslint ./ts --ext .ts --fix",
-    "postinstall": "cd .. && husky install sources/.husky",
-    "test": "npm run lint"
+    "preinstall": "npx npm-force-resolutions",
+    "setup": "npm install gulp -g && npm i -g gulp-cli && npm install",
+    "checkUpdates": "npm-check-updates -u && npm install",
+    "initCheckUpdates": "npm i -g npm-check-updates"
   },
-  "author": "Mausbrand Infosys",
-  "license": "GPL-3.0",
-  "devDependencies": {
-    "@types/highlightjs": "^10.1.0",
-    "@typescript-eslint/eslint-plugin": "^4.15.1",
-    "@typescript-eslint/parser": "^4.15.1",
-    "autoprefixer": "^10.2.4",
-    "del": "^6.0.0",
-    "eslint": "^7.20.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-plugin-no-loops": "^0.3.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-eslint": "^6.0.0",
-    "gulp-if": "^3.0.0",
-    "gulp-join-media-queries": "^1.2.0",
-    "gulp-less": "^4.0.1",
-    "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-stylefmt": "^1.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
-    "husky": "^5.0.9",
-    "postcss": "^8.2.13",
-    "postcss-discard-comments": "^4.0.2",
-    "postcss-focus": "^4.0.0",
-    "postcss-zindex": "^4.0.1",
-    "prettier": "2.2.1",
-    "pretty-quick": "^3.1.0",
-    "typescript": "^4.1.5"
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viur-framework/base.git"
   },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "IE 10"
+  "keywords": [
+    "ViUR",
+    "viur-framework",
+    "base",
+    "ignite",
+    "css",
+    "framework",
+    "less",
+    "gulp",
+    "getting-started",
+    "❤"
   ],
-  "engineStrict": true,
-  "engines": {
-    "node": "15.9.0"
+  "author": "ViUR",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/viur-framework/base/issues"
+  },
+  "homepage": "https://www.viur.is/",
+  "browserslist": [
+    "> 1%"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-cheerio": "^1.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-join-media-queries": "^1.2.0",
+    "gulp-less": "^5.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "postcss-focus": "^5.0.1",
+    "postcss-zindex": "^5.0.1",
+    "graceful-fs": "^4.2.8",
+    "postcss": "^8.3.6",
+    "trim-newlines": "^4.0.2",
+    "postcss-discard-comments": "^5.0.1"
   }
 }

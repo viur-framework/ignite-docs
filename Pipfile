@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+#[[source]]
+#url = "https://test.pypi.org/simple/"
+#verify_ssl = true
+#name = "testpypi"
+
+[packages]
+viur-core = "*"
+
+[dev-packages]
+viur-cli = "*"
+
+[requires]
+python_version = "3.9"
