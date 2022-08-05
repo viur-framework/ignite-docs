@@ -1,0 +1,39 @@
+{%- set baseUrl = getHostUrl(forceSSL=True) -%}
+
+{%- macro url(link, priority=None) -%}
+	{%- if link and not link.startswith("/") -%}
+		{%- set link = "/%s" % link -%}
+	{%- endif -%}
+
+	<url>
+		<loc>{{ baseUrl }}{{ link }}</loc>
+		{%- if priority -%}
+			<priority>{{ priority }}</priority>
+		{%- endif -%}
+	</url>
+{% endmacro -%}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+	{{ url("", "1.0") }}
+
+	{{ url("s/bar", "0.9") }}
+	{{ url("s/box", "0.9") }}
+	{{ url("s/buttons", "0.9") }}
+	{{ url("s/components", "0.9") }}
+	{{ url("s/forms", "0.9") }}
+	{{ url("s/gettingstarted", "0.9") }}
+	{{ url("s/guidelines", "0.9") }}
+	{{ url("s/messages", "0.9") }}
+	{{ url("s/mixins", "0.9") }}
+	{{ url("s/popout", "0.9") }}
+	{{ url("s/popup", "0.9") }}
+	{{ url("s/states", "0.9") }}
+	{{ url("s/tables", "0.9") }}
+	{{ url("s/types", "0.9") }}
+	{{ url("s/variables", "0.9") }}
+
+</urlset>

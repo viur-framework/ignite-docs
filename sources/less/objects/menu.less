@@ -12,7 +12,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  margin: 1em 0;
+  margin: 0 0 30px 0;
   .mq-min(@breakMedium, {font-size: .9rem;})
 }
 
@@ -153,28 +153,6 @@ a.menu-link {
       border-right-width: 0;
     }
   }
-}
-
-// #FIXME
-// (@breakMedium + 1em) is only a hotfix
-// @breakMedium will be decreased in mq-max mixin,
-// but this its not desired here
-.menu-wrap {
-  .mq-max((@breakMedium + 1em), {
-    width: 70%;
-    position: absolute;
-    top: 40px;
-    right: -80%;
-    z-index: 9999;
-    padding: 0 !important; // #FIXME
-    transition: right 0.6s ease;
-    .menu-list {
-      margin: 0;
-    }
-    &.is-active {
-      right: 0;
-    }
-  })
 }
 
 // Hide hamburger menu:

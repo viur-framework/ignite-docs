@@ -1,57 +1,50 @@
-# -*- coding: utf-8 -*-
-from server import tasks, exposed
-from render.html import default
-import logging
+import datetime, logging
 
-class index(default):
+from viur.core import utils, tasks, conf, errors, exposed
+from viur.core.prototypes import BasicApplication
+from viur.core.utils import currentRequest
+
+from google.cloud.datastore_admin_v1.services.datastore_admin.client import DatastoreAdminClient
+
+
+class Index(BasicApplication):
 
 	@exposed
 	def index(self, *args, **kwargs):
-		template = self.getEnv().get_template("sites/start.html")
+		"""
+		The first two lines of code here ensure that requesting a non-existent module or template will throw a 404
+		instead of referring to index. Remove them if you wish to alter this behaviour.
+		"""
+		if len(args) > 1 or kwargs:
+			raise errors.NotFound()
+
+		template = self.render.getEnv().get_template("index.html")
 		return template.render(start=True)
 
-	#@tasks.PeriodicTask(24*60)
+	@exposed
+	def sitemap_xml(self, *args, **kwargs):
+		currentRequest.get().response.headers["Content-Type"] = "text/xml"
+		return self.render.view({}, tpl="sitemap")
+
+	# @tasks.PeriodicTask(24 * 60)
 	def backup(self, *args, **kwargs):
 		"""
-		Backup job kick-off for Google App Engine datastore admin.
-
-		Enable it on production systems when necessary enabling and pre-configuration is done.
-		You need to enable GAE datastore admin, initialize a GCS bucket for your app and install
-		another queue specified in queue.yaml to get this run. This is done using
-
-		``` gcloud app deploy -q --project=YOUR-PROJECT queue.yaml
-
-		Then, uncomment above decorator.
+		Backup job kick-off for Google Cloud Storage.
+		Use the maintenance script setup/enable-backup.sh to configure your project for backups.
 		"""
-		from google.appengine.ext.db.metadata import Kind
-		from google.appengine.api.app_identity import get_application_id
-		from google.appengine.api import taskqueue
+		if utils.isLocalDevelopmentServer:
+			logging.info("Backup tool is disabled on local development server")
+			return
 
-		appname = get_application_id()
-		kinds = []
+		bucket = "backup-dot-%s" % utils.projectID
+		admin_client = DatastoreAdminClient()
+		timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 
-		q = Kind.all()
-		for kind in q.fetch(100):
-			kindName = kind.kind_name
+		output_url_prefix = "gs://%s/%s" % (bucket, timestamp)
 
-			if kindName in ["SharedConfData"] or kindName.startswith("_"):
-				continue
-
-			kinds.append(kindName)
-			logging.debug("Adding kind '%s' to backup" % kindName)
-
-		taskqueue.add(
-			url="/_ah/datastore_admin/backup.create",
-			method="GET",
-			queue_name="data-backup",
-			params={
-				"name": "daily_backup", #No ending "_" accepted here, this causes error 400????
-				"filesystem": "gs",
-				"gs_bucket_name": "%s.appspot.com/backup" % appname,
-				"kind": kinds
-			}
+		admin_client.export_entities(
+			project_id=utils.projectID,
+			output_url_prefix=output_url_prefix
 		)
 
-		logging.info("Daily backup queued for %s" % ", ".join(kinds))
-
-index.html = True
+		logging.info("Backup queued to be exported to %r", output_url_prefix)

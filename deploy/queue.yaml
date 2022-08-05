@@ -1,4 +1,10 @@
 queue:
-- name: data-backup
-  rate: 1/s
-  target: ah-builtin-python-bundle
+  - name: default
+    rate: 5/s
+    max_concurrent_requests: 2
+
+  - name: viur-emails
+    rate: 1/s
+    retry_parameters:
+      min_backoff_seconds: 3600
+      max_backoff_seconds: 3600
